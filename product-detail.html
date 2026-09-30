@@ -1,0 +1,2508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Corporate Products &amp; Packaging — Creative Roots</title>
+  <meta name="description" content="Customized corporate branding, promotional merchandise, and premium printing solutions in Pakistan.">
+  <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23113627'/><text x='50' y='65' font-size='42' font-weight='bold' text-anchor='middle' fill='%23d4af37'>CR</text></svg>">
+  <style>
+    /* Reset & Base Layout for Product Detail Page */
+    body {
+      background-color: #f6f6f8;
+      color: #222;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Top Announcement Bar */
+    .top-black-bar {
+      background-color: #000;
+      color: #fff;
+      font-size: 12.5px;
+      font-weight: 500;
+      text-align: center;
+      padding: 8px 16px;
+      letter-spacing: 0.3px;
+    }
+
+    /* Header Styling */
+    .instaprint-header {
+      background: #fff;
+      border-bottom: 1px solid #eaeaea;
+      padding: 14px 0;
+    }
+    .instaprint-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .brand-logo-icon {
+      width: 38px;
+      height: 38px;
+      background: #113627;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d4af37;
+      font-size: 18px;
+    }
+    .brand-logo-text {
+      font-size: 21px;
+      font-weight: 800;
+      color: #0b1f17;
+      letter-spacing: -0.5px;
+    }
+    .brand-logo-text span {
+      color: #d4af37;
+    }
+    
+    /* Search Bar */
+    .header-search-wrap {
+      flex: 1;
+      max-width: 520px;
+      position: relative;
+    }
+    .header-search-input {
+      width: 100%;
+      height: 42px;
+      padding: 0 46px 0 18px;
+      border-radius: 50px;
+      border: 1px solid #dcdcdc;
+      background: #fff;
+      font-size: 13.5px;
+      color: #333;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+    .header-search-input:focus {
+      border-color: #113627;
+      box-shadow: 0 0 0 3px rgba(17, 54, 39, 0.08);
+    }
+    .header-search-btn {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #555;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    /* Header Right Actions */
+    .header-right-actions {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    .find-store-link {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #222;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .find-store-link:hover {
+      color: #113627;
+    }
+    .cart-bag-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #222;
+      text-decoration: none;
+      font-size: 15px;
+      position: relative;
+      transition: all 0.2s;
+    }
+    .cart-bag-icon:hover {
+      background: #e8e8e8;
+    }
+
+    /* Sub Navigation Bar with Dropdowns */
+    .instaprint-subnav {
+      background: #fff;
+      border-bottom: 1px solid #ebebeb;
+      padding: 0;
+      position: relative;
+      z-index: 900;
+    }
+    .subnav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #333;
+      flex-wrap: wrap;
+    }
+    .subnav-links > li {
+      position: relative;
+      padding: 13px 0;
+    }
+    .subnav-links a {
+      color: #2e2e2e;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s ease;
+    }
+    .subnav-links a:hover, .subnav-links a.active {
+      color: #113627;
+    }
+    .subnav-links i.fa-chevron-down {
+      font-size: 10px;
+      color: #888;
+      transition: transform 0.2s ease;
+    }
+    .has-subnav-dropdown:hover i.fa-chevron-down {
+      transform: rotate(180deg);
+      color: #113627;
+    }
+    .subnav-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #ffffff;
+      min-width: 270px;
+      border-radius: 12px;
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.12);
+      border: 1px solid #e5e7eb;
+      padding: 10px 0;
+      list-style: none;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1000;
+    }
+    .has-subnav-dropdown:hover .subnav-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .subnav-dropdown li {
+      padding: 0;
+      margin: 0;
+    }
+    .subnav-dropdown li a {
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+      transition: all 0.2s ease;
+    }
+    .subnav-dropdown li a i {
+      width: 16px;
+      color: #113627;
+      font-size: 13px;
+    }
+    .subnav-dropdown li a:hover {
+      background: #f4f6f5;
+      color: #113627;
+      padding-left: 24px;
+    }
+
+    /* Breadcrumbs Bar */
+    .product-breadcrumb-wrap {
+      padding: 16px 0;
+      font-size: 12.5px;
+      color: #777;
+    }
+    .product-breadcrumb-wrap a {
+      color: #444;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .product-breadcrumb-wrap a:hover {
+      color: #113627;
+      text-decoration: underline;
+    }
+    .breadcrumb-sep {
+      margin: 0 8px;
+      color: #aaa;
+    }
+    .breadcrumb-current {
+      color: #111;
+      font-weight: 600;
+    }
+
+    /* Main Container Card (Exact match to screenshot) */
+    .product-main-container {
+      max-width: 1200px;
+      margin: 0 auto 50px;
+      padding: 0 16px;
+    }
+    .product-white-card {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #e7e7eb;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    /* Left Column: Image Box & Interactive Gallery */
+    .product-left-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .product-img-box {
+      width: 100%;
+      height: 480px;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      background: #f8fafc;
+      position: relative;
+      overflow: hidden;
+      cursor: crosshair;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.03);
+      user-select: none;
+    }
+    .product-img-box img {
+      max-width: 92%;
+      max-height: 92%;
+      object-fit: contain;
+      transform-origin: center center;
+      transition: transform 0.12s ease-out, opacity 0.25s ease;
+      will-change: transform;
+      pointer-events: none;
+    }
+
+    /* Floating Badges & Action Buttons on Image Box */
+    .zoom-hint {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid #e2e8f0;
+      border-radius: 50px;
+      padding: 6px 14px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      pointer-events: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      transition: all 0.25s ease;
+      z-index: 4;
+    }
+    .zoom-hint.active-zoom {
+      background: #113627;
+      color: #d4af37;
+      border-color: #113627;
+      box-shadow: 0 4px 14px rgba(17, 54, 39, 0.25);
+    }
+    .zoom-hint i {
+      font-size: 12px;
+    }
+
+    .btn-fullscreen-trigger {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid #e2e8f0;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+      z-index: 5;
+    }
+    .btn-fullscreen-trigger:hover {
+      background: #113627;
+      color: #ffffff;
+      transform: scale(1.1);
+      box-shadow: 0 4px 14px rgba(17, 54, 39, 0.25);
+    }
+
+    /* Thumbnail Gallery Strip */
+    .product-thumbnails-strip {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding: 4px 2px;
+    }
+    .thumb-item-btn {
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+      border: 2px solid #e5e7eb;
+      background: #ffffff;
+      overflow: hidden;
+      padding: 4px;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .thumb-item-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.25s ease;
+    }
+    .thumb-item-btn:hover {
+      border-color: #94a3b8;
+      transform: translateY(-2px);
+    }
+    .thumb-item-btn:hover img {
+      transform: scale(1.06);
+    }
+    .thumb-item-btn.active {
+      border-color: #113627;
+      box-shadow: 0 0 0 2px rgba(17, 54, 39, 0.25);
+    }
+
+    /* Fullscreen Lightbox Modal */
+    .product-lightbox-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 15, 20, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      padding: 20px;
+    }
+    .product-lightbox-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .lightbox-close-btn {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+    .lightbox-close-btn:hover {
+      background: #e11d48;
+      transform: scale(1.1);
+    }
+    .lightbox-img-wrap {
+      max-width: 90vw;
+      max-height: 80vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .lightbox-img-wrap img {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+      transition: transform 0.2s ease-out;
+    }
+    .lightbox-toolbar {
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: #e2e8f0;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .lightbox-controls {
+      display: flex;
+      gap: 10px;
+    }
+    .lightbox-controls button {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      padding: 6px 14px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .lightbox-controls button:hover {
+      background: #113627;
+      color: #d4af37;
+    }
+
+    /* Accordions */
+    .detail-accordion-group {
+      margin-top: 24px;
+      border-top: 1px solid #e6e6e8;
+    }
+    .detail-accordion-item {
+      border-bottom: 1px solid #e6e6e8;
+    }
+    .accordion-trigger {
+      width: 100%;
+      padding: 16px 0;
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a1a;
+      cursor: pointer;
+      text-align: left;
+      transition: color 0.2s;
+    }
+    .accordion-trigger:hover {
+      color: #113627;
+    }
+    .accordion-icon {
+      font-size: 18px;
+      font-weight: 400;
+      color: #555;
+      transition: transform 0.25s ease;
+    }
+    .detail-accordion-item.active .accordion-icon {
+      transform: rotate(45deg);
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: #4b4b4b;
+      padding: 0 0;
+    }
+    .detail-accordion-item.active .accordion-content {
+      max-height: 400px;
+      padding-bottom: 18px;
+    }
+    .accordion-specs-table {
+      width: 100%;
+      margin-top: 10px;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    .accordion-specs-table tr {
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .accordion-specs-table td {
+      padding: 7px 0;
+    }
+    .accordion-specs-table td:first-child {
+      font-weight: 600;
+      color: #222;
+      width: 42%;
+    }
+
+    /* Payment & Security Box */
+    .payment-security-box {
+      background: #f7f7f8;
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin-top: 24px;
+      border: 1px solid #eee;
+    }
+    .payment-security-box h4 {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 6px 0;
+    }
+    .payment-security-box p {
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: #666;
+      margin: 0;
+    }
+
+    /* Right Column: Title, WhatsApp Button, etc. */
+    .product-right-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .save-badge {
+      display: inline-block;
+      align-self: flex-start;
+      background: #e53935;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 14px;
+      margin-bottom: 12px;
+    }
+    .product-main-title {
+      font-size: 34px;
+      font-weight: 800;
+      color: #111111;
+      margin: 0 0 8px 0;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+    .product-vendor-line {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 18px;
+    }
+    .product-vendor-line a {
+      color: #111;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    
+    /* Live Price Display & Tier Selection */
+    .product-live-price-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 18px;
+      padding: 12px 16px;
+      background: #fbfbfb;
+      border-radius: 8px;
+      border: 1px solid #eee;
+    }
+    .live-current-price {
+      font-size: 26px;
+      font-weight: 800;
+      color: #113627;
+    }
+    .live-old-price {
+      font-size: 15px;
+      color: #999;
+      text-decoration: line-through;
+    }
+    .live-tax-note {
+      font-size: 12px;
+      color: #666;
+    }
+
+    /* Checkmarks Line */
+    .checkmarks-line {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 24px;
+    }
+    .checkmarks-line span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .checkmarks-line i {
+      color: #113627;
+      font-size: 13px;
+    }
+
+    /* Customization / Quantity Controls */
+    .customization-controls {
+      margin-bottom: 24px;
+    }
+    .control-label {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 8px;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .qty-picker-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .qty-picker {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 50px;
+      background: #fff;
+      overflow: hidden;
+      height: 44px;
+    }
+    .qty-btn {
+      width: 44px;
+      height: 100%;
+      border: none;
+      background: #f5f5f5;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .qty-btn:hover {
+      background: #e9e9e9;
+    }
+    .qty-input {
+      width: 60px;
+      height: 100%;
+      border: none;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: #111;
+      outline: none;
+    }
+    .live-tier-badge {
+      font-size: 12px;
+      font-weight: 600;
+      color: #113627;
+      background: rgba(17, 54, 39, 0.08);
+      padding: 6px 12px;
+      border-radius: 20px;
+    }
+
+    /* Chat On WhatsApp Pill Button (Exact Match) */
+    .whatsapp-chat-pill-btn {
+      width: 100%;
+      background: #000000;
+      color: #ffffff;
+      border: none;
+      border-radius: 50px;
+      padding: 16px 24px;
+      font-size: 15px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .whatsapp-chat-pill-btn:hover {
+      background: #113627;
+      color: #d4af37;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(17, 54, 39, 0.25);
+    }
+    .whatsapp-chat-pill-btn i {
+      font-size: 19px;
+      color: #25d366;
+      transition: transform 0.2s ease;
+    }
+    .whatsapp-chat-pill-btn:hover i {
+      transform: scale(1.15);
+    }
+
+    /* Free Local Shipping Line */
+    .shipping-truck-line {
+      font-size: 13px;
+      color: #444;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 18px 0 20px 0;
+    }
+    .shipping-truck-line i {
+      font-size: 16px;
+      color: #222;
+    }
+
+    /* Share Row */
+    .share-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      color: #555;
+      padding-top: 14px;
+      border-top: 1px solid #f0f0f0;
+    }
+    .share-icons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .share-icon-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid #ddd;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #444;
+      text-decoration: none;
+      font-size: 12.5px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .share-icon-btn:hover {
+      border-color: #111;
+      color: #111;
+      transform: translateY(-2px);
+    }
+
+    /* "You may also like" Section */
+    .related-products-section {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      padding: 0 16px;
+    }
+    .related-products-section h2 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 22px;
+      letter-spacing: -0.4px;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+    }
+    .related-card {
+      background: #ffffff;
+      border: 1px solid #e7e7eb;
+      border-radius: 8px;
+      overflow: hidden;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .related-card:hover {
+      transform: translateY(-5px);
+      border-color: #113627;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    }
+    .related-card-img-wrap {
+      width: 100%;
+      height: 180px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      overflow: hidden;
+      border-bottom: 1px solid #f2f2f4;
+    }
+    .related-card-img-wrap img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      transition: transform 0.35s ease;
+    }
+    .related-card:hover .related-card-img-wrap img {
+      transform: scale(1.08);
+    }
+    .related-card-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .related-card-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #222;
+      margin: 0;
+      line-height: 1.3;
+    }
+    .related-card-price {
+      font-size: 12px;
+      font-weight: 600;
+      color: #113627;
+    }
+
+    /* 4-Box Contact Bar (Exact Match from Screenshot) */
+    .contact-info-bar {
+      background: #000000;
+      padding: 30px 0;
+      border-bottom: 1px solid #222;
+    }
+    .contact-info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    .contact-info-box {
+      background: #1c1c1e;
+      border-radius: 8px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      color: #fff;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .contact-info-box:hover {
+      background: #252528;
+      transform: translateY(-2px);
+    }
+    .contact-box-icon {
+      font-size: 18px;
+      color: #d4af37;
+      margin-top: 2px;
+    }
+    .contact-box-content h5 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 4px 0;
+    }
+    .contact-box-content p, .contact-box-content a {
+      font-size: 11.5px;
+      color: #a0a0a5;
+      margin: 0;
+      text-decoration: none;
+      line-height: 1.4;
+    }
+    .contact-box-content a:hover {
+      color: #d4af37;
+      text-decoration: underline;
+    }
+
+    /* Solid Black Footer */
+    .instaprint-footer {
+      background: #000000;
+      color: #999;
+      padding: 50px 0 25px;
+      font-size: 12.5px;
+    }
+    .footer-inner-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-col h5 {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0 0 16px 0;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-col ul a {
+      color: #999;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col ul a:hover {
+      color: #fff;
+    }
+    .footer-brand-p {
+      line-height: 1.6;
+      color: #888;
+      max-width: 320px;
+      margin-top: 14px;
+    }
+    .footer-bottom-row {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 16px 0;
+      border-top: 1px solid #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-social-icons {
+      display: flex;
+      gap: 10px;
+    }
+    .footer-social-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #1c1c1e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      text-decoration: none;
+      font-size: 12px;
+      transition: all 0.2s;
+    }
+    .footer-social-btn:hover {
+      background: #d4af37;
+      color: #000;
+    }
+    .footer-legal-links {
+      display: flex;
+      gap: 18px;
+    }
+    .footer-legal-links a {
+      color: #777;
+      text-decoration: none;
+    }
+    .footer-legal-links a:hover {
+      color: #fff;
+    }
+
+    /* Toast Notification */
+    .toast-notice {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #113627;
+      color: #d4af37;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .toast-notice.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .product-white-card {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 24px;
+      }
+      .product-img-box {
+        height: 340px;
+      }
+      .related-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .contact-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-inner-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 768px) {
+      .instaprint-header .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px 14px;
+        padding: 0 16px;
+      }
+      .brand-logo-wrap {
+        order: 1;
+      }
+      .header-right-actions {
+        order: 2;
+        gap: 12px;
+      }
+      .find-store-link {
+        font-size: 0 !important;
+      }
+      .find-store-link i {
+        font-size: 1.35rem;
+      }
+      .cart-bag-icon {
+        font-size: 1.35rem;
+      }
+      .header-search-wrap {
+        order: 3;
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-top: 4px;
+      }
+      .header-search-input {
+        background: #f4f4f6;
+        border-color: #e5e7eb;
+      }
+    }
+    @media (max-width: 576px) {
+      .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .contact-info-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-inner-grid {
+        grid-template-columns: 1fr;
+      }
+      .subnav-links {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 6px;
+        gap: 18px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .subnav-links > li {
+        flex-shrink: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Top Announcement Black Bar -->
+  <div class="top-black-bar">
+    Free Delivery &amp; Bulk Discounts on Orders Over Rs. 5,000
+  </div>
+
+  <!-- 2. Header -->
+  <header class="instaprint-header">
+    <div class="container">
+      <a href="index.html" class="brand-logo-wrap">
+        <div class="brand-logo-icon"><i class="fa-solid fa-leaf"></i></div>
+        <div class="brand-logo-text">Creative<span>Roots</span></div>
+      </a>
+
+      <div class="header-search-wrap">
+        <input type="text" class="header-search-input" id="search-input" placeholder="What are you looking for?">
+        <button class="header-search-btn" id="search-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <div class="header-right-actions">
+        <a href="find-a-store.html" class="find-store-link">
+          <i class="fa-solid fa-location-dot"></i> Find a Store
+        </a>
+        <a href="products.html" class="cart-bag-icon" title="View Store">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. Sub Navigation Bar -->
+  <nav class="instaprint-subnav">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 16px;">
+      <ul class="subnav-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html" style="font-weight: 700; color: #113627;"><i class="fa-solid fa-layer-group" style="color: #d4af37; margin-right: 4px;"></i> Product Store</a></li>
+        <li class="has-subnav-dropdown">
+          <a href="products.html">Business Corporate <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="subnav-dropdown">
+            <li><a href="product-detail.html?item=boxes"><i class="fa-solid fa-box"></i> Corporate Giveaway Boxes</a></li>
+            <li><a href="product-detail.html?item=drinkware"><i class="fa-solid fa-gift"></i> Personalized Corporate Gifts</a></li>
+            <li><a href="product-detail.html?item=shirt"><i class="fa-solid fa-shirt"></i> Custom Apparel & Uniforms</a></li>
+            <li><a href="product-detail.html?item=pen"><i class="fa-solid fa-pen-nib"></i> Executive Pens & Accessories</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-calendar-check"></i> Corporate Event Management</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-rocket"></i> Product Launches</a></li>
+          </ul>
+        </li>
+        <li class="has-subnav-dropdown">
+          <a href="index.html#events">Event Solutions <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="subnav-dropdown">
+            <li><a href="product-detail.html?item=stall"><i class="fa-solid fa-store"></i> Exhibition Stalls & Booths</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-bullhorn"></i> Outdoor Promotional Activities</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-trophy"></i> Corporate Award Ceremonies</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-users"></i> Brand Activation Roadshows</a></li>
+          </ul>
+        </li>
+        <li class="has-subnav-dropdown">
+          <a href="index.html#packaging">Packaging Solutions <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="subnav-dropdown">
+            <li><a href="collection.html?cat=boxes"><i class="fa-solid fa-boxes-packing"></i> Corrugated Mailer Boxes</a></li>
+            <li><a href="product-detail.html?item=boxes"><i class="fa-solid fa-gem"></i> Luxury Rigid Magnet Boxes</a></li>
+            <li><a href="index.html#packaging"><i class="fa-solid fa-bag-shopping"></i> Branded Shopping Bags</a></li>
+            <li><a href="index.html#packaging"><i class="fa-solid fa-tags"></i> Custom Hang Tags & Labels</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Book an Appointment</a></li>
+        <li><a href="find-a-store.html">Find a Store</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 4. Breadcrumbs -->
+  <div class="product-main-container">
+    <div class="product-breadcrumb-wrap">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">|</span>
+      <a href="products.html">Shop All</a>
+      <span class="breadcrumb-sep">|</span>
+      <span class="breadcrumb-current" id="crumb-product-name">Cap</span>
+    </div>
+
+    <!-- 5. Main Product Card (Exact Match to Screenshot) -->
+    <div class="product-white-card">
+      
+      <!-- LEFT COLUMN -->
+      <div class="product-left-col">
+        <!-- Main Image Stage with Dynamic Cursor Magnifier -->
+        <div class="product-img-box" id="main-img-box" title="Move cursor across image to inspect fabric & embroidery">
+          <span class="zoom-hint" id="zoom-hint-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> Hover to Zoom Details</span>
+          <button type="button" class="btn-fullscreen-trigger" onclick="openLightbox()" title="View Fullscreen High-Res">
+            <i class="fa-solid fa-expand"></i>
+          </button>
+          <img src="images/cap_maroon.jpg" id="active-product-img" alt="Product Image" loading="lazy">
+        </div>
+
+        <!-- Multi-angle Thumbnail Strip -->
+        <div class="product-thumbnails-strip" id="product-thumbnails-strip"></div>
+
+        <!-- Accordions -->
+        <div class="detail-accordion-group">
+          
+          <!-- Accordion 1: Product Description -->
+          <div class="detail-accordion-item active" id="acc-description">
+            <button type="button" class="accordion-trigger" onclick="toggleAccordion('acc-description')">
+              <span>Product Description</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p id="product-long-desc">Structured 6-panel heavy brushed cotton twill cap with pre-curved peak, brass buckle strap adjuster, and customized 3D puff embroidery. Engineered for executive corporate uniforms, brand ambassadors, and promotional merchandise campaigns across Pakistan.</p>
+              
+              <table class="accordion-specs-table">
+                <tbody id="specs-table-body">
+                  <tr><td>Material:</td><td>100% Heavy Brushed Cotton Twill</td></tr>
+                  <tr><td>Branding:</td><td>3D High-Density Gold / Multi-Color Embroidery</td></tr>
+                  <tr><td>Closure:</td><td>Embossed Brass Buckle with Metal Grommet</td></tr>
+                  <tr><td>Min Order (MOQ):</td><td>50 Pieces</td></tr>
+                  <tr><td>Turnaround:</td><td>3 - 5 Business Days</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Accordion 2: Shipping & Return -->
+          <div class="detail-accordion-item" id="acc-shipping">
+            <button type="button" class="accordion-trigger" onclick="toggleAccordion('acc-shipping')">
+              <span>Shipping & Return</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p><strong>Shipping Information:</strong></p>
+              <ul style="padding-left: 20px; margin: 6px 0 12px;">
+                <li>Free delivery and special bulk discounts on orders over Rs. 5,000 across Pakistan.</li>
+                <li>Lahore, Karachi, Islamabad Delivery: 2-3 business days.</li>
+                <li>Nationwide Pakistan Delivery (TCS / Leopard / Daewoo Cargo): 3-5 business days.</li>
+              </ul>
+              <p><strong>Return & Quality Guarantee:</strong></p>
+              <p>Every batch undergoes strict multi-point physical QA inspection. In the rare event of printing or structural flaws, Creative Roots offers immediate complimentary reprint or full replacement.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Payment & Security Box (Exact text from screenshot) -->
+        <div class="payment-security-box">
+          <h4>Payment & Security</h4>
+          <p>Your payment information is processed securely. We do not store credit card details nor have access to your credit card information.</p>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="product-right-col">
+        <!-- Save 20% Red Badge -->
+        <span class="save-badge" id="product-save-badge">Save 20%</span>
+
+        <!-- Product Title -->
+        <h1 class="product-main-title" id="product-title-display">Cap</h1>
+
+        <!-- Vendor Line -->
+        <div class="product-vendor-line">
+          Vendor: <a href="index.html">Creative Roots</a>
+        </div>
+
+        <!-- Live Price & Savings Display -->
+        <div class="product-live-price-wrap">
+          <span class="live-current-price" id="price-display" style="color: #25d366; font-size: 1.35rem; display: flex; align-items: center; gap: 8px;"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</span>
+          <span class="live-old-price" id="old-price-display" style="display: none;"></span>
+          <span class="live-tax-note">Direct WhatsApp Inquiry • Instant Bulk Pricing &amp; Custom Quotes</span>
+        </div>
+
+        <!-- Checkmarks Line -->
+        <div class="checkmarks-line">
+          <span><i class="fa-solid fa-check"></i> High Quality</span>
+          <span><i class="fa-solid fa-check"></i> Customizable</span>
+        </div>
+
+        <!-- Interactive Quantity Selector -->
+        <div class="customization-controls">
+          <label class="control-label">Order Quantity (Pieces):</label>
+          <div class="qty-picker-row">
+            <div class="qty-picker">
+              <button type="button" class="qty-btn" onclick="updateQty(-10)">−</button>
+              <input type="text" class="qty-input" id="order-qty-input" value="50" readonly>
+              <button type="button" class="qty-btn" onclick="updateQty(10)">+</button>
+            </div>
+            <span class="live-tier-badge" id="tier-badge-label">MOQ: 50 Pieces</span>
+          </div>
+        </div>
+
+        <!-- Chat On WhatsApp Pill Button (Exact Match) -->
+        <a href="#" class="whatsapp-chat-pill-btn" id="main-whatsapp-btn" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-whatsapp"></i> Chat On WhatsApp
+        </a>
+
+        <!-- Free Local Shipping Line -->
+        <div class="shipping-truck-line">
+          <i class="fa-solid fa-truck-fast"></i>
+          <span>Free Delivery on Orders Over Rs. 5,000</span>
+        </div>
+
+        <!-- Share Row -->
+        <div class="share-row">
+          <span>Share:</span>
+          <div class="share-icons">
+            <a href="#" class="share-icon-btn" onclick="shareSocial('fb'); return false;" title="Share on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="share-icon-btn" onclick="shareSocial('x'); return false;" title="Share on X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="share-icon-btn" onclick="shareSocial('pinterest'); return false;" title="Share on Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="#" class="share-icon-btn" onclick="shareSocial('copy'); return false;" title="Copy Link"><i class="fa-solid fa-link"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 6. "You may also like" Section (Exact 6 cards matching screenshot) -->
+  <section class="related-products-section">
+    <h2>You may also like</h2>
+    <div class="related-grid">
+      
+      <!-- Card 1: Shirt -->
+      <a href="product-detail.html?item=shirt" class="related-card" onclick="loadProductByKey('shirt', event)">
+        <div class="related-card-img-wrap">
+          <img src="images/prod_shirt.jpg" alt="Shirt" loading="lazy">
+        </div>
+        <div class="related-card-body">
+          <h4 class="related-card-title">Shirt</h4>
+          <span class="related-card-price" style="color: #25d366; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</span>
+        </div>
+      </a>
+
+      <!-- Card 2: Notebook -->
+      <a href="product-detail.html?item=notebook" class="related-card" onclick="loadProductByKey('notebook', event)">
+        <div class="related-card-img-wrap">
+          <img src="images/prod_notebook.jpg" alt="Notebook" loading="lazy">
+        </div>
+        <div class="related-card-body">
+          <h4 class="related-card-title">Notebook</h4>
+          <span class="related-card-price" style="color: #25d366; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</span>
+        </div>
+      </a>
+
+      <!-- Card 3: Business Card -->
+      <a href="product-detail.html?item=cards" class="related-card" onclick="loadProductByKey('cards', event)">
+        <div class="related-card-img-wrap">
+          <img src="images/prod_cards.jpg" alt="Business Card" loading="lazy">
+        </div>
+        <div class="related-card-body">
+          <h4 class="related-card-title">Business Card</h4>
+          <span class="related-card-price" style="color: #25d366; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</span>
+        </div>
+      </a>
+
+      <!-- Card 4: Polo Shirt -->
+      <a href="product-detail.html?item=polo" class="related-card" onclick="loadProductByKey('polo', event)">
+        <div class="related-card-img-wrap">
+          <img src="images/promo_merch.jpg" alt="Shirt" loading="lazy">
+        </div>
+        <div class="related-card-body">
+          <h4 class="related-card-title">Shirt</h4>
+          <span class="related-card-price" style="color: #25d366; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</span>
+        </div>
+      </a>
+
+      <!-- Card 5: Mug -->
+      <a href="product-detail.html?item=mug" class="related-card" onclick="loadProductByKey('mug', event)">
+        <div class="related-card-img-wrap">
+          <img src="images/prod_mug.jpg" alt="Mug" loading="lazy">
+        </div>
+        <div class="related-card-body">
+          <h4 class="related-card-title">Mug</h4>
+          <span class="related-card-price" style="color: #25d366; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</span>
+        </div>
+      </a>
+
+      <!-- Card 6: Corporate Boxes -->
+      <a href="product-detail.html?item=boxes" class="related-card" onclick="loadProductByKey('boxes', event)">
+        <div class="related-card-img-wrap">
+          <img src="images/prod_box.jpg" alt="Corporate Boxes" loading="lazy">
+        </div>
+        <div class="related-card-body">
+          <h4 class="related-card-title">Corporate Boxes</h4>
+          <span class="related-card-price" style="color: #25d366; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- 7. Contact Info Bar (Exact 4 dark boxes from screenshot) -->
+  <div class="contact-info-bar">
+    <div class="contact-info-grid">
+      
+      <!-- Box 1: Customer Service -->
+      <div class="contact-info-box">
+        <div class="contact-box-icon"><i class="fa-regular fa-comment-dots"></i></div>
+        <div class="contact-box-content">
+          <h5>Customer Service</h5>
+          <p>Mon - Sat: 09:30am - 5:30pm</p>
+        </div>
+      </div>
+
+      <!-- Box 2: Contact Us -->
+      <div class="contact-info-box">
+        <div class="contact-box-icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <div class="contact-box-content">
+          <h5>Contact Us</h5>
+          <p>WhatsApp: <a href="https://wa.me/923347009992" target="_blank" rel="noopener noreferrer">+92 334 7009992</a></p>
+        </div>
+      </div>
+
+      <!-- Box 3: Get in Touch -->
+      <div class="contact-info-box">
+        <div class="contact-box-icon"><i class="fa-regular fa-envelope"></i></div>
+        <div class="contact-box-content">
+          <h5>Get in Touch</h5>
+          <p><a href="mailto:sales@creativeroots.pk">sales@creativeroots.pk</a></p>
+        </div>
+      </div>
+
+      <!-- Box 4: Address -->
+      <div class="contact-info-box">
+        <div class="contact-box-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="contact-box-content">
+          <h5>Address</h5>
+          <p>Lahore Office: Gohar Centre, Lahore</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 8. Solid Black Footer (Exact Match from Screenshot) -->
+  <footer class="instaprint-footer">
+    <div class="footer-inner-grid">
+      
+      <!-- Brand Bio -->
+      <div>
+        <a href="index.html" class="brand-logo-wrap" style="margin-bottom: 8px;">
+          <div class="brand-logo-icon" style="background:#1c1c1e;"><i class="fa-solid fa-leaf"></i></div>
+          <div class="brand-logo-text" style="color:#fff;">Creative<span style="color:#d4af37;">Roots</span></div>
+        </a>
+        <p class="footer-brand-p">
+          A one-stop solution for all your customized printing & branding wants and needs. At Creative Roots, we guarantee you only the best. A team of experienced and attentive graphic designers will personally meet with you to ease your burdens and help you create ideas that will kick into production quickly.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html#events">Event Solutions</a></li>
+          <li><a href="products.html">Packaging Solutions</a></li>
+          <li><a href="products.html">Business Corporate</a></li>
+        </ul>
+      </div>
+
+      <!-- Policies -->
+      <div class="footer-col">
+        <h5>Policies</h5>
+        <ul>
+          <li><a href="about.html">Privacy Policy</a></li>
+          <li><a href="about.html">Terms of Service</a></li>
+          <li><a href="about.html">Returns & Exchanges</a></li>
+        </ul>
+      </div>
+
+      <!-- Others -->
+      <div class="footer-col">
+        <h5>Others</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="find-a-store.html">Find a Store</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Legal Bar -->
+    <div class="footer-bottom-row">
+      <div>&copy; 2026 Creative Roots.</div>
+      
+      <div class="footer-social-icons">
+        <a href="#" class="footer-social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="footer-social-btn" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" class="footer-social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="footer-social-btn" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" class="footer-social-btn" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+      </div>
+
+      <div class="footer-legal-links">
+        <a href="about.html">Terms of Service</a>
+        <a href="about.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification element -->
+  <div class="toast-notice" id="toast-msg"><i class="fa-solid fa-check"></i> Link Copied to Clipboard!</div>
+
+  <!-- Shared Global Script -->
+  <script src="js/script.js"></script>
+
+  <!-- Dynamic Product Script -->
+  <script>
+    // Comprehensive Product Catalog Database with Embedded Galleries & Full Corporate Specs
+    const catalog = {
+      'boxes': {
+        title: 'Bespoke Luxury Giveaway Box',
+        crumbName: 'Corporate Giveaway Box',
+        badge: 'Save 20%',
+        image: 'images/prod_box.jpg',
+        gallery: [
+          { src: 'images/prod_box.jpg', label: 'Rigid Box Interior & Cushion' },
+          { src: 'images/promo_giftbox.jpg', label: 'Luxury Outer Presentation' },
+          { src: 'images/stationery_mockup.jpg', label: 'Complete Corporate Hamper Set' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 1650,
+        moq: 50,
+        desc: 'Handcrafted luxury rigid presentation box engineered from 1200gsm kappa board with metallic gold foil stamping on exterior and lid interior. Features precision laser-cut EVA foam velvet cushioning custom-fitted for thermal bottles, metal pens, journals, and executive accessories.',
+        specs: [
+          { label: 'Box Construction', value: '1200gsm Rigid Kappa Board + Natural Kraft / Soft-Touch Linen' },
+          { label: 'Interior Cushion', value: 'Custom CNC Laser-Cut Black High-Density EVA Foam' },
+          { label: 'Closure Mechanism', value: 'Concealed Dual Magnetic Flap Snap Closure' },
+          { label: 'Branding Method', value: 'Metallic Gold / Copper / Silver Hot Foil Stamping' },
+          { label: 'Min Order (MOQ)', value: '50 Pieces' },
+          { label: 'Turnaround Time', value: '5 - 7 Business Days' }
+        ]
+      },
+      'drinkware': {
+        title: 'Executive Mug & Thermal Flask Set',
+        crumbName: 'Drinkware Set',
+        badge: 'Save 20%',
+        image: 'images/promo_drinkware.jpg',
+        gallery: [
+          { src: 'images/promo_drinkware.jpg', label: 'Complete Set View' },
+          { src: 'images/pack_bottle.jpg', label: 'Matte Vacuum Bottle' },
+          { src: 'images/prod_mug.jpg', label: '24K Rim Ceramic Mug' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 1290,
+        moq: 36,
+        desc: 'High-fired glazed ceramic office mug paired with a double-wall vacuum insulated 304 food-grade stainless steel flask that retains hot beverages for 12 hours and chilled drinks for 24 hours. Permanent fiber laser etching of your corporate emblem.',
+        specs: [
+          { label: 'Flask Material', value: 'Double-Wall 304 Food-Grade Stainless Steel (500ml)' },
+          { label: 'Mug Material', value: 'High-Fired Glazed Ceramic with Gold Foil Accents (350ml)' },
+          { label: 'Branding Method', value: 'Permanent High-Precision Fiber Laser Etching' },
+          { label: 'Set Contents', value: '1x Vacuum Flask + 1x Glazed Ceramic Mug + Luxury Gift Box' },
+          { label: 'Min Order (MOQ)', value: '36 Sets' },
+          { label: 'Turnaround Time', value: '3 - 5 Business Days' }
+        ]
+      },
+      'bottle': {
+        title: 'Stainless Steel Vacuum Thermal Bottle',
+        crumbName: 'Thermal Bottle',
+        badge: 'Save 20%',
+        image: 'images/pack_bottle.jpg',
+        gallery: [
+          { src: 'images/pack_bottle.jpg', label: 'Matte Finish View' },
+          { src: 'images/promo_drinkware.jpg', label: 'Desk Mockup View' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 1150,
+        moq: 50,
+        desc: 'Matte black powder-coated 500ml vacuum insulated thermal flask. Keeps tea and coffee steaming hot during corporate conferences and executive commutes. Features leak-proof screw cap and permanent laser-marked corporate insignia.',
+        specs: [
+          { label: 'Body Material', value: '18/8 304 Medical-Grade Stainless Steel' },
+          { label: 'Insulation', value: 'Copper-Coated Double-Wall Vacuum Barrier' },
+          { label: 'Capacity', value: '500ml / 17oz Ergonomic Cylinder' },
+          { label: 'Branding', value: 'High-Speed Fiber Laser Rotary Marking' },
+          { label: 'Min Order (MOQ)', value: '50 Pieces' },
+          { label: 'Turnaround Time', value: '3 - 4 Business Days' }
+        ]
+      },
+      'mug': {
+        title: 'Grade-A Glazed Ceramic Mug',
+        crumbName: 'Ceramic Mug',
+        badge: 'Save 20%',
+        image: 'images/prod_mug.jpg',
+        gallery: [
+          { src: 'images/prod_mug.jpg', label: 'Ceramic Mug View' },
+          { src: 'images/promo_drinkware.jpg', label: 'Packaging Set View' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 390,
+        moq: 36,
+        desc: 'Grade-A pristine glazed white ceramic mug with high-fire decal sublimation print that is completely microwave and dishwasher safe. The timeless corporate desktop essential for staff welcoming kits and client appreciation giveaways.',
+        specs: [
+          { label: 'Material', value: 'High-Fired Glazed Porcelain / Ceramic' },
+          { label: 'Capacity', value: '350ml / 12oz Standard Office Mug' },
+          { label: 'Printing Method', value: 'Permanent High-Temperature Sublimation' },
+          { label: 'Safety', value: '100% Food Grade, Microwave & Dishwasher Safe' },
+          { label: 'Min Order (MOQ)', value: '36 Pieces' },
+          { label: 'Turnaround Time', value: '3 - 4 Business Days' }
+        ]
+      },
+      'merch': {
+        title: 'Luxury Branded Pique Polo Shirt',
+        crumbName: 'Polo Shirt',
+        badge: 'Save 20%',
+        image: 'images/promo_merch.jpg',
+        gallery: [
+          { src: 'images/promo_merch.jpg', label: 'Chest Embroidery View' },
+          { src: 'images/prod_shirt.jpg', label: 'Full Cut View' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 980,
+        moq: 50,
+        desc: 'Heavyweight 220-240 GSM combed cotton pique polo shirt with contrast ribbed collar and cuffs, 3-button placket, and luxury 3D high-density embroidered corporate crest. Form-retaining fabric engineered for long-lasting comfort across industrial wash cycles.',
+        specs: [
+          { label: 'Fabric Composition', value: '220-240 GSM 100% Combed Pique Cotton' },
+          { label: 'Branding Technique', value: 'Japanese Tajima Multi-Color 3D Embroidery' },
+          { label: 'Available Sizes', value: 'S, M, L, XL, XXL, Custom Corporate Tailoring' },
+          { label: 'Color Fastness', value: 'Grade 4+ Reactive Dye (Fade-Proof)' },
+          { label: 'Min Order (MOQ)', value: '50 Pieces' },
+          { label: 'Turnaround Time', value: '4 - 6 Business Days' }
+        ]
+      },
+      'shirt': {
+        title: 'Executive Staff Cotton T-Shirt',
+        crumbName: 'Corporate T-Shirt',
+        badge: 'Save 20%',
+        image: 'images/prod_shirt.jpg',
+        gallery: [
+          { src: 'images/prod_shirt.jpg', label: 'Front Crewneck View' },
+          { src: 'images/promo_merch.jpg', label: 'Fabric & Seam Detail' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 690,
+        moq: 50,
+        desc: 'Premium 190 GSM ring-spun combed cotton crewneck t-shirt with reinforced double-stitched collar and hems. Customizable with vibrant high-density screen printing or ultra-sharp DTF graphic transfers for corporate trade shows, team events, and brand campaigns.',
+        specs: [
+          { label: 'Fabric Stock', value: '190 GSM 100% Ring-Spun Combed Cotton' },
+          { label: 'Branding Technique', value: 'Silkscreen Printing / Direct-to-Film (DTF)' },
+          { label: 'Seam Construction', value: 'Twin-Needle Cover Stitching on Neck & Arms' },
+          { label: 'Available Sizes', value: 'S, M, L, XL, XXL, XXXL' },
+          { label: 'Min Order (MOQ)', value: '50 Pieces' },
+          { label: 'Turnaround Time', value: '3 - 5 Business Days' }
+        ]
+      },
+      'cap': {
+        title: 'Brushed Cotton Embroidered Cap',
+        crumbName: 'Embroidered Cap',
+        badge: 'Save 20%',
+        image: 'images/cap_maroon.jpg',
+        gallery: [
+          { src: 'images/cap_maroon.jpg', label: 'Front View' },
+          { src: 'images/cap_maroon_angle.jpg', label: 'Side & Strap Angle' },
+          { src: 'images/cap_maroon_macro.jpg', label: 'Gold Embroidery Macro' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 390,
+        moq: 50,
+        desc: 'Structured 6-panel heavy brushed cotton twill cap with pre-curved peak, brass buckle strap adjuster, and customized 3D puff embroidery. Engineered for executive corporate uniforms, brand ambassadors, and promotional merchandise campaigns across Pakistan.',
+        specs: [
+          { label: 'Material', value: '100% Heavy Brushed Cotton Twill' },
+          { label: 'Branding', value: '3D High-Density Gold / Multi-Color Embroidery' },
+          { label: 'Closure', value: 'Embossed Brass Buckle with Metal Grommet' },
+          { label: 'Structure', value: '6-Panel Crown with Buckram Reinforcement' },
+          { label: 'Min Order (MOQ)', value: '50 Pieces' },
+          { label: 'Turnaround Time', value: '3 - 5 Business Days' }
+        ]
+      },
+      'notebook': {
+        title: 'Executive Hardcover Journal & Planner',
+        crumbName: 'Executive Journal',
+        badge: 'Save 20%',
+        image: 'images/prod_notebook.jpg',
+        gallery: [
+          { src: 'images/prod_notebook.jpg', label: 'Gold Foil Cover' },
+          { src: 'images/promo_giftbox.jpg', label: 'Desk Gift Arrangement' },
+          { src: 'images/stationery_mockup.jpg', label: 'Inner Pages View' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 820,
+        moq: 50,
+        desc: 'Luxury hardcover twin-wire spiral executive journal featuring metallic gold floral foil debossing and 96 sheets of 100gsm fountain-pen friendly ivory lined paper. Includes elastic pen loop and ribbon page marker for seamless corporate productivity.',
+        specs: [
+          { label: 'Cover Finish', value: 'Matte Obsidian Hardcover + Gold Hot Foil Stamping' },
+          { label: 'Paper Stock', value: '100gsm Bleedless Fountain-Pen Friendly Ivory Sheets' },
+          { label: 'Binding Style', value: 'Heavy-Gauge Double Loop Wire-O Gold Spiral' },
+          { label: 'Page Count', value: '192 Ruled Pages (96 Sheets) + Year Calendar' },
+          { label: 'Min Order (MOQ)', value: '50 Pieces' },
+          { label: 'Turnaround Time', value: '4 - 6 Business Days' }
+        ]
+      },
+      'cards': {
+        title: 'Velvet Soft-Touch Business Cards',
+        crumbName: 'Business Cards',
+        badge: 'Save 20%',
+        image: 'images/prod_cards.jpg',
+        gallery: [
+          { src: 'images/prod_cards.jpg', label: 'Gold Foil Stamped Cards' },
+          { src: 'images/stationery_mockup.jpg', label: 'Full Stationery Suite' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 3800,
+        moq: 200,
+        desc: 'Triple-ply 600gsm kraft & black velvet soft-touch business cards with metallic gold hot foil debossing, tactile raised spot UV, and painted gilded edges for an ultra-prestigious executive impression.',
+        specs: [
+          { label: 'Cardstock Weight', value: '600gsm Triple-Layer Rigid Board' },
+          { label: 'Lamination', value: 'Velvet Soft-Touch Matte Silk Thermal Film' },
+          { label: 'Embellishments', value: 'Raised 3D Spot UV + 24K Gold Foil Debossing' },
+          { label: 'Edges', value: 'Custom Gilded Metallic Gold Edge Coating' },
+          { label: 'Min Order (MOQ)', value: '200 Cards' },
+          { label: 'Turnaround Time', value: '3 Business Days' }
+        ]
+      },
+      'pen': {
+        title: 'Metal Engraved Executive Ballpoint Pen',
+        crumbName: 'Executive Pen',
+        badge: 'Save 20%',
+        image: 'images/pack_pen.jpg',
+        gallery: [
+          { src: 'images/pack_pen.jpg', label: 'Twist Metal Pen View' },
+          { src: 'images/stationery_mockup.jpg', label: 'Executive Desk Setting' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 320,
+        moq: 100,
+        desc: 'Precision twist-action metal ballpoint pen with gold-plated accents and high-end brass barrel. Customized with fiber laser engraving or rotary screen printing of your corporate logo. Supplied in an executive velvet pouch or presentation box.',
+        specs: [
+          { label: 'Barrel Material', value: 'Solid Machined Brass with Gloss Black Lacquer' },
+          { label: 'Branding Technique', value: 'Rotary Fiber Laser Engraving (Permanent)' },
+          { label: 'Mechanism', value: 'Heavyweight Smooth Twist-Action Retraction' },
+          { label: 'Ink Cartridge', value: 'German Document-Proof Blue / Black Gel Refill' },
+          { label: 'Min Order (MOQ)', value: '100 Pieces' },
+          { label: 'Turnaround Time', value: '2 - 4 Business Days' }
+        ]
+      },
+      'calendar': {
+        title: 'Executive Desk Tent Calendar 2026',
+        crumbName: 'Tent Calendar',
+        badge: 'Save 20%',
+        image: 'images/pack_calendar.jpg',
+        gallery: [
+          { src: 'images/pack_calendar.jpg', label: 'Desk Calendar Stand' },
+          { src: 'images/stationery_mockup.jpg', label: 'Desk Mockup View' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 260,
+        moq: 100,
+        desc: 'Keep your brand visible on client desks 365 days a year. Our 2026 desk tent calendars feature premium 300gsm art card with matte/gloss lamination, gold foil accents, and sturdy triangular stand construction.',
+        specs: [
+          { label: 'Leaf Material', value: '300gsm Art Card with Matte Thermal Lamination' },
+          { label: 'Stand Base', value: '1200gsm Rigid Triangular Hardboard Base' },
+          { label: 'Binding', value: 'Twin-Wire Gold Metallic Spiral Wire-O' },
+          { label: 'Sheets', value: '13 Custom Double-Sided Leaves with Islamic & National Dates' },
+          { label: 'Min Order (MOQ)', value: '100 Pieces' },
+          { label: 'Turnaround Time', value: '3 - 5 Business Days' }
+        ]
+      },
+      'business': {
+        title: 'Natural Organic Canvas Tote Bag',
+        crumbName: 'Canvas Tote Bag',
+        badge: 'Save 20%',
+        image: 'images/promo_business.jpg',
+        gallery: [
+          { src: 'images/promo_business.jpg', label: 'Heavy Canvas Tote' },
+          { src: 'images/hero_studio_banner.jpg', label: 'Studio Showcase' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 310,
+        moq: 100,
+        desc: 'Heavy 12oz organic natural cotton canvas tote bag with cross-stitched reinforced webbing handles. High-capacity physical giveaway bag for trade expos, corporate summits, and retail marketing.',
+        specs: [
+          { label: 'Fabric', value: '12oz 100% Unbleached Heavy Natural Cotton Canvas' },
+          { label: 'Dimensions', value: '15" W x 16" H with 3" Expanding Bottom Gusset' },
+          { label: 'Handles', value: 'Reinforced Cross-Box Stitched Shoulder Straps' },
+          { label: 'Printing Method', value: 'Screen Printing or Vibrant Full-Color DTF' },
+          { label: 'Min Order (MOQ)', value: '100 Pieces' },
+          { label: 'Turnaround Time', value: '3 - 5 Business Days' }
+        ]
+      },
+      'wallet': {
+        title: 'Genuine Leather RFID Bifold Executive Wallet',
+        crumbName: 'Leather Wallet',
+        badge: 'Save 20%',
+        image: 'images/pack_wallet.jpg',
+        gallery: [
+          { src: 'images/pack_wallet.jpg', label: 'Leather Wallet View' },
+          { src: 'images/promo_giftbox.jpg', label: 'Gift Box Packaging' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 1650,
+        moq: 30,
+        desc: 'Crafted from top-grain cowhide leather with subtle blind debossing of your corporate insignia. Equipped with certified RFID blocking shielding, 8 card slots, and dual currency compartments.',
+        specs: [
+          { label: 'Leather Grade', value: '100% Genuine Top-Grain Cowhide Leather' },
+          { label: 'Security Layer', value: 'Built-in Certified RFID Anti-Theft Shielding' },
+          { label: 'Branding Technique', value: 'Deep Heat Blind Debossing or Metallic Gold Foil' },
+          { label: 'Capacity', value: '8 Card Slots + 2 Cash Compartments + ID Window' },
+          { label: 'Min Order (MOQ)', value: '30 Pieces' },
+          { label: 'Turnaround Time', value: '5 - 7 Business Days' }
+        ]
+      },
+      'usb': {
+        title: 'Silver Metal Swivel USB 3.0 Flash Drive',
+        crumbName: 'Metal USB Drive',
+        badge: 'Save 20%',
+        image: 'images/pack_usb.jpg',
+        gallery: [
+          { src: 'images/pack_usb.jpg', label: 'Swivel Flash Drive' },
+          { src: 'images/stationery_mockup.jpg', label: 'Accessories Desk' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 690,
+        moq: 50,
+        desc: 'Grade-A high-speed USB 3.0 data transfer flash drive. Solid brushed zinc-aluminum alloy swivel body with permanent fiber laser etching of your company identity.',
+        specs: [
+          { label: 'Storage Capacity', value: '32GB / 64GB High-Speed USB 3.0 Flash Chip' },
+          { label: 'Body Finish', value: 'Matte Brushed Zinc-Aluminum Alloy Swivel Casing' },
+          { label: 'Branding Method', value: 'Permanent Clean Fiber Laser Engraving' },
+          { label: 'Pre-Load Services', value: 'Optional Corporate Catalog / Video Pre-Loading' },
+          { label: 'Min Order (MOQ)', value: '50 Pieces' },
+          { label: 'Turnaround Time', value: '2 - 4 Business Days' }
+        ]
+      },
+      'keychain': {
+        title: 'Luxury Emerald Leather Brass Keychain',
+        crumbName: 'Leather Keychain',
+        badge: 'Save 20%',
+        image: 'images/pack_keychain.jpg',
+        gallery: [
+          { src: 'images/pack_keychain.jpg', label: 'Leather Brass Keyring' },
+          { src: 'images/stationery_mockup.jpg', label: 'Branded Accessories' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 390,
+        moq: 100,
+        desc: 'Textured pebble-grain cowhide leather oval tag with heavy solid brass key ring and hardware. Custom stamped with metallic gold foil of your corporate insignia.',
+        specs: [
+          { label: 'Material', value: 'Genuine Pebble Leather + Solid Brass Hardware' },
+          { label: 'Branding Method', value: 'Metallic Gold Hot Foil Stamping / Blind Heat Deboss' },
+          { label: 'Dimensions', value: '3.5" Total Drop Length with 1.25" Ring' },
+          { label: 'Hardware', value: 'Anti-Tarnish Solid Brass Snap Hook' },
+          { label: 'Min Order (MOQ)', value: '100 Pieces' },
+          { label: 'Turnaround Time', value: '3 - 5 Business Days' }
+        ]
+      },
+      'booklet': {
+        title: 'Corporate Profile Brochure Booklet',
+        crumbName: 'Corporate Brochure',
+        badge: 'Save 20%',
+        image: 'images/pack_booklet.jpg',
+        gallery: [
+          { src: 'images/pack_booklet.jpg', label: 'Brochure Cover & Pages' },
+          { src: 'images/printing_machinery.jpg', label: 'Offset Production Press' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 240,
+        moq: 250,
+        desc: 'High-definition offset multi-page company profiles and annual catalogs. Heidelberg 5-color offset printing on 150gsm European art paper with velvet soft-touch spot UV gloss cover.',
+        specs: [
+          { label: 'Paper Stock', value: '150gsm European Gloss/Matte Art Paper' },
+          { label: 'Cover Finish', value: '300gsm Art Card with Soft-Touch Lamination + Spot UV' },
+          { label: 'Binding Options', value: 'Saddle Stitch Wire Stapling or Perfect Hot-Melt Binding' },
+          { label: 'Page Counts', value: '8, 12, 16, 24, or 32 Custom Designed Pages' },
+          { label: 'Min Order (MOQ)', value: '250 Pieces' },
+          { label: 'Turnaround Time', value: '4 - 6 Business Days' }
+        ]
+      },
+      'stall': {
+        title: 'Turnkey Custom Exhibition Stall & Booth',
+        crumbName: 'Exhibition Stall',
+        badge: 'Save 20%',
+        image: 'images/event_stall.jpg',
+        gallery: [
+          { src: 'images/event_stall.jpg', label: '3D Stall Fabrication' },
+          { src: 'images/hero_studio_banner.jpg', label: 'Expo Pavilion View' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 45000,
+        moq: 1,
+        desc: 'Turnkey architectural exhibition booth design, structural wood and truss fabrication, backlit LED signage, reception counter, and premium promotional display installations for expo centers in Lahore, Karachi, and Islamabad.',
+        specs: [
+          { label: 'Booth Dimensions', value: '3m x 3m (Standard) up to 10m x 10m Custom Island' },
+          { label: 'Materials', value: 'Engineered MDF Structure, Aluminum Truss & Tension Fabric' },
+          { label: 'Lighting & AV', value: 'Recessed Warm White LED Spotlights & Backlit Lightboxes' },
+          { label: 'Turnkey Scope', value: '3D Architectural Renders, Fabrication, On-Site Setup & Teardown' },
+          { label: 'Min Order (MOQ)', value: '1 Complete Setup' },
+          { label: 'Turnaround Time', value: '7 - 10 Business Days' }
+        ]
+      },
+      'bag': {
+        title: 'Bespoke Corporate Favor & Shopping Bag',
+        crumbName: 'Favor Bag',
+        badge: 'Save 20%',
+        image: 'images/event_favor_bag.jpg',
+        gallery: [
+          { src: 'images/event_favor_bag.jpg', label: 'Luxury Favor Bag' },
+          { src: 'images/promo_business.jpg', label: 'Canvas Bag Option' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 195,
+        moq: 200,
+        desc: 'Custom-crafted luxury paper shopping and event favor bags with reinforced turnover top and bottom cardboards. Features gold foil stamped corporate branding and premium satin ribbon or woven cotton rope handles.',
+        specs: [
+          { label: 'Paper Stock', value: '250gsm Bleached Heavy Art Board or Natural Kraft' },
+          { label: 'Handles', value: 'Heavy Satin Ribbon or 100% Woven Cotton Twisted Cord' },
+          { label: 'Finishing', value: 'Matte Thermal Lamination + Raised Gold Hot Stamping' },
+          { label: 'Reinforcement', value: '350gsm Base and Turnover Top Hardboard Inserts' },
+          { label: 'Min Order (MOQ)', value: '200 Pieces' },
+          { label: 'Turnaround Time', value: '4 - 6 Business Days' }
+        ]
+      },
+      'stamps': {
+        title: 'Custom Solid Brass Wax Seal Stamp Kit',
+        crumbName: 'Wax Seal Stamp',
+        badge: 'Save 20%',
+        image: 'images/event_wax_stamp.jpg',
+        gallery: [
+          { src: 'images/event_wax_stamp.jpg', label: 'Brass Stamp & Seal' },
+          { src: 'images/promo_giftbox.jpg', label: 'Luxury Box Packaging' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 1450,
+        moq: 25,
+        desc: 'CNC-milled solid brass wax seal stamp head featuring your high-detail corporate crest or monogram, mounted on an ergonomic polished rosewood handle. Complete with metallic wax sticks and presentation box.',
+        specs: [
+          { label: 'Head Material', value: 'CNC Precision Carved Solid Heavy Brass' },
+          { label: 'Handle', value: 'Turned Natural Polished Rosewood' },
+          { label: 'Diameter', value: '25mm or 30mm Custom Engraved Face' },
+          { label: 'Kit Inclusions', value: '1x Brass Stamp + 3x Metallic Wax Sticks + Melting Spoon' },
+          { label: 'Min Order (MOQ)', value: '25 Kits' },
+          { label: 'Turnaround Time', value: '3 - 5 Business Days' }
+        ]
+      },
+      'acrylic-cards': {
+        title: 'Laser-Cut Frosted Acrylic Cards',
+        crumbName: 'Acrylic Cards',
+        badge: 'Save 20%',
+        image: 'images/event_acrylic_card.png',
+        gallery: [
+          { src: 'images/event_acrylic_card.png', label: 'Frosted Acrylic Card' },
+          { src: 'images/prod_cards.jpg', label: 'Foil Cards Comparison' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 480,
+        moq: 50,
+        desc: 'Ultra-modern 2mm thick frosted or crystal-clear cast acrylic invitation cards. Precision laser-cut with smooth polished bevels and screen-printed in metallic gold, silver, or opaque white ink.',
+        specs: [
+          { label: 'Substrate', value: '2mm Heavy Cast Acrylic (Frosted / Clear)' },
+          { label: 'Edges', value: 'CNC Diamond Polished Beveled Safety Edges' },
+          { label: 'Print Type', value: 'Permanent UV Silk-Screen or Mirror Gold Foil' },
+          { label: 'Dimensions', value: '5" x 7" Executive Invitation or 3.5" x 2" VIP Pass' },
+          { label: 'Min Order (MOQ)', value: '50 Pieces' },
+          { label: 'Turnaround Time', value: '4 - 6 Business Days' }
+        ]
+      },
+      'budget-cards': {
+        title: 'Standard Matte Laminated Business Cards',
+        crumbName: 'Budget Cards',
+        badge: 'Save 20%',
+        image: 'images/event_budget_card.png',
+        gallery: [
+          { src: 'images/event_budget_card.png', label: 'Matte Business Cards' },
+          { src: 'images/prod_cards.jpg', label: 'Sample Stack' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 1200,
+        moq: 500,
+        desc: 'Economical high-volume corporate business cards printed on 350gsm bleached art card with double-sided smooth matte lamination. Razor-sharp offset printing for corporate staff fleets and sales reps.',
+        specs: [
+          { label: 'Cardstock', value: '350gsm Bleached Heavy Art Card' },
+          { label: 'Coating', value: 'Double-Sided Smooth Matte Thermal Lamination' },
+          { label: 'Color Accuracy', value: 'Full CMYK Heidelberg Offset Press Run' },
+          { label: 'Quantity Pack', value: '500 Cards Packaged in Hard Plastic Cases' },
+          { label: 'Min Order (MOQ)', value: '500 Cards' },
+          { label: 'Turnaround Time', value: '2 - 3 Business Days' }
+        ]
+      },
+      'menu-cards': {
+        title: 'Executive Corporate Event Menu Cards',
+        crumbName: 'Menu Cards',
+        badge: 'Save 20%',
+        image: 'images/event_menu_card.png',
+        gallery: [
+          { src: 'images/event_menu_card.png', label: 'Gold Foil Menu Card' },
+          { src: 'images/pack_booklet.jpg', label: 'Event Suite View' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 95,
+        moq: 100,
+        desc: 'Custom-designed banquet and gala dinner menu cards printed on 350gsm textured linen or pearl cardstock with metallic gold hot stamping. The perfect tabletop companion for corporate galas and award dinners.',
+        specs: [
+          { label: 'Paper Stock', value: '350gsm Pearlized Shimmer or Textured Linen Card' },
+          { label: 'Embellishments', value: 'Metallic Gold / Copper Foil Stamping' },
+          { label: 'Dimensions', value: '4" x 8.5" Elegant Slender Tabletop Format' },
+          { label: 'Customization', value: 'Full Bespoke Menu Typography & Sponsor Logos' },
+          { label: 'Min Order (MOQ)', value: '100 Pieces' },
+          { label: 'Turnaround Time', value: '3 Business Days' }
+        ]
+      },
+      'e-cards': {
+        title: 'Digital Interactive NFC Smart Business Cards',
+        crumbName: 'NFC Smart Cards',
+        badge: 'Save 20%',
+        image: 'images/event_ecard.png',
+        gallery: [
+          { src: 'images/event_ecard.png', label: 'Matte Black NFC Card' },
+          { src: 'images/pack_wallet.jpg', label: 'Smart Card in Wallet' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 1850,
+        moq: 20,
+        desc: 'Next-generation smart NFC business cards. Tap on any modern iPhone or Android smartphone to instantly transfer full contact details, social links, portfolio website, and corporate brochures without an app.',
+        specs: [
+          { label: 'Chipset', value: 'NXP NTAG216 High-Speed Contactless NFC Chip' },
+          { label: 'Card Body', value: 'Matte Frosted PVC or Brushed Anodized Metal' },
+          { label: 'Compatibility', value: '100% Compatible with iOS & Android Devices' },
+          { label: 'Digital Profile', value: 'Lifetime Cloud Profile Hosting Included' },
+          { label: 'Min Order (MOQ)', value: '20 Pieces' },
+          { label: 'Turnaround Time', value: '3 - 5 Business Days' }
+        ]
+      },
+      'envelope': {
+        title: 'Gold Foil Stamped Luxury Envelopes',
+        crumbName: 'Luxury Envelopes',
+        badge: 'Save 20%',
+        image: 'images/hero_studio_banner.jpg',
+        gallery: [
+          { src: 'images/hero_studio_banner.jpg', label: 'Luxury Envelopes Showcase' },
+          { src: 'images/prod_cards.jpg', label: 'Matching Stationery' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 85,
+        moq: 200,
+        desc: 'Handcrafted luxury invitation and corporate mailing envelopes crafted from 180gsm imported linen paper with peel-and-seal adhesive strip and metallic gold foil monogram stamping on triangular flap.',
+        specs: [
+          { label: 'Paper Stock', value: '180gsm Heavy Textured Imported Linen Paper' },
+          { label: 'Flap Design', value: 'Euro-Flap / Deep Triangular Contour' },
+          { label: 'Branding', value: 'Metallic Gold or Rose Gold Hot Stamping' },
+          { label: 'Sizes', value: 'DL (Office), C5 (A5 Fold), or 5" x 7" (Invitations)' },
+          { label: 'Min Order (MOQ)', value: '200 Pieces' },
+          { label: 'Turnaround Time', value: '3 - 5 Business Days' }
+        ]
+      },
+      'stickers': {
+        title: 'Die-Cut Waterproof Vinyl Brand Labels',
+        crumbName: 'Vinyl Labels',
+        badge: 'Save 20%',
+        image: 'images/pack_keychain.jpg',
+        gallery: [
+          { src: 'images/pack_keychain.jpg', label: 'Die-Cut Stickers' },
+          { src: 'images/prod_box.jpg', label: 'Applied on Packaging' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 15,
+        moq: 500,
+        desc: 'Premium glossy or matte waterproof vinyl stickers die-cut to any custom contour. Perfect for packaging seal tags, bottle labels, retail product branding, and promotional laptop decals.',
+        specs: [
+          { label: 'Substrate', value: '100% Waterproof Heavy-Duty White or Clear Vinyl' },
+          { label: 'Adhesive', value: 'Permanent High-Tack Adhesive (No Residue)' },
+          { label: 'Cutting', value: 'Precision Optical Contour Die-Cutting' },
+          { label: 'Finish', value: 'UV Gloss or Anti-Glare Matte Lamination' },
+          { label: 'Min Order (MOQ)', value: '500 Pieces' },
+          { label: 'Turnaround Time', value: '2 - 3 Business Days' }
+        ]
+      }
+    };
+
+    // Robust Alias Dictionary mapping any potential query key to canonical catalog entry
+    const keyAliases = {
+      'box': 'boxes', 'boxes': 'boxes', 'rigid-box': 'boxes', 'gift-box': 'boxes', 'corporate-boxes': 'boxes', 'packaging': 'boxes', 'bid-boxes': 'boxes', 'bid-box': 'boxes', 'acrylic-boxes': 'boxes', 'acrylic-box': 'boxes',
+      'drinkware': 'drinkware', 'flask': 'bottle', 'thermal-bottle': 'bottle', 'bottle': 'bottle',
+      'mug': 'mug', 'mugs': 'mug', 'ceramic-mug': 'mug',
+      'shirt': 'shirt', 'tshirt': 'shirt', 't-shirt': 'shirt',
+      'polo': 'merch', 'merch': 'merch', 'apparel': 'merch',
+      'cap': 'cap', 'caps': 'cap', 'headwear': 'cap',
+      'notebook': 'notebook', 'planner': 'notebook', 'journal': 'notebook',
+      'cards': 'cards', 'business-cards': 'cards', 'card': 'cards', 'premium-cards': 'cards', 'premium-card': 'cards',
+      'budget-cards': 'budget-cards', 'budget-card': 'budget-cards',
+      'acrylic-cards': 'acrylic-cards', 'acrylic-card': 'acrylic-cards',
+      'menu-cards': 'menu-cards', 'menu-card': 'menu-cards',
+      'e-cards': 'e-cards', 'ecard': 'e-cards', 'e-card': 'e-cards',
+      'pen': 'pen', 'pens': 'pen', 'ballpoint': 'pen',
+      'calendar': 'calendar', 'calendars': 'calendar', 'tent-calendar': 'calendar',
+      'business': 'business', 'tote': 'business', 'tote-bag': 'business',
+      'bag': 'bag', 'bags': 'bag', 'favor-bag': 'bag', 'favor-bags': 'bag',
+      'wallet': 'wallet', 'wallets': 'wallet', 'leather-wallet': 'wallet',
+      'usb': 'usb', 'flash-drive': 'usb',
+      'keychain': 'keychain', 'keychains': 'keychain',
+      'booklet': 'booklet', 'brochure': 'booklet', 'catalog': 'booklet',
+      'stall': 'stall', 'stalls': 'stall', 'exhibition-stall': 'stall',
+      'stamps': 'stamps', 'wax-stamp': 'stamps', 'wax-stamps': 'stamps',
+      'envelope': 'envelope', 'envelopes': 'envelope',
+      'stickers': 'stickers', 'labels': 'stickers'
+    };
+
+    let activeKey = 'boxes';
+    let currentQty = 50;
+    let activeImageSrc = 'images/prod_box.jpg';
+    let lightboxCurrentZoom = 1;
+
+    // Load Product Data by Key (With Safe Normalization)
+    function renderProduct(rawKey) {
+      const cleanKey = (rawKey || '').toLowerCase().trim();
+      const resolvedKey = keyAliases[cleanKey] || (catalog[cleanKey] ? cleanKey : 'boxes');
+      const p = catalog[resolvedKey] || catalog['boxes'];
+      activeKey = resolvedKey;
+      currentQty = p.moq;
+      activeImageSrc = p.image;
+
+      // Update Page Title & Breadcrumb
+      document.getElementById('page-title').textContent = `${p.title} — Creative Roots`;
+      const crumbEl = document.getElementById('crumb-product-name');
+      if (crumbEl) crumbEl.textContent = p.crumbName || p.title;
+
+      // Update Header Text & Badge
+      const titleEl = document.getElementById('product-title-display');
+      if (titleEl) titleEl.textContent = p.title;
+      const badgeEl = document.getElementById('product-save-badge');
+      if (badgeEl) badgeEl.textContent = p.badge || 'Custom Quote';
+
+      // Update Pricing
+      const priceEl = document.getElementById('price-display');
+      if (priceEl) priceEl.innerHTML = '<i class="fa-brands fa-whatsapp" style="color: #25d366;"></i> Inquire on WhatsApp';
+      const oldPriceEl = document.getElementById('old-price-display');
+      if (oldPriceEl) oldPriceEl.style.display = 'none';
+
+      // Update Main Image
+      const imgEl = document.getElementById('active-product-img');
+      if (imgEl) {
+        imgEl.src = p.image;
+        imgEl.alt = p.title;
+        imgEl.style.opacity = '0.4';
+        imgEl.style.transform = 'scale(0.97)';
+        setTimeout(() => {
+          imgEl.style.opacity = '1';
+          imgEl.style.transform = 'scale(1)';
+          imgEl.style.transformOrigin = 'center center';
+        }, 80);
+      }
+
+      // Render Multi-Angle Thumbnails
+      const thumbsContainer = document.getElementById('product-thumbnails-strip');
+      if (thumbsContainer) {
+        const galleryItems = p.gallery && p.gallery.length > 0 ? p.gallery : [{ src: p.image, label: p.title }];
+        let thumbHtml = '';
+        galleryItems.forEach((g, idx) => {
+          const isActive = idx === 0 ? 'active' : '';
+          thumbHtml += `
+            <button type="button" class="thumb-item-btn ${isActive}" onclick="switchGalleryImage('${g.src}', this)" title="${g.label}">
+              <img src="${g.src}" alt="${g.label}" loading="lazy">
+            </button>
+          `;
+        });
+        thumbsContainer.innerHTML = thumbHtml;
+      }
+
+      // Update Quantity & MOQ Badge
+      const qtyInput = document.getElementById('order-qty-input');
+      if (qtyInput) qtyInput.value = currentQty;
+      const tierBadge = document.getElementById('tier-badge-label');
+      if (tierBadge) tierBadge.textContent = `MOQ: ${p.moq} Pieces`;
+
+      // Update Description & Specs Table
+      const descEl = document.getElementById('product-long-desc');
+      if (descEl) descEl.textContent = p.desc;
+      const tbody = document.getElementById('specs-table-body');
+      if (tbody) {
+        let specRows = '';
+        p.specs.forEach(s => {
+          specRows += `<tr><td>${s.label}:</td><td>${s.value}</td></tr>`;
+        });
+        tbody.innerHTML = specRows;
+      }
+
+      // Update Lightbox caption
+      const captionEl = document.getElementById('lightbox-title-caption');
+      if (captionEl) captionEl.textContent = `${p.title} — Ultra HD Detail View`;
+
+      // Update WhatsApp Link
+      updateWhatsAppHref();
+    }
+
+    // Switch Gallery Image on Thumbnail Click
+    function switchGalleryImage(src, btn) {
+      activeImageSrc = src;
+      const imgEl = document.getElementById('active-product-img');
+      if (imgEl) {
+        imgEl.style.opacity = '0.3';
+        imgEl.style.transform = 'scale(0.98)';
+        setTimeout(() => {
+          imgEl.src = src;
+          imgEl.style.opacity = '1';
+          imgEl.style.transform = 'scale(1)';
+          imgEl.style.transformOrigin = 'center center';
+        }, 120);
+      }
+
+      // Update active thumbnail border
+      document.querySelectorAll('.thumb-item-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    }
+
+    // ============================================================
+    // TRUE CURSOR-FOLLOWING DYNAMIC MAGNIFIER (Pan & Zoom)
+    // ============================================================
+    const imgBox = document.getElementById('main-img-box');
+    const mainImg = document.getElementById('active-product-img');
+    const zoomBadge = document.getElementById('zoom-hint-badge');
+
+    if (imgBox && mainImg) {
+      imgBox.addEventListener('mouseenter', () => {
+        mainImg.style.transition = 'transform 0.1s ease-out';
+        if (zoomBadge) {
+          zoomBadge.innerHTML = '<i class="fa-solid fa-magnifying-glass"></i> Zooming 2.5x (Move to Inspect)';
+          zoomBadge.classList.add('active-zoom');
+        }
+      });
+
+      imgBox.addEventListener('mousemove', (e) => {
+        const rect = imgBox.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        
+        mainImg.style.transformOrigin = `${x.toFixed(1)}% ${y.toFixed(1)}%`;
+        mainImg.style.transform = 'scale(2.5)';
+      });
+
+      imgBox.addEventListener('mouseleave', () => {
+        mainImg.style.transition = 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
+        mainImg.style.transform = 'scale(1)';
+        mainImg.style.transformOrigin = 'center center';
+        if (zoomBadge) {
+          zoomBadge.innerHTML = '<i class="fa-solid fa-magnifying-glass-plus"></i> Hover to Zoom Details';
+          zoomBadge.classList.remove('active-zoom');
+        }
+      });
+
+      // Mobile Touch pan & zoom
+      imgBox.addEventListener('touchmove', (e) => {
+        if (e.touches && e.touches.length === 1) {
+          const touch = e.touches[0];
+          const rect = imgBox.getBoundingClientRect();
+          const x = ((touch.clientX - rect.left) / rect.width) * 100;
+          const y = ((touch.clientY - rect.top) / rect.height) * 100;
+          mainImg.style.transformOrigin = `${x.toFixed(1)}% ${y.toFixed(1)}%`;
+          mainImg.style.transform = 'scale(2.2)';
+        }
+      }, { passive: true });
+
+      imgBox.addEventListener('touchend', () => {
+        mainImg.style.transition = 'transform 0.3s ease';
+        mainImg.style.transform = 'scale(1)';
+        mainImg.style.transformOrigin = 'center center';
+      });
+
+      // Clicking the image opens Fullscreen Lightbox
+      imgBox.addEventListener('click', (e) => {
+        if (!e.target.closest('.btn-fullscreen-trigger')) {
+          openLightbox();
+        }
+      });
+    }
+
+    // ============================================================
+    // FULLSCREEN LIGHTBOX MODAL
+    // ============================================================
+    function openLightbox() {
+      const modal = document.getElementById('product-lightbox-modal');
+      const lightImg = document.getElementById('lightbox-full-img');
+      const caption = document.getElementById('lightbox-title-caption');
+      const p = catalog[activeKey] || catalog['cap'];
+
+      if (modal && lightImg) {
+        lightImg.src = activeImageSrc || p.image;
+        if (caption) caption.textContent = `${p.title} — Ultra HD Detail View`;
+        lightboxCurrentZoom = 1;
+        lightImg.style.transform = 'scale(1)';
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeLightbox(e) {
+      if (e && e.target && e.target.closest('.lightbox-img-wrap')) return;
+      const modal = document.getElementById('product-lightbox-modal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function lightboxZoom(factor) {
+      const lightImg = document.getElementById('lightbox-full-img');
+      if (lightImg) {
+        lightboxCurrentZoom = Math.min(3.5, Math.max(0.6, lightboxCurrentZoom * factor));
+        lightImg.style.transform = `scale(${lightboxCurrentZoom.toFixed(2)})`;
+      }
+    }
+
+    function lightboxReset() {
+      const lightImg = document.getElementById('lightbox-full-img');
+      if (lightImg) {
+        lightboxCurrentZoom = 1;
+        lightImg.style.transform = 'scale(1)';
+      }
+    }
+
+    // Close on Escape Key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Update WhatsApp Chat Link
+    function updateWhatsAppHref() {
+      const p = catalog[activeKey] || catalog['cap'];
+      const phone = '923347009992';
+      const msg = encodeURIComponent(`Hello Creative Roots! I am interested in ordering/customizing: ${p.title} (${currentQty} pieces). Please share the product catalog and quote.`);
+      const btn = document.getElementById('main-whatsapp-btn');
+      btn.href = `https://wa.me/${phone}?text=${msg}`;
+    }
+
+    // Quantity Counter Updates
+    function updateQty(delta) {
+      const p = catalog[activeKey] || catalog['cap'];
+      currentQty = Math.max(p.moq, currentQty + delta);
+      document.getElementById('order-qty-input').value = currentQty;
+      updateWhatsAppHref();
+    }
+
+    // Accordion Toggle
+    function toggleAccordion(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.toggle('active');
+      }
+    }
+
+    // Click handler for "You may also like" cards
+    function loadProductByKey(key, event) {
+      if (event) event.preventDefault();
+      history.pushState(null, '', `product-detail.html?item=${key}`);
+      renderProduct(key);
+      window.scrollTo({ top: 120, behavior: 'smooth' });
+    }
+
+    // Share Functions
+    function shareSocial(type) {
+      const url = encodeURIComponent(window.location.href);
+      const title = encodeURIComponent(document.getElementById('product-title-display').textContent + ' from Creative Roots Pakistan');
+      
+      if (type === 'fb') {
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=600,height=450');
+      } else if (type === 'x') {
+        window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank', 'width=600,height=450');
+      } else if (type === 'pinterest') {
+        const img = encodeURIComponent(document.getElementById('active-product-img').src);
+        window.open(`https://pinterest.com/pin/create/button/?url=${url}&media=${img}&description=${title}`, '_blank', 'width=600,height=450');
+      } else if (type === 'copy') {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          showToast('Link copied to clipboard!');
+        }).catch(() => {
+          showToast('Product link ready!');
+        });
+      }
+    }
+
+    // Toast Notification helper
+    function showToast(text) {
+      const toast = document.getElementById('toast-msg');
+      toast.innerHTML = `<i class="fa-solid fa-check"></i> ${text}`;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    }
+
+    // Initialize on page load with multi-param & popstate support
+    function initProductPage() {
+      const params = new URLSearchParams(window.location.search);
+      const requestedItem = params.get('item') || params.get('product') || params.get('p') || 'boxes';
+      renderProduct(requestedItem);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initProductPage);
+    } else {
+      initProductPage();
+    }
+    window.addEventListener('popstate', initProductPage);
+
+    // Search bar functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search-input');
+      const searchBtn = document.getElementById('search-btn');
+      function performSearch() {
+        if (!searchInput) return;
+        const query = searchInput.value.toLowerCase().trim();
+        if (!query) return;
+        for (const [key, val] of Object.entries(catalog)) {
+          if (val.title.toLowerCase().includes(query) || key.includes(query) || (val.crumbName && val.crumbName.toLowerCase().includes(query))) {
+            loadProductByKey(key);
+            return;
+          }
+        }
+        window.location.href = `products.html?search=${encodeURIComponent(query)}`;
+      }
+      if (searchBtn) searchBtn.addEventListener('click', performSearch);
+      if (searchInput) {
+        searchInput.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') performSearch();
+        });
+      }
+    });
+  </script>
+
+  <!-- Fullscreen Lightbox Modal Element -->
+  <div class="product-lightbox-modal" id="product-lightbox-modal" onclick="closeLightbox(event)">
+    <button type="button" class="lightbox-close-btn" onclick="closeLightbox()">&times;</button>
+    <div class="lightbox-img-wrap" onclick="event.stopPropagation()">
+      <img src="" id="lightbox-full-img" alt="Product Fullscreen" loading="lazy">
+    </div>
+    <div class="lightbox-toolbar" onclick="event.stopPropagation()">
+      <span id="lightbox-title-caption">Cap — Ultra HD Detail View</span>
+      <div class="lightbox-controls">
+        <button type="button" onclick="lightboxZoom(1.25)"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom In</button>
+        <button type="button" onclick="lightboxZoom(0.8)"><i class="fa-solid fa-magnifying-glass-minus"></i> Zoom Out</button>
+        <button type="button" onclick="lightboxReset()"><i class="fa-solid fa-arrows-rotate"></i> Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Chat Widget (Direct Support with Speech Bubble) -->
+  <a href="https://wa.me/923347009992?text=Hello%20Creative%20Roots%2C%20I%20would%20like%20to%20inquire%20about%20your%20products." 
+     class="floating-whatsapp-widget" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Chat with Creative Roots on WhatsApp">
+    <div class="whatsapp-icon-circle">
+      <i class="fa-brands fa-whatsapp"></i>
+    </div>
+    <div class="whatsapp-chat-bubble">
+      <span>Need Help? Chat with us</span>
+    </div>
+  </a>
+</body>
+</html>

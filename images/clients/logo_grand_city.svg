@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 55" width="170" height="55">
+  <!-- Grand City Luxury Heraldic Brandmark -->
+  <g fill="#181818">
+    <!-- Top Coronet Crown -->
+    <g transform="translate(85, 9)">
+      <path d="M -7,4 L -5,-1 L -3,3 L 0,-3 L 3,3 L 5,-1 L 7,4 Z" fill="#181818"/>
+      <circle cx="-5" cy="-2" r="0.8" fill="#181818"/>
+      <circle cx="0" cy="-4" r="1" fill="#181818"/>
+      <circle cx="5" cy="-2" r="0.8" fill="#181818"/>
+    </g>
+    
+    <!-- Central Ornate Escutcheon -->
+    <path d="M 81,14 C 83,13 87,13 89,14 C 91,18 89,24 85,27 C 81,24 79,18 81,14 Z" fill="none" stroke="#181818" stroke-width="1.2"/>
+    <circle cx="85" cy="20" r="2.5" fill="#181818"/>
+    
+    <!-- Left Rampant Lion -->
+    <path d="M 80,16 C 76,14 73,12 70,14 C 68,16 67,20 68,23 C 66,22 64,20 63,18 C 62,22 64,26 68,27 C 66,29 65,32 67,34 C 69,34 72,33 74,30 C 76,31 78,29 80,26 Z"/>
+    
+    <!-- Right Rampant Lion -->
+    <path d="M 90,16 C 94,14 97,12 100,14 C 102,16 103,20 102,23 C 104,22 106,20 107,18 C 108,22 106,26 102,27 C 104,29 105,32 103,34 C 101,34 98,33 96,30 C 94,31 92,29 90,26 Z"/>
+    
+    <!-- Base Platform Line -->
+    <line x1="62" y1="36" x2="108" y2="36" stroke="#181818" stroke-width="0.9"/>
+    
+    <!-- GRAND CITY Typography -->
+    <text x="85" y="49" font-family="'Cinzel', 'Times New Roman', Georgia, serif" font-size="10.5" font-weight="700" fill="#181818" text-anchor="middle" letter-spacing="3.5">GRAND CITY</text>
+  </g>
+</svg>

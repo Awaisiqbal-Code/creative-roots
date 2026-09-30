@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 50" width="170" height="50">
+  <!-- CCL Life Sciences Corporate Brandmark -->
+  <g>
+    <!-- Molecule / Life Sciences Core Icon -->
+    <g transform="translate(24, 25)">
+      <circle cx="-5" cy="-5" r="5" fill="#0284c7"/>
+      <circle cx="5" cy="5" r="5" fill="#10b981"/>
+      <line x1="-5" y1="-5" x2="5" y2="5" stroke="#64748b" stroke-width="2.5"/>
+      <circle cx="6" cy="-4" r="3.5" fill="#f59e0b"/>
+    </g>
+    
+    <!-- CCL LIFE SCIENCES Typography -->
+    <text x="46" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Montserrat, sans-serif" font-size="14" font-weight="900" fill="#0369a1" letter-spacing="1.5">CCL</text>
+    <text x="46" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8.5" font-weight="700" fill="#1e293b" letter-spacing="1">LIFE SCIENCES</text>
+  </g>
+</svg>

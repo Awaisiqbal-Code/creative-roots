@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="collection-page-title">Pen Collection — Creative Roots</title>
+  <meta name="description" content="Custom branded corporate pens, writing instruments, laser engraving, and executive gifts in Pakistan from Creative Roots.">
+  <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23113627'/><text x='50' y='65' font-size='42' font-weight='bold' text-anchor='middle' fill='%23d4af37'>CR</text></svg>">
+  <style>
+    body {
+      background-color: #f7f7f9;
+      color: #222;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Top Announcement Bar */
+    .top-black-bar {
+      background-color: #000;
+      color: #fff;
+      font-size: 12.5px;
+      font-weight: 500;
+      text-align: center;
+      padding: 8px 16px;
+      letter-spacing: 0.3px;
+    }
+
+    /* Header */
+    .instaprint-header {
+      background: #fff;
+      border-bottom: 1px solid #eaeaea;
+      padding: 14px 0;
+    }
+    .instaprint-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .brand-logo-icon {
+      width: 38px;
+      height: 38px;
+      background: #113627;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d4af37;
+      font-size: 18px;
+    }
+    .brand-logo-text {
+      font-size: 21px;
+      font-weight: 800;
+      color: #0b1f17;
+      letter-spacing: -0.5px;
+    }
+    .brand-logo-text span {
+      color: #d4af37;
+    }
+    .header-search-wrap {
+      flex: 1;
+      max-width: 520px;
+      position: relative;
+    }
+    .header-search-input {
+      width: 100%;
+      height: 42px;
+      padding: 0 46px 0 18px;
+      border-radius: 50px;
+      border: 1px solid #dcdcdc;
+      background: #fff;
+      font-size: 13.5px;
+      color: #333;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+    .header-search-input:focus {
+      border-color: #113627;
+      box-shadow: 0 0 0 3px rgba(17, 54, 39, 0.08);
+    }
+    .header-search-btn {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #555;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .header-right-actions {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    .find-store-link {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #222;
+      text-decoration: none;
+    }
+    .cart-bag-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #222;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    /* Sub Navigation Bar with Dropdowns */
+    .instaprint-subnav {
+      background: #fff;
+      border-bottom: 1px solid #ebebeb;
+      padding: 0;
+      position: relative;
+      z-index: 900;
+    }
+    .subnav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #333;
+      flex-wrap: wrap;
+    }
+    .subnav-links > li {
+      position: relative;
+      padding: 13px 0;
+    }
+    .subnav-links a {
+      color: #2e2e2e;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s ease;
+    }
+    .subnav-links a:hover, .subnav-links a.active {
+      color: #113627;
+    }
+    .subnav-links i.fa-chevron-down {
+      font-size: 10px;
+      color: #888;
+      transition: transform 0.2s ease;
+    }
+    .has-subnav-dropdown:hover i.fa-chevron-down {
+      transform: rotate(180deg);
+      color: #113627;
+    }
+    .subnav-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #ffffff;
+      min-width: 270px;
+      border-radius: 12px;
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.12);
+      border: 1px solid #e5e7eb;
+      padding: 10px 0;
+      list-style: none;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1000;
+    }
+    .has-subnav-dropdown:hover .subnav-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .subnav-dropdown li {
+      padding: 0;
+      margin: 0;
+    }
+    .subnav-dropdown li a {
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+      transition: all 0.2s ease;
+    }
+    .subnav-dropdown li a i {
+      width: 16px;
+      color: #113627;
+      font-size: 13px;
+    }
+    .subnav-dropdown li a:hover {
+      background: #f4f6f5;
+      color: #113627;
+      padding-left: 24px;
+    }
+
+    /* Breadcrumbs */
+    .breadcrumb-wrap {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 16px 16px 12px;
+      font-size: 12.5px;
+      color: #777;
+    }
+    .breadcrumb-wrap a {
+      color: #444;
+      text-decoration: none;
+    }
+    .breadcrumb-wrap a:hover {
+      color: #113627;
+      text-decoration: underline;
+    }
+    .breadcrumb-sep {
+      margin: 0 8px;
+      color: #aaa;
+    }
+    .breadcrumb-current {
+      color: #111;
+      font-weight: 600;
+    }
+
+    /* Collection Hero Banner (Exact match to screenshot 3) */
+    .collection-hero {
+      max-width: 1220px;
+      margin: 0 auto 30px;
+      padding: 0 16px;
+    }
+    .hero-box {
+      background: #f1ede5;
+      border-radius: 12px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      border: 1px solid #e2dbce;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+    .hero-text-side {
+      padding: 44px 48px;
+    }
+    .hero-text-side h1 {
+      font-size: 40px;
+      font-weight: 800;
+      color: #111;
+      margin: 0 0 14px 0;
+      letter-spacing: -0.8px;
+    }
+    .hero-text-side p {
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: #555;
+      margin: 0 0 24px 0;
+      max-width: 580px;
+    }
+    .hero-badge-chips {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .hero-chip {
+      font-size: 11.5px;
+      font-weight: 700;
+      background: rgba(17, 54, 39, 0.08);
+      color: #113627;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .hero-img-side {
+      height: 100%;
+      min-height: 280px;
+      background: #e9e3d8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-img-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .hero-box:hover .hero-img-side img {
+      transform: scale(1.04);
+    }
+
+    /* Horizontal Category Scroller (12 Thumbnails, matching screenshot 3) */
+    .category-scroller-wrap {
+      max-width: 1220px;
+      margin: 0 auto 36px;
+      padding: 0 16px;
+    }
+    .category-scroller {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      overflow-x: auto;
+      padding: 8px 4px 16px;
+      scrollbar-width: thin;
+      scrollbar-color: #d4af37 #f0f0f0;
+    }
+    .category-scroller::-webkit-scrollbar {
+      height: 5px;
+    }
+    .category-scroller::-webkit-scrollbar-thumb {
+      background: #d4af37;
+      border-radius: 4px;
+    }
+    .cat-thumb-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      flex-shrink: 0;
+      width: 86px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .cat-thumb-circle {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2px solid #e5e5e8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: all 0.25s ease;
+      overflow: hidden;
+    }
+    .cat-thumb-circle img {
+      max-width: 85%;
+      max-height: 85%;
+      object-fit: contain;
+      transition: transform 0.25s ease;
+    }
+    .cat-thumb-label {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #444;
+      text-align: center;
+      white-space: nowrap;
+      transition: color 0.25s ease;
+    }
+    .cat-thumb-item:hover .cat-thumb-circle,
+    .cat-thumb-item.active .cat-thumb-circle {
+      border-color: #113627;
+      box-shadow: 0 0 0 3px rgba(17, 54, 39, 0.15), 0 6px 14px rgba(0, 0, 0, 0.08);
+      transform: translateY(-3px);
+    }
+    .cat-thumb-item:hover .cat-thumb-circle img {
+      transform: scale(1.15);
+    }
+    .cat-thumb-item.active .cat-thumb-circle {
+      border-color: #d4af37;
+      background: #fdfbf7;
+    }
+    .cat-thumb-item:hover .cat-thumb-label,
+    .cat-thumb-item.active .cat-thumb-label {
+      color: #113627;
+      font-weight: 700;
+    }
+
+    /* Products Grid (Exact Match to Screenshot 3) */
+    .collection-grid-section {
+      max-width: 1220px;
+      margin: 0 auto 70px;
+      padding: 0 16px;
+    }
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    /* Card 1: Special Business Corporate Promo Card */
+    .corporate-promo-card {
+      background: #bb9b78;
+      background-size: cover;
+      background-position: center;
+      border-radius: 8px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      min-height: 380px;
+    }
+    .corporate-promo-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(17, 30, 24, 0.4) 0%, rgba(11, 21, 17, 0.85) 100%);
+      z-index: 1;
+    }
+    .promo-card-content {
+      position: relative;
+      z-index: 2;
+    }
+    .promo-category-tag {
+      font-size: 13px;
+      font-weight: 700;
+      color: #d4af37;
+      text-transform: capitalize;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .promo-card-content h3 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+      margin: 0 0 12px 0;
+    }
+    .promo-card-content p {
+      font-size: 12.5px;
+      color: #e2e8e5;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .promo-card-footer {
+      position: relative;
+      z-index: 2;
+      margin-top: 20px;
+    }
+    .btn-promo-shop {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      color: #111111;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .btn-promo-shop:hover {
+      background: #d4af37;
+      color: #000;
+      transform: translateY(-2px);
+    }
+
+    /* Individual Product Card */
+    .coll-product-card {
+      background: #ffffff;
+      border: 1px solid #e7e7eb;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+    }
+    .coll-product-card:hover {
+      transform: translateY(-5px);
+      border-color: #113627;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    }
+    .coll-card-img-wrap {
+      width: 100%;
+      height: 240px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      overflow: hidden;
+      border-bottom: 1px solid #f2f2f4;
+      position: relative;
+    }
+    .coll-card-img-wrap img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      transition: transform 0.35s ease;
+    }
+    .coll-product-card:hover .coll-card-img-wrap img {
+      transform: scale(1.08);
+    }
+    .coll-card-body {
+      padding: 16px 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .coll-card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0;
+      line-height: 1.4;
+    }
+    .coll-card-price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-top: 8px;
+    }
+    .coll-card-price {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #113627;
+    }
+    .coll-card-moq {
+      font-size: 11px;
+      color: #777;
+      font-weight: 600;
+    }
+
+    /* 4-Box Contact Bar */
+    .contact-info-bar {
+      background: #000000;
+      padding: 30px 0;
+      border-bottom: 1px solid #222;
+    }
+    .contact-info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    .contact-info-box {
+      background: #1c1c1e;
+      border-radius: 8px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      color: #fff;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .contact-info-box:hover {
+      background: #252528;
+      transform: translateY(-2px);
+    }
+    .contact-box-icon {
+      font-size: 18px;
+      color: #d4af37;
+      margin-top: 2px;
+    }
+    .contact-box-content h5 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 4px 0;
+    }
+    .contact-box-content p, .contact-box-content a {
+      font-size: 11.5px;
+      color: #a0a0a5;
+      margin: 0;
+      text-decoration: none;
+      line-height: 1.4;
+    }
+    .contact-box-content a:hover {
+      color: #d4af37;
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    .instaprint-footer {
+      background: #000000;
+      color: #999;
+      padding: 50px 0 25px;
+      font-size: 12.5px;
+    }
+    .footer-inner-grid {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-col h5 {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0 0 16px 0;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-col ul a {
+      color: #999;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col ul a:hover {
+      color: #fff;
+    }
+    .footer-brand-p {
+      line-height: 1.6;
+      color: #888;
+      max-width: 320px;
+      margin-top: 14px;
+    }
+    .footer-bottom-row {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 24px 16px 0;
+      border-top: 1px solid #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-social-icons {
+      display: flex;
+      gap: 10px;
+    }
+    .footer-social-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #1c1c1e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      text-decoration: none;
+      font-size: 12px;
+      transition: all 0.2s;
+    }
+    .footer-social-btn:hover {
+      background: #d4af37;
+      color: #000;
+    }
+    .footer-legal-links {
+      display: flex;
+      gap: 18px;
+    }
+    .footer-legal-links a {
+      color: #777;
+      text-decoration: none;
+    }
+    .footer-legal-links a:hover {
+      color: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-box {
+        grid-template-columns: 1fr;
+      }
+      .collection-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .contact-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-inner-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 576px) {
+      .collection-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-info-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-inner-grid {
+        grid-template-columns: 1fr;
+      }
+      .subnav-links {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 6px;
+        gap: 18px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .subnav-links > li {
+        flex-shrink: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-black-bar">
+    Free Delivery &amp; Bulk Discounts on Orders Over Rs. 5,000
+  </div>
+
+  <!-- Header -->
+  <header class="instaprint-header">
+    <div class="container">
+      <a href="index.html" class="brand-logo-wrap">
+        <div class="brand-logo-icon"><i class="fa-solid fa-leaf"></i></div>
+        <div class="brand-logo-text">Creative<span>Roots</span></div>
+      </a>
+
+      <div class="header-search-wrap">
+        <input type="text" class="header-search-input" id="search-input" placeholder="What are you looking for?">
+        <button class="header-search-btn" id="search-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <div class="header-right-actions">
+        <a href="find-a-store.html" class="find-store-link">
+          <i class="fa-solid fa-location-dot"></i> Find a Store
+        </a>
+        <a href="products.html" class="cart-bag-icon" title="View Store">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sub Navigation Bar -->
+  <nav class="instaprint-subnav">
+    <div class="container" style="max-width: 1220px; margin: 0 auto; padding: 0 16px;">
+      <ul class="subnav-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html" style="font-weight: 700; color: #113627;"><i class="fa-solid fa-layer-group" style="color: #d4af37; margin-right: 4px;"></i> Product Store</a></li>
+        <li class="has-subnav-dropdown">
+          <a href="products.html">Business Corporate <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="subnav-dropdown">
+            <li><a href="product-detail.html?item=boxes"><i class="fa-solid fa-box"></i> Corporate Giveaway Boxes</a></li>
+            <li><a href="product-detail.html?item=drinkware"><i class="fa-solid fa-gift"></i> Personalized Corporate Gifts</a></li>
+            <li><a href="product-detail.html?item=shirt"><i class="fa-solid fa-shirt"></i> Custom Apparel & Uniforms</a></li>
+            <li><a href="product-detail.html?item=pen"><i class="fa-solid fa-pen-nib"></i> Executive Pens & Accessories</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-calendar-check"></i> Corporate Event Management</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-rocket"></i> Product Launches</a></li>
+          </ul>
+        </li>
+        <li class="has-subnav-dropdown">
+          <a href="index.html#events">Event Solutions <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="subnav-dropdown">
+            <li><a href="product-detail.html?item=stall"><i class="fa-solid fa-store"></i> Exhibition Stalls & Booths</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-bullhorn"></i> Outdoor Promotional Activities</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-trophy"></i> Corporate Award Ceremonies</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-users"></i> Brand Activation Roadshows</a></li>
+          </ul>
+        </li>
+        <li class="has-subnav-dropdown">
+          <a href="index.html#packaging">Packaging Solutions <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="subnav-dropdown">
+            <li><a href="collection.html?cat=boxes"><i class="fa-solid fa-boxes-packing"></i> Corrugated Mailer Boxes</a></li>
+            <li><a href="product-detail.html?item=boxes"><i class="fa-solid fa-gem"></i> Luxury Rigid Magnet Boxes</a></li>
+            <li><a href="index.html#packaging"><i class="fa-solid fa-bag-shopping"></i> Branded Shopping Bags</a></li>
+            <li><a href="index.html#packaging"><i class="fa-solid fa-tags"></i> Custom Hang Tags & Labels</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Book an Appointment</a></li>
+        <li><a href="find-a-store.html">Find a Store</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumb-wrap">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">|</span>
+    <a href="products.html">Collection</a>
+    <span class="breadcrumb-sep">|</span>
+    <span class="breadcrumb-current" id="crumb-cat-name">Pen</span>
+  </div>
+
+  <!-- Collection Hero Banner (Exact match to screenshot 3) -->
+  <section class="collection-hero">
+    <div class="hero-box">
+      <div class="hero-text-side">
+        <h1 id="hero-title">Pen</h1>
+        <p id="hero-desc">
+          Giving a writing instrument pen is a lasting gesture of appreciation. Creative Roots provides personalized pens inscribed with a logo, executive name, &amp; thoughtful message to transform this guarantee into a memorable keepsake. You can choose the optimal printing technique from pad printing, rotary screen printing, fiber laser engraving, and digital UV printing to make your lasting impression on enterprise customers.
+        </p>
+        <div class="hero-badge-chips">
+          <span class="hero-chip"><i class="fa-solid fa-check"></i> Fiber Laser Engraving</span>
+          <span class="hero-chip"><i class="fa-solid fa-check"></i> High-Density Screen Print</span>
+          <span class="hero-chip"><i class="fa-solid fa-check"></i> 48-Hour Urgent Dispatch</span>
+        </div>
+      </div>
+      <div class="hero-img-side">
+        <img src="images/pack_pen.jpg" id="hero-image" alt="Category Hero" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Horizontal Category Scroller (12 Thumbnails, matching screenshot 3) -->
+  <section class="category-scroller-wrap">
+    <div class="category-scroller" id="cat-scroller">
+      
+      <!-- 1. Pen -->
+      <a href="collection.html?cat=pen" class="cat-thumb-item active" onclick="switchCategory('pen', event)" data-cat="pen">
+        <div class="cat-thumb-circle"><img src="images/pack_pen.jpg" alt="Pen" loading="lazy"></div>
+        <span class="cat-thumb-label">Pen</span>
+      </a>
+
+      <!-- 2. Calendar -->
+      <a href="collection.html?cat=calendar" class="cat-thumb-item" onclick="switchCategory('calendar', event)" data-cat="calendar">
+        <div class="cat-thumb-circle"><img src="images/pack_calendar.jpg" alt="Calendar" loading="lazy"></div>
+        <span class="cat-thumb-label">Calendar</span>
+      </a>
+
+      <!-- 3. Notebook -->
+      <a href="collection.html?cat=notebook" class="cat-thumb-item" onclick="switchCategory('notebook', event)" data-cat="notebook">
+        <div class="cat-thumb-circle"><img src="images/prod_notebook.jpg" alt="Notebook" loading="lazy"></div>
+        <span class="cat-thumb-label">Notebook</span>
+      </a>
+
+      <!-- 4. Booklet -->
+      <a href="collection.html?cat=booklet" class="cat-thumb-item" onclick="switchCategory('booklet', event)" data-cat="booklet">
+        <div class="cat-thumb-circle"><img src="images/pack_booklet.jpg" alt="Booklet" loading="lazy"></div>
+        <span class="cat-thumb-label">Booklet</span>
+      </a>
+
+      <!-- 5. Wallet -->
+      <a href="collection.html?cat=wallet" class="cat-thumb-item" onclick="switchCategory('wallet', event)" data-cat="wallet">
+        <div class="cat-thumb-circle"><img src="images/pack_wallet.jpg" alt="Wallet" loading="lazy"></div>
+        <span class="cat-thumb-label">Wallet</span>
+      </a>
+
+      <!-- 6. Business Cards -->
+      <a href="collection.html?cat=cards" class="cat-thumb-item" onclick="switchCategory('cards', event)" data-cat="cards">
+        <div class="cat-thumb-circle"><img src="images/prod_cards.jpg" alt="Business Cards" loading="lazy"></div>
+        <span class="cat-thumb-label">Business Cards</span>
+      </a>
+
+      <!-- 7. USB -->
+      <a href="collection.html?cat=usb" class="cat-thumb-item" onclick="switchCategory('usb', event)" data-cat="usb">
+        <div class="cat-thumb-circle"><img src="images/pack_usb.jpg" alt="USB" loading="lazy"></div>
+        <span class="cat-thumb-label">USB</span>
+      </a>
+
+      <!-- 8. Keychain -->
+      <a href="collection.html?cat=keychain" class="cat-thumb-item" onclick="switchCategory('keychain', event)" data-cat="keychain">
+        <div class="cat-thumb-circle"><img src="images/pack_keychain.jpg" alt="Keychain" loading="lazy"></div>
+        <span class="cat-thumb-label">Keychain</span>
+      </a>
+
+      <!-- 9. Cap -->
+      <a href="collection.html?cat=cap" class="cat-thumb-item" onclick="switchCategory('cap', event)" data-cat="cap">
+        <div class="cat-thumb-circle"><img src="images/cap_maroon.jpg" alt="Cap" loading="lazy"></div>
+        <span class="cat-thumb-label">Cap</span>
+      </a>
+
+      <!-- 10. Bottle -->
+      <a href="collection.html?cat=bottle" class="cat-thumb-item" onclick="switchCategory('bottle', event)" data-cat="bottle">
+        <div class="cat-thumb-circle"><img src="images/pack_bottle.jpg" alt="Bottle" loading="lazy"></div>
+        <span class="cat-thumb-label">Bottle</span>
+      </a>
+
+      <!-- 11. Envelope -->
+      <a href="collection.html?cat=envelope" class="cat-thumb-item" onclick="switchCategory('envelope', event)" data-cat="envelope">
+        <div class="cat-thumb-circle"><img src="images/hero_studio_banner.jpg" alt="Envelope"></div>
+        <span class="cat-thumb-label">Envelope</span>
+      </a>
+
+      <!-- 12. Paper Bag -->
+      <a href="collection.html?cat=bag" class="cat-thumb-item" onclick="switchCategory('bag', event)" data-cat="bag">
+        <div class="cat-thumb-circle"><img src="images/promo_business.jpg" alt="Paper Bag" loading="lazy"></div>
+        <span class="cat-thumb-label">Paper Bag</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Collection Product Grid (Exact Match to Screenshot 3) -->
+  <section class="collection-grid-section">
+    <div class="collection-grid" id="collection-grid">
+      
+      <!-- Card 1: Featured Promo Card (Exact match from screenshot) -->
+      <div class="corporate-promo-card" id="promo-card" style="background-image: url('images/hero_studio_banner.jpg');">
+        <div class="promo-card-content">
+          <span class="promo-category-tag" id="promo-cat-tag">Pen</span>
+          <h3>Business Corporate</h3>
+          <p>Complete executive writing &amp; physical gifting solutions for conferences, VIP onboardings, and brand campaigns.</p>
+        </div>
+        <div class="promo-card-footer">
+          <a href="product-detail.html?item=cap" class="btn-promo-shop" id="promo-shop-btn">
+            Shop Now <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Individual Models Container injected via JavaScript -->
+      <div id="dynamic-product-cards" style="display: contents;"></div>
+
+    </div>
+  </section>
+
+  <!-- 4-Box Contact Bar -->
+  <div class="contact-info-bar">
+    <div class="contact-info-grid">
+      <div class="contact-info-box">
+        <div class="contact-box-icon"><i class="fa-regular fa-comment-dots"></i></div>
+        <div class="contact-box-content">
+          <h5>Customer Service</h5>
+          <p>Mon - Sat: 09:30am - 5:30pm</p>
+        </div>
+      </div>
+      <div class="contact-info-box">
+        <div class="contact-box-icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <div class="contact-box-content">
+          <h5>Contact Us</h5>
+          <p>WhatsApp: <a href="https://wa.me/923347009992" target="_blank" rel="noopener noreferrer">+92 334 7009992</a></p>
+        </div>
+      </div>
+      <div class="contact-info-box">
+        <div class="contact-box-icon"><i class="fa-regular fa-envelope"></i></div>
+        <div class="contact-box-content">
+          <h5>Get in Touch</h5>
+          <p><a href="mailto:sales@creativeroots.pk">sales@creativeroots.pk</a></p>
+        </div>
+      </div>
+      <div class="contact-info-box">
+        <div class="contact-box-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="contact-box-content">
+          <h5>Address</h5>
+          <p>Lahore Office: Gohar Centre, Lahore</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Solid Black Footer -->
+  <footer class="instaprint-footer">
+    <div class="footer-inner-grid">
+      <div>
+        <a href="index.html" class="brand-logo-wrap" style="margin-bottom: 8px;">
+          <div class="brand-logo-icon" style="background:#1c1c1e;"><i class="fa-solid fa-leaf"></i></div>
+          <div class="brand-logo-text" style="color:#fff;">Creative<span style="color:#d4af37;">Roots</span></div>
+        </a>
+        <p class="footer-brand-p">
+          A one-stop solution for all your customized printing &amp; branding wants and needs. At Creative Roots, we guarantee you only the best. A team of attentive designers will work personally with you to create unforgettable physical brand impressions.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html#events">Event Solutions</a></li>
+          <li><a href="collection.html?cat=boxes">Packaging Solutions</a></li>
+          <li><a href="collection.html?cat=pen">Business Corporate</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Policies</h5>
+        <ul>
+          <li><a href="about.html">Privacy Policy</a></li>
+          <li><a href="about.html">Terms of Service</a></li>
+          <li><a href="about.html">Returns &amp; Exchanges</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Others</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="find-a-store.html">Find a Store</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom-row">
+      <div>&copy; 2026 Creative Roots.</div>
+      <div class="footer-social-icons">
+        <a href="#" class="footer-social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="footer-social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" class="footer-social-btn"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="footer-social-btn"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" class="footer-social-btn"><i class="fa-brands fa-pinterest-p"></i></a>
+      </div>
+      <div class="footer-legal-links">
+        <a href="about.html">Terms of Service</a>
+        <a href="about.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared Global Script -->
+  <script src="js/script.js"></script>
+
+  <!-- Dynamic Collection Script -->
+  <script>
+    const collectionsDatabase = {
+      'pen': {
+        title: 'Pen',
+        heroImage: 'images/pack_pen.jpg',
+        promoBg: 'images/hero_studio_banner.jpg',
+        desc: 'Giving a writing instrument pen is a lasting gesture of appreciation. Creative Roots provides personalized pens inscribed with a logo, executive name, & thoughtful message to transform this guarantee into a memorable keepsake. You can choose the optimal printing technique from pad printing, rotary screen printing, fiber laser engraving, and digital UV printing to make your lasting impression on enterprise customers.',
+        items: [
+          { name: 'Metal Engraved Ballpoint Pen', price: 'Inquire on WhatsApp', moq: 'MOQ: 100 pcs', image: 'images/pack_pen.jpg', link: 'product-detail.html?item=pen' },
+          { name: 'Sleek Twist-Action Pen', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_pen.jpg', link: 'product-detail.html?item=pen' },
+          { name: 'Grip Executive Pen', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_pen.jpg', link: 'product-detail.html?item=pen' },
+          { name: '24K Gold Plated Executive Pen', price: 'Inquire on WhatsApp', moq: 'MOQ: 25 pcs', image: 'images/pack_pen.jpg', link: 'product-detail.html?item=pen' },
+          { name: 'Carbon Fiber Ballpoint Pen', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_pen.jpg', link: 'product-detail.html?item=pen' },
+          { name: 'Metal Engraved Inkjet Pen', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_pen.jpg', link: 'product-detail.html?item=pen' },
+          { name: 'Soft Touch Matte Pen', price: 'Inquire on WhatsApp', moq: 'MOQ: 100 pcs', image: 'images/pack_pen.jpg', link: 'product-detail.html?item=pen' }
+        ]
+      },
+      'calendar': {
+        title: 'Tent Calendar',
+        heroImage: 'images/pack_calendar.jpg',
+        promoBg: 'images/pack_calendar.jpg',
+        desc: 'Keep your brand visible on client desks 365 days a year. Our 2026 desk tent calendars feature premium 300gsm art card with matte/gloss lamination, gold foil accents, and sturdy triangular stand конструкции.',
+        items: [
+          { name: 'Executive 2026 Desk Tent Calendar', price: 'Inquire on WhatsApp', moq: 'MOQ: 100 pcs', image: 'images/pack_calendar.jpg', link: 'product-detail.html?item=notebook' },
+          { name: 'Twin-Wire Spiral Desk Calendar', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_calendar.jpg', link: 'product-detail.html?item=notebook' },
+          { name: 'Gold Foil Debossed Wall Calendar', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_calendar.jpg', link: 'product-detail.html?item=notebook' },
+          { name: 'Minimalist Corporate Desk Pad Calendar', price: 'Inquire on WhatsApp', moq: 'MOQ: 100 pcs', image: 'images/pack_calendar.jpg', link: 'product-detail.html?item=notebook' },
+          { name: 'Wooden Stand Luxury Calendar', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_calendar.jpg', link: 'product-detail.html?item=notebook' },
+          { name: 'Custom Monthly Planner Calendar', price: 'Inquire on WhatsApp', moq: 'MOQ: 100 pcs', image: 'images/pack_calendar.jpg', link: 'product-detail.html?item=notebook' },
+          { name: 'Pocket Executive 2026 Calendar', price: 'Inquire on WhatsApp', moq: 'MOQ: 200 pcs', image: 'images/pack_calendar.jpg', link: 'product-detail.html?item=notebook' }
+        ]
+      },
+      'notebook': {
+        title: 'Notebook',
+        heroImage: 'images/prod_notebook.jpg',
+        promoBg: 'images/promo_giftbox.jpg',
+        desc: 'Handcrafted executive hardcover journals and planners. Premium Italian thermo PU leather with custom debossed crests, 100gsm ink-proof bleedless paper, and ribbon bookmark for everyday corporate leadership.',
+        items: [
+          { name: 'Luxury Gold-Foil Floral Spiral Journal', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/prod_notebook.jpg', link: 'product-detail.html?item=notebook' },
+          { name: 'Executive Thermo PU Leather Journal', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/prod_notebook.jpg', link: 'product-detail.html?item=notebook' },
+          { name: 'Hardcover Magnetic Clasp Organizer', price: 'Inquire on WhatsApp', moq: 'MOQ: 30 pcs', image: 'images/prod_notebook.jpg', link: 'product-detail.html?item=notebook' },
+          { name: 'Kraft Eco-Friendly Spiral Notebook', price: 'Inquire on WhatsApp', moq: 'MOQ: 100 pcs', image: 'images/prod_notebook.jpg', link: 'product-detail.html?item=notebook' },
+          { name: 'Executive Daily Appointment Planner', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/prod_notebook.jpg', link: 'product-detail.html?item=notebook' },
+          { name: 'Soft Velvet Cover Journal with Pen Loop', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/prod_notebook.jpg', link: 'product-detail.html?item=notebook' },
+          { name: 'Pocket Sized Moleskine Style Journal', price: 'Inquire on WhatsApp', moq: 'MOQ: 100 pcs', image: 'images/prod_notebook.jpg', link: 'product-detail.html?item=notebook' }
+        ]
+      },
+      'booklet': {
+        title: 'Booklet',
+        heroImage: 'images/pack_booklet.jpg',
+        promoBg: 'images/pack_booklet.jpg',
+        desc: 'High-definition offset multi-page company profiles, annual reports, product catalogs, and event booklets. Printed with Heidelberg precision on 150gsm gloss/matte art paper with saddle stitch or perfect binding.',
+        items: [
+          { name: 'A4 Corporate Profile Brochure (16 Pages)', price: 'Inquire on WhatsApp', moq: 'MOQ: 250 pcs', image: 'images/pack_booklet.jpg', link: 'product-detail.html?item=cards' },
+          { name: 'Gloss Art Product Catalog (24 Pages)', price: 'Inquire on WhatsApp', moq: 'MOQ: 200 pcs', image: 'images/pack_booklet.jpg', link: 'product-detail.html?item=cards' },
+          { name: 'Executive Annual Report Hardcover Book', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_booklet.jpg', link: 'product-detail.html?item=cards' },
+          { name: 'Square Expo Activation Booklet', price: 'Inquire on WhatsApp', moq: 'MOQ: 300 pcs', image: 'images/pack_booklet.jpg', link: 'product-detail.html?item=cards' },
+          { name: 'Velvet Soft-Touch Folded Brochure', price: 'Inquire on WhatsApp', moq: 'MOQ: 500 pcs', image: 'images/pack_booklet.jpg', link: 'product-detail.html?item=cards' },
+          { name: 'Gatefold Luxury Corporate Booklet', price: 'Inquire on WhatsApp', moq: 'MOQ: 200 pcs', image: 'images/pack_booklet.jpg', link: 'product-detail.html?item=cards' },
+          { name: 'Wire-O Bound Technical Manual', price: 'Inquire on WhatsApp', moq: 'MOQ: 100 pcs', image: 'images/pack_booklet.jpg', link: 'product-detail.html?item=cards' }
+        ]
+      },
+      'wallet': {
+        title: 'Leather Wallet',
+        heroImage: 'images/pack_wallet.jpg',
+        promoBg: 'images/promo_giftbox.jpg',
+        desc: 'Crafted from genuine top-grain cowhide leather with precision edge-stitching and custom blind hot-stamped debossing of your corporate insignia. Features RFID blocking, multiple card slots, and currency compartments.',
+        items: [
+          { name: 'Genuine Leather Bifold Executive Wallet', price: 'Inquire on WhatsApp', moq: 'MOQ: 30 pcs', image: 'images/pack_wallet.jpg', link: 'product-detail.html?item=boxes' },
+          { name: 'Slim RFID Blocking Cardholder Wallet', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_wallet.jpg', link: 'product-detail.html?item=boxes' },
+          { name: 'Zip-Around Passport & Travel Wallet', price: 'Inquire on WhatsApp', moq: 'MOQ: 25 pcs', image: 'images/pack_wallet.jpg', link: 'product-detail.html?item=boxes' },
+          { name: 'Textured Saffiano Leather Wallet', price: 'Inquire on WhatsApp', moq: 'MOQ: 30 pcs', image: 'images/pack_wallet.jpg', link: 'product-detail.html?item=boxes' },
+          { name: 'Minimalist Metal & Leather Money Clip', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_wallet.jpg', link: 'product-detail.html?item=boxes' },
+          { name: 'Executive Checkbook & Card Wallet', price: 'Inquire on WhatsApp', moq: 'MOQ: 25 pcs', image: 'images/pack_wallet.jpg', link: 'product-detail.html?item=boxes' },
+          { name: 'Vintage Crazy Horse Leather Wallet', price: 'Inquire on WhatsApp', moq: 'MOQ: 30 pcs', image: 'images/pack_wallet.jpg', link: 'product-detail.html?item=boxes' }
+        ]
+      },
+      'cards': {
+        title: 'Business Cards',
+        heroImage: 'images/prod_cards.jpg',
+        promoBg: 'images/hero_studio_banner.jpg',
+        desc: 'Make an indelible first impression with Creative Roots luxury business cards. Choose from triple-ply 600gsm cotton stock, velvet soft-touch lamination, metallic hot foil stamping, and painted gilded edges.',
+        items: [
+          { name: 'Triple-Ply 600gsm Velvet Business Cards', price: 'Inquire on WhatsApp', moq: 'MOQ: 200 cards', image: 'images/prod_cards.jpg', link: 'product-detail.html?item=cards' },
+          { name: 'Metallic Gold Foil Stamped Business Cards', price: 'Inquire on WhatsApp', moq: 'MOQ: 200 cards', image: 'images/prod_cards.jpg', link: 'product-detail.html?item=cards' },
+          { name: 'Raised Spot UV Gloss Business Cards', price: 'Inquire on WhatsApp', moq: 'MOQ: 200 cards', image: 'images/prod_cards.jpg', link: 'product-detail.html?item=cards' },
+          { name: 'Square 2.5" x 2.5" Creative Business Cards', price: 'Inquire on WhatsApp', moq: 'MOQ: 200 cards', image: 'images/prod_cards.jpg', link: 'product-detail.html?item=cards' },
+          { name: 'Gilded Metallic Edge Executive Cards', price: 'Inquire on WhatsApp', moq: 'MOQ: 200 cards', image: 'images/prod_cards.jpg', link: 'product-detail.html?item=cards' },
+          { name: 'Eco Kraft Textured Organic Cards', price: 'Inquire on WhatsApp', moq: 'MOQ: 200 cards', image: 'images/prod_cards.jpg', link: 'product-detail.html?item=cards' },
+          { name: 'Matte Laminated 350gsm Standard Cards', price: 'Inquire on WhatsApp', moq: 'MOQ: 200 cards', image: 'images/prod_cards.jpg', link: 'product-detail.html?item=cards' }
+        ]
+      },
+      'usb': {
+        title: 'Metal USB',
+        heroImage: 'images/pack_usb.jpg',
+        promoBg: 'images/hero_studio_banner.jpg',
+        desc: 'Grade-A memory chips with high-speed USB 3.0 data transfer. Available in sleek swivel metal, card-style, and crystal illuminated bodies with permanent fiber laser etching.',
+        items: [
+          { name: 'Silver Metal Swivel USB 3.0 (32GB / 64GB)', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_usb.jpg', link: 'product-detail.html?item=boxes' },
+          { name: 'Executive Card USB with Full-Color Print', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_usb.jpg', link: 'product-detail.html?item=boxes' },
+          { name: 'Crystal LED Glowing Corporate USB', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_usb.jpg', link: 'product-detail.html?item=boxes' },
+          { name: 'Leather Key-Strap USB Drive', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_usb.jpg', link: 'product-detail.html?item=boxes' },
+          { name: 'Mini Metal Keychain USB Stick', price: 'Inquire on WhatsApp', moq: 'MOQ: 100 pcs', image: 'images/pack_usb.jpg', link: 'product-detail.html?item=boxes' },
+          { name: 'Wooden Eco Bamboo USB Drive', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_usb.jpg', link: 'product-detail.html?item=boxes' },
+          { name: 'High-Speed Type-C & USB Dual Drive', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_usb.jpg', link: 'product-detail.html?item=boxes' }
+        ]
+      },
+      'keychain': {
+        title: 'Keychain',
+        heroImage: 'images/pack_keychain.jpg',
+        promoBg: 'images/hero_studio_banner.jpg',
+        desc: 'Handcrafted leather and solid brass hardware keychains. Personalized with subtle hot foil stamping or fiber laser etching. An everyday physical brand ambassador on executive car keys and bags.',
+        items: [
+          { name: 'Luxury Emerald Leather Brass Oval Keychain', price: 'Inquire on WhatsApp', moq: 'MOQ: 100 pcs', image: 'images/pack_keychain.jpg', link: 'product-detail.html?item=boxes' },
+          { name: 'Heavy Die-Cast Chrome Metal Keychain', price: 'Inquire on WhatsApp', moq: 'MOQ: 100 pcs', image: 'images/pack_keychain.jpg', link: 'product-detail.html?item=boxes' },
+          { name: 'Braided Leather Key-Ring Loop', price: 'Inquire on WhatsApp', moq: 'MOQ: 100 pcs', image: 'images/pack_keychain.jpg', link: 'product-detail.html?item=boxes' },
+          { name: 'Gold-Plated Medallion Key Tag', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_keychain.jpg', link: 'product-detail.html?item=boxes' },
+          { name: 'Multi-Tool Bottle Opener Keychain', price: 'Inquire on WhatsApp', moq: 'MOQ: 100 pcs', image: 'images/pack_keychain.jpg', link: 'product-detail.html?item=boxes' },
+          { name: 'Silicone Soft-Touch Wristlet Keychain', price: 'Inquire on WhatsApp', moq: 'MOQ: 200 pcs', image: 'images/pack_keychain.jpg', link: 'product-detail.html?item=boxes' },
+          { name: 'Laser-Etched Natural Walnut Wood Keychain', price: 'Inquire on WhatsApp', moq: 'MOQ: 100 pcs', image: 'images/pack_keychain.jpg', link: 'product-detail.html?item=boxes' }
+        ]
+      },
+      'cap': {
+        title: 'Cap',
+        heroImage: 'images/cap_maroon.jpg',
+        promoBg: 'images/promo_merch.jpg',
+        desc: 'Structured 6-panel heavy cotton twill caps with pre-curved visors, breathable eyelets, and customized 3D puff embroidery. Engineered for executive corporate uniforms, brand ambassadors, and promotional merchandise campaigns.',
+        items: [
+          { name: 'Brushed Cotton Embroidered Cap (Maroon)', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/cap_maroon.jpg', link: 'product-detail.html?item=cap' },
+          { name: 'Executive Obsidian Emerald 6-Panel Cap', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/cap_maroon.jpg', link: 'product-detail.html?item=cap' },
+          { name: 'Breathable Mesh Trucker Cap with Patch', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/cap_maroon.jpg', link: 'product-detail.html?item=cap' },
+          { name: 'Laser-Cut Performance Quick-Dry Cap', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/cap_maroon.jpg', link: 'product-detail.html?item=cap' },
+          { name: 'Heavyweight Washed Vintage Cotton Cap', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/cap_maroon.jpg', link: 'product-detail.html?item=cap' },
+          { name: 'Flat-Brim High-Crown Snapback Cap', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/cap_maroon.jpg', link: 'product-detail.html?item=cap' },
+          { name: 'Water-Resistant Outdoor Adventure Cap', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/cap_maroon.jpg', link: 'product-detail.html?item=cap' }
+        ]
+      },
+      'bottle': {
+        title: 'Thermal Bottle',
+        heroImage: 'images/pack_bottle.jpg',
+        promoBg: 'images/promo_drinkware.jpg',
+        desc: 'Double-wall vacuum insulated 304 food-grade stainless steel thermal flask bottles. Keeps beverages cold for 24 hours and piping hot for 12 hours. Permanent laser etched or full-wrap UV printed.',
+        items: [
+          { name: 'Matte White Cylindrical Thermal Flask 500ml', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_bottle.jpg', link: 'product-detail.html?item=drinkware' },
+          { name: 'Matte Obsidian Black Thermal Bottle 750ml', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_bottle.jpg', link: 'product-detail.html?item=drinkware' },
+          { name: 'LED Smart Temperature Display Flask', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_bottle.jpg', link: 'product-detail.html?item=drinkware' },
+          { name: 'Stainless Steel Travel Tumbler with Straw', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_bottle.jpg', link: 'product-detail.html?item=drinkware' },
+          { name: 'Bamboo Wood Outer Shell Thermal Bottle', price: 'Inquire on WhatsApp', moq: 'MOQ: 30 pcs', image: 'images/pack_bottle.jpg', link: 'product-detail.html?item=drinkware' },
+          { name: 'Wide-Mouth Insulated Sports Flask', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_bottle.jpg', link: 'product-detail.html?item=drinkware' },
+          { name: 'Ceramic Lined Vacuum Tumbler 400ml', price: 'Inquire on WhatsApp', moq: 'MOQ: 50 pcs', image: 'images/pack_bottle.jpg', link: 'product-detail.html?item=drinkware' }
+        ]
+      },
+      'envelope': {
+        title: 'Envelope',
+        heroImage: 'images/hero_studio_banner.jpg',
+        promoBg: 'images/hero_studio_banner.jpg',
+        desc: 'Custom corporate envelopes in DL, C5, and C4 dimensions. Crafted from 120gsm fine textured bond paper or metallic pearlescent stock with peel-and-seal adhesive and gold foil insignia.',
+        items: [
+          { name: 'Executive DL Corporate Peel-and-Seal Envelopes', price: 'Inquire on WhatsApp', moq: 'MOQ: 500 pcs', image: 'images/hero_studio_banner.jpg', link: 'product-detail.html?item=cards' },
+          { name: 'Gold Foil Stamped Luxury Invitation Envelope', price: 'Inquire on WhatsApp', moq: 'MOQ: 200 pcs', image: 'images/hero_studio_banner.jpg', link: 'product-detail.html?item=cards' },
+          { name: 'Deep Emerald Linen Textured Envelope', price: 'Inquire on WhatsApp', moq: 'MOQ: 250 pcs', image: 'images/hero_studio_banner.jpg', link: 'product-detail.html?item=cards' },
+          { name: 'C4 Document Presentation Mailing Envelope', price: 'Inquire on WhatsApp', moq: 'MOQ: 200 pcs', image: 'images/hero_studio_banner.jpg', link: 'product-detail.html?item=cards' },
+          { name: 'Translucent Vellum Specialty Envelope', price: 'Inquire on WhatsApp', moq: 'MOQ: 100 pcs', image: 'images/hero_studio_banner.jpg', link: 'product-detail.html?item=cards' },
+          { name: 'Wax-Sealed Luxury Gift Voucher Envelope', price: 'Inquire on WhatsApp', moq: 'MOQ: 100 pcs', image: 'images/hero_studio_banner.jpg', link: 'product-detail.html?item=cards' },
+          { name: 'Eco Recycled Brown Kraft Mailing Envelope', price: 'Inquire on WhatsApp', moq: 'MOQ: 500 pcs', image: 'images/hero_studio_banner.jpg', link: 'product-detail.html?item=cards' }
+        ]
+      },
+      'bag': {
+        title: 'Paper Bag',
+        heroImage: 'images/promo_business.jpg',
+        promoBg: 'images/promo_business.jpg',
+        desc: 'Heavyweight laminated retail paper shopping bags and organic cotton canvas tote bags. Reinforced folded card tops, sturdy cotton cord handles, and striking hot foil debossing.',
+        items: [
+          { name: 'Luxury White Kraft Paper Bag with Rope Handles', price: 'Inquire on WhatsApp', moq: 'MOQ: 200 pcs', image: 'images/promo_business.jpg', link: 'product-detail.html?item=business' },
+          { name: 'Obsidian Emerald Gold Foil Boutiques Bag', price: 'Inquire on WhatsApp', moq: 'MOQ: 200 pcs', image: 'images/promo_business.jpg', link: 'product-detail.html?item=business' },
+          { name: '12oz Heavy Organic Cotton Canvas Tote Bag', price: 'Inquire on WhatsApp', moq: 'MOQ: 100 pcs', image: 'images/promo_business.jpg', link: 'product-detail.html?item=business' },
+          { name: 'Eco Natural Brown Kraft Shopping Bag', price: 'Inquire on WhatsApp', moq: 'MOQ: 500 pcs', image: 'images/promo_business.jpg', link: 'product-detail.html?item=business' },
+          { name: 'Matte Laminated Rigid Retail Gift Bag', price: 'Inquire on WhatsApp', moq: 'MOQ: 250 pcs', image: 'images/promo_business.jpg', link: 'product-detail.html?item=business' },
+          { name: 'Ribbon Handle Luxury Retail & Jewelry Bag', price: 'Inquire on WhatsApp', moq: 'MOQ: 150 pcs', image: 'images/promo_business.jpg', link: 'product-detail.html?item=business' },
+          { name: 'Large Exhibition Conference Tote Bag', price: 'Inquire on WhatsApp', moq: 'MOQ: 100 pcs', image: 'images/promo_business.jpg', link: 'product-detail.html?item=business' }
+        ]
+      }
+    };
+
+    function renderCollection(catKey) {
+      const data = collectionsDatabase[catKey] || collectionsDatabase['pen'];
+      
+      // Update Title & Breadcrumbs
+      document.getElementById('collection-page-title').textContent = `${data.title} Collection — Creative Roots`;
+      document.getElementById('crumb-cat-name').textContent = data.title;
+
+      // Update Hero Section
+      document.getElementById('hero-title').textContent = data.title;
+      document.getElementById('hero-desc').textContent = data.desc;
+      const heroImg = document.getElementById('hero-image');
+      heroImg.src = data.heroImage;
+      heroImg.alt = data.title;
+
+      // Update Active Scroller Thumbnail
+      document.querySelectorAll('.cat-thumb-item').forEach(el => {
+        el.classList.remove('active');
+        if (el.getAttribute('data-cat') === catKey) {
+          el.classList.add('active');
+          el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+      });
+
+      // Update Promo Card
+      document.getElementById('promo-cat-tag').textContent = data.title;
+      document.getElementById('promo-card').style.backgroundImage = `url('${data.promoBg}')`;
+      document.getElementById('promo-shop-btn').href = `product-detail.html?item=${catKey === 'pen' ? 'cap' : catKey}`;
+
+      // Render Dynamic Product Cards
+      const container = document.getElementById('dynamic-product-cards');
+      let cardsHtml = '';
+      data.items.forEach(item => {
+        cardsHtml += `
+          <a href="${item.link}" class="coll-product-card">
+            <div class="coll-card-img-wrap">
+              <img src="${item.image}" alt="${item.name}" loading="lazy">
+            </div>
+            <div class="coll-card-body">
+              <h4 class="coll-card-title">${item.name}</h4>
+              <div class="coll-card-price-row">
+                <span class="coll-card-price" style="color: #25d366; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> ${item.price}</span>
+                <span class="coll-card-moq">${item.moq}</span>
+              </div>
+            </div>
+          </a>
+        `;
+      });
+      container.innerHTML = cardsHtml;
+    }
+
+    function switchCategory(key, event) {
+      if (event) event.preventDefault();
+      history.pushState(null, '', `collection.html?cat=${key}`);
+      renderCollection(key);
+      window.scrollTo({ top: 120, behavior: 'smooth' });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const cat = params.get('cat') || 'pen';
+      renderCollection(cat);
+
+      // Search functionality
+      const searchInput = document.getElementById('search-input');
+      const searchBtn = document.getElementById('search-btn');
+      function performSearch() {
+        const query = searchInput.value.toLowerCase().trim();
+        if (!query) return;
+        if (collectionsDatabase[query]) {
+          switchCategory(query);
+          return;
+        }
+        for (const [key, val] of Object.entries(collectionsDatabase)) {
+          if (val.title.toLowerCase().includes(query) || key.includes(query)) {
+            switchCategory(key);
+            return;
+          }
+        }
+        window.location.href = `products.html?search=${encodeURIComponent(query)}`;
+      }
+      searchBtn.addEventListener('click', performSearch);
+      searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') performSearch();
+      });
+    });
+  </script>
+
+  <!-- Floating WhatsApp Chat Widget (Direct Support with Speech Bubble) -->
+  <a href="https://wa.me/923347009992?text=Hello%20Creative%20Roots%2C%20I%20would%20like%20to%20inquire%20about%20your%20collections." 
+     class="floating-whatsapp-widget" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Chat with Creative Roots on WhatsApp">
+    <div class="whatsapp-icon-circle">
+      <i class="fa-brands fa-whatsapp"></i>
+    </div>
+    <div class="whatsapp-chat-bubble">
+      <span>Need Help? Chat with us</span>
+    </div>
+  </a>
+</body>
+</html>

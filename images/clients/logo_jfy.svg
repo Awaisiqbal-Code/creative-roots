@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 50" width="170" height="50">
+  <!-- JFY Solar Tech Corporate Brandmark -->
+  <g>
+    <!-- Geometric Sun / Circuit Hexagon -->
+    <g transform="translate(24, 25)">
+      <polygon points="0,-14 12,-7 12,7 0,14 -12,7 -12,-7" fill="#ea580c"/>
+      <circle cx="0" cy="0" r="6" fill="#fde047"/>
+      <line x1="0" y1="-14" x2="0" y2="14" stroke="#ffffff" stroke-width="1.5"/>
+      <line x1="-12" y1="-7" x2="12" y2="7" stroke="#ffffff" stroke-width="1.5"/>
+    </g>
+    
+    <!-- JFY SOLAR TECH Typography -->
+    <text x="46" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Montserrat, sans-serif" font-size="14" font-weight="900" fill="#0f172a" letter-spacing="1.5">JFY SOLAR</text>
+    <text x="46" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="8.5" font-weight="700" fill="#ea580c" letter-spacing="1">TECHNOLOGIES</text>
+  </g>
+</svg>

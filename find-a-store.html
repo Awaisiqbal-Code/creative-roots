@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find a Store — Creative Roots | Advertising & Corporate Marketing</title>
+  <meta name="description" content="Locate Creative Roots corporate studios and display centers across Pakistan. Visit our Lahore Office at Gohar Centre, Islamabad, and Karachi branches for material sampling and physical consultations.">
+  <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23113627'/><text x='50' y='65' font-size='42' font-weight='bold' text-anchor='middle' fill='%23d4af37'>CR</text></svg>">
+  <style>
+    /* Dedicated Find a Store Page Styles (Competitor Reference Matched) */
+    .store-locator-wrap {
+      background-color: #faf9f6;
+      padding: 30px 0 85px;
+      min-height: calc(100vh - 280px);
+    }
+    .store-breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: #71717a;
+      margin-bottom: 26px;
+    }
+    .store-breadcrumbs a {
+      color: #27272a;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+    .store-breadcrumbs a:hover {
+      color: var(--primary-emerald);
+    }
+    .store-page-heading {
+      font-size: 2.85rem;
+      font-weight: 800;
+      color: #111111;
+      letter-spacing: -1px;
+      margin-bottom: 45px;
+    }
+
+    /* Branch Location Cards */
+    .store-locations-list {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+    .store-branch-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 24px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+    }
+    .store-branch-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07);
+      border-color: rgba(17, 54, 39, 0.2);
+    }
+
+    /* Map Graphic Frame */
+    .store-map-container {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      background: #edf2f7;
+      aspect-ratio: 4 / 3;
+      max-height: 420px;
+    }
+    .store-map-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .store-branch-card:hover .store-map-img {
+      transform: scale(1.04);
+    }
+
+    /* Live Directions Pill Overlay on Map */
+    .store-map-overlay {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #ffffff;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+      transition: all 0.25s ease;
+      z-index: 5;
+    }
+    .store-map-overlay i {
+      color: #22c55e;
+      font-size: 0.95rem;
+    }
+    .store-map-overlay:hover {
+      background: var(--primary-emerald);
+      color: var(--gold-champagne);
+      transform: translateY(-2px);
+    }
+
+    /* Store Info Panel */
+    .store-info-panel {
+      padding: 10px 18px 10px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .store-name-title {
+      font-size: 1.95rem;
+      font-weight: 800;
+      color: #111111;
+      letter-spacing: -0.5px;
+      margin: 0;
+    }
+    
+    .store-detail-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .store-icon-bubble {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #f4f4f5;
+      color: #18181b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: all 0.25s ease;
+    }
+    .store-branch-card:hover .store-icon-bubble {
+      background: rgba(17, 54, 39, 0.08);
+      color: var(--primary-emerald);
+    }
+    .store-detail-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .store-detail-label {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #111111;
+      letter-spacing: -0.2px;
+    }
+    .store-detail-val {
+      font-size: 0.92rem;
+      color: #52525b;
+      line-height: 1.58;
+      margin: 0;
+    }
+    .store-detail-val a {
+      color: #27272a;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+    .store-detail-val a:hover {
+      color: var(--primary-emerald);
+      text-decoration: underline;
+    }
+
+    /* Get Direction Pill Button */
+    .btn-get-direction {
+      align-self: flex-start;
+      background: #111111;
+      color: #ffffff;
+      padding: 13px 36px;
+      border-radius: 50px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-get-direction:hover {
+      background: var(--primary-emerald);
+      color: var(--gold-champagne);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(17, 54, 39, 0.25);
+    }
+    .btn-get-direction i {
+      font-size: 0.95rem;
+      transition: transform 0.25s ease;
+    }
+    .btn-get-direction:hover i {
+      transform: translateX(3px);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 960px) {
+      .store-branch-card {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 20px;
+      }
+      .store-info-panel {
+        padding: 0 8px;
+      }
+      .store-page-heading {
+        font-size: 2.25rem;
+        margin-bottom: 32px;
+      }
+    }
+    @media (max-width: 576px) {
+      .store-name-title {
+        font-size: 1.6rem;
+      }
+      .btn-get-direction {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== 1. Top Announcement Bar ===== -->
+      <div class="announcement-bar">
+    <div class="announcement-slider">
+      <div class="announcement-slide active">
+        <span class="badge-gold"><i class="fa-solid fa-truck-fast"></i> Delivery</span>
+        <div class="ticker-track">
+          <span class="ticker-inner">Free Delivery &amp; Bulk Discounts on Orders Over Rs. 5,000 across Pakistan</span>
+        </div>
+      </div>
+      <div class="announcement-slide">
+        <span class="badge-gold"><i class="fa-brands fa-whatsapp"></i> Quick Quote</span>
+        <div class="ticker-track">
+          <span class="ticker-inner">Free Consultation &amp; Instant WhatsApp Pricing — <a href="contact.html" class="highlight">Contact Us Today!</a></span>
+        </div>
+      </div>
+      <div class="announcement-slide">
+        <span class="badge-gold"><i class="fa-solid fa-gem"></i> Enterprise</span>
+        <div class="ticker-track">
+          <span class="ticker-inner">Pakistan's Premier Corporate Gifting &amp; Physical Merchandise Partner</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon-wrap"><i class="fa-solid fa-leaf"></i></div>
+        <div>Creative<span class="logo-gold">Roots</span></div>
+      </a>
+      
+      <div class="search-bar">
+        <input type="text" placeholder="What are you looking for?">
+        <button type="button" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <div class="header-actions">
+        <a href="find-a-store.html" class="header-store-link" style="color: var(--primary-emerald); font-weight: 700;"><i class="fa-solid fa-location-dot"></i> <span class="header-action-label">Find a Store</span></a>
+        <a href="products.html" class="cart-btn" title="View Products & Inquiry Bag">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge">3</span>
+        </a>
+      </div>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== 3. Navigation Bar ===== -->
+  <nav class="main-nav">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html" style="font-weight: 700;"><i class="fa-solid fa-layer-group" style="color: var(--gold-dark); margin-right: 4px;"></i> Product Store</a></li>
+        <li class="has-dropdown">
+          <a href="index.html#services">Business Corporate <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="products.html?cat=boxes"><i class="fa-solid fa-box"></i> Corporate Giveaway Boxes</a></li>
+            <li><a href="products.html?cat=drinkware"><i class="fa-solid fa-gift"></i> Personalized Corporate Gifts</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-calendar-check"></i> Corporate Event Management</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-rocket"></i> Product Launches</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="index.html#events">Event Solutions <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html#events"><i class="fa-solid fa-store"></i> Exhibition Stalls & Booths</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-bullhorn"></i> Outdoor Promotional Activities</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-trophy"></i> Corporate Award Ceremonies</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-users"></i> Brand Activation Roadshows</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="index.html#packaging">Packaging Solutions <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html#packaging"><i class="fa-solid fa-boxes-packing"></i> Corrugated Mailer Boxes</a></li>
+            <li><a href="products.html?cat=boxes"><i class="fa-solid fa-gem"></i> Luxury Rigid Magnet Boxes</a></li>
+            <li><a href="index.html#packaging"><i class="fa-solid fa-bag-shopping"></i> Branded Shopping Bags</a></li>
+            <li><a href="index.html#packaging"><i class="fa-solid fa-tags"></i> Custom Hang Tags & Labels</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Book an Appointment</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== Main Find a Store Section (Competitor Reference Matched) ===== -->
+  <main class="store-locator-wrap">
+    <div class="container">
+      
+      <!-- Breadcrumbs: Home | Find a Store -->
+      <div class="store-breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>|</span>
+        <span>Find a Store</span>
+      </div>
+
+      <!-- Main Heading: Find a Store -->
+      <h1 class="store-page-heading">Find a Store</h1>
+
+      <!-- Branches List -->
+      <div class="store-locations-list">
+
+        <!-- ================= Location 1: Lahore Office ================= -->
+        <article class="store-branch-card reveal-up">
+          <!-- Left Map Frame -->
+          <div class="store-map-container">
+            <img src="images/map_gohar.jpg" alt="Creative Roots Gohar Centre Lahore Location Map" class="store-map-img" loading="lazy">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Gohar+Centre+Lahore" target="_blank" rel="noopener noreferrer" class="store-map-overlay">
+              <i class="fa-solid fa-location-crosshairs"></i>
+              <span>Open in Google Maps</span>
+            </a>
+          </div>
+
+          <!-- Right Information Panel -->
+          <div class="store-info-panel">
+            <h2 class="store-name-title">Lahore Office: Gohar Centre, Lahore</h2>
+
+            <!-- Office Address -->
+            <div class="store-detail-row">
+              <div class="store-icon-bubble">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="store-detail-text">
+                <div class="store-detail-label">Office</div>
+                <div class="store-detail-val">Lahore Office: Gohar Centre, Lahore, Pakistan</div>
+              </div>
+            </div>
+
+            <!-- Call Us -->
+            <div class="store-detail-row">
+              <div class="store-icon-bubble">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="store-detail-text">
+                <div class="store-detail-label">Call Us</div>
+                <div class="store-detail-val">
+                  <a href="tel:+923347009992">+92 334 7009992</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Working Hours -->
+            <div class="store-detail-row">
+              <div class="store-icon-bubble">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+              <div class="store-detail-text">
+                <div class="store-detail-label">Working Hours</div>
+                <div class="store-detail-val">
+                  Mon – Sat, 10:00 AM – 8:00 PM<br>
+                  Sun, Closed
+                </div>
+              </div>
+            </div>
+
+            <!-- Get Direction Button -->
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Gohar+Centre+Lahore" target="_blank" rel="noopener noreferrer" class="btn-get-direction">
+              <span>Get Direction</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- ================= Location 2: Islamabad Office ================= -->
+        <article class="store-branch-card reveal-up">
+          <!-- Left Map Frame -->
+          <div class="store-map-container">
+            <img src="images/map_islamabad.jpg" alt="Creative Roots Islamabad Pakistan Location Map" class="store-map-img" loading="lazy">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Blue+Area+Islamabad+Pakistan" target="_blank" rel="noopener noreferrer" class="store-map-overlay">
+              <i class="fa-solid fa-location-crosshairs"></i>
+              <span>Open in Google Maps</span>
+            </a>
+          </div>
+
+          <!-- Right Information Panel -->
+          <div class="store-info-panel">
+            <h2 class="store-name-title">Islamabad, Pakistan</h2>
+
+            <!-- Office Address -->
+            <div class="store-detail-row">
+              <div class="store-icon-bubble">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="store-detail-text">
+                <div class="store-detail-label">Office</div>
+                <div class="store-detail-val">Islamabad, Pakistan</div>
+              </div>
+            </div>
+
+            <!-- Call Us -->
+            <div class="store-detail-row">
+              <div class="store-icon-bubble">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="store-detail-text">
+                <div class="store-detail-label">Call Us</div>
+                <div class="store-detail-val">
+                  <a href="tel:+923347009992">+92 334 7009992</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Working Hours -->
+            <div class="store-detail-row">
+              <div class="store-icon-bubble">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+              <div class="store-detail-text">
+                <div class="store-detail-label">Working Hours</div>
+                <div class="store-detail-val">
+                  Mon – Sat, 10:00 AM – 8:00 PM<br>
+                  Sun, Closed
+                </div>
+              </div>
+            </div>
+
+            <!-- Get Direction Button -->
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Blue+Area+Islamabad+Pakistan" target="_blank" rel="noopener noreferrer" class="btn-get-direction">
+              <span>Get Direction</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- ================= Location 3: Karachi Office ================= -->
+        <article class="store-branch-card reveal-up">
+          <!-- Left Map Frame -->
+          <div class="store-map-container">
+            <img src="images/map_karachi.jpg" alt="Creative Roots Karachi Pakistan Location Map" class="store-map-img" loading="lazy">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Clifton+Karachi+Pakistan" target="_blank" rel="noopener noreferrer" class="store-map-overlay">
+              <i class="fa-solid fa-location-crosshairs"></i>
+              <span>Open in Google Maps</span>
+            </a>
+          </div>
+
+          <!-- Right Information Panel -->
+          <div class="store-info-panel">
+            <h2 class="store-name-title">Karachi, Pakistan</h2>
+
+            <!-- Office Address -->
+            <div class="store-detail-row">
+              <div class="store-icon-bubble">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="store-detail-text">
+                <div class="store-detail-label">Office</div>
+                <div class="store-detail-val">Karachi, Pakistan</div>
+              </div>
+            </div>
+
+            <!-- Call Us -->
+            <div class="store-detail-row">
+              <div class="store-icon-bubble">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="store-detail-text">
+                <div class="store-detail-label">Call Us</div>
+                <div class="store-detail-val">
+                  <a href="tel:+923347009992">+92 334 7009992</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Working Hours -->
+            <div class="store-detail-row">
+              <div class="store-icon-bubble">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+              <div class="store-detail-text">
+                <div class="store-detail-label">Working Hours</div>
+                <div class="store-detail-val">
+                  Mon – Sat, 10:00 AM – 8:00 PM<br>
+                  Sun, Closed
+                </div>
+              </div>
+            </div>
+
+            <!-- Get Direction Button -->
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Clifton+Karachi+Pakistan" target="_blank" rel="noopener noreferrer" class="btn-get-direction">
+              <span>Get Direction</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ===== Pre-Footer Contact Bar ===== -->
+  <section class="contact-bar">
+    <div class="container">
+      
+      <div class="contact-item">
+        <i class="fa-solid fa-headset" style="color: var(--accent-emerald);"></i>
+        <div>
+          <span class="label">Customer Service</span>
+          <span class="value">Mon–Sat: 09:30am - 5:30pm</span>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
+        <div>
+          <span class="label">WhatsApp Support</span>
+          <span class="value"><a href="https://wa.me/923347009992" target="_blank" rel="noopener noreferrer">+92 334 7009992</a></span>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-solid fa-envelope" style="color: var(--gold-dark);"></i>
+        <div>
+          <span class="label">Corporate Inquiries</span>
+          <span class="value"><a href="mailto:creativeroots77@gmail.com">creativeroots77@gmail.com</a></span>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-solid fa-location-dot" style="color: var(--accent-ruby);"></i>
+        <div>
+          <span class="label">Principal Studio</span>
+          <span class="value">Lahore Office: Gohar Centre, Lahore</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Main Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      
+      <div class="footer-grid">
+        
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon-wrap"><i class="fa-solid fa-leaf"></i></div>
+            <div style="color: #fff;">Creative<span class="logo-gold">Roots</span></div>
+          </div>
+          <p>A one-stop physical branding and corporate gifting solution provider in Pakistan. We guarantee premium craftsmanship, transparent communication, and rapid turnaround for all corporate clients.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="products.html?cat=boxes">Corporate Gifting</a></li>
+            <li><a href="products.html?cat=drinkware">Personalized Giveaways</a></li>
+            <li><a href="index.html#packaging">Packaging Solutions</a></li>
+            <li><a href="index.html#events">Exhibition Stalls</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Policies</h4>
+          <ul>
+            <li><a href="#" data-modal="privacy">Privacy Policy</a></li>
+            <li><a href="#" data-modal="terms">Terms of Service</a></li>
+            <li><a href="#" data-modal="returns">Returns &amp; Quality Guarantee</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Product Store</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="find-a-store.html">Find a Store</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-social">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://twitter.com" target="_blank" aria-label="X" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://tiktok.com" target="_blank" aria-label="TikTok" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://pinterest.com" target="_blank" aria-label="Pinterest" rel="noopener noreferrer"><i class="fa-brands fa-pinterest-p"></i></a>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Creative Roots. All Rights Reserved.</span>
+        <div>
+          <a href="#" data-modal="terms">Terms of Service</a>
+          <a href="#" data-modal="privacy">Privacy Policy</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Mobile Navigation Backdrop Overlay -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+
+  <!-- Floating WhatsApp Chat Widget (Direct Support with Speech Bubble) -->
+  <a href="https://wa.me/923347009992?text=Hello%20Creative%20Roots%2C%20I%20would%20like%20to%20inquire%20about%20your%20store%20locations." 
+     class="floating-whatsapp-widget" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Chat with Creative Roots on WhatsApp">
+    <div class="whatsapp-icon-circle">
+      <i class="fa-brands fa-whatsapp"></i>
+    </div>
+    <div class="whatsapp-chat-bubble">
+      <span>Need Help? Chat with us</span>
+    </div>
+  </a>
+
+  <button class="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

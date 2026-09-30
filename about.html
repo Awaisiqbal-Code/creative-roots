@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — Creative Roots | Advertising & Corporate Marketing</title>
+  <meta name="description" content="Learn about Creative Roots - Pakistan's premier corporate branding, promotional gifting, printing solutions, and corporate event management partner.">
+  <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23113627'/><text x='50' y='65' font-size='42' font-weight='bold' text-anchor='middle' fill='%23d4af37'>CR</text></svg>">
+  <style>
+    /* About Us Specific Page Styles */
+    .about-hero {
+      background: linear-gradient(135deg, #071510 0%, #113627 60%, #1a4d38 100%);
+      color: #fff;
+      padding: 50px 0 45px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+    .about-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      margin-bottom: 12px;
+    }
+    .about-hero p {
+      font-size: 1.05rem;
+      color: #cfd8d3;
+      max-width: 620px;
+    }
+
+    /* Leadership / Founder Section */
+    .about-leadership {
+      padding: 85px 0 75px;
+      background: #ffffff;
+    }
+    .about-leadership-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 65px;
+      align-items: center;
+    }
+    .about-founder-visual {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      background: #f7f6f3;
+    }
+    .about-founder-visual img {
+      width: 100%;
+      height: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .about-founder-visual:hover img {
+      transform: scale(1.03);
+    }
+    .about-founder-text h2 {
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: var(--primary-obsidian);
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+    .about-founder-tag {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-emerald);
+      margin-bottom: 22px;
+      display: inline-block;
+      letter-spacing: 0.5px;
+    }
+    .about-founder-text p {
+      font-size: 0.95rem;
+      color: #4b5563;
+      line-height: 1.82;
+      margin-bottom: 18px;
+    }
+
+    /* Story & Machinery Split */
+    .about-story-section {
+      padding: 80px 0;
+      background: #faf9f6;
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .about-story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-story-text h3 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-obsidian);
+      margin-bottom: 14px;
+      letter-spacing: -0.4px;
+    }
+    .about-story-text p {
+      font-size: 0.94rem;
+      color: #4b5563;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+    .about-machinery-visual {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      background: #111;
+    }
+    .about-machinery-visual img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .about-machinery-visual:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Why Choose Us - 5 Columns */
+    .about-why-section {
+      padding: 85px 0 90px;
+      background: #ffffff;
+      text-align: center;
+    }
+    .about-why-section h2 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: var(--primary-obsidian);
+      letter-spacing: -0.5px;
+      margin-bottom: 50px;
+    }
+    .about-why-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      text-align: left;
+    }
+    .about-why-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .about-why-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.1);
+      border-color: var(--gold-champagne);
+    }
+    .about-why-img-wrap {
+      width: 100%;
+      height: 155px;
+      overflow: hidden;
+      background: #f3f4f6;
+    }
+    .about-why-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .about-why-card:hover .about-why-img-wrap img {
+      transform: scale(1.08);
+    }
+    .about-why-body {
+      padding: 22px 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .about-why-num {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--primary-emerald);
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+    .about-why-body h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary-obsidian);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .about-why-body p {
+      font-size: 0.84rem;
+      color: #64748b;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* What We Do & Our Promise Split */
+    .about-promise-section {
+      padding: 85px 0;
+      background: #faf9f6;
+      border-top: 1px solid var(--border-light);
+    }
+    .about-promise-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-promise-text h3 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-obsidian);
+      margin-bottom: 14px;
+      letter-spacing: -0.4px;
+    }
+    .about-promise-text p {
+      font-size: 0.94rem;
+      color: #4b5563;
+      line-height: 1.82;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 1100px) {
+      .about-why-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 900px) {
+      .about-leadership-grid,
+      .about-story-grid,
+      .about-promise-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .about-why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 576px) {
+      .about-why-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== 1. Top Announcement Bar ===== -->
+      <div class="announcement-bar">
+    <div class="announcement-slider">
+      <div class="announcement-slide active">
+        <span class="badge-gold"><i class="fa-solid fa-truck-fast"></i> Delivery</span>
+        <div class="ticker-track">
+          <span class="ticker-inner">Free Delivery &amp; Bulk Discounts on Orders Over Rs. 5,000 across Pakistan</span>
+        </div>
+      </div>
+      <div class="announcement-slide">
+        <span class="badge-gold"><i class="fa-brands fa-whatsapp"></i> Quick Quote</span>
+        <div class="ticker-track">
+          <span class="ticker-inner">Free Consultation &amp; Instant WhatsApp Pricing — <a href="contact.html" class="highlight">Contact Us Today!</a></span>
+        </div>
+      </div>
+      <div class="announcement-slide">
+        <span class="badge-gold"><i class="fa-solid fa-gem"></i> Enterprise</span>
+        <div class="ticker-track">
+          <span class="ticker-inner">Pakistan's Premier Corporate Gifting &amp; Physical Merchandise Partner</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon-wrap"><i class="fa-solid fa-leaf"></i></div>
+        <div>Creative<span class="logo-gold">Roots</span></div>
+      </a>
+      
+      <div class="search-bar">
+        <input type="text" placeholder="What are you looking for?">
+        <button type="button" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <div class="header-actions">
+        <a href="find-a-store.html" class="header-store-link" title="Find a Store"><i class="fa-solid fa-location-dot"></i> <span class="header-action-label">Find a Store</span></a>
+        <a href="products.html" class="cart-btn" title="View Products & Inquiry Bag">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge">3</span>
+        </a>
+      </div>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== 3. Navigation Bar ===== -->
+  <nav class="main-nav">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="about.html" style="color: var(--primary-emerald); font-weight: 800;">About Us</a></li>
+        <li><a href="products.html" style="font-weight: 700;"><i class="fa-solid fa-layer-group" style="color: var(--gold-dark); margin-right: 4px;"></i> Product Store</a></li>
+        <li class="has-dropdown">
+          <a href="index.html#services">Business Corporate <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="products.html?cat=boxes"><i class="fa-solid fa-box"></i> Corporate Giveaway Boxes</a></li>
+            <li><a href="products.html?cat=drinkware"><i class="fa-solid fa-gift"></i> Personalized Corporate Gifts</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-calendar-check"></i> Corporate Event Management</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-rocket"></i> Product Launches</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="index.html#events">Event Solutions <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html#events"><i class="fa-solid fa-store"></i> Exhibition Stalls & Booths</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-bullhorn"></i> Outdoor Promotional Activities</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-trophy"></i> Corporate Award Ceremonies</a></li>
+            <li><a href="index.html#events"><i class="fa-solid fa-users"></i> Brand Activation Roadshows</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="index.html#packaging">Packaging Solutions <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html#packaging"><i class="fa-solid fa-boxes-packing"></i> Corrugated Mailer Boxes</a></li>
+            <li><a href="products.html?cat=boxes"><i class="fa-solid fa-gem"></i> Luxury Rigid Magnet Boxes</a></li>
+            <li><a href="index.html#packaging"><i class="fa-solid fa-bag-shopping"></i> Branded Shopping Bags</a></li>
+            <li><a href="index.html#packaging"><i class="fa-solid fa-tags"></i> Custom Hang Tags & Labels</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Book an Appointment</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== Page Hero Banner ===== -->
+  <section class="about-hero">
+    <div class="container">
+      <h1>About Creative Roots</h1>
+      <p>Pakistan's premier enterprise partner for corporate branding, bespoke promotional gifts, precision offset packaging, and grand exhibition fabrication.</p>
+    </div>
+  </section>
+
+  <!-- ===== 1. Leadership Section (Screenshot 4 Reference Matched) ===== -->
+  <section class="about-leadership">
+    <div class="container">
+      <div class="about-leadership-grid">
+        
+        <!-- Left: Real Executive Portrait -->
+        <div class="about-founder-visual reveal-left">
+          <img src="images/founder_portrait.jpg" alt="Creative Roots Founder & Executive Leadership" loading="lazy">
+        </div>
+
+        <!-- Right: Executive Biography & Corporate Vision -->
+        <div class="about-founder-text reveal-right">
+          <h2>Ch. Adnan Ghani</h2>
+          <span class="about-founder-tag">Founder &amp; Chief Executive Officer — Creative Roots</span>
+          
+          <p>
+            Ch. Adnan Ghani is the Chief Executive Officer of Creative Roots and Founder of Pakistan Corporate Branding Network. With an extensive background in Industrial Design, Supply Chain Strategy, and Corporate Brand Activation, he brings a modern commercial vision to Pakistan's physical marketing sector, seeking to revolutionize corporate gifting, bespoke packaging, and enterprise event infrastructure.
+          </p>
+          <p>
+            Having spearheaded high-impact branding operations across Lahore, Islamabad, Karachi, and nationwide manufacturing hubs, he leads corporate partnerships across banking, healthcare, education, real estate, and consumer brands. As a staunch advocate of indigenous craftsmanship combined with European-standard offset precision, he has pioneered turnkey solutions that bridge digital brand design with flawless physical execution.
+          </p>
+          <p>
+            Under his stewardship, Creative Roots has grown from a specialized Lahore fabrication studio into a trusted nationwide authority trusted by Fortune-level corporations, prestigious academic institutions, and leading industrial developers.
+          </p>
+
+          <a href="contact.html" class="btn-shop-now" style="margin-top: 10px;">Connect With Leadership <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2. Who We Are & Our Story (With Real Heidelberg Machinery Photo) ===== -->
+  <section class="about-story-section">
+    <div class="container">
+      <div class="about-story-grid">
+        
+        <div class="about-story-text reveal-left">
+          <h3>Who We Are</h3>
+          <p>
+            We started off as a small, specialized corporate printing business in Lahore. Now we have grown into one of the most trusted physical branding and corporate fabrication solutions providers in Pakistan. We realized that there were many gaps in the market: organizations were brimming with remarkable marketing ideas, but had no reliable single-source partner to vent them into reality. This is where Creative Roots stepped in.
+          </p>
+
+          <h3>Our Story</h3>
+          <p>
+            From bespoke corporate welcome boxes and exhibition pavilions to nationwide brand activations, Creative Roots provides an uncompromising commitment to quality. Our central production facilities integrate precision Heidelberg offset presses, Japanese UV-curing systems, high-speed fiber laser marking, and dedicated rigid box artisans to deliver enterprise-grade finishes on time, every time.
+          </p>
+        </div>
+
+        <div class="about-machinery-visual reveal-right">
+          <img src="images/printing_machinery.jpg" alt="Heidelberg Speedmaster XL 106 Industrial Printing Press" loading="lazy">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. Why Choose Us (5 Columns with Real Photography & Numbers) ===== -->
+  <section class="about-why-section">
+    <div class="container">
+      <h2 class="reveal-up">Why Choose Us</h2>
+
+      <div class="about-why-grid">
+        
+        <!-- Card 1 -->
+        <div class="about-why-card reveal-up">
+          <div class="about-why-img-wrap">
+            <img src="images/why_same_day.jpg" alt="24-Hour Express Turnaround" loading="lazy">
+          </div>
+          <div class="about-why-body">
+            <span class="about-why-num">1.</span>
+            <h4>Same-Day Service</h4>
+            <p>Need something today? We can do that. For urgent corporate summits and VIP visits, deadlines don't scare us.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="about-why-card reveal-up" style="transition-delay: 0.1s;">
+          <div class="about-why-img-wrap">
+            <img src="images/prod_cards.jpg" alt="On-Demand Flexible Quantities" loading="lazy">
+          </div>
+          <div class="about-why-body">
+            <span class="about-why-num">2.</span>
+            <h4>Print-On-Demand</h4>
+            <p>Want just five cards? Fine. Need three custom mugs? No problem. You don't have to order hundreds of anything. Just get what you actually need.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="about-why-card reveal-up" style="transition-delay: 0.2s;">
+          <div class="about-why-img-wrap">
+            <img src="images/why_complete_solutions.jpg" alt="Complete In-House Facility" loading="lazy">
+          </div>
+          <div class="about-why-body">
+            <span class="about-why-num">3.</span>
+            <h4>Complete Solutions</h4>
+            <p>Our Lahore warehouse has everything: stamps, badges, fabric printing, display banners, rigid gift boxes. One roof, all services.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="about-why-card reveal-up" style="transition-delay: 0.3s;">
+          <div class="about-why-img-wrap">
+            <img src="images/why_design_team.jpg" alt="Prepress & 3D Packaging Design Team" loading="lazy">
+          </div>
+          <div class="about-why-body">
+            <span class="about-why-num">4.</span>
+            <h4>Expert Design Team</h4>
+            <p>No design? No problem. Our expert designers assess what will work best as per your need and offer you digital models to choose before final printing.</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="about-why-card reveal-up" style="transition-delay: 0.4s;">
+          <div class="about-why-img-wrap">
+            <img src="images/prod_box.jpg" alt="Premium Rigid Box Quality Guarantee" loading="lazy">
+          </div>
+          <div class="about-why-body">
+            <span class="about-why-num">5.</span>
+            <h4>Quality Guarantee</h4>
+            <p>We make sure that whatever you get from us flaunts quality. From materials to techniques, everything we do is with the latest setups.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. What We Do & Our Promise (With Real Epson Wide-Format Press) ===== -->
+  <section class="about-promise-section">
+    <div class="container">
+      <div class="about-promise-grid">
+        
+        <div class="about-promise-text reveal-left">
+          <h3>What We Do</h3>
+          <p>
+            Architects come to us for big prints. Event planners get invitations and stage pavilions made. Multinationals order custom executive welcome hampers for incoming staff. Our designers sit with you and figure out what you want. Then we make it happen fast. Business cards, corporate invitations & event passes, canvas prints, T-shirts, leather wallets, thermal bottles, mugs, plates, caps, jackets—even rubber stamps and 3D metal badges.
+          </p>
+
+          <h3>Our Promise</h3>
+          <p>
+            We don't just print things. We work with you. A big conglomerate or a regular person celebrating something special—doesn't matter to us. Every job gets done right. You think of something, we make it real. Your ideas shouldn't stay stuck in your head; we have the tools and skills to put them on paper, fabric, metal, or wood.<br><br>
+            Lots of printing places exist. Most rush through jobs or mess things up. We take time to understand what you want. Then we deliver exactly that. Got an idea? Bring it over. We'll figure out the rest together.
+          </p>
+
+          <a href="contact.html" class="btn-gold-pill">Consult Our Specialists <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="about-machinery-visual reveal-right">
+          <img src="images/printing_wide_format.jpg" alt="Epson Wide-Format Commercial Production Press" loading="lazy">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. Contact Bar ===== -->
+  <section class="contact-bar" id="contact">
+    <div class="container">
+      <div class="contact-item">
+        <i class="fa-solid fa-headset" style="color: var(--gold-champagne);"></i>
+        <div>
+          <span class="label">Customer Service</span>
+          <span class="value">Mon - Sat: 09:30am - 5:30pm</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
+        <div>
+          <span class="label">Contact Us</span>
+          <span class="value"><a href="https://wa.me/923347009992" target="_blank" rel="noopener noreferrer">WhatsApp: +92 334 7009992</a></span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <i class="fa-solid fa-envelope" style="color: var(--gold-champagne);"></i>
+        <div>
+          <span class="label">Get in Touch</span>
+          <span class="value"><a href="mailto:creativeroots77@gmail.com">creativeroots77@gmail.com</a></span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <i class="fa-solid fa-location-dot" style="color: var(--accent-ruby);"></i>
+        <div>
+          <span class="label">Address</span>
+          <span class="value"><a href="contact.html">Lahore Office: Gohar Centre, Lahore</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon-wrap"><i class="fa-solid fa-leaf"></i></div>
+            <div style="color: #fff;">Creative<span class="logo-gold">Roots</span></div>
+          </div>
+          <p>A one-stop physical branding and corporate gifting solution provider in Pakistan. We guarantee premium craftsmanship, transparent communication, and rapid turnaround for all corporate clients.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="products.html?cat=boxes">Corporate Gifting</a></li>
+            <li><a href="products.html?cat=drinkware">Personalized Giveaways</a></li>
+            <li><a href="index.html#packaging">Packaging Solutions</a></li>
+            <li><a href="index.html#events">Exhibition Stalls</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Policies</h4>
+          <ul>
+            <li><a href="#" data-modal="privacy">Privacy Policy</a></li>
+            <li><a href="#" data-modal="terms">Terms of Service</a></li>
+            <li><a href="#" data-modal="returns">Returns &amp; Quality Guarantee</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Product Store</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="find-a-store.html">Find a Store</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://twitter.com" target="_blank" aria-label="X" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://tiktok.com" target="_blank" aria-label="TikTok" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://pinterest.com" target="_blank" aria-label="Pinterest" rel="noopener noreferrer"><i class="fa-brands fa-pinterest-p"></i></a>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Creative Roots. All Rights Reserved.</span>
+        <div>
+          <a href="#" data-modal="terms">Terms of Service</a>
+          <a href="#" data-modal="privacy">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Navigation Backdrop Overlay -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+
+  <!-- Floating WhatsApp Chat Widget (Direct Support with Speech Bubble) -->
+  <a href="https://wa.me/923347009992?text=Hello%20Creative%20Roots%2C%20I%20would%20like%20to%20learn%20more%20about%20your%20services." 
+     class="floating-whatsapp-widget" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Chat with Creative Roots on WhatsApp">
+    <div class="whatsapp-icon-circle">
+      <i class="fa-brands fa-whatsapp"></i>
+    </div>
+    <div class="whatsapp-chat-bubble">
+      <span>Need Help? Chat with us</span>
+    </div>
+  </a>
+
+  <button class="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 80" width="110" height="80">
+  <!-- Cadet College Hasanabdal Crest -->
+  <g>
+    <!-- Top Radiating Crest -->
+    <g stroke="#1d4ed8" stroke-width="1.2">
+      <line x1="55" y1="12" x2="55" y2="4"/>
+      <line x1="51" y1="13" x2="47" y2="6"/>
+      <line x1="59" y1="13" x2="63" y2="6"/>
+      <line x1="48" y1="15" x2="41" y2="10"/>
+      <line x1="62" y1="15" x2="69" y2="10"/>
+    </g>
+    
+    <!-- Shield Outline & Background Stripes -->
+    <clipPath id="shieldClip">
+      <path d="M 33,14 L 77,14 L 77,45 C 77,58 55,68 55,68 C 55,68 33,58 33,45 Z"/>
+    </clipPath>
+    
+    <g clip-path="url(#shieldClip)">
+      <!-- Alternating Blue and Gold Vertical Stripes -->
+      <rect x="33" y="14" width="9" height="55" fill="#facc15"/>
+      <rect x="42" y="14" width="8" height="55" fill="#1e3a8a"/>
+      <rect x="50" y="14" width="10" height="55" fill="#facc15"/>
+      <rect x="60" y="14" width="8" height="55" fill="#1e3a8a"/>
+      <rect x="68" y="14" width="9" height="55" fill="#facc15"/>
+    </g>
+    
+    <!-- Shield Outer Border -->
+    <path d="M 33,14 L 77,14 L 77,45 C 77,58 55,68 55,68 C 55,68 33,58 33,45 Z" fill="none" stroke="#1e3a8a" stroke-width="2.5"/>
+    
+    <!-- Red Rampant Lion Emblem in Center -->
+    <path d="M 54,23 C 57,22 59,24 58,26 C 60,25 62,27 61,29 C 59,30 57,30 56,32 C 58,34 60,34 61,37 C 59,38 56,37 54,39 C 55,42 57,43 56,46 C 54,46 52,44 51,42 C 50,44 48,45 47,44 C 47,42 49,40 50,38 C 48,37 46,38 46,36 C 47,34 49,34 50,33 C 48,31 49,27 52,27 C 52,25 53,24 54,23 Z" fill="#dc2626"/>
+    
+    <!-- Flowing Yellow Ribbon Banner -->
+    <path d="M 24,62 L 34,57 L 55,60 L 76,57 L 86,62 L 80,72 L 55,69 L 30,72 Z" fill="#fde047" stroke="#1e3a8a" stroke-width="1.2"/>
+    <text x="55" y="66" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="4.2" font-weight="900" fill="#1e3a8a" text-anchor="middle" letter-spacing="0.5">HASANABDAL CADET COLLEGE</text>
+  </g>
+</svg>

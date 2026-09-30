@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 50" width="170" height="50">
+  <!-- Defence Raya Golf Club Brandmark -->
+  <g>
+    <!-- Laurel Wreath & Crest Icon -->
+    <g transform="translate(26, 25)">
+      <circle cx="0" cy="0" r="14" fill="#0d281c"/>
+      <circle cx="0" cy="0" r="12" fill="none" stroke="#d4af37" stroke-width="1.2"/>
+      <!-- Crossed Clubs / Flag -->
+      <line x1="-6" y1="6" x2="6" y2="-6" stroke="#d4af37" stroke-width="1.4"/>
+      <line x1="6" y1="6" x2="-6" y2="-6" stroke="#d4af37" stroke-width="1.4"/>
+      <circle cx="0" cy="0" r="2" fill="#ffffff"/>
+    </g>
+    
+    <!-- DEFENCE RAYA Typography -->
+    <text x="50" y="24" font-family="'Cinzel', 'Times New Roman', serif" font-size="12.5" font-weight="700" fill="#0d281c" letter-spacing="2">DEFENCE RAYA</text>
+    <text x="50" y="37" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="8" font-weight="700" fill="#888888" letter-spacing="3.5">GOLF &amp; COUNTRY CLUB</text>
+  </g>
+</svg>

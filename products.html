@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Product Store — Creative Roots</title>
+  <meta name="description" content="Explore Creative Roots complete corporate product catalog: custom giveaway boxes, promotional merchandise, executive stationery, and luxury gifts in Pakistan.">
+  <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23113627'/><text x='50' y='65' font-size='42' font-weight='bold' text-anchor='middle' fill='%23d4af37'>CR</text></svg>">
+  <style>
+    .store-hero {
+      background: linear-gradient(135deg, #071510 0%, #113627 60%, #1a4d38 100%);
+      color: #fff;
+      padding: 55px 0 45px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+    .store-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -0.8px;
+    }
+    .store-hero p {
+      font-size: 1.05rem;
+      color: #cfd8d3;
+      max-width: 600px;
+    }
+    .store-filter-bar {
+      background: #fff;
+      border-bottom: 1px solid var(--border-light);
+      padding: 16px 0;
+      position: sticky;
+      top: 71px;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .filter-tabs {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    .filter-tab {
+      padding: 8px 20px;
+      border-radius: var(--radius-pill);
+      font-size: 0.84rem;
+      font-weight: 700;
+      background: var(--bg-subtle);
+      color: var(--text-dark);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: var(--transition-fast);
+      border: 1px solid var(--border-light);
+    }
+    .filter-tab.active, .filter-tab:hover {
+      background: var(--primary-obsidian);
+      color: var(--gold-champagne);
+      border-color: var(--primary-obsidian);
+    }
+    .store-grid-section {
+      padding: 45px 0 70px;
+    }
+    .store-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+    .store-card {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+    .store-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-card);
+      border-color: var(--gold-champagne);
+    }
+    .store-card-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      height: auto;
+      background: #fbf8f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-subtle);
+      position: relative;
+    }
+    .store-card-img img {
+      width: 100%;
+      height: 100%;
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      transition: transform 0.4s ease;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.08));
+    }
+    .store-card:hover .store-card-img img {
+      transform: scale(1.08);
+    }
+    .store-card-body {
+      padding: 20px 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .store-card-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    .store-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--primary-obsidian);
+      margin-bottom: 8px;
+    }
+    .store-card-price {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-emerald);
+      margin: 12px 0 16px;
+    }
+    .store-card-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px;
+      background: var(--primary-obsidian);
+      color: #fff;
+      border-radius: var(--radius-pill);
+      font-size: 0.84rem;
+      font-weight: 700;
+      transition: var(--transition-fast);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .store-card:hover .store-card-btn {
+      background: var(--primary-emerald);
+      color: var(--gold-champagne);
+    }
+    @media (max-width: 992px) {
+      .store-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    }
+    @media (max-width: 576px) {
+      .store-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+      .store-card-body { padding: 12px 10px; }
+      .store-card h3 { font-size: 0.92rem; }
+      .store-card-price { font-size: 0.95rem; margin: 8px 0 12px; }
+      .store-card-btn { font-size: 0.74rem; padding: 7px; }
+      .store-hero { padding: 35px 0 28px; }
+      .store-hero h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+      <div class="announcement-bar">
+    <div class="announcement-slider">
+      <div class="announcement-slide active">
+        <span class="badge-gold"><i class="fa-solid fa-truck-fast"></i> Delivery</span>
+        <div class="ticker-track">
+          <span class="ticker-inner">Free Delivery &amp; Bulk Discounts on Orders Over Rs. 5,000 across Pakistan</span>
+        </div>
+      </div>
+      <div class="announcement-slide">
+        <span class="badge-gold"><i class="fa-brands fa-whatsapp"></i> Quick Quote</span>
+        <div class="ticker-track">
+          <span class="ticker-inner">Free Consultation &amp; Instant WhatsApp Pricing — <a href="contact.html" class="highlight">Contact Us Today!</a></span>
+        </div>
+      </div>
+      <div class="announcement-slide">
+        <span class="badge-gold"><i class="fa-solid fa-gem"></i> Enterprise</span>
+        <div class="ticker-track">
+          <span class="ticker-inner">Pakistan's Premier Corporate Gifting &amp; Physical Merchandise Partner</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon-wrap"><i class="fa-solid fa-leaf"></i></div>
+        <div>Creative<span class="logo-gold">Roots</span></div>
+      </a>
+      
+      <div class="search-bar">
+        <input type="text" placeholder="What are you looking for?">
+        <button type="button" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <div class="header-actions">
+        <a href="find-a-store.html" class="header-store-link" title="Find a Store"><i class="fa-solid fa-location-dot"></i> <span class="header-action-label">Find a Store</span></a>
+        <a href="products.html" class="cart-btn" aria-label="View Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge">3</span>
+        </a>
+      </div>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html" style="color: var(--primary-emerald); font-weight: 800;"><i class="fa-solid fa-layer-group" style="color: var(--gold-dark); margin-right: 4px;"></i> Product Store</a></li>
+        <li><a href="product-detail.html?item=boxes">Featured Item</a></li>
+        <li><a href="#" data-modal="appointment">Book an Appointment</a></li>
+        <li><a href="#" data-modal="catalogue">Download Catalogue</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Store Hero -->
+  <section class="store-hero">
+    <div class="container">
+      <h1>Corporate Product Catalogue</h1>
+      <p>Select any item below for instant volume rate calculations, custom logo mockup options, and direct WhatsApp invoice confirmation.</p>
+    </div>
+  </section>
+
+  <!-- Filter Bar -->
+  <div class="store-filter-bar">
+    <div class="container">
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All Products (12)</button>
+        <button class="filter-tab" data-filter="gifting">Corporate Gifting</button>
+        <button class="filter-tab" data-filter="drinkware">Drinkware &amp; Flasks</button>
+        <button class="filter-tab" data-filter="apparel">Custom Apparel</button>
+        <button class="filter-tab" data-filter="stationery">Executive Stationery</button>
+        <button class="filter-tab" data-filter="packaging">Packaging</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Store Grid Section -->
+  <section class="store-grid-section">
+    <div class="container">
+      <div class="store-grid">
+        
+        <!-- Product 1: Giveaway Box -->
+        <div class="store-card" data-product="boxes" data-category="gifting">
+          <div class="store-card-img">
+            <img src="images/prod_box.jpg" alt="Bespoke Luxury Giveaway Box" loading="lazy">
+          </div>
+          <div class="store-card-body">
+            <div>
+              <span class="store-card-tag">Corporate Gifting</span>
+              <h3>Bespoke Luxury Giveaway Box</h3>
+              <p style="font-size: 0.84rem; color: #666; line-height: 1.5;">Rigid gift box with gold foil interior, custom laser foam, and magnetic clasp.</p>
+            </div>
+            <div>
+              <div class="store-card-price" style="color: #25d366; font-size: 0.92rem; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</div>
+              <span class="store-card-btn"><i class="fa-solid fa-eye"></i> View Details &amp; Quote</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2: Drinkware Set -->
+        <div class="store-card" data-product="drinkware" data-category="drinkware">
+          <div class="store-card-img">
+            <img src="images/promo_drinkware.jpg" alt="Executive Mug & Thermal Flask Set" loading="lazy">
+          </div>
+          <div class="store-card-body">
+            <div>
+              <span class="store-card-tag">Drinkware</span>
+              <h3>Mug &amp; Thermal Flask Set</h3>
+              <p style="font-size: 0.84rem; color: #666; line-height: 1.5;">24K gold rim ceramic mug with matte stainless steel vacuum flask.</p>
+            </div>
+            <div>
+              <div class="store-card-price" style="color: #25d366; font-size: 0.92rem; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</div>
+              <span class="store-card-btn"><i class="fa-solid fa-eye"></i> View Details &amp; Quote</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3: Polo Shirt -->
+        <div class="store-card" data-product="merch" data-category="apparel">
+          <div class="store-card-img">
+            <img src="images/promo_merch.jpg" alt="Luxury Branded Pique Polo Shirt" loading="lazy">
+          </div>
+          <div class="store-card-body">
+            <div>
+              <span class="store-card-tag">Apparel</span>
+              <h3>Luxury Pique Polo Shirt</h3>
+              <p style="font-size: 0.84rem; color: #666; line-height: 1.5;">Combed pique cotton with high-density gold embroidery on chest.</p>
+            </div>
+            <div>
+              <div class="store-card-price" style="color: #25d366; font-size: 0.92rem; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</div>
+              <span class="store-card-btn"><i class="fa-solid fa-eye"></i> View Details &amp; Quote</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4: Tote Bags -->
+        <div class="store-card" data-product="business" data-category="gifting">
+          <div class="store-card-img">
+            <img src="images/promo_business.jpg" alt="Premium Canvas Tote Bag Pack" loading="lazy">
+          </div>
+          <div class="store-card-body">
+            <div>
+              <span class="store-card-tag">Merchandise</span>
+              <h3>Natural Canvas Tote Bag</h3>
+              <p style="font-size: 0.84rem; color: #666; line-height: 1.5;">12oz organic cotton canvas tote with reinforced handles and sharp print.</p>
+            </div>
+            <div>
+              <div class="store-card-price" style="color: #25d366; font-size: 0.92rem; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</div>
+              <span class="store-card-btn"><i class="fa-solid fa-eye"></i> View Details &amp; Quote</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5: Crewneck Shirt -->
+        <div class="store-card" data-product="shirt" data-category="apparel">
+          <div class="store-card-img">
+            <img src="images/prod_shirt.jpg" alt="Corporate T-Shirt" loading="lazy">
+          </div>
+          <div class="store-card-body">
+            <div>
+              <span class="store-card-tag">Apparel</span>
+              <h3>Corporate Staff T-Shirt</h3>
+              <p style="font-size: 0.84rem; color: #666; line-height: 1.5;">100% Ring-Spun breathable cotton customized with custom screen printing.</p>
+            </div>
+            <div>
+              <div class="store-card-price" style="color: #25d366; font-size: 0.92rem; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</div>
+              <span class="store-card-btn"><i class="fa-solid fa-eye"></i> View Details &amp; Quote</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6: Cap -->
+        <div class="store-card" data-product="cap" data-category="apparel">
+          <div class="store-card-img">
+            <img src="images/cap_maroon.jpg" alt="Brushed Cotton Embroidered Cap" loading="lazy">
+          </div>
+          <div class="store-card-body">
+            <div>
+              <span class="store-card-tag">Headwear</span>
+              <h3>Brushed Cotton Cap</h3>
+              <p style="font-size: 0.84rem; color: #666; line-height: 1.5;">Structured 6-panel heavy cotton cap with 3D embroidery &amp; brass buckle.</p>
+            </div>
+            <div>
+              <div class="store-card-price" style="color: #25d366; font-size: 0.92rem; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</div>
+              <span class="store-card-btn"><i class="fa-solid fa-eye"></i> View Details &amp; Quote</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 7: Notebook -->
+        <div class="store-card" data-product="notebook" data-category="stationery">
+          <div class="store-card-img">
+            <img src="images/prod_notebook.jpg" alt="Executive Hardcover Journal & Planner" loading="lazy">
+          </div>
+          <div class="store-card-body">
+            <div>
+              <span class="store-card-tag">Stationery</span>
+              <h3>Executive Leather Journal</h3>
+              <p style="font-size: 0.84rem; color: #666; line-height: 1.5;">Textured Italian PU leather journal with custom blind debossed crest.</p>
+            </div>
+            <div>
+              <div class="store-card-price" style="color: #25d366; font-size: 0.92rem; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</div>
+              <span class="store-card-btn"><i class="fa-solid fa-eye"></i> View Details &amp; Quote</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 8: Business Cards -->
+        <div class="store-card" data-product="cards" data-category="stationery">
+          <div class="store-card-img">
+            <img src="images/prod_cards.jpg" alt="Velvet Soft-Touch Business Cards" loading="lazy">
+          </div>
+          <div class="store-card-body">
+            <div>
+              <span class="store-card-tag">Printing</span>
+              <h3>Velvet Business Cards</h3>
+              <p style="font-size: 0.84rem; color: #666; line-height: 1.5;">Triple-ply 600gsm stock with gold foil stamping and gilded edges.</p>
+            </div>
+            <div>
+              <div class="store-card-price" style="color: #25d366; font-size: 0.92rem; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</div>
+              <span class="store-card-btn"><i class="fa-solid fa-eye"></i> View Details &amp; Quote</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 9: Executive Pen -->
+        <div class="store-card" data-product="pen" data-category="stationery">
+          <div class="store-card-img">
+            <img src="images/pack_pen.jpg" alt="Metal Engraved Executive Ballpoint Pen" loading="lazy">
+          </div>
+          <div class="store-card-body">
+            <div>
+              <span class="store-card-tag">Executive Stationery</span>
+              <h3>Metal Engraved Executive Pen</h3>
+              <p style="font-size: 0.84rem; color: #666; line-height: 1.5;">Solid brass twist ballpoint with permanent fiber laser etching.</p>
+            </div>
+            <div>
+              <div class="store-card-price" style="color: #25d366; font-size: 0.92rem; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</div>
+              <span class="store-card-btn"><i class="fa-solid fa-eye"></i> View Details &amp; Quote</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 10: Tent Calendar -->
+        <div class="store-card" data-product="calendar" data-category="stationery">
+          <div class="store-card-img">
+            <img src="images/pack_calendar.jpg" alt="Executive Desk Tent Calendar 2026" loading="lazy">
+          </div>
+          <div class="store-card-body">
+            <div>
+              <span class="store-card-tag">Executive Stationery</span>
+              <h3>Desk Tent Calendar 2026</h3>
+              <p style="font-size: 0.84rem; color: #666; line-height: 1.5;">300gsm matte art card with gold spiral &amp; triangular easel stand.</p>
+            </div>
+            <div>
+              <div class="store-card-price" style="color: #25d366; font-size: 0.92rem; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</div>
+              <span class="store-card-btn"><i class="fa-solid fa-eye"></i> View Details &amp; Quote</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 11: Thermal Bottle -->
+        <div class="store-card" data-product="bottle" data-category="drinkware">
+          <div class="store-card-img">
+            <img src="images/pack_bottle.jpg" alt="Stainless Steel Vacuum Thermal Bottle" loading="lazy">
+          </div>
+          <div class="store-card-body">
+            <div>
+              <span class="store-card-tag">Drinkware &amp; Flasks</span>
+              <h3>Vacuum Thermal Bottle 500ml</h3>
+              <p style="font-size: 0.84rem; color: #666; line-height: 1.5;">Double-wall 304 stainless steel with rotary laser engraving.</p>
+            </div>
+            <div>
+              <div class="store-card-price" style="color: #25d366; font-size: 0.92rem; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</div>
+              <span class="store-card-btn"><i class="fa-solid fa-eye"></i> View Details &amp; Quote</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 12: Leather Wallet -->
+        <div class="store-card" data-product="wallet" data-category="gifting">
+          <div class="store-card-img">
+            <img src="images/pack_wallet.jpg" alt="Genuine Leather RFID Executive Wallet" loading="lazy">
+          </div>
+          <div class="store-card-body">
+            <div>
+              <span class="store-card-tag">Corporate Gifting</span>
+              <h3>Leather RFID Executive Wallet</h3>
+              <p style="font-size: 0.84rem; color: #666; line-height: 1.5;">Top-grain cowhide bifold wallet with custom debossed logo &amp; RFID shield.</p>
+            </div>
+            <div>
+              <div class="store-card-price" style="color: #25d366; font-size: 0.92rem; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</div>
+              <span class="store-card-btn"><i class="fa-solid fa-eye"></i> View Details &amp; Quote</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon-wrap"><i class="fa-solid fa-leaf"></i></div>
+            <div style="color: #fff;">Creative<span class="logo-gold">Roots</span></div>
+          </div>
+          <p>Complete physical branding, luxury corporate gifting, and printing solutions in Pakistan.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Catalogue</h4>
+          <ul>
+            <li><a href="#" data-product="boxes">Gift Boxes</a></li>
+            <li><a href="#" data-product="drinkware">Drinkware</a></li>
+            <li><a href="#" data-product="merch">Apparel</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Policies</h4>
+          <ul>
+            <li><a href="#" data-modal="privacy">Privacy Policy</a></li>
+            <li><a href="#" data-modal="terms">Terms of Service</a></li>
+            <li><a href="#" data-modal="returns">Quality Guarantee</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="find-a-store.html">Find a Store</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Creative Roots. All Rights Reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Product Modal Component -->
+  <div class="product-modal-overlay" id="product-detail-modal">
+    <div class="product-modal-window">
+      <button class="product-modal-close" id="product-modal-close">&times;</button>
+      <div class="modal-visual-side">
+        <span class="modal-badge-tag" id="modal-product-badge">Bestseller</span>
+        <div id="modal-product-visual"></div>
+      </div>
+      <div class="modal-info-side">
+        <div>
+          <h3 class="modal-product-title" id="modal-product-title">Product Title</h3>
+          <div class="modal-product-rating" id="modal-product-rating">★★★★★ 4.9/5</div>
+          <p class="modal-product-desc" id="modal-product-desc">Description</p>
+          <div class="modal-specs-box" id="modal-product-specs"></div>
+          <div class="price-tiers-label">Select Quantity Tier for Live Corporate Pricing:</div>
+          <div class="price-tiers" id="modal-price-tiers"></div>
+        </div>
+        <div class="modal-actions">
+          <a href="#" class="btn-inquire-whatsapp" id="modal-whatsapp-btn" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+          </a>
+          <a href="product-detail.html?item=boxes" class="btn-quote-modal" id="modal-details-btn">Full Details Page</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Info Modal -->
+  <div class="modal-overlay" id="info-modal">
+    <div class="modal-window">
+      <button class="modal-close" id="modal-close" aria-label="Close Modal">&times;</button>
+      <h3 id="modal-title">Notice</h3>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <button class="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Tab filtering on products.html
+    document.querySelectorAll('.filter-tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+        const filter = this.getAttribute('data-filter');
+        
+        // Hide search notice banner if switching tabs
+        const banner = document.getElementById('store-search-notice-banner');
+        if (banner) banner.style.display = 'none';
+
+        document.querySelectorAll('.store-card').forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Check URL parameters for ?cat=
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const catParam = urlParams.get('cat');
+      if (catParam) {
+        let targetFilter = 'all';
+        if (catParam === 'boxes') targetFilter = 'gifting';
+        else if (catParam === 'drinkware') targetFilter = 'drinkware';
+        else if (catParam === 'merch' || catParam === 'shirt') targetFilter = 'apparel';
+        else if (catParam === 'cards' || catParam === 'notebook') targetFilter = 'stationery';
+        const matchingTab = document.querySelector(`.filter-tab[data-filter="${targetFilter}"]`);
+        if (matchingTab) matchingTab.click();
+      }
+    });
+  </script>
+
+  <!-- Mobile Navigation Backdrop Overlay -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+
+  <!-- Floating WhatsApp Chat Widget (Direct Support with Speech Bubble) -->
+  <a href="https://wa.me/923347009992?text=Hello%20Creative%20Roots%2C%20I%20would%20like%20to%20inquire%20about%20your%20products." 
+     class="floating-whatsapp-widget" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Chat with Creative Roots on WhatsApp">
+    <div class="whatsapp-icon-circle">
+      <i class="fa-brands fa-whatsapp"></i>
+    </div>
+    <div class="whatsapp-chat-bubble">
+      <span>Need Help? Chat with us</span>
+    </div>
+  </a>
+</body>
+</html>
