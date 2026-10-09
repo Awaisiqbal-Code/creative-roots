@@ -1235,4 +1235,139 @@ document.addEventListener('DOMContentLoaded', function () {
     playSlide(0);
   });
 
+  // ============================================================
+  // HERO BANNER 4-SLIDE AUTO CAROUSEL
+  // - Smooth fade & slide transition
+  // - 5s auto-rotation
+  // - Pause on hover
+  // - Arrow controls & pagination dots
+  // - Touch swipe support for mobile
+  // - Keyboard accessibility (ArrowLeft / ArrowRight)
+  // ============================================================
+  const heroCarousel = document.getElementById('heroCarousel');
+  if (heroCarousel) {
+    const slides = heroCarousel.querySelectorAll('.hero-slide');
+    const dots = heroCarousel.querySelectorAll('.hero-dot');
+    const prevBtn = heroCarousel.querySelector('.hero-nav-prev');
+    const nextBtn = heroCarousel.querySelector('.hero-nav-next');
+    let currentIndex = 0;
+    let autoTimer = null;
+    const ROTATION_INTERVAL = 5000; // 5 seconds per slide
+
+    function showSlide(index) {
+      if (!slides.length) return;
+      if (index < 0) {
+        index = slides.length - 1;
+      } else if (index >= slides.length) {
+        index = 0;
+      }
+
+      currentIndex = index;
+
+      slides.forEach((slide, idx) => {
+        const isActive = idx === currentIndex;
+        slide.classList.toggle('active', isActive);
+        slide.setAttribute('aria-hidden', !isActive);
+      });
+
+      dots.forEach((dot, idx) => {
+        const isActive = idx === currentIndex;
+        dot.classList.toggle('active', isActive);
+        dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+    }
+
+    function advanceSlide() {
+      showSlide(currentIndex + 1);
+    }
+
+    function retreatSlide() {
+      showSlide(currentIndex - 1);
+    }
+
+    function startAutoPlay() {
+      stopAutoPlay();
+      autoTimer = setInterval(advanceSlide, ROTATION_INTERVAL);
+    }
+
+    function stopAutoPlay() {
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+    }
+
+    // Next / Prev Button Controls
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        advanceSlide();
+        startAutoPlay();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        retreatSlide();
+        startAutoPlay();
+      });
+    }
+
+    // Indicator Dot Controls
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', function (e) {
+        e.preventDefault();
+        showSlide(idx);
+        startAutoPlay();
+      });
+    });
+
+    // Pause on Hover
+    heroCarousel.addEventListener('mouseenter', stopAutoPlay);
+    heroCarousel.addEventListener('mouseleave', startAutoPlay);
+
+    // Keyboard Arrow Keys
+    heroCarousel.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') {
+        retreatSlide();
+        startAutoPlay();
+      } else if (e.key === 'ArrowRight') {
+        advanceSlide();
+        startAutoPlay();
+      }
+    });
+
+    // Touch Swipe Support for Mobile Devices
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    heroCarousel.addEventListener('touchstart', function (e) {
+      if (e.touches && e.touches.length > 0) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        stopAutoPlay();
+      }
+    }, { passive: true });
+
+    heroCarousel.addEventListener('touchend', function (e) {
+      if (e.changedTouches && e.changedTouches.length > 0) {
+        const diffX = e.changedTouches[0].clientX - touchStartX;
+        const diffY = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+          if (diffX < 0) {
+            advanceSlide();
+          } else {
+            retreatSlide();
+          }
+        }
+        startAutoPlay();
+      }
+    }, { passive: true });
+
+    // Initialize slide 0 and begin autoplay
+    showSlide(0);
+    startAutoPlay();
+  }
+
 });

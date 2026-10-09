@@ -171,17 +171,82 @@
         <a href="products.html" class="view-all-btn">View All Categories</a>
       </div>
 
-      <!-- Hero Banner (REAL PHOTOGRAPHIC STUDIO SHOOT) -->
-      <div class="hero-banner reveal-right">
-        <img src="images/hero_studio_banner.jpg" alt="Creative Roots Studio Shoot" class="hero-banner-bg-img">
-        <div class="hero-banner-overlay"></div>
+      <!-- Hero Banner Carousel (4-Slide Professional Auto Slider) -->
+      <div class="hero-banner hero-carousel reveal-right" id="heroCarousel" aria-label="Featured Collections Carousel">
+        <div class="hero-carousel-track">
+          
+          <!-- Slide 1: Custom Corporate Gifts -->
+          <div class="hero-slide active" data-index="0" role="group" aria-label="Slide 1 of 4: Custom Corporate Gifts">
+            <img src="images/hero_banner_corporate_gifts.jpg" alt="Custom Corporate Gifts" class="hero-banner-bg-img" loading="eager">
+            <div class="hero-banner-overlay"></div>
+            <div class="hero-banner-content">
+              <p class="label">Premium Collection</p>
+              <h1>Custom Corporate Gifts</h1>
+              <p class="hero-slide-desc">Premium branded corporate gifts and promotional merchandise customized for businesses across Pakistan.</p>
+              <a href="products.html?search=gifts" class="btn-shop-now">
+                Explore Gifts <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
 
-        <div class="hero-banner-content">
-          <p class="label">Special Weekly</p>
-          <h1>You think We Create</h1>
-          <a href="products.html" class="btn-shop-now">
-            Shop Now <i class="fa-solid fa-arrow-right"></i>
-          </a>
+          <!-- Slide 2: Luxury Rigid Packaging -->
+          <div class="hero-slide" data-index="1" role="group" aria-label="Slide 2 of 4: Luxury Rigid Packaging" aria-hidden="true">
+            <img src="images/hero_banner_luxury_packaging.jpg" alt="Luxury Rigid Packaging" class="hero-banner-bg-img" loading="lazy">
+            <div class="hero-banner-overlay"></div>
+            <div class="hero-banner-content">
+              <p class="label">Bespoke Craftsmanship</p>
+              <h1>Luxury Rigid Packaging</h1>
+              <p class="hero-slide-desc">Handcrafted presentation gift boxes with gold foil debossing, custom velvet EVA foam & magnetic closure.</p>
+              <a href="products.html?search=boxes" class="btn-shop-now">
+                View Packaging <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Slide 3: Promotional Products & Merchandise -->
+          <div class="hero-slide" data-index="2" role="group" aria-label="Slide 3 of 4: Promotional Products" aria-hidden="true">
+            <img src="images/hero_banner_promotional_merch.jpg" alt="Promotional Merchandise & Swag" class="hero-banner-bg-img" loading="lazy">
+            <div class="hero-banner-overlay"></div>
+            <div class="hero-banner-content">
+              <p class="label">Brand Activation</p>
+              <h1>Promotional Products</h1>
+              <p class="hero-slide-desc">Complete corporate swag sets, branded apparel, personalized drinkware & event giveaway essentials.</p>
+              <a href="products.html?search=merch" class="btn-shop-now">
+                Explore Merch <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Slide 4: Business Cards & Offset Printing -->
+          <div class="hero-slide" data-index="3" role="group" aria-label="Slide 4 of 4: Business Cards & Offset Printing" aria-hidden="true">
+            <img src="images/hero_banner_offset_printing.jpg" alt="Business Cards & Offset Printing" class="hero-banner-bg-img" loading="lazy">
+            <div class="hero-banner-overlay"></div>
+            <div class="hero-banner-content">
+              <p class="label">Precision Offset</p>
+              <h1>Business Cards & Print</h1>
+              <p class="hero-slide-desc">High-definition corporate brochures, company profiles, letterheads & luxury tactile spot-UV business cards.</p>
+              <a href="products.html?search=cards" class="btn-shop-now">
+                Order Custom Print <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Navigation Controls: Left & Right Arrows -->
+        <button type="button" class="hero-nav-arrow hero-nav-prev" aria-label="Previous Slide">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button type="button" class="hero-nav-arrow hero-nav-next" aria-label="Next Slide">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <!-- Navigation Controls: Indicator Dots -->
+        <div class="hero-dots" role="tablist" aria-label="Slide Selector">
+          <button type="button" class="hero-dot active" role="tab" aria-selected="true" aria-label="Slide 1" data-slide-to="0"></button>
+          <button type="button" class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 2" data-slide-to="1"></button>
+          <button type="button" class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 3" data-slide-to="2"></button>
+          <button type="button" class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 4" data-slide-to="3"></button>
         </div>
       </div>
 
