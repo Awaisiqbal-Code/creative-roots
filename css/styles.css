@@ -597,10 +597,8 @@ button, input, select {
   background-color: var(--bg-page);
 }
 .hero-section .container {
-  display: grid;
-  grid-template-columns: 215px 1fr;
-  gap: 20px;
-  align-items: stretch;
+  display: block;
+  width: 100%;
 }
 
 /* Top Categories Sidebar (Preserved exactly as user requested) */
