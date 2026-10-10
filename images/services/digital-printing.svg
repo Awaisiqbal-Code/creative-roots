@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100%" height="100%">
+  <defs>
+    <linearGradient id="dpBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D3748"/>
+      <stop offset="60%" stop-color="#1A202C"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="dpSilverGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F1F5F9"/>
+      <stop offset="50%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+    <linearGradient id="dpCmykGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00AEEF"/>
+      <stop offset="33%" stop-color="#EC008C"/>
+      <stop offset="66%" stop-color="#FFF200"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="dpPaperGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <linearGradient id="dpGoldAcc" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+    <filter id="dpShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Base Shadow -->
+  <ellipse cx="32" cy="57" rx="23" ry="3.5" fill="#000000" opacity="0.16"/>
+
+  <g filter="url(#dpShadow)">
+    <!-- Top Paper Input Sheet -->
+    <path d="M 20 9 L 44 9 L 46 22 L 18 22 Z" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="0.8"/>
+    <line x1="23" y1="13" x2="35" y2="13" stroke="#94A3B8" stroke-width="1.2" stroke-linecap="round"/>
+    <line x1="23" y1="17" x2="41" y2="17" stroke="#94A3B8" stroke-width="1.2" stroke-linecap="round"/>
+
+    <!-- Printer Main Chassis -->
+    <rect x="9" y="19" width="46" height="26" rx="5" fill="url(#dpBodyGrad)"/>
+    <rect x="9" y="19" width="46" height="26" rx="5" fill="none" stroke="#475569" stroke-width="0.8"/>
+    
+    <!-- Top Chamfer Silver Accent Line -->
+    <line x1="12" y1="21" x2="52" y2="21" stroke="url(#dpGoldAcc)" stroke-width="1.5" stroke-linecap="round"/>
+    
+    <!-- Digital Glass Control Panel / Screen -->
+    <rect x="13" y="24" width="12" height="7" rx="1.5" fill="#0F172A" stroke="#38BDF8" stroke-width="0.6"/>
+    <circle cx="16" cy="27.5" r="1" fill="#22C55E"/>
+    <rect x="18.5" y="26.5" width="5" height="1" fill="#38BDF8"/>
+    <rect x="18.5" y="28.5" width="3" height="1" fill="#94A3B8"/>
+    
+    <!-- Power / Status Buttons -->
+    <circle cx="47" cy="27" r="1.5" fill="#38BDF8"/>
+    <circle cx="42" cy="27" r="1.5" fill="#F43F5E"/>
+    
+    <!-- Output Paper Slot Cavity -->
+    <rect x="14" y="36" width="36" height="4" rx="1.5" fill="#090D16"/>
+
+    <!-- Fresh Printed Sheet Emerging with CMYK Bars -->
+    <g>
+      <path d="M 16 38 L 48 38 L 46 54 L 18 54 Z" fill="url(#dpPaperGrad)" stroke="#CBD5E1" stroke-width="0.8"/>
+      <!-- CMYK Precision Color Test Bars -->
+      <rect x="19" y="41" width="26" height="3" fill="url(#dpCmykGrad)"/>
+      <rect x="19" y="46" width="16" height="1.8" rx="0.5" fill="#0284C7"/>
+      <rect x="19" y="49" width="22" height="1.8" rx="0.5" fill="#E11D48"/>
+      <!-- Registration Mark -->
+      <circle cx="42" cy="48" r="2.2" fill="none" stroke="#0F172A" stroke-width="0.6"/>
+      <line x1="42" y1="45" x2="42" y2="51" stroke="#0F172A" stroke-width="0.6"/>
+      <line x1="39" y1="48" x2="45" y2="48" stroke="#0F172A" stroke-width="0.6"/>
+    </g>
+
+    <!-- Metallic Base Feed Rollers -->
+    <rect x="13" y="43" width="5" height="2" fill="url(#dpSilverGrad)"/>
+    <rect x="46" y="43" width="5" height="2" fill="url(#dpSilverGrad)"/>
+  </g>
+</svg>
