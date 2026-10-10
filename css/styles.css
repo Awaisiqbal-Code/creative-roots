@@ -7,26 +7,37 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap');
 
-/* ---------- Luxury Cohesive Theme Variables ---------- */
+/* ---------- Official Navy & Orange Master Theme Variables (Reference Matched) ---------- */
 :root {
-  --primary-obsidian: #09271F;       /* Midnight Forest */
-  --primary-emerald: #10382D;        /* Deep Evergreen */
-  --emerald-light: #184A3C;          /* Forest Accent */
-  --gold-champagne: #C6A35B;         /* Muted Champagne Gold */
-  --gold-dark: #AC893E;              /* Deep Gold */
-  --gold-light: #E0C788;             /* Soft Champagne Highlight */
-  --accent-ruby: #8E2328;            /* Restrained Accent */
-  --accent-ruby-glow: rgba(142, 35, 40, 0.18);
+  --primary-navy: #132238;           /* Deep Corporate Navy */
+  --primary-obsidian: #132238;       /* Primary Dark Brand */
+  --primary-emerald: #132238;        /* Unified Navy */
+  --navy-dark: #0D1726;              /* Darkest Midnight Navy */
+  --navy-light: #1E3352;             /* Soft Navy Accent */
   
-  --bg-page: #F8F5EF;                /* Warm Ivory */
+  --accent-orange: #F47721;          /* Vibrant Brand Orange (Primary CTA) */
+  --orange-hover: #D96213;           /* Darker Orange for Hover */
+  --orange-light: #FF8F42;           /* Bright Orange Accent */
+  --orange-glow: rgba(244, 119, 33, 0.28);
+  
+  --brand-green: #3E9B32;            /* Leaf Green from Logo */
+  --green-light: #58C843;            /* Light Green */
+  
+  --gold-champagne: #F47721;         /* Accent CTA mapped to Orange */
+  --gold-dark: #D96213;              /* Hover mapped */
+  --gold-light: #FFAE19;             /* Golden Yellow from Logo Ring */
+  --accent-ruby: #F47721;            /* Badges & Alerts */
+  --accent-ruby-glow: rgba(244, 119, 33, 0.2);
+  
+  --bg-page: #F7F9FC;                /* Soft Slate Clean Page Background */
   --bg-white: #FFFFFF;               /* Clean White */
-  --bg-subtle: #EAE2D5;              /* Soft Sand */
-  --border-light: #E4DCD0;           /* Sand Border */
-  --border-subtle: #EDE7DC;          /* Subtle Card Border */
+  --bg-subtle: #EDF2F7;              /* Muted Subtle Fill */
+  --border-light: #E2E8F0;           /* Clean Modern Border */
+  --border-subtle: #EAEFF5;          /* Card Border */
   
-  --text-dark: #202A25;              /* Charcoal Primary Text */
-  --text-body: #404B45;              /* Body Text */
-  --text-muted: #70776F;             /* Muted Secondary Text */
+  --text-dark: #132238;              /* Navy Primary Heading Text */
+  --text-body: #334155;              /* Readable Slate Body Text */
+  --text-muted: #536273;             /* Slate Secondary Text */
   
   --radius-xs: 6px;
   --radius-sm: 10px;
@@ -34,10 +45,11 @@
   --radius-lg: 20px;
   --radius-pill: 9999px;
   
-  --shadow-subtle: 0 4px 14px rgba(9, 39, 31, 0.05);
-  --shadow-card: 0 8px 24px rgba(9, 39, 31, 0.08);
-  --shadow-elevated: 0 16px 36px rgba(9, 39, 31, 0.14);
-  --shadow-gold: 0 8px 25px rgba(198, 163, 91, 0.25);
+  --shadow-subtle: 0 4px 14px rgba(19, 34, 56, 0.05);
+  --shadow-card: 0 8px 24px rgba(19, 34, 56, 0.08);
+  --shadow-elevated: 0 16px 36px rgba(19, 34, 56, 0.12);
+  --shadow-orange: 0 8px 25px rgba(244, 119, 33, 0.35);
+  --shadow-gold: 0 8px 25px rgba(244, 119, 33, 0.35);
   
   --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -85,10 +97,10 @@ button, input, select {
   padding: 0 24px;
 }
 
-/* ---------- Top Announcement Bar (Luxury Deep Emerald + Gold Ticker) ---------- */
+/* ---------- Top Announcement Bar (Corporate Navy + Orange Badge Ticker) ---------- */
 .announcement-bar {
-  background: linear-gradient(90deg, #071510 0%, #0f2e22 50%, #071510 100%);
-  color: #f7f4ee;
+  background: linear-gradient(90deg, #0d1726 0%, #132238 50%, #0d1726 100%);
+  color: #f7f9fc;
   text-align: center;
   height: 38px;
   line-height: 38px;
@@ -96,7 +108,7 @@ button, input, select {
   font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 0.3px;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  border-bottom: 1px solid rgba(244, 119, 33, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,11 +147,11 @@ button, input, select {
   transform: translateY(-16px);
 }
 .announcement-bar .badge-gold {
-  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
-  color: #0b1f17;
+  background: linear-gradient(135deg, var(--accent-orange) 0%, #d96213 100%);
+  color: #ffffff;
   font-size: 0.66rem;
   font-weight: 800;
-  padding: 2px 9px;
+  padding: 2px 10px;
   border-radius: var(--radius-pill);
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -148,7 +160,6 @@ button, input, select {
   align-items: center;
   gap: 4px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
-  flex-shrink: 0;
 }
 .ticker-track {
   overflow: hidden;
@@ -258,16 +269,16 @@ button, input, select {
 }
 .search-bar input:focus {
   background-color: #fff;
-  border-color: var(--primary-emerald);
-  box-shadow: 0 0 0 4px rgba(17, 54, 39, 0.08);
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 0 4px rgba(244, 119, 33, 0.12);
 }
 .search-bar button {
   position: absolute;
   right: 5px;
   top: 50%;
   transform: translateY(-50%);
-  background: linear-gradient(135deg, var(--primary-emerald) 0%, var(--primary-obsidian) 100%);
-  color: var(--gold-champagne);
+  background: linear-gradient(135deg, var(--accent-orange) 0%, #d96213 100%);
+  color: #ffffff;
   border-radius: 50%;
   width: 36px;
   height: 36px;
@@ -918,29 +929,34 @@ button, input, select {
 .hero-dot.active {
   width: 24px;
   border-radius: 12px;
-  background: var(--gold-champagne);
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+  background: var(--accent-orange);
+  box-shadow: 0 0 10px rgba(244, 119, 33, 0.8);
 }
 
-/* Master Obsidian & Gold Pill Button */
+/* Master Orange Pill Button (Reference: 'Get a Quote ->') */
 .btn-shop-now {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: linear-gradient(135deg, var(--primary-obsidian) 0%, #153e2d 100%);
+  background: linear-gradient(135deg, var(--accent-orange) 0%, #e06612 100%);
   color: #ffffff;
   padding: 14px 38px;
   border-radius: var(--radius-pill);
-  font-size: 0.92rem;
+  font-size: 0.94rem;
   font-weight: 700;
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: 0 6px 18px rgba(11, 31, 23, 0.25);
+  box-shadow: 0 8px 22px rgba(244, 119, 33, 0.35);
   position: relative;
   overflow: hidden;
   z-index: 1;
-  border: 1px solid rgba(212, 175, 55, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.btn-shop-now:hover {
+  background: linear-gradient(135deg, #e06612 0%, #c95508 100%);
+  box-shadow: 0 12px 28px rgba(244, 119, 33, 0.45);
+  transform: translateY(-2px);
 }
 .btn-shop-now::before {
   content: '';
@@ -980,6 +996,7 @@ button, input, select {
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
+/* Reference Theme Matched 3 Feature Cards */
 .promo-card {
   position: relative;
   border-radius: var(--radius-md);
@@ -991,24 +1008,28 @@ button, input, select {
   padding: 24px 28px;
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: var(--shadow-subtle);
+  box-shadow: 0 4px 16px rgba(19, 34, 56, 0.06);
   border: 1px solid var(--border-light);
-  background-color: #fff;
+  background-color: #ffffff;
 }
 .promo-card:hover {
   transform: translateY(-5px);
-  box-shadow: var(--shadow-elevated);
+  box-shadow: 0 12px 30px rgba(19, 34, 56, 0.12);
+  border-color: rgba(244, 119, 33, 0.4);
 }
 
-/* Subtle Gradient Backdrops */
-.promo-card.card-drinkware {
-  background: linear-gradient(135deg, #f7f2ea 0%, #eee6d8 100%);
+/* Crisp Clean Backdrops */
+.promo-card.card-drinkware,
+.promo-card.card-offset {
+  background: #ffffff;
 }
-.promo-card.card-merch {
-  background: linear-gradient(135deg, #f2ece8 0%, #e6dcd8 100%);
+.promo-card.card-merch,
+.promo-card.card-brochures {
+  background: #ffffff;
 }
-.promo-card.card-business {
-  background: linear-gradient(135deg, #eaf1f4 0%, #dae7ec 100%);
+.promo-card.card-business,
+.promo-card.card-cards {
+  background: #ffffff;
 }
 
 .promo-card-content {
@@ -1017,34 +1038,41 @@ button, input, select {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 12px;
-  max-width: 58%;
+  gap: 10px;
+  max-width: 62%;
 }
 .promo-card-content h3 {
-  font-size: 1.22rem;
+  font-size: 1.25rem;
   font-weight: 800;
-  color: var(--primary-obsidian);
+  color: var(--primary-navy);
   line-height: 1.2;
   letter-spacing: -0.3px;
+}
+.promo-card-content p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 0;
 }
 .promo-card-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 24px;
-  background: var(--primary-obsidian);
-  color: #fff;
+  padding: 7px 20px;
+  background: var(--bg-page);
+  color: var(--primary-navy);
   border-radius: var(--radius-pill);
   font-size: 0.8rem;
   font-weight: 700;
   transition: var(--transition-fast);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid var(--border-light);
 }
 .promo-card:hover .promo-card-btn {
-  background: var(--primary-emerald);
-  color: var(--gold-champagne);
+  background: var(--accent-orange);
+  color: #ffffff;
+  border-color: var(--accent-orange);
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(11, 31, 23, 0.3);
+  box-shadow: 0 4px 12px rgba(244, 119, 33, 0.35);
 }
 
 .promo-card-photo {
@@ -2384,11 +2412,12 @@ button, input, select {
   color: var(--gold-champagne);
 }
 
-/* ---------- Footer (Deep Obsidian) ---------- */
+/* ---------- Footer (Deep Corporate Navy #132238 Reference Matched) ---------- */
 .footer {
-  background-color: #040c09;
+  background-color: var(--primary-navy);
   color: #ffffff;
   padding: 60px 0 28px;
+  border-top: 1px solid #1e3352;
 }
 .footer-grid {
   display: grid;
@@ -2402,7 +2431,7 @@ button, input, select {
 }
 .footer-brand p {
   font-size: 0.84rem;
-  color: #8c9e94;
+  color: #cad7e6;
   line-height: 1.7;
   max-width: 320px;
 }
@@ -2410,19 +2439,19 @@ button, input, select {
   font-size: 0.98rem;
   font-weight: 700;
   margin-bottom: 20px;
-  color: var(--gold-champagne);
+  color: var(--accent-orange);
 }
 .footer-links ul li {
   margin-bottom: 12px;
 }
 .footer-links ul li a {
   font-size: 0.84rem;
-  color: #8c9e94;
+  color: #9cb0c6;
   transition: var(--transition-fast);
   display: inline-block;
 }
 .footer-links ul li a:hover {
-  color: #fff;
+  color: #ffffff;
   padding-left: 6px;
 }
 .footer-social {
@@ -2430,38 +2459,39 @@ button, input, select {
   justify-content: flex-end;
   gap: 14px;
   padding: 26px 0 22px;
-  border-top: 1px solid #142e22;
+  border-top: 1px solid #1e3352;
 }
 .footer-social a {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background-color: #0b1f17;
-  border: 1px solid #1a3e2e;
+  background-color: #0d1726;
+  border: 1px solid #233b5c;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: #ffffff;
   font-size: 0.9rem;
   transition: var(--transition-fast);
 }
 .footer-social a:hover {
-  background-color: var(--gold-champagne);
-  color: #071510;
+  background-color: var(--accent-orange);
+  color: #ffffff;
+  border-color: var(--accent-orange);
   transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 6px 16px rgba(244, 119, 33, 0.4);
 }
 .footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 22px;
-  border-top: 1px solid #142e22;
+  border-top: 1px solid #1e3352;
   font-size: 0.8rem;
-  color: #728279;
+  color: #8da4be;
 }
 .footer-bottom a {
-  color: #728279;
+  color: #8da4be;
   margin-left: 20px;
 }
 .footer-bottom a:hover {
@@ -4144,7 +4174,7 @@ button, input, select {
   inset: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(135deg, var(--primary-obsidian, #09271F) 0%, var(--primary-emerald, #10382D) 100%);
+  background: linear-gradient(135deg, var(--navy-dark, #0d1726) 0%, var(--primary-navy, #132238) 100%);
   z-index: 999999;
   display: flex;
   flex-direction: column;
@@ -4197,7 +4227,7 @@ button, input, select {
   left: 0;
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, var(--gold-champagne, #C6A35B), var(--gold-light, #E3C578));
+  background: linear-gradient(90deg, var(--accent-orange, #F47721), var(--orange-light, #FF8F42));
   border-radius: 99px;
   transition: width 0.38s ease;
 }
