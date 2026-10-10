@@ -7,26 +7,26 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap');
 
-/* ---------- Luxury Theme Variables ---------- */
+/* ---------- Luxury Cohesive Theme Variables ---------- */
 :root {
-  --primary-obsidian: #0b1f17;       /* Royal Deep Emerald Obsidian */
-  --primary-emerald: #113627;        /* Rich Forest Emerald */
-  --emerald-light: #1b4d38;          /* Vibrant Emerald */
-  --gold-champagne: #d4af37;         /* Luxury Gold */
-  --gold-dark: #b8860b;              /* Antique Gold */
-  --gold-light: #f3e5ab;             /* Soft Champagne */
-  --accent-ruby: #a31d24;            /* Royal Ruby Highlight */
-  --accent-ruby-glow: rgba(163, 29, 36, 0.25);
+  --primary-obsidian: #09271F;       /* Midnight Forest */
+  --primary-emerald: #10382D;        /* Deep Evergreen */
+  --emerald-light: #184A3C;          /* Forest Accent */
+  --gold-champagne: #C6A35B;         /* Muted Champagne Gold */
+  --gold-dark: #AC893E;              /* Deep Gold */
+  --gold-light: #E0C788;             /* Soft Champagne Highlight */
+  --accent-ruby: #8E2328;            /* Restrained Accent */
+  --accent-ruby-glow: rgba(142, 35, 40, 0.18);
   
-  --bg-page: #fbfaf7;                /* Warm Studio Off-White */
-  --bg-white: #ffffff;
-  --bg-subtle: #f4f1ea;
-  --border-light: #e8e3d8;
-  --border-subtle: #f0ece3;
+  --bg-page: #F8F5EF;                /* Warm Ivory */
+  --bg-white: #FFFFFF;               /* Clean White */
+  --bg-subtle: #EAE2D5;              /* Soft Sand */
+  --border-light: #E4DCD0;           /* Sand Border */
+  --border-subtle: #EDE7DC;          /* Subtle Card Border */
   
-  --text-dark: #0e1713;
-  --text-body: #404a44;
-  --text-muted: #758079;
+  --text-dark: #202A25;              /* Charcoal Primary Text */
+  --text-body: #404B45;              /* Body Text */
+  --text-muted: #70776F;             /* Muted Secondary Text */
   
   --radius-xs: 6px;
   --radius-sm: 10px;
@@ -34,10 +34,10 @@
   --radius-lg: 20px;
   --radius-pill: 9999px;
   
-  --shadow-subtle: 0 4px 14px rgba(11, 31, 23, 0.05);
-  --shadow-card: 0 8px 24px rgba(11, 31, 23, 0.08);
-  --shadow-elevated: 0 16px 36px rgba(11, 31, 23, 0.14);
-  --shadow-gold: 0 8px 25px rgba(212, 175, 55, 0.25);
+  --shadow-subtle: 0 4px 14px rgba(9, 39, 31, 0.05);
+  --shadow-card: 0 8px 24px rgba(9, 39, 31, 0.08);
+  --shadow-elevated: 0 16px 36px rgba(9, 39, 31, 0.14);
+  --shadow-gold: 0 8px 25px rgba(198, 163, 91, 0.25);
   
   --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -209,6 +209,18 @@ button, input, select {
   color: var(--primary-obsidian);
   letter-spacing: -0.6px;
   cursor: pointer;
+  text-decoration: none;
+}
+.logo-img {
+  height: 42px;
+  width: auto;
+  max-width: 230px;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.logo:hover .logo-img {
+  transform: translateY(-1px);
 }
 .logo-icon-wrap {
   width: 34px;
@@ -4123,4 +4135,81 @@ button, input, select {
     height: 120px;
   }
 }
+
+/* ==========================================================================
+   Page Transition Overlay (Luxury Brand Curtain Transition: 400ms - 550ms)
+   ========================================================================== */
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--primary-obsidian, #09271F) 0%, var(--primary-emerald, #10382D) 100%);
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.page-transition-overlay.is-active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.page-transition-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transform: translateY(12px) scale(0.96);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+}
+
+.page-transition-overlay.is-active .page-transition-brand {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.page-transition-logo {
+  height: 48px;
+  width: auto;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.4));
+}
+
+.page-transition-bar-wrap {
+  width: 140px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 99px;
+  overflow: hidden;
+  position: relative;
+}
+
+.page-transition-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold-champagne, #C6A35B), var(--gold-light, #E3C578));
+  border-radius: 99px;
+  transition: width 0.38s ease;
+}
+
+.page-transition-overlay.is-active .page-transition-bar {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-overlay {
+    display: none !important;
+  }
+}
+
 

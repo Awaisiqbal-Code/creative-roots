@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Bespoke Luxury Giveaway Box',
       category: 'Corporate Gifting',
       rating: '5.0 ★★★★★ (142 Corporate Reviews)',
-      image: 'images/promo_giftbox.jpg',
+      image: 'images/prod_box.jpg',
       badge: 'Best Seller',
       desc: 'Handcrafted rigid presentation gift box featuring metallic gold debossing, custom high-density EVA foam cutouts tailored to your gifts, and magnetic snap closure. The pinnacle of executive onboarding and client appreciation.',
       specs: {
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Corporate Executive Crewneck / T-Shirt',
       category: 'Custom Apparel',
       rating: '4.9 ★★★★★ (135 Reviews)',
-      image: 'images/promo_merch.jpg',
+      image: 'images/prod_shirt.jpg',
       badge: 'Bestseller',
       desc: '100% Ring-Spun breathable cotton shirts customized with subtle breast-pocket embroidery or metallic gold screen printing for staff, conferences, and brand ambassador kits.',
       specs: {
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Brushed Cotton Embroidered Cap',
       category: 'Headwear',
       rating: '4.8 ★★★★★ (76 Reviews)',
-      image: 'images/hero_studio_banner.jpg',
+      image: 'images/cap_maroon.jpg',
       badge: 'Popular',
       desc: 'Structured 6-panel heavy brushed cotton cap with pre-curved peak, brass buckle strap adjuster, and 3D puff embroidery of your corporate logo.',
       specs: {
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Executive Hardcover Journal & Planner',
       category: 'Executive Stationery',
       rating: '5.0 ★★★★★ (160 Reviews)',
-      image: 'images/promo_giftbox.jpg',
+      image: 'images/prod_notebook.jpg',
       badge: 'Premium',
       desc: 'Thermo PU Italian leather notebook with custom debossed logo, 96 sheets of 100gsm cream fountain-pen friendly lined paper, ribbon marker, and elastic closure band.',
       specs: {
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Velvet Soft-Touch Business Cards',
       category: 'Offset Printing',
       rating: '5.0 ★★★★★ (320 Reviews)',
-      image: 'images/hero_studio_banner.jpg',
+      image: 'images/prod_cards.jpg',
       badge: 'Ultra Luxury',
       desc: 'Multi-layer 600gsm laminated cards with rose gold foil accents, raised spot UV gloss elements, and painted gilded metallic edges.',
       specs: {
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Smart Matte Thermal Bottle',
       category: 'Drinkware',
       rating: '4.9 ★★★★★ (110 Reviews)',
-      image: 'images/promo_drinkware.jpg',
+      image: 'images/pack_bottle.jpg',
       badge: 'Hot Item',
       desc: '500ml double-insulated stainless steel flask with precision laser engraved company identity that never scratches or fades.',
       specs: {
@@ -189,11 +189,31 @@ document.addEventListener('DOMContentLoaded', function () {
         { qty: '500+ pcs', price: 'Inquire on WhatsApp' }
       ]
     },
+    'mug': {
+      title: 'Executive Ceramic Office Mug',
+      category: 'Drinkware',
+      rating: '4.9 ★★★★★ (124 Reviews)',
+      image: 'images/prod_mug.jpg',
+      badge: 'Best Seller',
+      desc: 'High-density ceramic coffee mug with comfortable ergonomic C-handle, kiln-fired high-fire custom corporate branding that resists commercial dishwashing, and smooth glazed finish.',
+      specs: {
+        'Material': 'Grade-A High-Fire Ceramic',
+        'Finish': 'High-Gloss Glaze + Kiln Screen Decal',
+        'Capacity': '350ml / 11.8 oz',
+        'Min Order (MOQ)': '36 Pieces',
+        'Turnaround': '3 - 5 Business Days'
+      },
+      tiers: [
+        { qty: '36-100 pcs', price: 'Inquire on WhatsApp' },
+        { qty: '101-300 pcs', price: 'Inquire on WhatsApp' },
+        { qty: '500+ pcs', price: 'Inquire on WhatsApp' }
+      ]
+    },
     'stall': {
       title: 'Turnkey Exhibition Stall & Booth',
       category: 'Exhibitions & Events',
       rating: '5.0 ★★★★★ (55 Enterprise Reviews)',
-      image: 'images/hero_studio_banner.jpg',
+      image: 'images/event_stall.jpg',
       badge: 'Turnkey Service',
       desc: 'Custom 3D exhibition booth architecture, fabrication, high-resolution tension fabric graphics, illuminated reception counter, and on-ground expo setup at Lahore Expo, Karachi Expo, or Pak-China Center Islamabad.',
       specs: {
@@ -936,7 +956,7 @@ document.addEventListener('DOMContentLoaded', function () {
     { key: 'cap', title: 'Luxury Embroidered Cap', category: 'Headwear & Uniforms', price: 'Inquire on WhatsApp', image: 'images/cap_maroon.jpg', keywords: 'cap hat maroon baseball embroidery crest uniform merchandise headwear' },
     { key: 'shirt', title: 'Executive Crewneck / T-Shirt', category: 'Custom Apparel', price: 'Inquire on WhatsApp', image: 'images/prod_shirt.jpg', keywords: 'shirt t-shirt tshirt tee cotton screen print dtf apparel clothes' },
     { key: 'polo', title: 'Heavyweight Pique Polo Shirt', category: 'Custom Apparel', price: 'Inquire on WhatsApp', image: 'images/promo_merch.jpg', keywords: 'polo shirt pique collar embroidered uniform corporate staff apparel' },
-    { key: 'boxes', title: 'Luxury Rigid Magnetic Gift Box', category: 'Packaging & Gifting', price: 'Inquire on WhatsApp', image: 'images/promo_giftbox.jpg', keywords: 'box boxes giveaway packaging rigid magnet magnetic foil gift hamper carton kappa' },
+    { key: 'boxes', title: 'Luxury Rigid Magnetic Gift Box', category: 'Packaging & Gifting', price: 'Inquire on WhatsApp', image: 'images/prod_box.jpg', keywords: 'box boxes giveaway packaging rigid magnet magnetic foil gift hamper carton kappa' },
     { key: 'notebook', title: 'Hardcover Gold Foil Executive Journal', category: 'Executive Stationery', price: 'Inquire on WhatsApp', image: 'images/prod_notebook.jpg', keywords: 'notebook journal diary planner pad stationery leather spiral gold foil' },
     { key: 'cards', title: 'Triple-Ply Velvet Edge Business Cards', category: 'Offset Printing', price: 'Inquire on WhatsApp', image: 'images/prod_cards.jpg', keywords: 'card cards business visiting foil gilded edge cotton kraft print' },
     { key: 'drinkware', title: 'Smart Matte Thermal Flask & Mug Set', category: 'Drinkware', price: 'Inquire on WhatsApp', image: 'images/promo_drinkware.jpg', keywords: 'drinkware flask thermal bottle tumbler mug ceramic vacuum laser etched water' },
@@ -1370,4 +1390,85 @@ document.addEventListener('DOMContentLoaded', function () {
     startAutoPlay();
   }
 
+  // ============================================================
+  // 14. LUXURY PAGE TRANSITION (400ms - 500ms Brand Experience)
+  // ============================================================
+  function initPageTransitions() {
+    // Check if user prefers reduced motion
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
+    // Create overlay element dynamically if not present
+    let overlay = document.getElementById('page-transition-overlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.id = 'page-transition-overlay';
+      overlay.className = 'page-transition-overlay';
+      overlay.setAttribute('aria-hidden', 'true');
+      overlay.innerHTML = `
+        <div class="page-transition-brand">
+          <img src="images/logo-light.svg" alt="CreativeRoots" class="page-transition-logo" width="180" height="35">
+          <div class="page-transition-bar-wrap">
+            <div class="page-transition-bar"></div>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+    }
+
+    // Dismiss overlay when page loads or is shown from cache (back/forward cache)
+    window.addEventListener('pageshow', function () {
+      if (overlay) {
+        overlay.classList.remove('is-active');
+      }
+    });
+
+    // Intercept internal page navigation links
+    document.addEventListener('click', function (e) {
+      const link = e.target.closest('a');
+      if (!link) return;
+
+      const href = link.getAttribute('href');
+      const target = link.getAttribute('target');
+
+      // Skip non-navigational links, external links, anchor scrolls, and modals
+      if (!href ||
+          href.startsWith('#') ||
+          href.startsWith('javascript:') ||
+          href.startsWith('mailto:') ||
+          href.startsWith('tel:') ||
+          href.startsWith('https://wa.me') ||
+          target === '_blank' ||
+          e.metaKey || e.ctrlKey || e.shiftKey || e.altKey ||
+          link.hasAttribute('download')) {
+        return;
+      }
+
+      // Check if it's an internal relative link (.html or same origin)
+      const isInternal = href.endsWith('.html') ||
+                         href.includes('.html?') ||
+                         href.includes('.html#') ||
+                         href.startsWith('./') ||
+                         href.startsWith('/');
+
+      if (!isInternal && !href.startsWith('index.html') && !href.startsWith('about.html') &&
+          !href.startsWith('products.html') && !href.startsWith('product-detail.html') &&
+          !href.startsWith('contact.html') && !href.startsWith('find-a-store.html')) {
+        return;
+      }
+
+      e.preventDefault();
+      overlay.classList.add('is-active');
+
+      // Seamlessly navigate after smooth 400ms brand transition
+      setTimeout(function () {
+        window.location.href = href;
+      }, 400);
+    });
+  }
+
+  initPageTransitions();
+
 });
+
