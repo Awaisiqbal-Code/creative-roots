@@ -226,6 +226,44 @@ document.addEventListener('DOMContentLoaded', function () {
         { qty: '6x3m Booth', price: 'Inquire on WhatsApp' },
         { qty: 'Custom Island', price: 'Custom Quote' }
       ]
+    },
+    'brochure': {
+      title: 'Company Profiles & Catalogs',
+      category: 'Offset Printing',
+      rating: '5.0 ★★★★★ (185 Corporate Reviews)',
+      image: 'images/stationery_mockup.jpg',
+      badge: 'Corporate Choice',
+      desc: 'High-definition offset printed corporate company profiles, multi-page catalogs, and presentation folders with velvet soft-touch lamination, gold foil accents, and precision spot UV detailing.',
+      specs: {
+        'Cover': '350gsm Premium Art Card + Soft-Touch Finish',
+        'Inner Pages': '150gsm Silk Art Paper Full Color',
+        'Binding': 'Saddle Stitch / Wire-O / Perfect Binding',
+        'Min Order (MOQ)': '100 Copies',
+        'Turnaround': '3 - 5 Business Days'
+      },
+      tiers: [
+        { qty: '100-250 pcs', price: 'Inquire on WhatsApp' },
+        { qty: '251-500 pcs', price: 'Inquire on WhatsApp' },
+        { qty: '1000+ pcs', price: 'Inquire on WhatsApp' }
+      ]
+    },
+    'offset': {
+      title: 'Commercial Offset Printing Solutions',
+      category: 'Offset & Commercial Printing',
+      rating: '5.0 ★★★★★ (240 Enterprise Reviews)',
+      image: 'images/printing_wide_format.jpg',
+      badge: 'High Volume',
+      desc: 'Industrial Heidelberg multi-color offset printing for large volume packaging, corporate marketing collateral, annual reports, brochures, and promotional displays with precise PMS color matching.',
+      specs: {
+        'Press': 'Heidelberg Speedmaster 4-Color & 5-Color',
+        'Finishing': 'Matte/Gloss Lamination, Foil, Die-Cutting',
+        'Turnaround': '3 - 6 Business Days'
+      },
+      tiers: [
+        { qty: 'High Volume Run', price: 'Inquire on WhatsApp' },
+        { qty: 'Custom Packaging', price: 'Inquire on WhatsApp' },
+        { qty: 'Annual Reports', price: 'Inquire on WhatsApp' }
+      ]
     }
   };
 
@@ -780,8 +818,10 @@ document.addEventListener('DOMContentLoaded', function () {
     startInterval();
   }
 
-  // Initialize auto-rotation immediately
-  startInterval();
+  // Initialize auto-rotation only if testimonial showcase exists
+  if (reviewHeadline) {
+    startInterval();
+  }
 
   // Pause on hover, resume on mouse leave
   if (showcaseContainer) {
