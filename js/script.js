@@ -264,6 +264,122 @@ document.addEventListener('DOMContentLoaded', function () {
         { qty: 'Custom Packaging', price: 'Inquire on WhatsApp' },
         { qty: 'Annual Reports', price: 'Inquire on WhatsApp' }
       ]
+    },
+    'chase-box': {
+      title: 'CHASE Executive Welcome Hamper Box',
+      category: 'Corporate Boxes',
+      rating: '5.0 ★★★★★ (188 Enterprise Reviews)',
+      image: 'images/real_work/box_chase_black.jpg',
+      badge: 'Client Favorite',
+      desc: 'Real physical client project manufactured for CHASE. Satin-lined luxury rigid black hamper containing matte black ceramic coffee mug, laser-debossed executive diary, metal twist pen, and engraved metallic keychain.',
+      specs: {
+        'Box': '1200gsm Rigid Kappa Board + Satin Lining',
+        'Contents': 'Mug + Diary + Metal Pen + Keychain',
+        'Branding': 'Silver Foil Debossing + Fiber Laser Etching',
+        'Min Order (MOQ)': '30 Sets',
+        'Turnaround': '4 - 6 Business Days'
+      },
+      tiers: [
+        { qty: '30-50 sets', price: 'Inquire on WhatsApp' },
+        { qty: '51-150 sets', price: 'Inquire on WhatsApp' },
+        { qty: '200+ sets', price: 'Inquire on WhatsApp' }
+      ]
+    },
+    'rabia-box': {
+      title: 'Rabia Amber VIP Gift Hamper',
+      category: 'Corporate Boxes',
+      rating: '5.0 ★★★★★ (145 Enterprise Reviews)',
+      image: 'images/real_work/box_rabia_amber.jpg',
+      badge: 'Luxury Kit',
+      desc: 'Real physical corporate hamper crafted for Rabia Amber. Pure white magnetic presentation box with crimson thermal bottle, customized executive journal, ceramic mug, ballpoint pen, and swivel USB flash drive.',
+      specs: {
+        'Box': 'Magnetic Clasp White Presentation Hamper',
+        'Contents': 'Thermal Flask + Journal + Mug + Pen + USB',
+        'Branding': 'Color DTF + Screen Decal + Laser Etch',
+        'Min Order (MOQ)': '30 Sets',
+        'Turnaround': '4 - 6 Business Days'
+      },
+      tiers: [
+        { qty: '30-50 sets', price: 'Inquire on WhatsApp' },
+        { qty: '51-150 sets', price: 'Inquire on WhatsApp' },
+        { qty: '200+ sets', price: 'Inquire on WhatsApp' }
+      ]
+    },
+    'ccl-drinkware': {
+      title: 'CCL Executive Thermal Flask & Pen Set',
+      category: 'Executive Drinkware',
+      rating: '5.0 ★★★★★ (212 Enterprise Reviews)',
+      image: 'images/real_work/box_ccl_bottle.jpg',
+      badge: 'Pharma Choice',
+      desc: 'Delivered for CCL Pharmaceuticals. High-density EVA foam presentation box with double-wall matte black thermal bottle, luxury metallic stylus pen, and heavy metal keychain with crisp laser-etched corporate emblem.',
+      specs: {
+        'Bottle': '500ml 304 Food-Grade Stainless Steel (12H Hot/24H Cold)',
+        'Pen & Tag': 'Solid Brass Body + Fiber Laser Marking',
+        'Min Order (MOQ)': '50 Sets',
+        'Turnaround': '3 - 5 Business Days'
+      },
+      tiers: [
+        { qty: '50-100 sets', price: 'Inquire on WhatsApp' },
+        { qty: '101-300 sets', price: 'Inquire on WhatsApp' },
+        { qty: '500+ sets', price: 'Inquire on WhatsApp' }
+      ]
+    },
+    'huasun-box': {
+      title: 'Huasun VIP Presentation Box',
+      category: 'Corporate Boxes',
+      rating: '5.0 ★★★★★ (96 Enterprise Reviews)',
+      image: 'images/real_work/box_huasun_golf.jpg',
+      badge: 'VIP Tournament',
+      desc: 'Produced for Huasun Solar Golf Tournament. Bespoke rigid clamshell presentation box featuring high-definition printed invitation inner lid, artificial turf greenbed, personalized badge, and golf kit.',
+      specs: {
+        'Box': 'Heavyweight Rigid Clamshell Box',
+        'Features': 'Full-Color Inner Lid Print + Synthetic Grass Insert',
+        'Min Order (MOQ)': '25 Boxes',
+        'Turnaround': '5 - 7 Business Days'
+      },
+      tiers: [
+        { qty: '25-50 boxes', price: 'Inquire on WhatsApp' },
+        { qty: '51-100 boxes', price: 'Inquire on WhatsApp' },
+        { qty: '150+ boxes', price: 'Inquire on WhatsApp' }
+      ]
+    },
+    'calendar': {
+      title: 'Executive Desk Tent Calendar 2026',
+      category: 'Stationery & Planners',
+      rating: '4.9 ★★★★★ (160 Enterprise Reviews)',
+      image: 'images/real_work/promo_desk_calendar.jpg',
+      badge: 'Annual Corporate',
+      desc: 'Commercial offset printed 12-month desk easel calendar on 300gsm matte art card with gold wire-o binding, heavy triangular easel stand, and customized corporate branding leaves.',
+      specs: {
+        'Stock': '300gsm Imported Matte Art Card',
+        'Binding': 'Gold / Black Spiral Twin-Loop Wire',
+        'Min Order (MOQ)': '100 Pieces',
+        'Turnaround': '3 - 5 Business Days'
+      },
+      tiers: [
+        { qty: '100-250 pcs', price: 'Inquire on WhatsApp' },
+        { qty: '251-500 pcs', price: 'Inquire on WhatsApp' },
+        { qty: '1000+ pcs', price: 'Inquire on WhatsApp' }
+      ]
+    },
+    'promo': {
+      title: 'Retail POS Displays & Marketing Collaterals',
+      category: 'Offset Printing',
+      rating: '5.0 ★★★★★ (130 Enterprise Reviews)',
+      image: 'images/real_work/promo_her_beauty.jpg',
+      badge: 'Brand Activations',
+      desc: 'Delivered for HER Beauty & commercial FMCG brands. Precision die-cut acrylic shelf talkers, promotional wobblers, product hanging tags, and retail point-of-sale display collaterals.',
+      specs: {
+        'Substrates': 'Optically Clear Cast Acrylic / 400gsm Bleached Board',
+        'Cutting': 'Laser Contour Cutting / High-Speed Die-Cutting',
+        'Min Order (MOQ)': '100 Pieces',
+        'Turnaround': '3 - 5 Business Days'
+      },
+      tiers: [
+        { qty: '100-300 pcs', price: 'Inquire on WhatsApp' },
+        { qty: '301-1000 pcs', price: 'Inquire on WhatsApp' },
+        { qty: '1000+ pcs', price: 'Inquire on WhatsApp' }
+      ]
     }
   };
 

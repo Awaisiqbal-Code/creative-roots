@@ -1229,7 +1229,7 @@
           <button type="button" class="btn-fullscreen-trigger" onclick="openLightbox()" title="View Fullscreen High-Res">
             <i class="fa-solid fa-expand"></i>
           </button>
-          <img src="images/cap_maroon.jpg" id="active-product-img" alt="Product Image" loading="lazy">
+          <img src="images/real_work/box_chase_black.jpg" id="active-product-img" alt="Product Image" loading="lazy">
         </div>
 
         <!-- Multi-angle Thumbnail Strip -->
@@ -1358,13 +1358,13 @@
     <h2>You may also like</h2>
     <div class="related-grid">
       
-      <!-- Card 1: Shirt -->
-      <a href="product-detail.html?item=shirt" class="related-card" onclick="loadProductByKey('shirt', event)">
+      <!-- Card 1: CHASE Executive Hamper -->
+      <a href="product-detail.html?item=chase-box" class="related-card" onclick="loadProductByKey('chase-box', event)">
         <div class="related-card-img-wrap">
-          <img src="images/prod_shirt.jpg" alt="Shirt" loading="lazy">
+          <img src="images/real_work/box_chase_black.jpg" alt="CHASE Executive Hamper" loading="lazy">
         </div>
         <div class="related-card-body">
-          <h4 class="related-card-title">Shirt</h4>
+          <h4 class="related-card-title">CHASE Hamper</h4>
           <span class="related-card-price" style="color: #25d366; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp</span>
         </div>
       </a>
@@ -1647,7 +1647,7 @@
         image: 'images/promo_merch.jpg',
         gallery: [
           { src: 'images/promo_merch.jpg', label: 'Chest Embroidery View' },
-          { src: 'images/prod_shirt.jpg', label: 'Full Cut View' }
+          { src: 'images/promo_merch.jpg', label: 'Fabric Weave View' }
         ],
         price: 'Inquire on WhatsApp',
         oldPrice: '',
@@ -1663,50 +1663,85 @@
           { label: 'Turnaround Time', value: '4 - 6 Business Days' }
         ]
       },
-      'shirt': {
-        title: 'Executive Staff Cotton T-Shirt',
-        crumbName: 'Corporate T-Shirt',
-        badge: 'Save 20%',
-        image: 'images/prod_shirt.jpg',
+      'chase-box': {
+        title: 'CHASE Executive Welcome Hamper Box',
+        crumbName: 'Corporate Hamper Box',
+        badge: 'Client Favorite',
+        image: 'images/real_work/box_chase_black.jpg',
         gallery: [
-          { src: 'images/prod_shirt.jpg', label: 'Front Crewneck View' },
-          { src: 'images/promo_merch.jpg', label: 'Fabric & Seam Detail' }
+          { src: 'images/real_work/box_chase_black.jpg', label: 'Full Executive Set' },
+          { src: 'images/real_client_boxes.jpg', label: 'Complete Hamper Collection' }
         ],
         price: 'Inquire on WhatsApp',
         oldPrice: '',
-        unitPriceNum: 690,
-        moq: 50,
-        desc: 'Premium 190 GSM ring-spun combed cotton crewneck t-shirt with reinforced double-stitched collar and hems. Customizable with vibrant high-density screen printing or ultra-sharp DTF graphic transfers for corporate trade shows, team events, and brand campaigns.',
+        unitPriceNum: 2850,
+        moq: 30,
+        desc: 'Real physical client project manufactured for CHASE. Satin-lined luxury rigid black hamper containing matte black ceramic coffee mug, laser-debossed executive diary, metal twist pen, and engraved metallic keychain.',
         specs: [
-          { label: 'Fabric Stock', value: '190 GSM 100% Ring-Spun Combed Cotton' },
-          { label: 'Branding Technique', value: 'Silkscreen Printing / Direct-to-Film (DTF)' },
-          { label: 'Seam Construction', value: 'Twin-Needle Cover Stitching on Neck & Arms' },
-          { label: 'Available Sizes', value: 'S, M, L, XL, XXL, XXXL' },
-          { label: 'Min Order (MOQ)', value: '50 Pieces' },
+          { label: 'Box Construction', value: '1200gsm Rigid Kappa Board + Satin Lining' },
+          { label: 'Branding Technique', value: 'Silver Hot Foil + Fiber Laser Marking' },
+          { label: 'Included Items', value: 'Ceramic Mug, PU Diary, Metal Pen, Keychain' },
+          { label: 'Customization', value: 'Fully Custom Logo on Every Item' },
+          { label: 'Min Order (MOQ)', value: '30 Sets' },
+          { label: 'Turnaround Time', value: '4 - 6 Business Days' }
+        ]
+      },
+      'ccl-drinkware': {
+        title: 'CCL Executive Thermal Flask & Pen Set',
+        crumbName: 'Executive Drinkware Set',
+        badge: 'Pharma Choice',
+        image: 'images/real_work/box_ccl_bottle.jpg',
+        gallery: [
+          { src: 'images/real_work/box_ccl_bottle.jpg', label: 'Matte Thermal Set View' },
+          { src: 'images/promo_drinkware.jpg', label: 'Laser Etched Macro View' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 1650,
+        moq: 50,
+        desc: 'Delivered for CCL Pharmaceuticals. High-density EVA foam presentation box with double-wall matte black thermal bottle, luxury metallic stylus pen, and heavy metal keychain with crisp laser-etched corporate emblem.',
+        specs: [
+          { label: 'Bottle Spec', value: '500ml 304 Food-Grade Stainless Steel' },
+          { label: 'Thermal Retention', value: '24H Cold / 12H Hot Temperature Lock' },
+          { label: 'Branding', value: 'Precision Fiber Laser Etching' },
+          { label: 'Packaging', value: 'Custom Laser-Cut EVA Foam Presentation Box' },
+          { label: 'Min Order (MOQ)', value: '50 Sets' },
           { label: 'Turnaround Time', value: '3 - 5 Business Days' }
         ]
       },
-      'cap': {
-        title: 'Brushed Cotton Embroidered Cap',
-        crumbName: 'Embroidered Cap',
-        badge: 'Save 20%',
-        image: 'images/cap_maroon.jpg',
+      'shirt': {
+        title: 'CHASE Executive Welcome Hamper Box',
+        crumbName: 'Corporate Hamper Box',
+        badge: 'Client Favorite',
+        image: 'images/real_work/box_chase_black.jpg',
         gallery: [
-          { src: 'images/cap_maroon.jpg', label: 'Front View' },
-          { src: 'images/cap_maroon_angle.jpg', label: 'Side & Strap Angle' },
-          { src: 'images/cap_maroon_macro.jpg', label: 'Gold Embroidery Macro' }
+          { src: 'images/real_work/box_chase_black.jpg', label: 'Full Executive Set' }
         ],
         price: 'Inquire on WhatsApp',
         oldPrice: '',
-        unitPriceNum: 390,
-        moq: 50,
-        desc: 'Structured 6-panel heavy brushed cotton twill cap with pre-curved peak, brass buckle strap adjuster, and customized 3D puff embroidery. Engineered for executive corporate uniforms, brand ambassadors, and promotional merchandise campaigns across Pakistan.',
+        unitPriceNum: 2850,
+        moq: 30,
+        desc: 'Luxury rigid presentation hamper customized for corporate onboarding and VIP gifting.',
         specs: [
-          { label: 'Material', value: '100% Heavy Brushed Cotton Twill' },
-          { label: 'Branding', value: '3D High-Density Gold / Multi-Color Embroidery' },
-          { label: 'Closure', value: 'Embossed Brass Buckle with Metal Grommet' },
-          { label: 'Structure', value: '6-Panel Crown with Buckram Reinforcement' },
-          { label: 'Min Order (MOQ)', value: '50 Pieces' },
+          { label: 'Min Order (MOQ)', value: '30 Sets' },
+          { label: 'Turnaround Time', value: '4 - 6 Business Days' }
+        ]
+      },
+      'cap': {
+        title: 'CCL Executive Thermal Flask & Pen Set',
+        crumbName: 'Executive Drinkware Set',
+        badge: 'Pharma Choice',
+        image: 'images/real_work/box_ccl_bottle.jpg',
+        gallery: [
+          { src: 'images/real_work/box_ccl_bottle.jpg', label: 'Matte Thermal Set View' }
+        ],
+        price: 'Inquire on WhatsApp',
+        oldPrice: '',
+        unitPriceNum: 1650,
+        moq: 50,
+        desc: 'High-density EVA foam presentation box with double-wall matte black thermal bottle, luxury stylus pen, and keychain.',
+        specs: [
+          { label: 'Min Order (MOQ)', value: '50 Sets' },
           { label: 'Turnaround Time', value: '3 - 5 Business Days' }
         ]
       },
