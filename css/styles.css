@@ -223,9 +223,9 @@ button, input, select {
   text-decoration: none;
 }
 .logo-img {
-  height: 42px;
+  height: 46px;
   width: auto;
-  max-width: 230px;
+  max-width: 280px;
   display: block;
   object-fit: contain;
   transition: transform 0.3s ease, filter 0.3s ease;
