@@ -40,9 +40,9 @@
       <tspan fill="#3E9B32">Creative </tspan><tspan fill="#F47721">Roots</tspan>
     </text>
     
-    <!-- Offset Printing Subtitle -->
-    <text x="1" y="42" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="9" font-weight="700" letter-spacing="1.2" fill="#536273" text-transform="uppercase">
-      Offset Printing &amp; Packaging
+    <!-- Tagline Subtitle -->
+    <text x="1" y="42" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="8" font-weight="700" letter-spacing="0.5" fill="#536273">
+      Printing | Corporate Events | Exhibition Stalls
     </text>
   </g>
 </svg>
