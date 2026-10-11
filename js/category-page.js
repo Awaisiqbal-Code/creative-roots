@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!itemsGrid || !category.items) return;
 
     const heading = document.getElementById('orderSectionHeading');
-    if (heading) heading.textContent = `${category.name} Catalog & Direct Ordering`;
+    if (heading) heading.textContent = `${category.name} Catalog & Direct WhatsApp Ordering`;
 
     itemsGrid.innerHTML = category.items.map(item => `
       <article class="category-item-card" data-item-id="${item.id}">
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <i class="fa-solid fa-circle-check"></i> ${item.tag || 'Direct Factory Production'}
             </div>
             <button type="button" class="btn-get-order-now" data-add-item="${item.id}">
-              <i class="fa-brands fa-whatsapp"></i> <span>Get Your Order Now</span>
+              <i class="fa-brands fa-whatsapp"></i> <span>Order on WhatsApp</span>
             </button>
           </div>
         </div>
@@ -514,13 +514,20 @@ document.addEventListener('DOMContentLoaded', function () {
           if (btnSendOrderWhatsApp) btnSendOrderWhatsApp.href = result.whatsAppUrl;
         }
 
+        // DIRECT WHATSAPP LAUNCH: Automatically redirect / open WhatsApp with pre-filled order
+        if (result.whatsAppUrl) {
+          setTimeout(() => {
+            window.open(result.whatsAppUrl, '_blank', 'noopener,noreferrer');
+          }, 300);
+        }
+
       } catch (err) {
         console.error('Order submission error:', err);
         alert('There was an issue processing your order. Please try again or WhatsApp us directly.');
       } finally {
         isSubmitting = false;
         btnSubmitOrder.disabled = false;
-        btnSubmitOrder.innerHTML = `<span>Place Order Now</span> <i class="fa-solid fa-arrow-right"></i>`;
+        btnSubmitOrder.innerHTML = `<i class="fa-brands fa-whatsapp"></i> <span>Send Order on WhatsApp</span> <i class="fa-solid fa-arrow-right"></i>`;
       }
     });
   }

@@ -155,13 +155,13 @@
       <div class="container">
         <div class="category-order-header">
           <div class="title-area">
-            <span class="projects-section-badge">✦ DIRECT CATALOG &amp; ORDERING</span>
+            <span class="projects-section-badge">✦ DIRECT CATALOG &amp; WHATSAPP ORDERING</span>
             <h2 id="orderSectionHeading">Catalog &amp; Direct Ordering</h2>
-            <p id="orderSectionSubtitle">Select individual items below to place your custom order directly with our production team.</p>
+            <p id="orderSectionSubtitle">Select individual items below to send your customized order details directly to our WhatsApp team.</p>
           </div>
           <div class="header-action-area">
             <button type="button" class="btn-open-drawer" id="btnHeaderViewOrder">
-              <i class="fa-solid fa-bag-shopping"></i> View Order (<span class="cart-items-counter">0</span>)
+              <i class="fa-brands fa-whatsapp"></i> Order Form (<span class="cart-items-counter">0</span>)
             </button>
           </div>
         </div>
@@ -255,12 +255,12 @@
 
   </main>
 
-  <!-- ===== ORDER DRAWER & CHECKOUT SYSTEM ===== -->
+  <!-- ===== ORDER DRAWER & DIRECT WHATSAPP ORDERING SYSTEM ===== -->
   <div class="order-drawer-backdrop" id="orderDrawerBackdrop" aria-hidden="true"></div>
   
   <aside class="order-drawer" id="orderDrawer" role="dialog" aria-modal="true" aria-labelledby="orderDrawerTitle" aria-hidden="true" data-lenis-prevent="true">
     <div class="order-drawer-header">
-      <h3 id="orderDrawerTitle"><i class="fa-solid fa-cart-shopping" style="color: var(--accent-orange, #F47721);"></i> Your Order (<span class="cart-items-counter">0</span>)</h3>
+      <h3 id="orderDrawerTitle"><i class="fa-brands fa-whatsapp" style="color: #25d366;"></i> WhatsApp Order Form (<span class="cart-items-counter">0</span>)</h3>
       <button type="button" class="order-drawer-close" id="orderDrawerCloseBtn" aria-label="Close Order Drawer">
         <i class="fa-solid fa-xmark"></i>
       </button>
@@ -275,7 +275,7 @@
 
       <!-- Customer Details Form -->
       <form class="drawer-order-form" id="drawerOrderForm" novalidate>
-        <h4 class="drawer-form-title">Customer &amp; Delivery Details</h4>
+        <h4 class="drawer-form-title">Enter Details to Send Order via WhatsApp</h4>
 
         <div class="form-group">
           <label for="orderCustomerName">Full Name <span class="req">*</span></label>
@@ -313,8 +313,8 @@
     </div>
 
     <div class="order-drawer-footer" id="orderDrawerFooter">
-      <button type="button" class="btn-place-order" id="btnSubmitOrder">
-        <span>Place Order Now</span> <i class="fa-solid fa-arrow-right"></i>
+      <button type="button" class="btn-place-order" id="btnSubmitOrder" style="background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);">
+        <i class="fa-brands fa-whatsapp"></i> <span>Send Order on WhatsApp</span> <i class="fa-solid fa-arrow-right"></i>
       </button>
     </div>
 
@@ -323,7 +323,7 @@
       <div class="success-icon-badge">
         <i class="fa-solid fa-check"></i>
       </div>
-      <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-navy, #132238); margin-bottom: 6px;">Order Received!</h3>
+      <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-navy, #132238); margin-bottom: 6px;">Opening WhatsApp...</h3>
       <p style="font-size: 0.9rem; color: #64748b;">Your order request has been logged successfully.</p>
       
       <div>
@@ -331,11 +331,11 @@
       </div>
 
       <p style="font-size: 0.85rem; color: #475569; margin-bottom: 20px; line-height: 1.5;">
-        Send this order directly to our official WhatsApp desk for immediate invoice generation and production scheduling:
+        If WhatsApp did not open automatically, click the button below to send your order:
       </p>
 
       <a href="#" target="_blank" rel="noopener noreferrer" class="btn-send-whatsapp-order" id="btnSendOrderWhatsApp">
-        <i class="fa-brands fa-whatsapp"></i> Send via WhatsApp Now
+        <i class="fa-brands fa-whatsapp"></i> Open WhatsApp Now
       </a>
 
       <button type="button" class="btn-new-order-reset" id="btnStartNewOrder">
@@ -348,10 +348,10 @@
   <div class="sticky-order-bar" id="stickyOrderBar">
     <div class="sticky-order-info">
       <span class="sticky-order-badge cart-items-counter">0</span>
-      <span class="sticky-order-text">Items in your order</span>
+      <span class="sticky-order-text">Items selected</span>
     </div>
-    <button type="button" class="btn-open-drawer" id="btnStickyCheckout">
-      <span>Review &amp; Order</span> <i class="fa-solid fa-arrow-right"></i>
+    <button type="button" class="btn-open-drawer" id="btnStickyCheckout" style="background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);">
+      <i class="fa-brands fa-whatsapp"></i> <span>Fill Form &amp; Send</span> <i class="fa-solid fa-arrow-right"></i>
     </button>
   </div>
 
