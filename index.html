@@ -256,8 +256,103 @@
             </div>
           </div>
 
+                </div>
+
+        <!-- Navigation Controls: Arrows -->
+        <button class="hero-nav-arrow hero-nav-prev" aria-label="Previous Slide">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="hero-nav-arrow hero-nav-next" aria-label="Next Slide">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <!-- Navigation Controls: Dots (6 Slides) -->
+        <div class="hero-dots" role="tablist" aria-label="Carousel Slides">
+          <button class="hero-dot active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+          <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+          <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+          <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 4"></button>
+          <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 5"></button>
+          <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 6"></button>
         </div>
       </div>
+
+
+    <!-- Mobile-Exclusive Services Quick Grid (Visible on max-width 992px) -->
+    <div class="mobile-services-section" id="mobileServices">
+      <div class="mobile-services-header">
+        <span class="badge-gold">✦ COMPLETE SOLUTIONS</span>
+        <h3>Our Services</h3>
+        <p>Explore our 6 core corporate branding capabilities</p>
+      </div>
+      <div class="mobile-services-grid">
+        <a href="category.html?slug=corporate-giveaways" class="mobile-service-card active" data-slide-target="0">
+          <div class="mobile-service-icon">
+            <img src="images/services/corporate-giveaways.svg" alt="Corporate Giveaways" width="36" height="36" loading="lazy">
+          </div>
+          <div class="mobile-service-info">
+            <h4>Corporate Giveaways</h4>
+            <p>Premium customized merchandise & hampers</p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+
+        <a href="category.html?slug=digital-printing" class="mobile-service-card" data-slide-target="1">
+          <div class="mobile-service-icon">
+            <img src="images/services/digital-printing.svg" alt="Digital Printing" width="36" height="36" loading="lazy">
+          </div>
+          <div class="mobile-service-info">
+            <h4>Digital Printing</h4>
+            <p>HD short-run catalogs & die-cut labels</p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+
+        <a href="category.html?slug=offset-printing" class="mobile-service-card" data-slide-target="2">
+          <div class="mobile-service-icon">
+            <img src="images/services/offset-printing.svg" alt="Offset Printing" width="36" height="36" loading="lazy">
+          </div>
+          <div class="mobile-service-info">
+            <h4>Offset Printing</h4>
+            <p>High-volume commercial lithography & packaging</p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+
+        <a href="category.html?slug=outdoor-branding" class="mobile-service-card" data-slide-target="3">
+          <div class="mobile-service-icon">
+            <img src="images/services/outdoor-branding.svg" alt="Outdoor Branding" width="36" height="36" loading="lazy">
+          </div>
+          <div class="mobile-service-info">
+            <h4>Outdoor Branding</h4>
+            <p>3D architectural signs & LED fascias</p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+
+        <a href="category.html?slug=panaflex-printing" class="mobile-service-card" data-slide-target="4">
+          <div class="mobile-service-icon">
+            <img src="images/services/panaflex-printing.svg" alt="Panaflex Printing" width="36" height="36" loading="lazy">
+          </div>
+          <div class="mobile-service-info">
+            <h4>Panaflex Printing</h4>
+            <p>Large format billboards & roll-up standees</p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+
+        <a href="category.html?slug=exhibition-stalls" class="mobile-service-card" data-slide-target="5">
+          <div class="mobile-service-icon">
+            <img src="images/services/exhibition-stalls.svg" alt="Exhibition Stalls" width="36" height="36" loading="lazy">
+          </div>
+          <div class="mobile-service-info">
+            <h4>Exhibition Stalls</h4>
+            <p>Turnkey 3D expo trade booths & kiosks</p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
 
     </div>
   </section>
@@ -1041,6 +1136,38 @@
 
   <!-- Back to Top Button -->
   <button class="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  
+  <!-- ===== Mobile Fixed Bottom Tab Bar (App-like Experience) ===== -->
+  <nav class="mobile-bottom-tab-bar" id="mobileBottomBar" aria-label="Mobile Bottom Navigation">
+    <a href="index.html" class="tab-bar-item active" data-tab="home">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </a>
+    <a href="#mobileServices" class="tab-bar-item" data-tab="services">
+      <i class="fa-solid fa-shapes"></i>
+      <span>Services</span>
+    </a>
+    <a href="#projects" class="tab-bar-item" data-tab="projects">
+      <i class="fa-solid fa-briefcase"></i>
+      <span>Projects</span>
+    </a>
+    <a href="products.html" class="tab-bar-item" data-tab="store">
+      <div class="tab-bar-icon-wrap">
+        <i class="fa-solid fa-layer-group"></i>
+        <span class="tab-badge">Hot</span>
+      </div>
+      <span>Store</span>
+    </a>
+    <a href="https://wa.me/923347009992?text=Hello%20Creative%20Roots%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." 
+       class="tab-bar-item tab-bar-whatsapp" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       data-tab="whatsapp">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>WhatsApp</span>
+    </a>
+  </nav>
 
   <!-- Lenis Smooth Scroll Engine -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>

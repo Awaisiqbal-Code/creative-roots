@@ -1449,6 +1449,14 @@ document.addEventListener('DOMContentLoaded', function () {
         dot.classList.toggle('active', isActive);
         dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
       });
+
+      // Synchronize Mobile Services Quick Cards (Highlight matching active slide)
+      const mobileServiceCards = document.querySelectorAll('.mobile-service-card');
+      if (mobileServiceCards.length) {
+        mobileServiceCards.forEach((c, idx) => {
+          c.classList.toggle('active', idx === currentIndex);
+        });
+      }
     }
 
     function advanceSlide() {
@@ -1542,6 +1550,33 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize slide 0 and begin autoplay
     showSlide(0);
     startAutoPlay();
+  }
+
+  // ============================================================
+  // MOBILE BOTTOM TAB BAR (Show on scroll up, hide on scroll down)
+  // ============================================================
+  const mobileBottomBar = document.getElementById('mobileBottomBar');
+  if (mobileBottomBar) {
+    let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    let ticking = false;
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+          if (currentScrollY > lastScrollY && currentScrollY > 120) {
+            // Scrolling down -> hide tab bar
+            mobileBottomBar.classList.add('hide-bar');
+          } else {
+            // Scrolling up -> show tab bar
+            mobileBottomBar.classList.remove('hide-bar');
+          }
+          lastScrollY = Math.max(0, currentScrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
   }
 
   // ============================================================

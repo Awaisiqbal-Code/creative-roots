@@ -66,6 +66,8 @@
 html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   scroll-behavior: auto !important;
   overscroll-behavior-y: none;
 }
@@ -6476,3 +6478,707 @@ button, input, select {
 
 
 
+
+
+/* ================================================================
+   19. COMPREHENSIVE MOBILE-ONLY UPGRADE (MAX-WIDTH: 768px)
+   Matches Exact User Specifications & Real Mobile Device Audits
+   ================================================================ */
+@media (max-width: 768px) {
+
+  /* --- 1. TOP ANNOUNCEMENT BAR (Seamless, compact, non-intrusive) --- */
+  .announcement-bar {
+    height: 35px !important;
+    min-height: 35px !important;
+    line-height: 35px !important;
+    font-size: 0.72rem !important;
+    padding: 0 !important;
+    background: #0d1726 !important;
+    z-index: 1002 !important;
+  }
+  .announcement-ticker-track {
+    animation-duration: 32s !important;
+  }
+  .announcement-ticker-item {
+    padding: 0 10px !important;
+    gap: 6px !important;
+  }
+  .announcement-bar .badge-gold {
+    font-size: 0.58rem !important;
+    padding: 2px 7px !important;
+    letter-spacing: 0.3px !important;
+  }
+  .ticker-text {
+    font-size: 0.72rem !important;
+    font-weight: 500 !important;
+  }
+  .announcement-ticker-divider {
+    padding: 0 6px !important;
+    font-size: 0.6rem !important;
+  }
+
+  /* --- 2. HEADER: Compact 58px Height, Sticky with Backdrop Blur --- */
+  .header {
+    height: 58px !important;
+    min-height: 58px !important;
+    max-height: 58px !important;
+    padding: 8px 0 !important;
+    position: sticky !important;
+    top: 0 !important;
+    background: rgba(255, 255, 255, 0.94) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.9) !important;
+    z-index: 1000 !important;
+  }
+  .header.scrolled {
+    height: 58px !important;
+    min-height: 58px !important;
+    max-height: 58px !important;
+    padding: 8px 0 !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 4px 20px rgba(19, 34, 56, 0.08) !important;
+  }
+  .header .container {
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 16px !important;
+    gap: 12px !important;
+  }
+  .logo {
+    display: flex !important;
+    align-items: center !important;
+    order: 2 !important;
+  }
+  .logo-img {
+    height: 34px !important;
+    max-height: 34px !important;
+    width: auto !important;
+    max-width: 170px !important;
+  }
+  .mobile-menu-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    order: 1 !important;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    color: var(--primary-navy) !important;
+    font-size: 1.15rem !important;
+    cursor: pointer !important;
+    transition: transform 0.2s ease !important;
+  }
+  .mobile-menu-toggle:active {
+    transform: scale(0.94) !important;
+  }
+  .header-actions {
+    order: 3 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .header-store-link {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 12px !important;
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    color: var(--accent-orange, #F47721) !important;
+    font-size: 1.15rem !important;
+    padding: 0 !important;
+    text-decoration: none !important;
+  }
+  .header-store-link .header-action-label {
+    display: none !important;
+  }
+
+  /* Slide-Down Full Navigation Drawer */
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 58px;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: calc(100dvh - 58px);
+    background: #ffffff;
+    flex-direction: column;
+    padding: 24px 20px 100px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.15);
+    z-index: 99999;
+    overflow-y: auto;
+    border-top: 1px solid #e2e8f0;
+  }
+  .nav-links.active {
+    display: flex !important;
+    animation: slideDownNav 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes slideDownNav {
+    from { opacity: 0; transform: translateY(-12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .nav-links li {
+    width: 100%;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .nav-links li a {
+    padding: 16px 12px !important;
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    color: var(--primary-navy) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    min-height: 48px !important;
+  }
+
+  /* --- 3. HERO CAROUSEL: 60-70dvh, Dark Bottom Gradient, White Text, 100% Legibility --- */
+  .hero-section {
+    padding: 12px 0 16px !important;
+    background: var(--bg-page) !important;
+  }
+  .hero-section .container {
+    padding: 0 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  .hero-banner.hero-carousel,
+  .hero-banner {
+    width: 100% !important;
+    height: 64dvh !important;
+    min-height: 460px !important;
+    max-height: 560px !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    border: 1px solid rgba(19, 34, 56, 0.1) !important;
+    box-shadow: 0 8px 24px rgba(19, 34, 56, 0.08) !important;
+    background: #0d1726 !important;
+  }
+  .hero-carousel-track {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    position: relative !important;
+  }
+  .hero-slide {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    align-items: flex-start !important;
+  }
+  .hero-slide .hero-banner-bg-img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: 70% center !important; /* Centers products / signage subject */
+    display: block !important;
+  }
+  /* Remove washed out white overlay; use dark cinematic bottom gradient */
+  .hero-slide .hero-banner-overlay,
+  .hero-banner-overlay {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(180deg, 
+      rgba(10, 19, 32, 0.1) 0%, 
+      rgba(10, 19, 32, 0.25) 30%, 
+      rgba(10, 19, 32, 0.72) 58%, 
+      rgba(10, 19, 32, 0.94) 84%, 
+      #0a1320 100%) !important;
+    z-index: 2 !important;
+  }
+  .hero-slide-dark .hero-banner-overlay {
+    background: linear-gradient(180deg, 
+      rgba(5, 10, 18, 0.15) 0%, 
+      rgba(5, 10, 18, 0.35) 30%, 
+      rgba(5, 10, 18, 0.8) 58%, 
+      #050a12 100%) !important;
+  }
+  .hero-slide .hero-banner-content {
+    position: relative !important;
+    z-index: 3 !important;
+    padding: 16px 18px 46px 18px !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .hero-badge-pill {
+    padding: 4px 12px !important;
+    font-size: 0.65rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 1px !important;
+    border-radius: 50px !important;
+    border: 1px solid rgba(244, 119, 33, 0.5) !important;
+    background: rgba(13, 23, 38, 0.8) !important;
+    color: #F47721 !important;
+    margin-bottom: 6px !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+  }
+  .hero-kicker-script {
+    font-family: 'Caveat', cursive, sans-serif !important;
+    font-size: 1.6rem !important;
+    line-height: 1 !important;
+    color: #93c5fd !important;
+    margin-bottom: 2px !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) !important;
+  }
+  .hero-banner-content h1.hero-main-title {
+    font-size: clamp(1.8rem, 7vw, 2.35rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.1 !important;
+    color: #ffffff !important;
+    margin-bottom: 8px !important;
+    letter-spacing: -0.5px !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+  }
+  .hero-slide-desc-clean {
+    font-size: 0.85rem !important;
+    line-height: 1.42 !important;
+    color: #e2e8f0 !important;
+    margin-bottom: 14px !important;
+    max-width: 100% !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+  }
+  .hero-actions-wrap {
+    width: 100% !important;
+  }
+  .hero-btn-pill {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    background: linear-gradient(135deg, #F47721 0%, #D96213 100%) !important;
+    color: #ffffff !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    padding: 10px 14px 10px 20px !important;
+    border-radius: 50px !important;
+    box-shadow: 0 6px 18px rgba(244, 119, 33, 0.4) !important;
+    min-height: 46px !important;
+  }
+  .hero-btn-pill .arrow-circle {
+    width: 28px !important;
+    height: 28px !important;
+    background: rgba(0, 0, 0, 0.25) !important;
+    font-size: 0.8rem !important;
+  }
+  .hero-nav-arrow {
+    display: none !important; /* Hide arrows on touch mobile, rely on dots & swipe */
+  }
+  .hero-dots {
+    bottom: 12px !important;
+    padding: 4px 10px !important;
+    gap: 6px !important;
+    background: rgba(13, 23, 38, 0.7) !important;
+    border-radius: 20px !important;
+  }
+  .hero-dot {
+    width: 7px !important;
+    height: 7px !important;
+    background: rgba(255, 255, 255, 0.45) !important;
+  }
+  .hero-dot.active {
+    width: 20px !important;
+    background: var(--accent-orange, #F47721) !important;
+    border-radius: 10px !important;
+  }
+
+  /* --- 4. MOBILE SERVICES QUICK GRID (2-Column Cards) --- */
+  .mobile-services-section {
+    display: block !important;
+    width: 100%;
+    margin-top: 14px;
+    padding-top: 8px;
+  }
+  .mobile-services-header {
+    margin-bottom: 14px;
+  }
+  .mobile-services-header h3 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--primary-navy);
+    margin: 6px 0 2px;
+  }
+  .mobile-services-header p {
+    font-size: 0.84rem;
+    color: #64748b;
+  }
+  .mobile-services-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+  .mobile-service-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 2px 8px rgba(19, 34, 56, 0.04);
+    position: relative;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .mobile-service-card:active {
+    transform: scale(0.97);
+  }
+  .mobile-service-card.active {
+    border-color: var(--accent-orange);
+    background: #fffdf9;
+    box-shadow: 0 4px 14px rgba(244, 119, 33, 0.12);
+  }
+  .mobile-service-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #f8fafc;
+    border: 1px solid #edf2f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+  }
+  .mobile-service-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .mobile-service-info h4 {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: var(--primary-navy);
+    line-height: 1.25;
+  }
+  .mobile-service-info p {
+    font-size: 0.72rem;
+    color: #64748b;
+    line-height: 1.35;
+    margin-top: 2px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .mobile-service-card i.fa-chevron-right {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    font-size: 0.7rem;
+    color: #cbd5e1;
+  }
+
+  /* --- 5. CORPORATE CLIENTS SECTION (Tightened Spacing, 96x60px Cards) --- */
+  .corporate-clients {
+    padding: 36px 0 40px !important;
+    background: #f8fafc !important;
+  }
+  .corporate-clients h2 {
+    font-size: 1.45rem !important;
+    margin-bottom: 22px !important;
+  }
+  .clients-slider {
+    gap: 16px !important;
+    animation-duration: 36s !important;
+    padding: 6px 0 !important;
+  }
+  .client-logo-item {
+    height: 60px !important;
+    min-width: 105px !important;
+    width: 105px !important;
+    padding: 6px 12px !important;
+    border-radius: 10px !important;
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    filter: grayscale(85%) !important;
+    transition: filter 0.3s ease, transform 0.2s ease !important;
+  }
+  .client-logo-item:hover,
+  .client-logo-item:active {
+    filter: grayscale(0%) !important;
+  }
+  .client-logo-item img {
+    max-height: 42px !important;
+    max-width: 90px !important;
+  }
+
+  /* --- 6. PROJECTS SECTION & HORIZONTAL SCROLL-SNAP FILTER TABS --- */
+  .services-projects-showcase {
+    padding: 44px 0 55px !important;
+  }
+  .projects-section-header h2 {
+    font-size: 1.65rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 8px !important;
+  }
+  .projects-section-header p {
+    font-size: 0.88rem !important;
+  }
+  .projects-filter-bar {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    justify-content: flex-start !important;
+    padding: 6px 16px 12px !important;
+    margin: 0 -16px 20px !important;
+    gap: 8px !important;
+  }
+  .projects-filter-bar::-webkit-scrollbar {
+    display: none !important;
+  }
+  .project-filter-btn {
+    flex-shrink: 0 !important;
+    scroll-snap-align: start !important;
+    font-size: 0.8rem !important;
+    padding: 8px 16px !important;
+    min-height: 44px !important;
+    border-radius: 50px !important;
+  }
+  .projects-track-container {
+    padding: 0 16px !important;
+  }
+  .projects-slider-wrapper {
+    padding: 4px 0 20px !important;
+  }
+  .projects-cards-track {
+    gap: 16px !important;
+  }
+  .project-card {
+    flex: 0 0 280px !important;
+    width: 280px !important;
+    border-radius: 16px !important;
+    padding: 12px !important;
+  }
+  .project-card-canvas {
+    aspect-ratio: 4 / 3 !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+  .project-img-frame {
+    aspect-ratio: 4 / 3 !important;
+    height: 100% !important;
+  }
+  .project-card-footer h4 {
+    font-size: 0.95rem !important;
+  }
+
+  /* Full Screen Mobile Project Modal */
+  .project-modal-dialog {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+  }
+  .project-modal-body {
+    grid-template-columns: 1fr !important;
+    max-height: 100% !important;
+    overflow-y: auto !important;
+    padding: 20px 16px 60px !important;
+  }
+  .btn-project-inquire {
+    width: 100% !important;
+    justify-content: center !important;
+    min-height: 48px !important;
+  }
+
+  /* --- 7. STATS MILESTONES: 2x2 Grid on Mobile --- */
+  .trust-stats-section {
+    padding: 40px 0 46px !important;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+  .stat-card {
+    padding: 18px 12px !important;
+    border-radius: 14px !important;
+  }
+  .stat-icon-wrap {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.15rem !important;
+    margin-bottom: 10px !important;
+  }
+  .stat-number-wrap {
+    font-size: 1.9rem !important;
+  }
+  .stat-title {
+    font-size: 0.88rem !important;
+  }
+  .stat-desc {
+    font-size: 0.74rem !important;
+    line-height: 1.35 !important;
+  }
+
+  /* --- 8. FOOTER: Clean Single Stack --- */
+  .footer {
+    padding: 45px 0 95px !important; /* Space for bottom tab bar */
+  }
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  .footer-brand p {
+    max-width: 100% !important;
+  }
+  .footer-links h4 {
+    margin-bottom: 12px !important;
+    font-size: 1.05rem !important;
+  }
+  .footer-links ul li a {
+    font-size: 0.92rem !important;
+    padding: 4px 0 !important;
+    min-height: 36px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+  .footer-social {
+    justify-content: flex-start !important;
+  }
+  .footer-bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  .footer-bottom div a {
+    margin-left: 0 !important;
+    margin-right: 16px !important;
+  }
+
+  /* --- 9. FLOATING WHATSAPP BUTTON (Compact Icon-Only Above Tab Bar) --- */
+  .floating-whatsapp-widget {
+    bottom: 74px !important; /* Clear 60px bottom tab bar */
+    left: 14px !important;
+    z-index: 9998 !important;
+  }
+  .whatsapp-icon-circle {
+    width: 46px !important;
+    height: 46px !important;
+    font-size: 1.6rem !important;
+  }
+  .whatsapp-chat-bubble {
+    display: none !important; /* Icon-only on mobile so it never covers content */
+  }
+
+  .back-to-top {
+    bottom: 74px !important;
+    right: 14px !important;
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  /* --- 10. FIXED MOBILE BOTTOM TAB BAR (App-Style Experience) --- */
+  .mobile-bottom-tab-bar {
+    display: flex !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 60px !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    border-top: 1px solid #e2e8f0 !important;
+    z-index: 9999 !important;
+    padding-bottom: env(safe-area-inset-bottom, 0px) !important;
+    box-shadow: 0 -4px 16px rgba(19, 34, 56, 0.08) !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    transform: translateY(0) !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+  .mobile-bottom-tab-bar.hide-bar {
+    transform: translateY(100%) !important;
+  }
+  .tab-bar-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 3px !important;
+    flex: 1 !important;
+    height: 100% !important;
+    text-decoration: none !important;
+    color: #64748b !important;
+    font-size: 0.68rem !important;
+    font-weight: 700 !important;
+    transition: all 0.2s ease !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  .tab-bar-item i {
+    font-size: 1.15rem !important;
+  }
+  .tab-bar-item.active {
+    color: var(--accent-orange, #F47721) !important;
+  }
+  .tab-bar-item.active i {
+    transform: translateY(-2px) !important;
+  }
+  .tab-bar-whatsapp {
+    color: #25d366 !important;
+  }
+  .tab-bar-icon-wrap {
+    position: relative !important;
+  }
+  .tab-badge {
+    position: absolute !important;
+    top: -4px !important;
+    right: -10px !important;
+    background: #ef4444 !important;
+    color: #ffffff !important;
+    font-size: 0.55rem !important;
+    padding: 1px 4px !important;
+    border-radius: 6px !important;
+    font-weight: 800 !important;
+  }
+
+  /* Prevent any horizontal page overflow */
+  html, body {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+}
+
+/* Hide mobile-specific sections on Desktop */
+@media (min-width: 769px) {
+  .mobile-services-section {
+    display: none !important;
+  }
+  .mobile-bottom-tab-bar {
+    display: none !important;
+  }
+}
