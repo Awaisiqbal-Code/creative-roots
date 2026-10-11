@@ -1624,6 +1624,193 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* ================================================================
+     16. Services Projects Showcase Controller
+     - Rotating / Slider Carousel with pause on hover
+     - Filter tabs for All + 6 Services
+     - Seamless click-through from Top Categories & Hero Banner buttons
+     - Lightbox Modal with instant WhatsApp inquiry
+     ================================================================ */
+  function initServicesProjectsShowcase() {
+    const section = document.getElementById('projects');
+    if (!section) return;
+
+    const sliderWrapper = document.getElementById('projectsSliderWrapper');
+    const prevBtn = document.getElementById('projectsPrevBtn');
+    const nextBtn = document.getElementById('projectsNextBtn');
+    const filterBtns = section.querySelectorAll('.project-filter-btn');
+    const allCards = Array.from(section.querySelectorAll('.project-card'));
+
+    // Modal elements
+    const modal = document.getElementById('projectModal');
+    const modalImg = document.getElementById('modalProjectImg');
+    const modalBadge = document.getElementById('modalProjectBadge');
+    const modalTitle = document.getElementById('modalProjectTitle');
+    const modalDesc = document.getElementById('modalProjectDesc');
+    const modalCta = document.getElementById('modalProjectCta');
+    const modalClose = document.getElementById('projectModalClose');
+    const modalBackdrop = document.getElementById('projectModalBackdrop');
+
+    let currentFilter = 'all';
+    let autoScrollTimer = null;
+    let isHovered = false;
+
+    // Filter functionality
+    function setFilter(category) {
+      currentFilter = category;
+
+      // Update button states
+      filterBtns.forEach(btn => {
+        const isMatch = btn.getAttribute('data-filter') === category;
+        btn.classList.toggle('active', isMatch);
+        btn.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+      });
+
+      // Filter cards
+      allCards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        if (category === 'all' || cardCat === category) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
+        } else {
+          card.style.display = 'none';
+          card.style.opacity = '0';
+        }
+      });
+
+      // Reset scroll position
+      if (sliderWrapper) {
+        sliderWrapper.scrollTo({ left: 0, behavior: 'smooth' });
+      }
+    }
+
+    // Filter Button Clicks
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function () {
+        const cat = this.getAttribute('data-filter') || 'all';
+        setFilter(cat);
+      });
+    });
+
+    // Slider Navigation Arrows
+    function scrollSlider(direction) {
+      if (!sliderWrapper) return;
+      const cardWidth = 364; // card width + gap
+      const currentScroll = sliderWrapper.scrollLeft;
+      const targetScroll = direction === 'next' ? currentScroll + cardWidth : currentScroll - cardWidth;
+      sliderWrapper.scrollTo({ left: targetScroll, behavior: 'smooth' });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => scrollSlider('prev'));
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => scrollSlider('next'));
+    }
+
+    // Auto-advance slider (rotating smoothly like corporate clients marquee)
+    function startAutoScroll() {
+      stopAutoScroll();
+      autoScrollTimer = setInterval(function () {
+        if (!sliderWrapper || isHovered) return;
+        const maxScroll = sliderWrapper.scrollWidth - sliderWrapper.clientWidth;
+        if (sliderWrapper.scrollLeft >= maxScroll - 20) {
+          sliderWrapper.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          scrollSlider('next');
+        }
+      }, 3500);
+    }
+
+    function stopAutoScroll() {
+      if (autoScrollTimer) {
+        clearInterval(autoScrollTimer);
+        autoScrollTimer = null;
+      }
+    }
+
+    if (sliderWrapper) {
+      sliderWrapper.addEventListener('mouseenter', () => { isHovered = true; });
+      sliderWrapper.addEventListener('mouseleave', () => { isHovered = false; });
+      sliderWrapper.addEventListener('touchstart', () => { isHovered = true; }, { passive: true });
+      sliderWrapper.addEventListener('touchend', () => { isHovered = false; }, { passive: true });
+      startAutoScroll();
+    }
+
+    // Modal Lightbox for Project Details
+    function openModal(card) {
+      if (!modal) return;
+      const img = card.getAttribute('data-img') || '';
+      const title = card.getAttribute('data-title') || '';
+      const badge = card.getAttribute('data-badge') || '';
+      const desc = card.getAttribute('data-desc') || '';
+
+      if (modalImg) modalImg.src = img;
+      if (modalImg) modalImg.alt = title;
+      if (modalTitle) modalTitle.textContent = title;
+      if (modalBadge) modalBadge.textContent = badge;
+      if (modalDesc) modalDesc.textContent = desc;
+
+      if (modalCta) {
+        const waMsg = encodeURIComponent(`Hello Creative Roots, I am interested in your project: "${title}" (${badge}). Please provide more details and pricing.`);
+        modalCta.href = `https://wa.me/923347009992?text=${waMsg}`;
+      }
+
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      if (!modal) return;
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    allCards.forEach(card => {
+      card.addEventListener('click', function () {
+        openModal(this);
+      });
+    });
+
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal && modal.classList.contains('open')) {
+        closeModal();
+      }
+    });
+
+    // Seamless Integration with Top Categories Sidebar & Hero Banner Explore Buttons
+    document.addEventListener('click', function (e) {
+      const target = e.target.closest('[data-category], [data-target-category]');
+      if (!target) return;
+
+      // Ignore filter buttons inside the projects section itself
+      if (target.classList.contains('project-filter-btn') || target.closest('.projects-filter-bar')) {
+        return;
+      }
+
+      const cat = target.getAttribute('data-category') || target.getAttribute('data-target-category');
+      if (cat) {
+        e.preventDefault();
+        setFilter(cat);
+
+        // Smooth scroll to projects section
+        const headerOffset = 80;
+        const elementPosition = section.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  }
+
+  initServicesProjectsShowcase();
   initPageTransitions();
 
 });
