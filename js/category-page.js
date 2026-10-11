@@ -225,14 +225,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
+      if (typeof window.lockBackgroundScroll === 'function') {
+        window.lockBackgroundScroll();
+      } else {
+        document.body.style.overflow = 'hidden';
+      }
     }
 
     function closeProjectModal() {
       if (!modal) return;
       modal.classList.remove('open');
       modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
+      if (typeof window.unlockBackgroundScroll === 'function') {
+        window.unlockBackgroundScroll();
+      } else {
+        document.body.style.overflow = '';
+      }
     }
 
     projectsGrid.querySelectorAll('.project-card').forEach(card => {
@@ -335,7 +343,11 @@ document.addEventListener('DOMContentLoaded', function () {
       drawerBackdrop.classList.add('is-open');
       drawerBackdrop.setAttribute('aria-hidden', 'false');
     }
-    document.body.style.overflow = 'hidden';
+    if (typeof window.lockBackgroundScroll === 'function') {
+      window.lockBackgroundScroll();
+    } else {
+      document.body.style.overflow = 'hidden';
+    }
   }
 
   function closeDrawer() {
@@ -346,7 +358,11 @@ document.addEventListener('DOMContentLoaded', function () {
       drawerBackdrop.classList.remove('is-open');
       drawerBackdrop.setAttribute('aria-hidden', 'true');
     }
-    document.body.style.overflow = '';
+    if (typeof window.unlockBackgroundScroll === 'function') {
+      window.unlockBackgroundScroll();
+    } else {
+      document.body.style.overflow = '';
+    }
   }
 
   if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeDrawer);

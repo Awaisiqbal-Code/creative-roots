@@ -234,7 +234,7 @@
   <!-- ===== ORDER DRAWER & CHECKOUT SYSTEM ===== -->
   <div class="order-drawer-backdrop" id="orderDrawerBackdrop" aria-hidden="true"></div>
   
-  <aside class="order-drawer" id="orderDrawer" role="dialog" aria-modal="true" aria-labelledby="orderDrawerTitle" aria-hidden="true">
+  <aside class="order-drawer" id="orderDrawer" role="dialog" aria-modal="true" aria-labelledby="orderDrawerTitle" aria-hidden="true" data-lenis-prevent="true">
     <div class="order-drawer-header">
       <h3 id="orderDrawerTitle"><i class="fa-solid fa-cart-shopping" style="color: var(--accent-orange, #F47721);"></i> Your Order (<span class="cart-items-counter">0</span>)</h3>
       <button type="button" class="order-drawer-close" id="orderDrawerCloseBtn" aria-label="Close Order Drawer">
@@ -243,7 +243,7 @@
     </div>
 
     <!-- Active Form View -->
-    <div class="order-drawer-body" id="orderDrawerBody">
+    <div class="order-drawer-body" id="orderDrawerBody" data-lenis-prevent="true">
       <!-- Items list -->
       <div class="drawer-items-list" id="drawerItemsList">
         <!-- Rendered dynamically -->

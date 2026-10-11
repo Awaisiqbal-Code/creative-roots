@@ -10,6 +10,26 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+  // Prevent browser scroll restoration jitter on reload
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  // Global scroll lock helpers to coordinate Lenis and modals
+  window.lockBackgroundScroll = function () {
+    document.body.style.overflow = 'hidden';
+    if (window.lenisInstance && typeof window.lenisInstance.stop === 'function') {
+      window.lenisInstance.stop();
+    }
+  };
+
+  window.unlockBackgroundScroll = function () {
+    document.body.style.overflow = '';
+    if (window.lenisInstance && typeof window.lenisInstance.start === 'function') {
+      window.lenisInstance.start();
+    }
+  };
+
   // ============================================================
   // 1. PRODUCT CATALOG DATABASE FOR DETAIL MODAL
   // ============================================================
@@ -503,20 +523,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // ============================================================
   const revealElements = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up, .reveal-zoom');
   
-  // Create & mount top luxury scroll progress bar
-  if (!document.getElementById('scroll-progress-bar')) {
-    const scrollBar = document.createElement('div');
-    scrollBar.id = 'scroll-progress-bar';
-    scrollBar.className = 'scroll-progress-bar';
-    document.body.prepend(scrollBar);
-
-    window.addEventListener('scroll', () => {
-      const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollProgress = scrollTotal > 0 ? (window.scrollY / scrollTotal) * 100 : 0;
-      scrollBar.style.width = `${Math.min(100, Math.max(0, scrollProgress))}%`;
-    }, { passive: true });
-  }
-
   // Pre-calculate organic staggered delays for card grids
   const isMobileScreen = window.innerWidth <= 768;
   const gridContainers = document.querySelectorAll('.services-grid, .packaging-cards, .event-grid, .products-grid, .promo-cards, .about-why-grid');
@@ -1008,25 +1014,17 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // ============================================================
-  // 9. HEADER SHADOW & BACK TO TOP
+  // 9. BACK TO TOP CLICK HANDLER
   // ============================================================
-  const header = document.querySelector('.header');
   const backToTop = document.querySelector('.back-to-top');
-
-  window.addEventListener('scroll', function () {
-    if (header) {
-      if (window.scrollY > 40) header.classList.add('scrolled');
-      else header.classList.remove('scrolled');
-    }
-    if (backToTop) {
-      if (window.scrollY > 300) backToTop.classList.add('visible');
-      else backToTop.classList.remove('visible');
-    }
-  });
-
   if (backToTop) {
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    backToTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (window.lenisInstance && typeof window.lenisInstance.scrollTo === 'function') {
+        window.lenisInstance.scrollTo(0, { duration: 1.0 });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     });
   }
 
@@ -1778,14 +1776,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
+      window.lockBackgroundScroll();
     }
 
     function closeModal() {
       if (!modal) return;
       modal.classList.remove('open');
       modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
+      window.unlockBackgroundScroll();
     }
 
     allCards.forEach(card => {
@@ -1824,9 +1822,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ================================================================
      17. LENIS SMOOTH SCROLL ENGINE
-     - Natural inertial smooth scrolling
-     - Auto-fallback to native scroll
-     - Disabled on touch to prevent scroll jank
+  /* ================================================================
+     17. LENIS SMOOTH SCROLL ENGINE (DESKTOP OPTIMIZED)
+     - Single root instance
+     - Conservative physics (duration: 1.0, wheelMultiplier: 1.0, syncTouch: false)
+     - Clean destroy on page unload
      ================================================================ */
   function initLenisSmoothScroll() {
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -1836,23 +1836,29 @@ document.addEventListener('DOMContentLoaded', function () {
     if (typeof Lenis !== 'undefined') {
       try {
         const lenis = new Lenis({
-          duration: 1.15,
+          duration: 1.0,
           easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
           orientation: 'vertical',
           gestureOrientation: 'vertical',
           smoothWheel: true,
-          smoothTouch: false,
-          wheelMultiplier: 1.0
+          wheelMultiplier: 1.0,
+          syncTouch: false,
+          touchMultiplier: 1.0
         });
 
+        let rafId;
         function raf(time) {
           lenis.raf(time);
-          requestAnimationFrame(raf);
+          rafId = requestAnimationFrame(raf);
         }
-        requestAnimationFrame(raf);
+        rafId = requestAnimationFrame(raf);
 
-        // Expose globally for programmatic scrolling
         window.lenisInstance = lenis;
+
+        window.addEventListener('beforeunload', () => {
+          if (rafId) cancelAnimationFrame(rafId);
+          lenis.destroy();
+        });
       } catch (err) {
         console.warn('Lenis initialization skipped:', err);
       }
@@ -1860,30 +1866,44 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ================================================================
-     18. TOP SCROLL PROGRESS BAR & HEADER BLUR TRACKER
-     - 60fps RAF-throttled scroll progress
-     - Header shrink & blur on scroll
+     18. UNIFIED 60FPS MASTER SCROLL CONTROLLER
+     - Single passive RAF-throttled scroll listener for entire site
+     - Fixed header state (threshold: 15px, zero height/padding change)
+     - Back-to-top button visibility
+     - Window scroll progress bar
      ================================================================ */
-  function initScrollProgressBar() {
+  function initMasterScrollController() {
     const bar = document.getElementById('scrollProgressBar');
     const header = document.querySelector('.header');
+    const backToTop = document.querySelector('.back-to-top');
     let ticking = false;
 
-    function updateProgress() {
+    function onScrollTick() {
       const scrollY = window.pageYOffset || document.documentElement.scrollTop;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
 
+      // 1. Header scrolled styling (fixed 72px height, zero layout shift)
+      if (header) {
+        if (scrollY > 15) {
+          if (!header.classList.contains('scrolled')) header.classList.add('scrolled');
+        } else {
+          if (header.classList.contains('scrolled')) header.classList.remove('scrolled');
+        }
+      }
+
+      // 2. Back-to-top button
+      if (backToTop) {
+        if (scrollY > 300) {
+          if (!backToTop.classList.contains('visible')) backToTop.classList.add('visible');
+        } else {
+          if (backToTop.classList.contains('visible')) backToTop.classList.remove('visible');
+        }
+      }
+
+      // 3. Scroll progress bar
       if (bar && docHeight > 0) {
         const pct = Math.min(100, Math.max(0, (scrollY / docHeight) * 100));
         bar.style.width = pct + '%';
-      }
-
-      if (header) {
-        if (scrollY > 35) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
       }
 
       ticking = false;
@@ -1891,13 +1911,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('scroll', function () {
       if (!ticking) {
-        requestAnimationFrame(updateProgress);
+        requestAnimationFrame(onScrollTick);
         ticking = true;
       }
     }, { passive: true });
 
-    // Initial check
-    updateProgress();
+    onScrollTick();
   }
 
   /* ================================================================
@@ -2015,7 +2034,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Master Initializations
   initLenisSmoothScroll();
-  initScrollProgressBar();
+  initMasterScrollController();
   initNumberCounters();
   initButtonRipples();
   initSmoothAnchorNavigation();
