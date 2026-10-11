@@ -1,6 +1,12 @@
 {
   "version": 2,
   "cleanUrls": false,
+  "rewrites": [
+    {
+      "source": "/category/:slug",
+      "destination": "/category.html?slug=:slug"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

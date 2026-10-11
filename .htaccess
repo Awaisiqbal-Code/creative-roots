@@ -1,5 +1,11 @@
 # Creative Roots — Production Apache Configuration
 
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^category/([^/]+)/?$ category.html?slug=$1 [L,QSA]
+</IfModule>
+
 <IfModule mod_headers.c>
     # Security Headers
     Header always set X-Content-Type-Options "nosniff"

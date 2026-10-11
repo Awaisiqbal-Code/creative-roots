@@ -1678,6 +1678,26 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
 
+      // Update View All in Category button
+      const viewAllBtn = document.getElementById('projectsCategoryViewAllBtn');
+      if (viewAllBtn) {
+        const catMap = {
+          'giveaways': { slug: 'corporate-giveaways', name: 'Corporate Giveaways' },
+          'digital': { slug: 'digital-printing', name: 'Digital Printing' },
+          'offset': { slug: 'offset-printing', name: 'Offset Printing' },
+          'outdoor': { slug: 'outdoor-branding', name: 'Outdoor Branding' },
+          'panaflex': { slug: 'panaflex-printing', name: 'Panaflex Printing' },
+          'stalls': { slug: 'exhibition-stalls', name: 'Exhibition Stalls' }
+        };
+        if (catMap[category]) {
+          viewAllBtn.href = `category.html?slug=${catMap[category].slug}`;
+          viewAllBtn.innerHTML = `<span>View All in ${catMap[category].name}</span> <i class="fa-solid fa-arrow-right"></i>`;
+        } else {
+          viewAllBtn.href = 'category.html?slug=corporate-giveaways';
+          viewAllBtn.innerHTML = `<span>Explore All Services &amp; Order</span> <i class="fa-solid fa-arrow-right"></i>`;
+        }
+      }
+
       // Reset scroll position
       if (sliderWrapper) {
         sliderWrapper.scrollTo({ left: 0, behavior: 'smooth' });
@@ -1782,32 +1802,24 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // Seamless Integration with Top Categories Sidebar & Hero Banner Explore Buttons
-    document.addEventListener('click', function (e) {
-      const target = e.target.closest('[data-category], [data-target-category]');
-      if (!target) return;
-
-      // Ignore filter buttons inside the projects section itself
-      if (target.classList.contains('project-filter-btn') || target.closest('.projects-filter-bar')) {
-        return;
-      }
-
-      const cat = target.getAttribute('data-category') || target.getAttribute('data-target-category');
-      if (cat) {
-        e.preventDefault();
-        setFilter(cat);
-
-        // Smooth scroll to projects section
-        const headerOffset = 80;
-        const elementPosition = section.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
+    // Top Categories Sidebar "Inquire All Services" button scroll
+    const inquireAllBtn = document.querySelector('.view-all-btn[data-category="all"]');
+    if (inquireAllBtn) {
+      inquireAllBtn.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#projects') {
+          e.preventDefault();
+          setFilter('all');
+          const headerOffset = 80;
+          const elementPosition = section.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    }
   }
 
   /* ================================================================

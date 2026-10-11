@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="metaPageTitle">Creative Roots — Corporate Category</title>
+  <meta name="description" id="metaPageDesc" content="Creative Roots corporate solutions, bespoke merchandise, and precision printing in Pakistan.">
+  
+  <!-- Open Graph Meta Tags for Social & SEO -->
+  <meta property="og:title" id="ogMetaTitle" content="Creative Roots — Corporate Category">
+  <meta property="og:description" id="ogMetaDesc" content="Creative Roots corporate solutions, bespoke merchandise, and precision printing in Pakistan.">
+  <meta property="og:image" id="ogMetaImage" content="images/banners/banner-1.jpg">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="images/logo-mark.svg">
+</head>
+<body>
+
+  <!-- Top Window Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
+
+  <!-- ===== 1. Top Announcement Bar ===== -->
+  <div class="announcement-bar">
+    <div class="announcement-slider">
+      <div class="announcement-slide active">
+        <span class="badge-gold"><i class="fa-solid fa-truck-fast"></i> Delivery</span>
+        <div class="ticker-track">
+          <span class="ticker-inner">Free Delivery &amp; Bulk Discounts on Orders Over Rs. 5,000 across Pakistan</span>
+        </div>
+      </div>
+      <div class="announcement-slide">
+        <span class="badge-gold"><i class="fa-brands fa-whatsapp"></i> Quick Quote</span>
+        <div class="ticker-track">
+          <span class="ticker-inner">Free Consultation &amp; Instant WhatsApp Pricing — <a href="contact.html" class="highlight">Contact Us Today!</a></span>
+        </div>
+      </div>
+      <div class="announcement-slide">
+        <span class="badge-gold"><i class="fa-solid fa-gem"></i> Enterprise</span>
+        <div class="ticker-track">
+          <span class="ticker-inner">Pakistan's Premier Corporate Gifting &amp; Physical Merchandise Partner</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 2. Global Header ===== -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.svg" alt="Creative Roots" class="logo-img" width="220" height="42">
+      </a>
+      
+      <div class="header-actions">
+        <a href="find-a-store.html" class="header-store-link" title="Find a Store"><i class="fa-solid fa-location-dot"></i> <span class="header-action-label">Find a Store</span></a>
+      </div>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== 3. Global Navigation ===== -->
+  <nav class="main-nav">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html" style="font-weight: 700; color: var(--primary-emerald);"><i class="fa-solid fa-layer-group" style="color: var(--gold-dark); margin-right: 4px;"></i> Product Store</a></li>
+        <li><a href="contact.html">Book an Appointment</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Dynamic Category Content Root Container -->
+  <main id="categoryPageMain" class="category-page-main">
+    
+    <!-- a) Category Hero (Rendered dynamically by CategoryController) -->
+    <section class="category-hero-section" id="categoryHeroSection">
+      <div class="category-hero-overlay"></div>
+      <div class="container">
+        <div class="category-hero-content">
+          <nav class="category-breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="separator"><i class="fa-solid fa-chevron-right"></i></span>
+            <a href="index.html#categories">Services</a>
+            <span class="separator"><i class="fa-solid fa-chevron-right"></i></span>
+            <span class="current" id="breadcrumbCategoryName">Loading...</span>
+          </nav>
+
+          <span class="category-hero-badge" id="heroCategoryBadge">✦ PREMIUM SERVICES</span>
+          <h1 class="category-hero-title" id="heroCategoryTitle">Category Title</h1>
+          <div class="category-hero-tagline" id="heroCategoryTagline">Crafting Precision Branding</div>
+          <p class="category-hero-desc" id="heroCategoryDesc">Explore authentic corporate solutions tailored for industry leaders across Pakistan.</p>
+          
+          <div class="category-hero-actions">
+            <a href="#order-section" class="btn-category-order" id="heroBtnOrderNow">
+              <i class="fa-solid fa-cart-shopping"></i> Order Now
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn-category-whatsapp" id="heroBtnWhatsApp">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- b) Category Intro & Key Highlights -->
+    <section class="category-intro-section" id="categoryIntroSection">
+      <div class="container">
+        <div class="category-intro-header">
+          <span class="hero-badge-pill" style="margin-bottom: 12px; display: inline-block;">✦ WHY CHOOSE US</span>
+          <h2 id="introCategoryHeading">Crafted for Corporate Excellence</h2>
+          <p id="introCategoryParagraph">Our enterprise-grade production facilities combine precision artisanal craftsmanship with cutting-edge technology.</p>
+        </div>
+
+        <div class="category-highlights-grid" id="categoryHighlightsGrid">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- c) Items / Services List (ORDER SECTION) -->
+    <section class="category-order-section" id="order-section">
+      <div class="container">
+        <div class="category-order-header">
+          <div class="title-area">
+            <span class="projects-section-badge">✦ DIRECT CATALOG &amp; ORDERING</span>
+            <h2 id="orderSectionHeading">Products &amp; Pricing</h2>
+            <p id="orderSectionSubtitle">Select individual items or build a bulk order package with custom corporate branding.</p>
+          </div>
+          <div class="header-action-area">
+            <button type="button" class="btn-open-drawer" id="btnHeaderViewOrder">
+              <i class="fa-solid fa-bag-shopping"></i> View Order (<span class="cart-items-counter">0</span>)
+            </button>
+          </div>
+        </div>
+
+        <!-- Grid of cards showing ONLY this category's items -->
+        <div class="category-items-grid" id="categoryItemsGrid">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- d) Our Projects in this Category (Reusable ProjectCard & Lightbox) -->
+    <section class="category-projects-section" id="categoryProjectsSection">
+      <div class="container">
+        <div class="projects-section-header">
+          <span class="projects-section-badge">✦ VERIFIED DELIVERED PORTFOLIO</span>
+          <h2 id="projectsSectionHeading">Recent Delivered Projects</h2>
+          <p id="projectsSectionSubtitle">Authentic physical productions manufactured for corporate clients and institutions across Pakistan.</p>
+        </div>
+
+        <!-- Gallery of ONLY this category's successful projects -->
+        <div class="category-projects-grid" id="categoryProjectsGrid">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- e) Process / How It Works Timeline -->
+    <section class="process-timeline-section" id="processTimelineSection">
+      <div class="container">
+        <div class="process-timeline-header">
+          <span class="hero-badge-pill" style="margin-bottom: 12px; display: inline-block;">✦ STREAMLINED EXECUTION</span>
+          <h2>How It Works</h2>
+          <p>A simple 4-step workflow engineered to take your corporate project from concept to delivery seamlessly.</p>
+        </div>
+
+        <div class="process-steps-grid" id="processStepsGrid">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- f) Verified Category Testimonials -->
+    <section class="category-testimonials-section" id="categoryTestimonialsSection">
+      <div class="container">
+        <div class="projects-section-header" style="margin-bottom: 40px;">
+          <span class="projects-section-badge">✦ CLIENT FEEDBACK</span>
+          <h2>What Clients Say</h2>
+          <p>Read real endorsements from enterprise procurement leaders who rely on Creative Roots.</p>
+        </div>
+
+        <div class="category-testimonials-grid" id="categoryTestimonialsGrid">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- g) Other Categories ("Explore More Services") -->
+    <section class="related-categories-section" id="relatedCategoriesSection">
+      <div class="container">
+        <div class="related-categories-header">
+          <span class="hero-badge-pill" style="margin-bottom: 12px; display: inline-block;">✦ COMPLETE ECOSYSTEM</span>
+          <h2>Explore More Services</h2>
+          <p>Discover our comprehensive range of corporate branding, wide-format printing, and exhibition capabilities.</p>
+        </div>
+
+        <div class="related-categories-grid" id="relatedCategoriesGrid">
+          <!-- Rendered dynamically with the other 5 categories -->
+        </div>
+      </div>
+    </section>
+
+    <!-- h) Final CTA Strip -->
+    <section class="category-final-cta">
+      <div class="container">
+        <div class="category-final-cta-content">
+          <span class="category-hero-badge" style="background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.2); color: #fff;">✦ NEED A BESPOKE ESTIMATE?</span>
+          <h2>Ready to Elevate Your Brand Presence?</h2>
+          <p>Connect with our corporate branding specialists for personalized catalog samples, tiered volume discounts, and priority delivery timelines.</p>
+          <div class="category-final-cta-actions">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn-category-order" id="finalCtaWhatsAppBtn">
+              <i class="fa-brands fa-whatsapp"></i> Chat On WhatsApp
+            </a>
+            <a href="contact.html" class="btn-category-whatsapp" style="border-color: rgba(255, 255, 255, 0.3); color: #fff !important; background: rgba(255, 255, 255, 0.08);">
+              <i class="fa-solid fa-envelope"></i> Request Formal Proposal
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== ORDER DRAWER & CHECKOUT SYSTEM ===== -->
+  <div class="order-drawer-backdrop" id="orderDrawerBackdrop" aria-hidden="true"></div>
+  
+  <aside class="order-drawer" id="orderDrawer" role="dialog" aria-modal="true" aria-labelledby="orderDrawerTitle" aria-hidden="true">
+    <div class="order-drawer-header">
+      <h3 id="orderDrawerTitle"><i class="fa-solid fa-cart-shopping" style="color: var(--accent-orange, #F47721);"></i> Your Order (<span class="cart-items-counter">0</span>)</h3>
+      <button type="button" class="order-drawer-close" id="orderDrawerCloseBtn" aria-label="Close Order Drawer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Active Form View -->
+    <div class="order-drawer-body" id="orderDrawerBody">
+      <!-- Items list -->
+      <div class="drawer-items-list" id="drawerItemsList">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Customer Details Form -->
+      <form class="drawer-order-form" id="drawerOrderForm" novalidate>
+        <h4 class="drawer-form-title">Customer &amp; Delivery Details</h4>
+
+        <div class="form-group">
+          <label for="orderCustomerName">Full Name <span class="req">*</span></label>
+          <input type="text" id="orderCustomerName" class="form-control" placeholder="e.g. Adnan Khan" required autocomplete="name">
+          <div class="form-error-msg" id="errorCustomerName">Please provide your full name.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="orderCustomerPhone">WhatsApp / Mobile Phone <span class="req">*</span></label>
+          <input type="tel" id="orderCustomerPhone" class="form-control" placeholder="e.g. 0300-1234567" required autocomplete="tel">
+          <div class="form-error-msg" id="errorCustomerPhone">Please enter a valid phone number (e.g. 0300-1234567).</div>
+        </div>
+
+        <div class="form-group">
+          <label for="orderCustomerCity">City <span class="req">*</span></label>
+          <input type="text" id="orderCustomerCity" class="form-control" placeholder="e.g. Lahore, Karachi, Islamabad..." required autocomplete="address-level2">
+          <div class="form-error-msg" id="errorCustomerCity">Please enter your city.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="orderCustomerAddress">Company Name / Delivery Address</label>
+          <input type="text" id="orderCustomerAddress" class="form-control" placeholder="Office address or company name" autocomplete="street-address">
+        </div>
+
+        <div class="form-group">
+          <label for="orderCustomerDate">Date Required / Event Deadline</label>
+          <input type="date" id="orderCustomerDate" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="orderCustomerNotes">Branding &amp; Customization Notes</label>
+          <textarea id="orderCustomerNotes" class="form-control" rows="3" placeholder="Provide logo stamping preferences, custom colors, or specific quantity notes..."></textarea>
+        </div>
+      </form>
+    </div>
+
+    <div class="order-drawer-footer" id="orderDrawerFooter">
+      <button type="button" class="btn-place-order" id="btnSubmitOrder">
+        <span>Place Order Now</span> <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+
+    <!-- Success View (Hidden initially) -->
+    <div class="order-success-screen" id="orderSuccessScreen" style="display: none;">
+      <div class="success-icon-badge">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-navy, #132238); margin-bottom: 6px;">Order Received!</h3>
+      <p style="font-size: 0.9rem; color: #64748b;">Your order request has been logged successfully.</p>
+      
+      <div>
+        <span class="success-order-ref" id="successOrderRefNumber">CR-2026-0000</span>
+      </div>
+
+      <p style="font-size: 0.85rem; color: #475569; margin-bottom: 20px; line-height: 1.5;">
+        Send this order directly to our official WhatsApp desk for immediate invoice generation and production scheduling:
+      </p>
+
+      <a href="#" target="_blank" rel="noopener noreferrer" class="btn-send-whatsapp-order" id="btnSendOrderWhatsApp">
+        <i class="fa-brands fa-whatsapp"></i> Send via WhatsApp Now
+      </a>
+
+      <button type="button" class="btn-new-order-reset" id="btnStartNewOrder">
+        Start Another Order
+      </button>
+    </div>
+  </aside>
+
+  <!-- Sticky Order Bar (Bottom Floating Pill) -->
+  <div class="sticky-order-bar" id="stickyOrderBar">
+    <div class="sticky-order-info">
+      <span class="sticky-order-badge cart-items-counter">0</span>
+      <span class="sticky-order-text">Items in your order</span>
+    </div>
+    <button type="button" class="btn-open-drawer" id="btnStickyCheckout">
+      <span>Review &amp; Order</span> <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
+
+  <!-- Reusable Project Modal Lightbox -->
+  <div class="project-modal" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="project-modal-backdrop" id="projectModalBackdrop"></div>
+    <div class="project-modal-dialog">
+      <button class="project-modal-close" id="projectModalClose" aria-label="Close Project Details">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="project-modal-body">
+        <div class="project-modal-image-col">
+          <img src="" alt="" id="modalProjectImg" loading="lazy">
+        </div>
+        <div class="project-modal-info-col">
+          <span class="project-modal-badge" id="modalProjectBadge">Corporate Giveaways</span>
+          <h3 id="modalProjectTitle">Project Title</h3>
+          <p class="project-modal-desc" id="modalProjectDesc">Detailed project execution description.</p>
+          <div class="project-modal-meta">
+            <span class="project-meta-item"><i class="fa-solid fa-circle-check"></i> Physical Execution</span>
+            <span class="project-meta-item"><i class="fa-solid fa-location-dot"></i> Delivered in Pakistan</span>
+          </div>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn-project-inquire" id="modalProjectCta">
+            <i class="fa-brands fa-whatsapp"></i> Inquire This Project On WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Global Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/logo-light.svg" alt="Creative Roots" class="logo-img" width="220" height="42">
+          </a>
+          <p>Pakistan's trusted corporate branding partner for bespoke promotional merchandise, precision offset &amp; digital printing, architectural signage, and 3D exhibition stalls.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="category.html?slug=corporate-giveaways">Corporate Giveaways</a></li>
+            <li><a href="category.html?slug=digital-printing">Digital Printing</a></li>
+            <li><a href="category.html?slug=offset-printing">Offset Printing</a></li>
+            <li><a href="category.html?slug=outdoor-branding">Outdoor Branding</a></li>
+            <li><a href="category.html?slug=panaflex-printing">Panaflex Printing</a></li>
+            <li><a href="category.html?slug=exhibition-stalls">Exhibition Stalls</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Policies</h4>
+          <ul>
+            <li><a href="#" data-modal="privacy">Privacy Policy</a></li>
+            <li><a href="#" data-modal="terms">Terms of Service</a></li>
+            <li><a href="#" data-modal="returns">Returns &amp; Quality Guarantee</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Product Store</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="find-a-store.html">Find a Store</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-social">
+        <a href="https://www.instagram.com/creativeroots2022?stkn=MW51ZHB5d2w0bjVmZA%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/1EwrhYfkBd/?mibextid=wwXIfr" target="_blank" aria-label="Facebook" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.tiktok.com/@creative.roots77?_r=1&_t=ZS-9ANlGQlPivk" target="_blank" aria-label="TikTok" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://www.linkedin.com/in/m-adnan-ghani-89a451a7?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Creative Roots. All Rights Reserved.</span>
+        <div>
+          <a href="#" data-modal="terms">Terms of Service</a>
+          <a href="#" data-modal="privacy">Privacy Policy</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Widget -->
+  <a href="https://wa.me/923347009992?text=Hello%20Creative%20Roots%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." 
+     class="floating-whatsapp-widget" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Chat with Creative Roots on WhatsApp">
+    <div class="whatsapp-icon-circle">
+      <i class="fa-brands fa-whatsapp"></i>
+    </div>
+    <div class="whatsapp-chat-bubble">
+      <span>Need Help? Chat with us</span>
+    </div>
+  </a>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- Core Scripts -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/categories-data.js"></script>
+  <script src="js/orders.js"></script>
+  <script src="js/category-page.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
