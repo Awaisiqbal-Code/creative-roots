@@ -1823,9 +1823,9 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ================================================================
      17. LENIS SMOOTH SCROLL ENGINE
   /* ================================================================
-     17. LENIS SMOOTH SCROLL ENGINE (DESKTOP OPTIMIZED)
-     - Single root instance
-     - Conservative physics (duration: 1.0, wheelMultiplier: 1.0, syncTouch: false)
+     17. LENIS SMOOTH SCROLL ENGINE (ZERO-LAG RESPONSIVE PHYSIC)
+     - Responsive linear interpolation (lerp: 0.12)
+     - Immediate momentum reset on directional reversal (eliminates upward scroll delay)
      - Clean destroy on page unload
      ================================================================ */
   function initLenisSmoothScroll() {
@@ -1836,8 +1836,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (typeof Lenis !== 'undefined') {
       try {
         const lenis = new Lenis({
-          duration: 1.0,
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          lerp: 0.12,
           orientation: 'vertical',
           gestureOrientation: 'vertical',
           smoothWheel: true,
@@ -1845,6 +1844,17 @@ document.addEventListener('DOMContentLoaded', function () {
           syncTouch: false,
           touchMultiplier: 1.0
         });
+
+        // Instant directional reversal: eliminate the upward dead-zone / delay
+        window.addEventListener('wheel', function (e) {
+          if (!window.lenisInstance) return;
+          const inst = window.lenisInstance;
+          // When user spins wheel in opposite direction, immediately sync target with current scroll
+          if ((e.deltaY < 0 && inst.velocity > 0) || (e.deltaY > 0 && inst.velocity < 0)) {
+            inst.velocity = 0;
+            inst.target = inst.scroll;
+          }
+        }, { passive: true });
 
         let rafId;
         function raf(time) {
@@ -1866,44 +1876,67 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ================================================================
-     18. UNIFIED 60FPS MASTER SCROLL CONTROLLER
+     18. UNIFIED 60FPS/120FPS MASTER SCROLL CONTROLLER
      - Single passive RAF-throttled scroll listener for entire site
-     - Fixed header state (threshold: 15px, zero height/padding change)
-     - Back-to-top button visibility
-     - Window scroll progress bar
+     - Cached document height to eliminate Forced Synchronous Layout / Reflow thrashing
+     - Fixed header state (threshold: 15px, GPU-isolated layer)
+     - Back-to-top button visibility (compositor-only opacity/transform)
+     - Window scroll progress bar (GPU scaleX transform)
      ================================================================ */
   function initMasterScrollController() {
     const bar = document.getElementById('scrollProgressBar');
     const header = document.querySelector('.header');
     const backToTop = document.querySelector('.back-to-top');
     let ticking = false;
+    let isHeaderScrolled = false;
+    let isBackToTopVisible = false;
+
+    // Cache document scrollable height outside the per-frame tick to prevent layout thrashing
+    let cachedDocHeight = 1;
+    function recalculateDocHeight() {
+      cachedDocHeight = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    }
+    recalculateDocHeight();
+    window.addEventListener('resize', recalculateDocHeight, { passive: true });
+    window.addEventListener('load', recalculateDocHeight, { passive: true });
 
     function onScrollTick() {
       const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
 
-      // 1. Header scrolled styling (fixed 72px height, zero layout shift)
+      // 1. Header scrolled styling (GPU layer, zero layout shift, state gated)
       if (header) {
         if (scrollY > 15) {
-          if (!header.classList.contains('scrolled')) header.classList.add('scrolled');
+          if (!isHeaderScrolled) {
+            header.classList.add('scrolled');
+            isHeaderScrolled = true;
+          }
         } else {
-          if (header.classList.contains('scrolled')) header.classList.remove('scrolled');
+          if (isHeaderScrolled) {
+            header.classList.remove('scrolled');
+            isHeaderScrolled = false;
+          }
         }
       }
 
-      // 2. Back-to-top button
+      // 2. Back-to-top button (GPU layer, zero reflow, state gated)
       if (backToTop) {
         if (scrollY > 300) {
-          if (!backToTop.classList.contains('visible')) backToTop.classList.add('visible');
+          if (!isBackToTopVisible) {
+            backToTop.classList.add('visible');
+            isBackToTopVisible = true;
+          }
         } else {
-          if (backToTop.classList.contains('visible')) backToTop.classList.remove('visible');
+          if (isBackToTopVisible) {
+            backToTop.classList.remove('visible');
+            isBackToTopVisible = false;
+          }
         }
       }
 
-      // 3. Scroll progress bar
-      if (bar && docHeight > 0) {
-        const pct = Math.min(100, Math.max(0, (scrollY / docHeight) * 100));
-        bar.style.width = pct + '%';
+      // 3. Scroll progress bar (Hardware accelerated GPU transform scaleX)
+      if (bar && cachedDocHeight > 0) {
+        const pct = Math.min(1, Math.max(0, scrollY / cachedDocHeight));
+        bar.style.transform = `scaleX(${pct})`;
       }
 
       ticking = false;
