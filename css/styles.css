@@ -827,9 +827,30 @@ button, input, select {
 .hero-banner-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(251, 248, 242, 0.94) 0%, rgba(251, 248, 242, 0.82) 42%, rgba(251, 248, 242, 0.15) 75%, transparent 100%);
+  background: linear-gradient(90deg, rgba(251, 248, 242, 0.96) 0%, rgba(251, 248, 242, 0.85) 42%, rgba(251, 248, 242, 0.15) 75%, transparent 100%);
   z-index: 2;
   pointer-events: none;
+}
+
+/* Dark Slide Theme (e.g. Slide 6 Exhibition Stalls) */
+.hero-slide-dark .hero-banner-overlay {
+  background: linear-gradient(90deg, rgba(11, 20, 28, 0.97) 0%, rgba(11, 20, 28, 0.86) 42%, rgba(11, 20, 28, 0.15) 75%, transparent 100%) !important;
+}
+.hero-slide-dark .hero-banner-content h1 {
+  color: #ffffff !important;
+}
+.hero-slide-dark .hero-slide-desc {
+  color: #cbd5e1 !important;
+}
+.hero-slide-dark .btn-hero-outline {
+  border-color: rgba(255, 255, 255, 0.7) !important;
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+.hero-slide-dark .btn-hero-outline:hover {
+  background: #ffffff !important;
+  color: #0b141c !important;
+  border-color: #ffffff !important;
 }
 
 .hero-banner-content {
@@ -3385,6 +3406,15 @@ button, input, select {
     inset: 0;
     background: linear-gradient(180deg, rgba(251, 248, 242, 0.12) 0%, rgba(251, 248, 242, 0.72) 38%, rgba(251, 248, 242, 0.96) 68%, #fbf8f2 100%);
     z-index: 2;
+  }
+  .hero-slide-dark .hero-banner-overlay {
+    background: linear-gradient(180deg, rgba(11, 20, 28, 0.15) 0%, rgba(11, 20, 28, 0.75) 38%, rgba(11, 20, 28, 0.98) 68%, #0b141c 100%) !important;
+  }
+  .hero-slide-dark .hero-banner-content h1 {
+    color: #ffffff !important;
+  }
+  .hero-slide-dark .hero-slide-desc {
+    color: #cbd5e1 !important;
   }
   .hero-slide .hero-banner-content {
     position: relative;
