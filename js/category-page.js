@@ -138,12 +138,12 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="item-card-content">
           <h3>${item.name}</h3>
           <p class="item-card-desc">${item.description}</p>
-          <div class="item-card-footer">
-            <div class="item-card-price">
-              ${item.price} <span>${item.unit || ''}</span>
+          <div class="item-card-footer item-card-footer-order">
+            <div class="item-card-tag">
+              <i class="fa-solid fa-circle-check"></i> ${item.tag || 'Direct Factory Production'}
             </div>
-            <button type="button" class="btn-add-to-order" data-add-item="${item.id}">
-              <i class="fa-solid fa-plus"></i> Order
+            <button type="button" class="btn-get-order-now" data-add-item="${item.id}">
+              <i class="fa-brands fa-whatsapp"></i> <span>Get Your Order Now</span>
             </button>
           </div>
         </div>
@@ -414,7 +414,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <img src="${item.image}" alt="${item.name}" class="drawer-item-thumb">
         <div class="drawer-item-details">
           <div class="drawer-item-title">${item.name}</div>
-          <div class="drawer-item-price">${item.price} ${item.unit || ''}</div>
+          <div class="drawer-item-price" style="color: #10b981; font-size: 0.82rem;"><i class="fa-solid fa-circle-check"></i> Custom Enterprise Order</div>
         </div>
         <div class="drawer-qty-stepper">
           <button type="button" class="btn-qty-minus" data-id="${item.id}" aria-label="Decrease quantity">-</button>

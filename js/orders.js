@@ -192,7 +192,7 @@
     ].filter(Boolean);
 
     order.items.forEach((item, idx) => {
-      lines.push(`${idx + 1}. *${item.name}* x ${item.quantity} ${item.unit || ''} (${item.price})`);
+      lines.push(`${idx + 1}. *${item.name}* x ${item.quantity} units`);
     });
 
     if (order.customer.notes) {

@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Bespoke Luxury Giveaway Box',
       category: 'Corporate Gifting',
       rating: '5.0 ★★★★★ (142 Corporate Reviews)',
-      image: 'images/prod_box.jpg',
+      image: 'images/projects/giveaways/giveaways-1.jpg',
       badge: 'Best Seller',
       desc: 'Handcrafted rigid presentation gift box featuring metallic gold debossing, custom high-density EVA foam cutouts tailored to your gifts, and magnetic snap closure. The pinnacle of executive onboarding and client appreciation.',
       specs: {
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Executive Mug & Thermal Flask Set',
       category: 'Drinkware & Tumblers',
       rating: '4.9 ★★★★★ (98 Corporate Reviews)',
-      image: 'images/promo_drinkware.jpg',
+      image: 'images/projects/giveaways/giveaways-3.jpg',
       badge: 'Trending Now',
       desc: 'Grade-A ceramic coffee mug with 24K gold rim and custom gold embossed insignia, paired with a double-wall vacuum insulated matte black stainless steel bottle that keeps beverages hot for 12h / cold for 24h.',
       specs: {
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Luxury Branded Pique Polo Shirt',
       category: 'Custom Apparel',
       rating: '4.9 ★★★★★ (210 Corporate Reviews)',
-      image: 'images/promo_merch.jpg',
+      image: 'images/projects/giveaways/giveaways-2.jpg',
       badge: 'Staff Choice',
       desc: 'Heavyweight combed cotton pique polo shirt with ribbed contrast collar and premium Japanese embroidery threading. Designed to maintain structural integrity, vibrant coloration, and softness across industrial wash cycles.',
       specs: {
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Premium Canvas Tote Bag Pack',
       category: 'Promotional Merchandise',
       rating: '4.8 ★★★★★ (84 Corporate Reviews)',
-      image: 'images/promo_business.jpg',
+      image: 'images/projects/giveaways/giveaways-4.jpg',
       badge: 'Eco-Friendly',
       desc: 'Eco-conscious 12oz heavy organic cotton canvas tote bags with reinforced cross-stitched handles and razor-sharp screen / DTF typography. The essential physical giveaway for trade expos, seminars, and retail activations.',
       specs: {
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Corporate Executive Crewneck / T-Shirt',
       category: 'Custom Apparel',
       rating: '4.9 ★★★★★ (135 Reviews)',
-      image: 'images/prod_shirt.jpg',
+      image: 'images/projects/giveaways/giveaways-6.jpg',
       badge: 'Bestseller',
       desc: '100% Ring-Spun breathable cotton shirts customized with subtle breast-pocket embroidery or metallic gold screen printing for staff, conferences, and brand ambassador kits.',
       specs: {
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Brushed Cotton Embroidered Cap',
       category: 'Headwear',
       rating: '4.8 ★★★★★ (76 Reviews)',
-      image: 'images/cap_maroon.jpg',
+      image: 'images/projects/giveaways/giveaways-7.jpg',
       badge: 'Popular',
       desc: 'Structured 6-panel heavy brushed cotton cap with pre-curved peak, brass buckle strap adjuster, and 3D puff embroidery of your corporate logo.',
       specs: {
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Executive Hardcover Journal & Planner',
       category: 'Executive Stationery',
       rating: '5.0 ★★★★★ (160 Reviews)',
-      image: 'images/prod_notebook.jpg',
+      image: 'images/projects/giveaways/giveaways-8.jpg',
       badge: 'Premium',
       desc: 'Thermo PU Italian leather notebook with custom debossed logo, 96 sheets of 100gsm cream fountain-pen friendly lined paper, ribbon marker, and elastic closure band.',
       specs: {
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Velvet Soft-Touch Business Cards',
       category: 'Offset Printing',
       rating: '5.0 ★★★★★ (320 Reviews)',
-      image: 'images/prod_cards.jpg',
+      image: 'images/projects/offset/offset-1.jpg',
       badge: 'Ultra Luxury',
       desc: 'Multi-layer 600gsm laminated cards with rose gold foil accents, raised spot UV gloss elements, and painted gilded metallic edges.',
       specs: {
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Smart Matte Thermal Bottle',
       category: 'Drinkware',
       rating: '4.9 ★★★★★ (110 Reviews)',
-      image: 'images/pack_bottle.jpg',
+      image: 'images/projects/giveaways/giveaways-7.jpg',
       badge: 'Hot Item',
       desc: '500ml double-insulated stainless steel flask with precision laser engraved company identity that never scratches or fades.',
       specs: {
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Executive Ceramic Office Mug',
       category: 'Drinkware',
       rating: '4.9 ★★★★★ (124 Reviews)',
-      image: 'images/prod_mug.jpg',
+      image: 'images/projects/giveaways/giveaways-3.jpg',
       badge: 'Best Seller',
       desc: 'High-density ceramic coffee mug with comfortable ergonomic C-handle, kiln-fired high-fire custom corporate branding that resists commercial dishwashing, and smooth glazed finish.',
       specs: {
@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Turnkey Exhibition Stall & Booth',
       category: 'Exhibitions & Events',
       rating: '5.0 ★★★★★ (55 Enterprise Reviews)',
-      image: 'images/event_stall.jpg',
+      image: 'images/projects/stalls/stalls-1.jpg',
       badge: 'Turnkey Service',
       desc: 'Custom 3D exhibition booth architecture, fabrication, high-resolution tension fabric graphics, illuminated reception counter, and on-ground expo setup at Lahore Expo, Karachi Expo, or Pak-China Center Islamabad.',
       specs: {
@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Company Profiles & Catalogs',
       category: 'Offset Printing',
       rating: '5.0 ★★★★★ (185 Corporate Reviews)',
-      image: 'images/stationery_mockup.jpg',
+      image: 'images/projects/digital/digital-1.jpg',
       badge: 'Corporate Choice',
       desc: 'High-definition offset printed corporate company profiles, multi-page catalogs, and presentation folders with velvet soft-touch lamination, gold foil accents, and precision spot UV detailing.',
       specs: {
@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function () {
       title: 'Commercial Offset Printing Solutions',
       category: 'Offset & Commercial Printing',
       rating: '5.0 ★★★★★ (240 Enterprise Reviews)',
-      image: 'images/printing_wide_format.jpg',
+      image: 'images/projects/offset/offset-1.jpg',
       badge: 'High Volume',
       desc: 'Industrial Heidelberg multi-color offset printing for large volume packaging, corporate marketing collateral, annual reports, brochures, and promotional displays with precise PMS color matching.',
       specs: {
