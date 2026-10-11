@@ -6,6 +6,7 @@
   <title>Creative Roots — Corporate Branding & Marketing Solutions</title>
   <meta name="description" content="Creative Roots provides corporate gifting, personalized giveaways, premium printing, exhibition stalls, and brand experiences across Pakistan.">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" as="image" href="images/banners/banner-1.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
@@ -13,6 +14,9 @@
   <link rel="icon" type="image/svg+xml" href="images/logo-mark.svg">
 </head>
 <body>
+
+  <!-- Scroll Progress Bar (Top Window Tracker) -->
+  <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
 
   <!-- ===== 1. Top Announcement Bar (Deep Obsidian Emerald + Gold) ===== -->
       <div class="announcement-bar">
@@ -832,6 +836,49 @@
     </div>
   </div>
 
+  <!-- ===== Trust & Enterprise Milestones (Animated Counters) ===== -->
+  <section class="trust-stats-section" id="milestones">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal-up" style="--stagger-i: 1;">
+          <div class="stat-icon-wrap"><i class="fa-solid fa-building-shield"></i></div>
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="500">0</span><span class="stat-suffix">+</span>
+          </div>
+          <div class="stat-title">Corporate Clients</div>
+          <p class="stat-desc">Leading enterprises &amp; multinationals across Pakistan</p>
+        </div>
+
+        <div class="stat-card reveal-up" style="--stagger-i: 2;">
+          <div class="stat-icon-wrap"><i class="fa-solid fa-boxes-stacked"></i></div>
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="150000">0</span><span class="stat-suffix">+</span>
+          </div>
+          <div class="stat-title">Units Delivered</div>
+          <p class="stat-desc">Custom gift sets, apparel &amp; printed merchandise</p>
+        </div>
+
+        <div class="stat-card reveal-up" style="--stagger-i: 3;">
+          <div class="stat-icon-wrap"><i class="fa-solid fa-truck-fast"></i></div>
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="99.8" data-decimals="1">0</span><span class="stat-suffix">%</span>
+          </div>
+          <div class="stat-title">On-Time Execution</div>
+          <p class="stat-desc">Strict deadline discipline for summits &amp; expos</p>
+        </div>
+
+        <div class="stat-card reveal-up" style="--stagger-i: 4;">
+          <div class="stat-icon-wrap"><i class="fa-solid fa-award"></i></div>
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span>
+          </div>
+          <div class="stat-title">Years of Mastery</div>
+          <p class="stat-desc">End-to-end in-house production &amp; fabrication</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== 17. Contact Bar (4 Columns) ===== -->
   <section class="contact-bar" id="contact">
     <div class="container">
@@ -963,6 +1010,8 @@
   <!-- Back to Top Button -->
   <button class="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
 
+  <!-- Lenis Smooth Scroll Engine -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

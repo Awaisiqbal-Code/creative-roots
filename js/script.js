@@ -1810,6 +1810,203 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* ================================================================
+     17. LENIS SMOOTH SCROLL ENGINE
+     - Natural inertial smooth scrolling
+     - Auto-fallback to native scroll
+     - Disabled on touch to prevent scroll jank
+     ================================================================ */
+  function initLenisSmoothScroll() {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
+    if (typeof Lenis !== 'undefined') {
+      try {
+        const lenis = new Lenis({
+          duration: 1.15,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          orientation: 'vertical',
+          gestureOrientation: 'vertical',
+          smoothWheel: true,
+          smoothTouch: false,
+          wheelMultiplier: 1.0
+        });
+
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Expose globally for programmatic scrolling
+        window.lenisInstance = lenis;
+      } catch (err) {
+        console.warn('Lenis initialization skipped:', err);
+      }
+    }
+  }
+
+  /* ================================================================
+     18. TOP SCROLL PROGRESS BAR & HEADER BLUR TRACKER
+     - 60fps RAF-throttled scroll progress
+     - Header shrink & blur on scroll
+     ================================================================ */
+  function initScrollProgressBar() {
+    const bar = document.getElementById('scrollProgressBar');
+    const header = document.querySelector('.header');
+    let ticking = false;
+
+    function updateProgress() {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+      if (bar && docHeight > 0) {
+        const pct = Math.min(100, Math.max(0, (scrollY / docHeight) * 100));
+        bar.style.width = pct + '%';
+      }
+
+      if (header) {
+        if (scrollY > 35) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        requestAnimationFrame(updateProgress);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Initial check
+    updateProgress();
+  }
+
+  /* ================================================================
+     19. ANIMATED NUMBER COUNTERS (Trust & Milestones)
+     - Smooth spring-based count up
+     - Triggered once via IntersectionObserver
+     ================================================================ */
+  function initNumberCounters() {
+    const counterElements = document.querySelectorAll('.stat-number[data-target]');
+    if (!counterElements.length || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseFloat(el.getAttribute('data-target')) || 0;
+          const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+          const duration = 1800; // 1.8s
+          const startTime = performance.now();
+
+          function updateCounter(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(1, elapsed / duration);
+            // Ease out cubic
+            const easeProgress = 1 - Math.pow(1 - progress, 3);
+            const currentVal = target * easeProgress;
+
+            if (decimals > 0) {
+              el.textContent = currentVal.toFixed(decimals);
+            } else {
+              el.textContent = Math.floor(currentVal).toLocaleString();
+            }
+
+            if (progress < 1) {
+              requestAnimationFrame(updateCounter);
+            } else {
+              if (decimals > 0) {
+                el.textContent = target.toFixed(decimals);
+              } else {
+                el.textContent = target.toLocaleString();
+              }
+            }
+          }
+
+          requestAnimationFrame(updateCounter);
+          obs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.35 });
+
+    counterElements.forEach(el => observer.observe(el));
+  }
+
+  /* ================================================================
+     20. BUTTON RIPPLE & MICRO-INTERACTIONS
+     - Material/Luxury expanding ripple on click
+     - Touch feedback
+     ================================================================ */
+  function initButtonRipples() {
+    const rippleSelector = '.btn-shop-now, .hero-btn-pill, .btn-quote, .btn-project-inquire, .view-all-btn, .btn-return-home';
+    document.addEventListener('click', function (e) {
+      const btn = e.target.closest(rippleSelector);
+      if (!btn) return;
+
+      const rect = btn.getBoundingClientRect();
+      const ripple = document.createElement('span');
+      ripple.className = 'btn-ripple-effect';
+      const diameter = Math.max(rect.width, rect.height);
+      const radius = diameter / 2;
+
+      ripple.style.width = ripple.style.height = `${diameter}px`;
+      ripple.style.left = `${e.clientX - rect.left - radius}px`;
+      ripple.style.top = `${e.clientY - rect.top - radius}px`;
+
+      const existingRipple = btn.querySelector('.btn-ripple-effect');
+      if (existingRipple) {
+        existingRipple.remove();
+      }
+
+      btn.appendChild(ripple);
+      setTimeout(() => {
+        if (ripple.parentNode) ripple.remove();
+      }, 650);
+    });
+  }
+
+  /* ================================================================
+     21. SMOOTH ANCHOR NAVIGATION WITH LENIS / NATIVE FALLBACK
+     ================================================================ */
+  function initSmoothAnchorNavigation() {
+    document.addEventListener('click', function (e) {
+      const anchor = e.target.closest('a[href^="#"]:not([href="#"]):not([data-modal])');
+      if (!anchor) return;
+
+      const hash = anchor.getAttribute('href');
+      if (hash.startsWith('#') && hash.length > 1) {
+        const targetEl = document.querySelector(hash);
+        if (targetEl) {
+          e.preventDefault();
+          const headerOffset = 76;
+          const targetTop = targetEl.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+          if (window.lenisInstance) {
+            window.lenisInstance.scrollTo(targetTop, { duration: 1.1 });
+          } else {
+            window.scrollTo({
+              top: targetTop,
+              behavior: 'smooth'
+            });
+          }
+        }
+      }
+    });
+  }
+
+  // Master Initializations
+  initLenisSmoothScroll();
+  initScrollProgressBar();
+  initNumberCounters();
+  initButtonRipples();
+  initSmoothAnchorNavigation();
   initServicesProjectsShowcase();
   initPageTransitions();
 

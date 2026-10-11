@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | Creative Roots</title>
+  <meta name="description" content="The page you requested could not be found. Explore Creative Roots corporate gifts, printing, and branding.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="images/logo-mark.svg">
+  <style>
+    .error-page-wrapper {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      text-align: center;
+      background: radial-gradient(circle at center, rgba(244, 119, 33, 0.05) 0%, transparent 65%);
+    }
+    .error-card {
+      max-width: 580px;
+      background: #ffffff;
+      padding: 50px 40px;
+      border-radius: 24px;
+      box-shadow: 0 16px 40px rgba(19, 34, 56, 0.08);
+      border: 1px solid #EAEFF5;
+    }
+    .error-code {
+      font-size: 6rem;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--primary-navy, #132238);
+      letter-spacing: -3px;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #132238 30%, #F47721 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .error-badge {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 50px;
+      border: 1.5px solid #d4af37;
+      color: #a17822;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .error-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-navy, #132238);
+      margin-bottom: 14px;
+    }
+    .error-desc {
+      font-size: 0.98rem;
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+    .error-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-return-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary-navy, #132238);
+      color: #ffffff !important;
+      padding: 12px 26px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(19, 34, 56, 0.2);
+    }
+    .btn-return-home:hover {
+      background: #F47721;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.svg" alt="Creative Roots" class="logo-img" width="220" height="42">
+      </a>
+      <div class="header-actions">
+        <a href="index.html" class="btn-quote"><i class="fa-solid fa-house"></i> Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="error-page-wrapper">
+    <div class="error-card">
+      <div class="error-badge">✦ PAGE NOT FOUND</div>
+      <div class="error-code">404</div>
+      <h1 class="error-title">Oops! Looks Like You're Lost</h1>
+      <p class="error-desc">The requested page might have been moved, renamed, or is temporarily unavailable. Let's get you back to our corporate branding showcase.</p>
+      <div class="error-actions">
+        <a href="index.html" class="btn-return-home"><i class="fa-solid fa-arrow-left"></i> Return to Homepage</a>
+        <a href="products.html" class="btn-hero-outline"><i class="fa-solid fa-layer-group"></i> Explore Store</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container text-center" style="padding: 30px 0; font-size: 0.88rem; color: #94a3b8;">
+      &copy; 2026 Creative Roots. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

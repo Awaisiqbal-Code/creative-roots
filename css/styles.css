@@ -4978,8 +4978,260 @@ button, input, select {
   .project-modal-image-col {
     max-height: 320px;
   }
-  .project-modal-info-col {
+}
+
+/* ================================================================
+   17. PREMIUM UX POLISH & SYSTEM UPGRADES (Checklist Implementation)
+   ================================================================ */
+
+/* Scroll Progress Bar */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3.5px;
+  width: 0%;
+  background: linear-gradient(90deg, #F47721 0%, #c59b27 50%, #3E9B32 100%);
+  z-index: 9999999;
+  box-shadow: 0 0 10px rgba(244, 119, 33, 0.5);
+  pointer-events: none;
+  transition: width 0.08s linear;
+}
+
+/* Sticky Header Shrink & Glassmorphic Blur */
+.header {
+  transition: padding 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  padding: 8px 0 !important;
+  box-shadow: 0 4px 20px rgba(19, 34, 56, 0.08) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.header.scrolled .logo-img {
+  height: 36px;
+  transform: scale(0.92);
+  transition: transform 0.3s ease, height 0.3s ease;
+}
+
+/* Animated Underline on Nav Links */
+.nav-links a:not(.btn-quote):not(.btn-shop-now) {
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.nav-links a:not(.btn-quote):not(.btn-shop-now)::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent-orange, #F47721);
+  border-radius: 2px;
+  transition: width 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* Accessible Focus-Visible Custom Ring */
+:focus-visible {
+  outline: 2px solid var(--accent-orange, #F47721) !important;
+  outline-offset: 3px !important;
+}
+
+/* Button Micro-Interactions (Scale, Active Pressed, Ripple) */
+.btn-shop-now,
+.hero-btn-pill,
+.btn-quote,
+.btn-project-inquire,
+.view-all-btn,
+.btn-hero-outline {
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.25s ease, color 0.25s ease;
+}
+
+.btn-shop-now:active,
+.hero-btn-pill:active,
+.btn-quote:active,
+.btn-project-inquire:active,
+.view-all-btn:active {
+  transform: scale(0.96) !important;
+}
+
+/* Ripple Click Effect */
+.btn-ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  transform: scale(0);
+  animation: rippleAnimation 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+@keyframes rippleAnimation {
+  to {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+/* Arrow Slide on Hover */
+.btn-shop-now:hover i,
+.hero-btn-pill:hover .arrow-circle i,
+.view-all-btn:hover i {
+  transform: translateX(4px);
+}
+
+.btn-shop-now i,
+.hero-btn-pill .arrow-circle i,
+.view-all-btn i {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Ken Burns Subtle Zoom on Active Hero Slide */
+.hero-slide.active .hero-banner-bg-img {
+  animation: kenBurnsZoom 8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes kenBurnsZoom {
+  0% {
+    transform: scale(1.0);
+  }
+  100% {
+    transform: scale(1.045);
+  }
+}
+
+/* Trust & Milestones Stats Counter Section */
+.trust-stats-section {
+  padding: 70px 0 80px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFD 100%);
+  border-top: 1px solid #EAEFF5;
+  border-bottom: 1px solid #EAEFF5;
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.stat-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 34px 26px;
+  text-align: center;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 8px 24px rgba(19, 34, 56, 0.05);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(19, 34, 56, 0.1);
+  border-color: #cbd5e1;
+}
+
+.stat-icon-wrap {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(244, 119, 33, 0.1);
+  color: #F47721;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  margin: 0 auto 16px;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease, color 0.3s ease;
+}
+
+.stat-card:hover .stat-icon-wrap {
+  transform: scale(1.12) rotate(6deg);
+  background: #F47721;
+  color: #ffffff;
+}
+
+.stat-number-wrap {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--primary-navy, #132238);
+  line-height: 1.1;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.stat-suffix {
+  color: #F47721;
+  font-weight: 800;
+}
+
+.stat-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary-navy, #132238);
+  margin-bottom: 6px;
+}
+
+.stat-desc {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Reduced Motion Override for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-slide.active .hero-banner-bg-img {
+    animation: none !important;
+  }
+  .stat-card:hover, .project-card:hover {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .stat-card {
     padding: 24px 20px;
+  }
+  .stat-number-wrap {
+    font-size: 2.3rem;
   }
 }
 
