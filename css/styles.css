@@ -69,7 +69,7 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-behavior: auto !important;
-  overscroll-behavior-y: none;
+  /* overscroll-behavior-y: auto; */
 }
 body {
   font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -78,7 +78,7 @@ body {
   line-height: 1.55;
   overflow-x: clip;
   scroll-behavior: auto !important;
-  overscroll-behavior-y: none;
+  /* overscroll-behavior-y: auto; */
 }
 /* Ensure anchors don't get hidden behind sticky header */
 [id] {
@@ -7172,10 +7172,24 @@ button, input, select {
     font-weight: 800 !important;
   }
 
-  /* Prevent any horizontal page overflow */
-  html, body {
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
+  /* Native Fluid 120Hz Mobile Touch Scrolling */
+  html {
+    overflow-x: clip !important;
+    overflow-y: scroll !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: auto !important;
+    height: auto !important;
+  }
+  body {
+    overflow-x: clip !important;
+    overflow-y: visible !important;
+    touch-action: pan-y !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: auto !important;
+    min-height: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    position: static !important;
   }
 }
 
@@ -7187,4 +7201,30 @@ button, input, select {
   .mobile-bottom-tab-bar {
     display: none !important;
   }
+}
+
+/* Ensure inactive modals & overlays never trap mobile touch events */
+.page-transition-overlay:not(.is-active) {
+  display: none !important;
+  pointer-events: none !important;
+}
+.project-modal:not(.open) {
+  display: none !important;
+  pointer-events: none !important;
+}
+.product-modal-overlay:not(.active) {
+  display: none !important;
+  pointer-events: none !important;
+}
+.modal-overlay:not(.active) {
+  display: none !important;
+  pointer-events: none !important;
+}
+.order-drawer-backdrop:not(.active) {
+  display: none !important;
+  pointer-events: none !important;
+}
+.mobile-nav-backdrop:not(.active) {
+  display: none !important;
+  pointer-events: none !important;
 }

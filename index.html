@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Creative Roots — Corporate Branding & Marketing Solutions</title>
   <meta name="description" content="Creative Roots provides corporate gifting, personalized giveaways, premium printing, exhibition stalls, and brand experiences across Pakistan.">
-  <link rel="stylesheet" href="css/styles.css?v=20261011_v3">
+  <link rel="stylesheet" href="css/styles.css?v=20261011_v4">
   <link rel="preload" as="image" href="images/banners/banner-1.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +16,37 @@
   <!-- Critical Mobile Responsive Fixes (Cache-Proof Guarantee for 320px - 768px) -->
   <style id="critical-mobile-overrides">
     @media (max-width: 768px) {
+    /* 0. CRITICAL: Guarantee 100% Smooth Native Touch Scrolling on Mobile */
+    html {
+      overflow-x: clip !important;
+      overflow-y: scroll !important;
+      -webkit-overflow-scrolling: touch !important;
+      overscroll-behavior: auto !important;
+      height: auto !important;
+    }
+    body {
+      overflow-x: clip !important;
+      overflow-y: visible !important;
+      touch-action: pan-y !important;
+      -webkit-overflow-scrolling: touch !important;
+      overscroll-behavior: auto !important;
+      min-height: 100% !important;
+      height: auto !important;
+      max-width: 100% !important;
+      position: static !important;
+    }
+
+    /* Inactive overlays must NEVER intercept touch gestures */
+    .page-transition-overlay:not(.is-active),
+    .project-modal:not(.open),
+    .product-modal-overlay:not(.active),
+    .modal-overlay:not(.active),
+    .order-drawer-backdrop:not(.active),
+    .mobile-nav-backdrop:not(.active) {
+      display: none !important;
+      pointer-events: none !important;
+    }
+
       /* 1. Top Announcement Bar: No clipping, perfect vertical alignment */
       .announcement-bar {
         height: 40px !important;
@@ -1537,6 +1568,6 @@
 
   <!-- Lenis Smooth Scroll Engine -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-  <script src="js/script.js?v=20261011_v3"></script>
+  <script src="js/script.js?v=20261011_v4"></script>
 </body>
 </html>

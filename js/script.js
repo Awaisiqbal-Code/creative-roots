@@ -10,6 +10,10 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+  // Ensure body scroll is unlocked immediately on page load
+  document.body.style.overflow = '';
+  document.documentElement.style.overflow = '';
+
   // Prevent browser scroll restoration jitter on reload
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
@@ -1864,6 +1868,13 @@ document.addEventListener('DOMContentLoaded', function () {
      - Programmatic scrollTo remains active for smooth anchors
      ================================================================ */
   function initLenisSmoothScroll() {
+    // 100% Native browser momentum scrolling on mobile & touch screens - zero interference
+    const isTouchOrMobile = (window.innerWidth <= 1024) || ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+    if (isTouchOrMobile) {
+      window.lenisInstance = null;
+      return;
+    }
+
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       return;
     }
