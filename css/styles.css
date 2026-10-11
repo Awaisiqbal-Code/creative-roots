@@ -3548,12 +3548,18 @@ button, input, select {
     display: block;
     border-radius: 0;
   }
-  .hero-slide .hero-banner-overlay {
+  .hero-slide .hero-banner-overlay,
+  .hero-banner-overlay {
     display: block !important;
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(251, 248, 242, 0.12) 0%, rgba(251, 248, 242, 0.72) 38%, rgba(251, 248, 242, 0.96) 68%, #fbf8f2 100%);
-    z-index: 2;
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(180deg, 
+      rgba(9, 18, 31, 0.15) 0%, 
+      rgba(9, 18, 31, 0.35) 35%, 
+      rgba(9, 18, 31, 0.78) 65%, 
+      rgba(9, 18, 31, 0.95) 85%, 
+      #09121f 100%) !important;
+    z-index: 2 !important;
   }
   .hero-slide-dark .hero-banner-overlay {
     background: linear-gradient(180deg, rgba(11, 20, 28, 0.15) 0%, rgba(11, 20, 28, 0.75) 38%, rgba(11, 20, 28, 0.98) 68%, #0b141c 100%) !important;

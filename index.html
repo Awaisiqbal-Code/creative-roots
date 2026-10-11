@@ -5,13 +5,379 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Creative Roots — Corporate Branding & Marketing Solutions</title>
   <meta name="description" content="Creative Roots provides corporate gifting, personalized giveaways, premium printing, exhibition stalls, and brand experiences across Pakistan.">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=20261011_v3">
   <link rel="preload" as="image" href="images/banners/banner-1.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/svg+xml" href="images/logo-mark.svg">
+
+  <!-- Critical Mobile Responsive Fixes (Cache-Proof Guarantee for 320px - 768px) -->
+  <style id="critical-mobile-overrides">
+    @media (max-width: 768px) {
+      /* 1. Top Announcement Bar: No clipping, perfect vertical alignment */
+      .announcement-bar {
+        height: 40px !important;
+        min-height: 40px !important;
+        line-height: 1.2 !important;
+        font-size: 0.74rem !important;
+        display: flex !important;
+        align-items: center !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        background: #0a1320 !important;
+        border-bottom: 1px solid rgba(244, 119, 33, 0.4) !important;
+      }
+      .announcement-ticker-wrap {
+        height: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+      .announcement-ticker-track {
+        display: flex !important;
+        align-items: center !important;
+        height: 100% !important;
+        animation-duration: 32s !important;
+      }
+      .announcement-ticker-item {
+        display: inline-flex !important;
+        align-items: center !important;
+        height: 100% !important;
+        padding: 0 10px !important;
+        gap: 7px !important;
+      }
+      .announcement-bar .badge-gold {
+        font-size: 0.62rem !important;
+        padding: 2.5px 8px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+        vertical-align: middle !important;
+        border-radius: 9999px !important;
+      }
+      .announcement-bar .ticker-text {
+        font-size: 0.74rem !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        margin: 0 !important;
+        line-height: 1.2 !important;
+      }
+      .announcement-ticker-divider {
+        padding: 0 8px !important;
+        font-size: 0.65rem !important;
+        display: inline-flex !important;
+        align-items: center !important;
+      }
+
+      /* 2. Hero Carousel Banner: Cinematic Dark Bottom Gradient, White Razor-Sharp Text, Orange Button */
+      .hero-banner.hero-carousel,
+      .hero-banner {
+        display: block !important;
+        width: 100% !important;
+        height: 64dvh !important;
+        min-height: 460px !important;
+        max-height: 560px !important;
+        border-radius: 20px !important;
+        overflow: hidden !important;
+        position: relative !important;
+        border: 1px solid rgba(19, 34, 56, 0.12) !important;
+        box-shadow: 0 8px 24px rgba(19, 34, 56, 0.08) !important;
+        background: #09121f !important;
+      }
+      .hero-slide .hero-banner-bg-img {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: 72% center !important;
+        display: block !important;
+        border-radius: 0 !important;
+      }
+      .hero-slide .hero-banner-overlay,
+      .hero-banner-overlay {
+        display: block !important;
+        position: absolute !important;
+        inset: 0 !important;
+        background: linear-gradient(180deg, 
+          rgba(9, 18, 31, 0.15) 0%, 
+          rgba(9, 18, 31, 0.35) 35%, 
+          rgba(9, 18, 31, 0.78) 65%, 
+          rgba(9, 18, 31, 0.95) 85%, 
+          #09121f 100%) !important;
+        z-index: 2 !important;
+      }
+      .hero-slide .hero-banner-content {
+        position: relative !important;
+        z-index: 3 !important;
+        padding: 16px 18px 46px 18px !important;
+        max-width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+      .hero-badge-pill {
+        background: rgba(244, 119, 33, 0.25) !important;
+        color: #ff9d54 !important;
+        border: 1px solid rgba(244, 119, 33, 0.6) !important;
+        font-size: 0.64rem !important;
+        padding: 3px 10px !important;
+        border-radius: 9999px !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.8px !important;
+        display: inline-block !important;
+        margin-bottom: 6px !important;
+        backdrop-filter: blur(6px) !important;
+        -webkit-backdrop-filter: blur(6px) !important;
+      }
+      .hero-kicker-script {
+        font-family: 'Caveat', cursive, sans-serif !important;
+        font-size: 1.65rem !important;
+        line-height: 1 !important;
+        color: #fcd34d !important;
+        margin-bottom: 2px !important;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) !important;
+      }
+      .hero-banner-content h1,
+      .hero-banner-content h1.hero-main-title {
+        font-size: clamp(1.75rem, 6.8vw, 2.3rem) !important;
+        font-weight: 800 !important;
+        line-height: 1.15 !important;
+        color: #ffffff !important;
+        margin-bottom: 8px !important;
+        letter-spacing: -0.5px !important;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6) !important;
+      }
+      .hero-slide-desc,
+      .hero-slide-desc-clean {
+        font-size: 0.85rem !important;
+        line-height: 1.42 !important;
+        color: #f1f5f9 !important;
+        margin-bottom: 14px !important;
+        max-width: 100% !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) !important;
+      }
+      .hero-btn-pill {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        max-width: 310px !important;
+        background: linear-gradient(135deg, #F47721 0%, #D96213 100%) !important;
+        color: #ffffff !important;
+        font-size: 0.9rem !important;
+        font-weight: 700 !important;
+        padding: 10px 14px 10px 20px !important;
+        border-radius: 9999px !important;
+        box-shadow: 0 6px 20px rgba(244, 119, 33, 0.45) !important;
+        min-height: 46px !important;
+      }
+      .hero-btn-pill .arrow-circle {
+        width: 28px !important;
+        height: 28px !important;
+        background: rgba(0, 0, 0, 0.25) !important;
+        font-size: 0.8rem !important;
+      }
+      .hero-dots {
+        position: absolute !important;
+        bottom: 12px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        padding: 4px 10px !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+        border-radius: 9999px !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        z-index: 10 !important;
+      }
+      .hero-dot {
+        width: 7px !important;
+        height: 7px !important;
+        border-radius: 9999px !important;
+        background: rgba(255, 255, 255, 0.45) !important;
+        border: none !important;
+        padding: 0 !important;
+      }
+      .hero-dot.active {
+        width: 18px !important;
+        background: #F47721 !important;
+      }
+
+      /* 3. Mobile Services Quick Grid: Premium 2-Column Cards */
+      .mobile-services-section {
+        display: block !important;
+        width: 100% !important;
+        margin-top: 18px !important;
+        padding: 4px 0 10px !important;
+      }
+      .mobile-services-header {
+        margin-bottom: 12px !important;
+        text-align: left !important;
+      }
+      .mobile-services-header h3 {
+        font-size: 1.35rem !important;
+        font-weight: 800 !important;
+        color: var(--primary-navy, #132238) !important;
+        margin: 4px 0 2px !important;
+      }
+      .mobile-services-header p {
+        font-size: 0.82rem !important;
+        color: #64748b !important;
+        margin: 0 !important;
+      }
+      .mobile-services-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+      }
+      .mobile-service-card {
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 14px !important;
+        padding: 14px 12px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+        text-decoration: none !important;
+        color: inherit !important;
+        position: relative !important;
+        box-shadow: 0 2px 8px rgba(19, 34, 56, 0.04) !important;
+        transition: transform 0.2s ease, border-color 0.2s ease !important;
+        -webkit-tap-highlight-color: transparent !important;
+      }
+      .mobile-service-card:active {
+        transform: scale(0.97) !important;
+      }
+      .mobile-service-card.active {
+        border-color: #F47721 !important;
+        background: #fffdf9 !important;
+        box-shadow: 0 4px 14px rgba(244, 119, 33, 0.12) !important;
+      }
+      .mobile-service-icon {
+        width: 42px !important;
+        height: 42px !important;
+        border-radius: 10px !important;
+        background: #f8fafc !important;
+        border: 1px solid #edf2f7 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 7px !important;
+      }
+      .mobile-service-icon img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+      }
+      .mobile-service-info h4 {
+        font-size: 0.88rem !important;
+        font-weight: 800 !important;
+        color: var(--primary-navy, #132238) !important;
+        line-height: 1.25 !important;
+        margin: 0 !important;
+      }
+      .mobile-service-info p {
+        font-size: 0.72rem !important;
+        color: #64748b !important;
+        line-height: 1.35 !important;
+        margin: 2px 0 0 !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+      }
+      .mobile-service-card i.fa-chevron-right {
+        position: absolute !important;
+        top: 14px !important;
+        right: 12px !important;
+        font-size: 0.65rem !important;
+        color: #cbd5e1 !important;
+      }
+
+      /* 4. Projects Section & Single Horizontal Scroll-Snap Filter Tabs Row */
+      .projects-filter-bar {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+        justify-content: flex-start !important;
+        padding: 6px 16px 14px !important;
+        margin: 0 -16px 16px !important;
+        gap: 8px !important;
+      }
+      .projects-filter-bar::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+      }
+      .project-filter-btn {
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+        scroll-snap-align: start !important;
+        font-size: 0.82rem !important;
+        padding: 8px 16px !important;
+        min-height: 42px !important;
+        border-radius: 9999px !important;
+      }
+
+      /* 5. Floating WhatsApp Button: Icon-Only, Bubble Hidden on Mobile */
+      .whatsapp-chat-bubble {
+        display: none !important;
+      }
+      .floating-whatsapp-widget {
+        bottom: 74px !important;
+        left: 14px !important;
+        z-index: 9998 !important;
+      }
+      .whatsapp-icon-circle {
+        width: 46px !important;
+        height: 46px !important;
+        font-size: 1.6rem !important;
+      }
+      .back-to-top {
+        bottom: 74px !important;
+        right: 14px !important;
+        width: 42px !important;
+        height: 42px !important;
+      }
+
+      /* 6. Fixed Mobile Bottom Tab Bar (60px high) */
+      .mobile-bottom-tab-bar {
+        display: flex !important;
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: 60px !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(14px) !important;
+        -webkit-backdrop-filter: blur(14px) !important;
+        border-top: 1px solid #e2e8f0 !important;
+        z-index: 9999 !important;
+        box-shadow: 0 -4px 16px rgba(19, 34, 56, 0.08) !important;
+        align-items: center !important;
+        justify-content: space-around !important;
+      }
+    }
+  </style>
+
 </head>
 <body>
 
@@ -1171,6 +1537,6 @@
 
   <!-- Lenis Smooth Scroll Engine -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="js/script.js?v=20261011_v3"></script>
 </body>
 </html>
