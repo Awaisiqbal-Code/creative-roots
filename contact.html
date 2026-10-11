@@ -245,34 +245,59 @@
 </head>
 <body>
 
-  <!-- Scroll Progress Bar -->
-  <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
+      <!-- ===== 1. Top Announcement Bar (Continuous Running Marquee Ticker) ===== -->
+  <div class="announcement-bar" role="region" aria-label="Announcement Ticker">
+    <div class="announcement-ticker-wrap">
+      <div class="announcement-ticker-track">
+        <div class="announcement-ticker-item">
+          <span class="badge-gold"><i class="fa-solid fa-shield-halved"></i> Order Policy</span>
+          <span class="ticker-text">For orders over Rs. 4000, a 20–50% advance is needed to confirm your order. Thanks for understanding!</span>
+        </div>
+        <span class="announcement-ticker-divider">✦</span>
+        <div class="announcement-ticker-item">
+          <span class="badge-gold"><i class="fa-brands fa-whatsapp"></i> Quick Quote</span>
+          <span class="ticker-text">Free Consultation &amp; Instant WhatsApp Pricing — <a href="https://wa.me/923347009992" target="_blank" rel="noopener noreferrer" class="highlight">Contact Us Today!</a></span>
+        </div>
+        <span class="announcement-ticker-divider">✦</span>
+        <div class="announcement-ticker-item">
+          <span class="badge-gold"><i class="fa-solid fa-truck-fast"></i> Delivery</span>
+          <span class="ticker-text">Nationwide Delivery &amp; Bulk Corporate Discounts across Pakistan</span>
+        </div>
+        <span class="announcement-ticker-divider">✦</span>
+        <div class="announcement-ticker-item">
+          <span class="badge-gold"><i class="fa-solid fa-gem"></i> Enterprise</span>
+          <span class="ticker-text">Pakistan's Premier Corporate Gifting &amp; Physical Merchandise Partner</span>
+        </div>
+        <span class="announcement-ticker-divider">✦</span>
+      </div>
 
-  <!-- ===== 1. Top Announcement Bar ===== -->
-      <div class="announcement-bar">
-    <div class="announcement-slider">
-      <div class="announcement-slide active">
-        <span class="badge-gold"><i class="fa-solid fa-truck-fast"></i> Delivery</span>
-        <div class="ticker-track">
-          <span class="ticker-inner">Free Delivery &amp; Bulk Discounts on Orders Over Rs. 5,000 across Pakistan</span>
+      <!-- Identical Duplicate Track for Seamless Infinite Loop -->
+      <div class="announcement-ticker-track" aria-hidden="true">
+        <div class="announcement-ticker-item">
+          <span class="badge-gold"><i class="fa-solid fa-shield-halved"></i> Order Policy</span>
+          <span class="ticker-text">For orders over Rs. 4000, a 20–50% advance is needed to confirm your order. Thanks for understanding!</span>
         </div>
-      </div>
-      <div class="announcement-slide">
-        <span class="badge-gold"><i class="fa-brands fa-whatsapp"></i> Quick Quote</span>
-        <div class="ticker-track">
-          <span class="ticker-inner">Free Consultation &amp; Instant WhatsApp Pricing — <a href="contact.html" class="highlight">Contact Us Today!</a></span>
+        <span class="announcement-ticker-divider">✦</span>
+        <div class="announcement-ticker-item">
+          <span class="badge-gold"><i class="fa-brands fa-whatsapp"></i> Quick Quote</span>
+          <span class="ticker-text">Free Consultation &amp; Instant WhatsApp Pricing — <a href="https://wa.me/923347009992" target="_blank" rel="noopener noreferrer" class="highlight">Contact Us Today!</a></span>
         </div>
-      </div>
-      <div class="announcement-slide">
-        <span class="badge-gold"><i class="fa-solid fa-gem"></i> Enterprise</span>
-        <div class="ticker-track">
-          <span class="ticker-inner">Pakistan's Premier Corporate Gifting &amp; Physical Merchandise Partner</span>
+        <span class="announcement-ticker-divider">✦</span>
+        <div class="announcement-ticker-item">
+          <span class="badge-gold"><i class="fa-solid fa-truck-fast"></i> Delivery</span>
+          <span class="ticker-text">Nationwide Delivery &amp; Bulk Corporate Discounts across Pakistan</span>
         </div>
+        <span class="announcement-ticker-divider">✦</span>
+        <div class="announcement-ticker-item">
+          <span class="badge-gold"><i class="fa-solid fa-gem"></i> Enterprise</span>
+          <span class="ticker-text">Pakistan's Premier Corporate Gifting &amp; Physical Merchandise Partner</span>
+        </div>
+        <span class="announcement-ticker-divider">✦</span>
       </div>
     </div>
   </div>
 
-  <header class="header">
+<header class="header">
     <div class="container">
       <a href="index.html" class="logo">
         <img src="images/logo.svg" alt="Creative Roots" class="logo-img" width="220" height="42">
