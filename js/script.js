@@ -1823,10 +1823,10 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ================================================================
      17. LENIS SMOOTH SCROLL ENGINE
   /* ================================================================
-     17. LENIS SMOOTH SCROLL ENGINE (ZERO-LAG RESPONSIVE PHYSIC)
-     - Responsive linear interpolation (lerp: 0.12)
-     - Immediate momentum reset on directional reversal (eliminates upward scroll delay)
-     - Clean destroy on page unload
+     17. LENIS SMOOTH SCROLL ENGINE (NATIVE COMPOSITOR HARDWARE ACCELERATED)
+     - smoothWheel: false leaves mouse wheel & trackpad to native browser compositor
+     - 0ms input latency on scroll up / reversal (completely eliminates delay and jerks)
+     - Programmatic scrollTo remains active for smooth anchors
      ================================================================ */
   function initLenisSmoothScroll() {
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -1836,37 +1836,14 @@ document.addEventListener('DOMContentLoaded', function () {
     if (typeof Lenis !== 'undefined') {
       try {
         const lenis = new Lenis({
-          lerp: 0.12,
-          orientation: 'vertical',
-          gestureOrientation: 'vertical',
-          smoothWheel: true,
-          wheelMultiplier: 1.0,
+          smoothWheel: false,
           syncTouch: false,
-          touchMultiplier: 1.0
+          autoRaf: true
         });
-
-        // Instant directional reversal: eliminate the upward dead-zone / delay
-        window.addEventListener('wheel', function (e) {
-          if (!window.lenisInstance) return;
-          const inst = window.lenisInstance;
-          // When user spins wheel in opposite direction, immediately sync target with current scroll
-          if ((e.deltaY < 0 && inst.velocity > 0) || (e.deltaY > 0 && inst.velocity < 0)) {
-            inst.velocity = 0;
-            inst.target = inst.scroll;
-          }
-        }, { passive: true });
-
-        let rafId;
-        function raf(time) {
-          lenis.raf(time);
-          rafId = requestAnimationFrame(raf);
-        }
-        rafId = requestAnimationFrame(raf);
 
         window.lenisInstance = lenis;
 
         window.addEventListener('beforeunload', () => {
-          if (rafId) cancelAnimationFrame(rafId);
           lenis.destroy();
         });
       } catch (err) {
@@ -1879,7 +1856,7 @@ document.addEventListener('DOMContentLoaded', function () {
      18. UNIFIED 60FPS/120FPS MASTER SCROLL CONTROLLER
      - Single passive RAF-throttled scroll listener for entire site
      - Cached document height to eliminate Forced Synchronous Layout / Reflow thrashing
-     - Fixed header state (threshold: 15px, GPU-isolated layer)
+     - Fixed header state (threshold: 40px post-announcement bar, GPU-isolated layer)
      - Back-to-top button visibility (compositor-only opacity/transform)
      - Window scroll progress bar (GPU scaleX transform)
      ================================================================ */
@@ -1905,7 +1882,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // 1. Header scrolled styling (GPU layer, zero layout shift, state gated)
       if (header) {
-        if (scrollY > 15) {
+        if (scrollY > 40) {
           if (!isHeaderScrolled) {
             header.classList.add('scrolled');
             isHeaderScrolled = true;

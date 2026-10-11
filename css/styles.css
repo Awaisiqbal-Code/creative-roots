@@ -67,6 +67,7 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: auto !important;
+  overscroll-behavior-y: none;
 }
 body {
   font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -75,6 +76,7 @@ body {
   line-height: 1.55;
   overflow-x: clip;
   scroll-behavior: auto !important;
+  overscroll-behavior-y: none;
 }
 /* Ensure anchors don't get hidden behind sticky header */
 [id] {
