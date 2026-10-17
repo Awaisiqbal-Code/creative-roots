@@ -18,14 +18,14 @@
       aliases: ['gift', 'giveaways', 'corporate-gifts', 'gifts', 'corporate-giveaways-box'],
       name: 'Corporate Giveaways',
       tagline: 'Bespoke Executive Gift Boxes & Corporate Merchandise',
-      heroImage: 'images/banners/banner-1.jpg',
+      heroImage: 'new assets/1.jpeg',
       badge: '✦ EXECUTIVE COLLECTION',
       iconSvg: 'images/services/corporate-giveaways.svg',
       description: 'Elevate your enterprise brand prestige with handcrafted rigid gift boxes, executive onboarding kits, custom drinkware, and premium corporate merchandise manufactured for leading multinationals across Pakistan.',
       seo: {
         title: 'Corporate Giveaways & Luxury Executive Gift Boxes — Creative Roots',
         description: 'Explore authentic corporate gift boxes, executive diaries, drinkware, and onboarding merchandise with custom hot-foil debossing and laser branding across Pakistan.',
-        ogImage: 'images/banners/banner-1.jpg'
+        ogImage: 'new assets/1.jpeg'
       },
       highlights: [
         {
@@ -256,14 +256,14 @@
       aliases: ['digital', 'print', 'digital-print', 'brochures', 'catalogues'],
       name: 'Digital Printing',
       tagline: 'High-Resolution Commercial & Short-Run Precision Printing',
-      heroImage: 'images/banners/banner-2.jpg',
+      heroImage: 'new assets/2.jpeg',
       badge: '✦ COLOR CALIBRATED',
       iconSvg: 'images/services/digital-printing.svg',
       description: 'Industrial digital press technology delivering photorealistic color accuracy, crisp typography, and rapid on-demand turnarounds for corporate brochures, presentation folders, product catalogs, and marketing collateral.',
       seo: {
         title: 'High-Resolution Digital Printing Services — Creative Roots',
         description: 'Explore on-demand corporate brochures, multi-page product catalogues, folders, certificates, and marketing collaterals with digital precision.',
-        ogImage: 'images/banners/banner-2.jpg'
+        ogImage: 'new assets/2.jpeg'
       },
       highlights: [
         {
@@ -574,14 +574,14 @@
       aliases: ['offset', 'commercial-printing', 'bulk-printing', 'packaging-boxes', 'offprinting'],
       name: 'Offset Printing',
       tagline: 'High-Volume Commercial Lithography & Industrial Packaging',
-      heroImage: 'images/banners/banner-3.jpg',
+      heroImage: 'new assets/3.jpeg',
       badge: '✦ INDUSTRIAL CAPACITY',
       iconSvg: 'images/services/offset-printing.svg',
       description: 'Heavyweight Heidelberg multi-color offset presses engineered for cost-effective massive volume runs. Specializing in folding cartons, spot UV stationery, corporate annual reports, luxury paper shopping bags, and corrugated packaging.',
       seo: {
         title: 'Industrial Offset Printing & Custom Packaging Boxes — Creative Roots',
         description: 'High-volume commercial offset printing for folding cartons, hardbound annual profiles, foil-stamped business cards, and luxury paper bags in Pakistan.',
-        ogImage: 'images/banners/banner-3.jpg'
+        ogImage: 'new assets/3.jpeg'
       },
       highlights: [
         {
@@ -812,14 +812,14 @@
       aliases: ['outdoor', 'branding', 'signs', 'fascia', 'signage', 'billboards'],
       name: 'Outdoor Branding',
       tagline: 'High-Impact Architectural Signage & Structural Brand Environments',
-      heroImage: 'images/banners/banner-4.jpg',
+      heroImage: 'new assets/4.jpeg',
       badge: '✦ WEATHER TESTED',
       iconSvg: 'images/services/outdoor-branding.svg',
       description: 'Architectural outdoor signage engineering: 3D illuminated acrylic LED channel letters, pylon monolith signs, shopfront fascia cladding, commercial vehicle fleet wraps, and high-rise building branding built to withstand Pakistan extreme weather.',
       seo: {
         title: 'Outdoor Signage & Architectural Branding — Creative Roots',
         description: 'Design and fabrication of 3D acrylic LED channel letters, pylon signboards, ACP facade cladding, and commercial vehicle fleet wraps in Pakistan.',
-        ogImage: 'images/banners/banner-4.jpg'
+        ogImage: 'new assets/4.jpeg'
       },
       highlights: [
         {
@@ -1050,14 +1050,14 @@
       aliases: ['panaflex', 'flex', 'flex-printing', 'banners', 'standees', 'billboards'],
       name: 'Panaflex Printing',
       tagline: 'Wide-Format Outdoor Flex, Backlit Skins & Event Displays',
-      heroImage: 'images/banners/banner-5.jpg',
+      heroImage: 'new assets/5.jpeg',
       badge: '✦ UV STABILIZED',
       iconSvg: 'images/services/panaflex-printing.svg',
       description: 'Super-wide 3.2-meter and 5-meter seamless flex printing using original Japanese solvent and UV curable inks. Built for massive highway billboards, backlit shop signs, roll-up display standees, stage backdrops, and event streamers.',
       seo: {
         title: 'Large-Format Panaflex & Billboard Printing — Creative Roots',
         description: 'Wide-format high-density panaflex printing, Star flex billboard skins, retractable roll-up standees, and stage backdrops in Pakistan.',
-        ogImage: 'images/banners/banner-5.jpg'
+        ogImage: 'new assets/5.jpeg'
       },
       highlights: [
         {
@@ -1288,14 +1288,14 @@
       aliases: ['exhibition', 'stalls', 'expo', 'booths', 'exabitions-halls', 'exhibition-hall'],
       name: 'Exhibition Stalls',
       tagline: 'Turnkey 3D Custom Trade Show Stalls & Experiential Pavilions',
-      heroImage: 'images/banners/banner-6.jpg',
+      heroImage: 'new assets/6.jpeg',
       badge: '✦ AWARD WINNING 3D',
       iconSvg: 'images/services/exhibition-stalls.svg',
       description: 'Complete end-to-end exhibition stall design, engineering, and turnkey carpentry fabrication for major expos at Expo Centre Lahore, Karachi Expo, and Pak-China Friendship Centre Islamabad.',
       seo: {
         title: 'Custom 3D Exhibition Stall Design & Fabrication — Creative Roots',
         description: 'Award-winning turnkey 3D exhibition booth design, wooden carpentry fabrication, reception counters, and audio-visual integration in Pakistan.',
-        ogImage: 'images/banners/banner-6.jpg'
+        ogImage: 'new assets/6.jpeg'
       },
       highlights: [
         {

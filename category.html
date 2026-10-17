@@ -104,53 +104,32 @@
 
   <!-- Dynamic Category Content Root Container -->
   <main id="categoryPageMain" class="category-page-main">
-    
-    <!-- a) Category Hero (Rendered dynamically by CategoryController) -->
+
+    <!-- Breadcrumb -->
+    <div class="category-breadcrumb-wrap">
+      <div class="container">
+        <nav class="category-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="separator"><i class="fa-solid fa-chevron-right"></i></span>
+          <a href="index.html#services">Services</a>
+          <span class="separator"><i class="fa-solid fa-chevron-right"></i></span>
+          <span class="current" id="breadcrumbCategoryName">Loading...</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- a) Category Hero Banner (Exact Category Promotional Banner) -->
     <section class="category-hero-section" id="categoryHeroSection">
-      <div class="category-hero-overlay"></div>
       <div class="container">
-        <div class="category-hero-content">
-          <nav class="category-breadcrumb" aria-label="Breadcrumb">
-            <a href="index.html">Home</a>
-            <span class="separator"><i class="fa-solid fa-chevron-right"></i></span>
-            <a href="index.html#categories">Services</a>
-            <span class="separator"><i class="fa-solid fa-chevron-right"></i></span>
-            <span class="current" id="breadcrumbCategoryName">Loading...</span>
-          </nav>
-
-          <span class="category-hero-badge" id="heroCategoryBadge">✦ PREMIUM SERVICES</span>
-          <h1 class="category-hero-title" id="heroCategoryTitle">Category Title</h1>
-          <div class="category-hero-tagline" id="heroCategoryTagline">Crafting Precision Branding</div>
-          <p class="category-hero-desc" id="heroCategoryDesc">Explore authentic corporate solutions tailored for industry leaders across Pakistan.</p>
-          
-          <div class="category-hero-actions">
-            <a href="#order-section" class="btn-category-order" id="heroBtnOrderNow">
-              <i class="fa-solid fa-cart-shopping"></i> Order Now
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" class="btn-category-whatsapp" id="heroBtnWhatsApp">
-              <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
-            </a>
-          </div>
+        <div class="category-hero-banner">
+          <a href="#order-section" class="category-hero-banner-link" title="Explore Catalog &amp; Order">
+            <img id="categoryHeroBannerImg" src="new assets/1.jpeg" alt="Category Banner" class="category-hero-banner-img" loading="eager">
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- b) Category Intro & Key Highlights -->
-    <section class="category-intro-section" id="categoryIntroSection">
-      <div class="container">
-        <div class="category-intro-header">
-          <span class="hero-badge-pill" style="margin-bottom: 12px; display: inline-block;">✦ WHY CHOOSE US</span>
-          <h2 id="introCategoryHeading">Crafted for Corporate Excellence</h2>
-          <p id="introCategoryParagraph">Our enterprise-grade production facilities combine precision artisanal craftsmanship with cutting-edge technology.</p>
-        </div>
-
-        <div class="category-highlights-grid" id="categoryHighlightsGrid">
-          <!-- Rendered dynamically -->
-        </div>
-      </div>
-    </section>
-
-    <!-- c) Items / Services List (ORDER SECTION) -->
+    <!-- b) Items / Services List (ORDER SECTION) — MOVED UP -->
     <section class="category-order-section" id="order-section">
       <div class="container">
         <div class="category-order-header">
@@ -173,17 +152,16 @@
       </div>
     </section>
 
-    <!-- d) Our Projects in this Category (Reusable ProjectCard & Lightbox) -->
-    <section class="category-projects-section" id="categoryProjectsSection">
+    <!-- c) Category Intro & Key Highlights (Why Choose Us) — MOVED DOWN -->
+    <section class="category-intro-section" id="categoryIntroSection">
       <div class="container">
-        <div class="projects-section-header">
-          <span class="projects-section-badge">✦ VERIFIED DELIVERED PORTFOLIO</span>
-          <h2 id="projectsSectionHeading">Recent Delivered Projects</h2>
-          <p id="projectsSectionSubtitle">Authentic physical productions manufactured for corporate clients and institutions across Pakistan.</p>
+        <div class="category-intro-header">
+          <span class="hero-badge-pill" style="margin-bottom: 12px; display: inline-block;">✦ WHY CHOOSE US</span>
+          <h2 id="introCategoryHeading">Crafted for Corporate Excellence</h2>
+          <p id="introCategoryParagraph">Our enterprise-grade production facilities combine precision artisanal craftsmanship with cutting-edge technology.</p>
         </div>
 
-        <!-- Gallery of ONLY this category's successful projects -->
-        <div class="category-projects-grid" id="categoryProjectsGrid">
+        <div class="category-highlights-grid" id="categoryHighlightsGrid">
           <!-- Rendered dynamically -->
         </div>
       </div>

@@ -67,34 +67,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 3. RENDER CATEGORY HERO
   function renderHero() {
-    const heroSection = document.getElementById('categoryHeroSection');
-    if (heroSection) {
-      heroSection.style.backgroundImage = `url('${category.heroImage}')`;
+    const bannerImg = document.getElementById('categoryHeroBannerImg');
+    if (bannerImg && category.heroImage) {
+      bannerImg.src = category.heroImage;
+      bannerImg.alt = `${category.name} — Creative Roots`;
     }
 
     const breadcrumbName = document.getElementById('breadcrumbCategoryName');
     if (breadcrumbName) breadcrumbName.textContent = category.name;
 
-    const heroBadge = document.getElementById('heroCategoryBadge');
-    if (heroBadge) heroBadge.textContent = category.badge || '✦ PREMIUM SERVICES';
-
-    const heroTitle = document.getElementById('heroCategoryTitle');
-    if (heroTitle) heroTitle.textContent = category.name;
-
-    const heroTagline = document.getElementById('heroCategoryTagline');
-    if (heroTagline) heroTagline.textContent = category.tagline || '';
-
-    const heroDesc = document.getElementById('heroCategoryDesc');
-    if (heroDesc) heroDesc.textContent = category.description || '';
-
-    const waMsg = encodeURIComponent(`Hello Creative Roots, I am interested in your ${category.name} services and products. Please provide details.`);
-    const waUrl = `https://wa.me/923347009992?text=${waMsg}`;
-
-    const heroWhatsApp = document.getElementById('heroBtnWhatsApp');
-    if (heroWhatsApp) heroWhatsApp.href = waUrl;
-
     const finalCtaWhatsApp = document.getElementById('finalCtaWhatsAppBtn');
-    if (finalCtaWhatsApp) finalCtaWhatsApp.href = waUrl;
+    if (finalCtaWhatsApp) {
+      const waMsg = encodeURIComponent(`Hello Creative Roots, I am interested in your ${category.name} services and products. Please provide details.`);
+      finalCtaWhatsApp.href = `https://wa.me/923347009992?text=${waMsg}`;
+    }
   }
   renderHero();
 
