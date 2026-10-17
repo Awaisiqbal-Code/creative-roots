@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Creative Roots — Corporate Branding & Marketing Solutions</title>
   <meta name="description" content="Creative Roots provides corporate gifting, personalized giveaways, premium printing, exhibition stalls, and brand experiences across Pakistan.">
-  <link rel="stylesheet" href="css/styles.css?v=20261011_v5">
-  <link rel="preload" as="image" href="images/banners/banner-1.jpg">
+  <link rel="stylesheet" href="css/styles.css?v=20261017_v5">
+  <link rel="preload" as="image" href="new assets/1.jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
@@ -108,23 +108,31 @@
       .hero-banner {
         display: block !important;
         width: 100% !important;
-        height: 64dvh !important;
-        min-height: 460px !important;
-        max-height: 560px !important;
-        border-radius: 20px !important;
+        aspect-ratio: 2.35 / 1 !important;
+        min-height: 160px !important;
+        max-height: 380px !important;
+        height: auto !important;
+        border-radius: 16px !important;
         overflow: hidden !important;
         position: relative !important;
-        border: 1px solid rgba(19, 34, 56, 0.12) !important;
-        box-shadow: 0 8px 24px rgba(19, 34, 56, 0.08) !important;
-        background: #09121f !important;
+        border: 1px solid rgba(19, 34, 56, 0.1) !important;
+        box-shadow: 0 4px 16px rgba(19, 34, 56, 0.08) !important;
+        background: #ffffff !important;
       }
+      .hero-slide-link {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        position: relative !important;
+      }
+      .hero-slide-link .hero-banner-bg-img,
       .hero-slide .hero-banner-bg-img {
         position: absolute !important;
         inset: 0 !important;
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
-        object-position: 72% center !important;
+        object-position: center !important;
         display: block !important;
         border-radius: 0 !important;
       }
@@ -216,9 +224,23 @@
         background: rgba(0, 0, 0, 0.25) !important;
         font-size: 0.8rem !important;
       }
+      .hero-nav-arrow {
+        display: flex !important;
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.75rem !important;
+        opacity: 0.85 !important;
+        z-index: 10 !important;
+      }
+      .hero-nav-prev {
+        left: 8px !important;
+      }
+      .hero-nav-next {
+        right: 8px !important;
+      }
       .hero-dots {
         position: absolute !important;
-        bottom: 12px !important;
+        bottom: 8px !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
         display: flex !important;
@@ -551,109 +573,48 @@
       <div class="hero-banner hero-carousel reveal-right" id="heroCarousel" role="region" aria-label="Featured Services Carousel">
         <div class="hero-carousel-track">
           
-          <!-- Slide 1: Corporate Giveaways -->
+          <!-- Slide 1: Custom Corporate Gifts -->
           <div class="hero-slide active" aria-hidden="false">
-            <img src="images/banners/banner-1.jpg" alt="Corporate Giveaways & Executive Gifts" class="hero-banner-bg-img" loading="eager">
-            <div class="hero-banner-overlay"></div>
-            <div class="hero-banner-content">
-              <div class="hero-badge-pill">✦ PREMIUM COLLECTION</div>
-              <span class="hero-kicker-script">Custom Corporate</span>
-              <h1 class="hero-main-title">Gifts &amp; Giveaways</h1>
-              <p class="hero-slide-desc-clean">Premium branded corporate gifts and promotional products customized for businesses, events, and campaigns across Pakistan.</p>
-              <div class="hero-actions-wrap">
-                <a href="category.html?slug=corporate-giveaways" class="hero-btn-pill" data-target-category="giveaways">
-                  Explore Corporate Gifts <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-              </div>
-            </div>
+            <a href="category.html?slug=corporate-giveaways" class="hero-slide-link" aria-label="Explore Custom Corporate Gifts - Premium Collection">
+              <img src="new assets/1.jpeg" alt="Custom Corporate Gifts" class="hero-banner-bg-img" loading="eager" width="1280" height="491">
+            </a>
           </div>
 
-          <!-- Slide 2: Digital Printing -->
+          <!-- Slide 2: Premium Quality Custom Stickers -->
           <div class="hero-slide" aria-hidden="true">
-            <img src="images/banners/banner-2.jpg" alt="Digital Printing Solutions" class="hero-banner-bg-img" loading="lazy">
-            <div class="hero-banner-overlay"></div>
-            <div class="hero-banner-content">
-              <div class="hero-badge-pill">✦ HD DIGITAL PRINT</div>
-              <span class="hero-kicker-script">Fast &amp; Vibrant</span>
-              <h1 class="hero-main-title">Digital Printing</h1>
-              <p class="hero-slide-desc-clean">Ultra-crisp short-run brochures, product catalogs, die-cut holographic labels, and promotional prints.</p>
-              <div class="hero-actions-wrap">
-                <a href="category.html?slug=digital-printing" class="hero-btn-pill" data-target-category="digital">
-                  Explore Digital Printing <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-              </div>
-            </div>
+            <a href="category.html?slug=digital-printing" class="hero-slide-link" aria-label="Explore Premium Quality Custom Stickers - UV DTF & Laminated">
+              <img src="new assets/2.jpeg" alt="Premium Quality Custom Stickers" class="hero-banner-bg-img" loading="lazy" width="1600" height="666">
+            </a>
           </div>
 
-          <!-- Slide 3: Offset Printing -->
+          <!-- Slide 3: Offset Printing Solutions -->
           <div class="hero-slide" aria-hidden="true">
-            <img src="images/banners/banner-3.jpg" alt="Offset Printing Solutions" class="hero-banner-bg-img" loading="lazy">
-            <div class="hero-banner-overlay"></div>
-            <div class="hero-banner-content">
-              <div class="hero-badge-pill">✦ INDUSTRIAL PRECISION</div>
-              <span class="hero-kicker-script">Commercial Scale</span>
-              <h1 class="hero-main-title">Offset Printing</h1>
-              <p class="hero-slide-desc-clean">High-volume corporate stationery, gold-foil business cards, hardbound profiles, and luxury packaging.</p>
-              <div class="hero-actions-wrap">
-                <a href="category.html?slug=offset-printing" class="hero-btn-pill" data-target-category="offset">
-                  Explore Offset Printing <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-              </div>
-            </div>
+            <a href="category.html?slug=offset-printing" class="hero-slide-link" aria-label="Get a Quote for Offset Printing - Company Profiles & Brochures">
+              <img src="new assets/3.jpeg" alt="Your Partner for Offset Printing" class="hero-banner-bg-img" loading="lazy" width="1600" height="601">
+            </a>
           </div>
 
-          <!-- Slide 4: Outdoor Branding -->
+          <!-- Slide 4: Bulk Branding Merchandise -->
           <div class="hero-slide" aria-hidden="true">
-            <img src="images/banners/banner-4.jpg" alt="Outdoor Branding & Signages" class="hero-banner-bg-img" loading="lazy">
-            <div class="hero-banner-overlay"></div>
-            <div class="hero-banner-content">
-              <div class="hero-badge-pill">✦ HIGH VISIBILITY</div>
-              <span class="hero-kicker-script">Maximum Impact</span>
-              <h1 class="hero-main-title">Outdoor Branding</h1>
-              <p class="hero-slide-desc-clean">Architectural building signages, 3D acrylic LED fascias, illuminated pylons, and vehicle fleet wraps.</p>
-              <div class="hero-actions-wrap">
-                <a href="category.html?slug=outdoor-branding" class="hero-btn-pill" data-target-category="outdoor">
-                  Explore Outdoor Branding <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-              </div>
-            </div>
+            <a href="products.html" class="hero-slide-link" aria-label="Get a Bulk Quote - Built for Businesses">
+              <img src="new assets/4.jpeg" alt="Your Partner for Bulk Branding" class="hero-banner-bg-img" loading="lazy" width="1600" height="601">
+            </a>
           </div>
 
-          <!-- Slide 5: Panaflex Printing -->
+          <!-- Slide 5: Special Weekly Apparel & Brand Merchandise -->
           <div class="hero-slide" aria-hidden="true">
-            <img src="images/banners/banner-5.jpg" alt="Panaflex Printing & Billboards" class="hero-banner-bg-img" loading="lazy">
-            <div class="hero-banner-overlay"></div>
-            <div class="hero-banner-content">
-              <div class="hero-badge-pill">✦ WIDE FORMAT</div>
-              <span class="hero-kicker-script">Heavy-Duty Flex</span>
-              <h1 class="hero-main-title">Panaflex Printing</h1>
-              <p class="hero-slide-desc-clean">Weatherproof outdoor billboards, backlit hoardings, exhibition streamers, and heavy-duty banner displays.</p>
-              <div class="hero-actions-wrap">
-                <a href="category.html?slug=panaflex-printing" class="hero-btn-pill" data-target-category="panaflex">
-                  Explore Panaflex Printing <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-              </div>
-            </div>
+            <a href="products.html" class="hero-slide-link" aria-label="Shop Now - Creative Roots Apparel & Merchandise">
+              <img src="new assets/5.jpeg" alt="Special Weekly - You Think We Create" class="hero-banner-bg-img" loading="lazy" width="1600" height="718">
+            </a>
           </div>
 
-          <!-- Slide 6: Exhibition Stalls -->
-          <div class="hero-slide hero-slide-dark" aria-hidden="true">
-            <img src="images/banners/banner-6.jpg" alt="3D Exhibition Stalls & Expo Booths" class="hero-banner-bg-img" loading="lazy">
-            <div class="hero-banner-overlay"></div>
-            <div class="hero-banner-content">
-              <div class="hero-badge-pill">✦ 3D FABRICATION</div>
-              <span class="hero-kicker-script">Turnkey Expo</span>
-              <h1 class="hero-main-title">Exhibition Stalls</h1>
-              <p class="hero-slide-desc-clean">Turnkey 3D trade show booths, illuminated pavilions, pop-up kiosks, and brand activation setups nationwide.</p>
-              <div class="hero-actions-wrap">
-                <a href="category.html?slug=exhibition-stalls" class="hero-btn-pill" data-target-category="stalls">
-                  Explore Exhibition Stalls <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-              </div>
-            </div>
+          <!-- Slide 6: Exhibition Stalls & Branding Solutions -->
+          <div class="hero-slide" aria-hidden="true">
+            <a href="category.html?slug=exhibition-stalls" class="hero-slide-link" aria-label="Explore 3D Exhibition Stalls & Expo Solutions">
+              <img src="new assets/6.jpeg" alt="Exhibitions, Printing & Branding Solutions" class="hero-banner-bg-img" loading="lazy" width="1600" height="665">
+            </a>
           </div>
-
-                </div>
+        </div>
 
         <!-- Navigation Controls: Arrows -->
         <button class="hero-nav-arrow hero-nav-prev" aria-label="Previous Slide">
@@ -1568,6 +1529,6 @@
 
   <!-- Lenis Smooth Scroll Engine -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-  <script src="js/script.js?v=20261011_v5"></script>
+  <script src="js/script.js?v=20261017_v5"></script>
 </body>
 </html>
