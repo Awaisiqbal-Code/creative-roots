@@ -2639,19 +2639,19 @@ button, input, select {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 68px;
-  min-width: 140px;
-  padding: 8px 20px;
+  height: 90px;
+  min-width: 175px;
+  padding: 12px 24px;
   background: #ffffff;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
   cursor: pointer;
 }
 .client-logo-item img {
-  max-height: 48px;
-  max-width: 130px;
+  max-height: 66px;
+  max-width: 155px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -2659,9 +2659,9 @@ button, input, select {
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .client-logo-item:hover {
-  transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  border-color: rgba(212, 175, 55, 0.4);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+  border-color: rgba(244, 119, 33, 0.35);
 }
 @media (max-width: 768px) {
   .clients-slider {
@@ -2669,14 +2669,14 @@ button, input, select {
     animation-duration: 38s;
   }
   .client-logo-item {
-    height: 56px;
-    min-width: 110px;
-    padding: 6px 14px;
-    border-radius: 8px;
+    height: 72px;
+    min-width: 130px;
+    padding: 8px 16px;
+    border-radius: 10px;
   }
   .client-logo-item img {
-    max-height: 38px;
-    max-width: 100px;
+    max-height: 52px;
+    max-width: 115px;
   }
 }
 @keyframes scrollClients {
@@ -7115,38 +7115,44 @@ button, input, select {
     color: #cbd5e1;
   }
 
-  /* --- 5. CORPORATE CLIENTS SECTION (Tightened Spacing, 96x60px Cards) --- */
+  /* --- 5. CORPORATE CLIENTS SECTION --- */
   .corporate-clients {
-    padding: 36px 0 40px !important;
+    padding: 40px 0 46px !important;
     background: #f8fafc !important;
   }
   .corporate-clients h2 {
-    font-size: 1.45rem !important;
-    margin-bottom: 22px !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 24px !important;
   }
   .clients-slider {
-    gap: 16px !important;
-    animation-duration: 36s !important;
-    padding: 6px 0 !important;
+    gap: 18px !important;
+    animation-duration: 38s !important;
+    padding: 8px 0 !important;
   }
   .client-logo-item {
-    height: 60px !important;
-    min-width: 105px !important;
-    width: 105px !important;
-    padding: 6px 12px !important;
-    border-radius: 10px !important;
+    height: 72px !important;
+    min-width: 130px !important;
+    width: auto !important;
+    padding: 8px 18px !important;
+    border-radius: 12px !important;
     background: #ffffff !important;
     border: 1px solid #e2e8f0 !important;
-    filter: grayscale(85%) !important;
-    transition: filter 0.3s ease, transform 0.2s ease !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+    filter: none !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
   }
   .client-logo-item:hover,
   .client-logo-item:active {
-    filter: grayscale(0%) !important;
+    filter: none !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08) !important;
   }
   .client-logo-item img {
-    max-height: 42px !important;
-    max-width: 90px !important;
+    max-height: 52px !important;
+    max-width: 115px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
   }
 
   /* --- 6. PROJECTS SECTION & HORIZONTAL SCROLL-SNAP FILTER TABS --- */
