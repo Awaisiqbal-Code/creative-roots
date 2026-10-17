@@ -3,7 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">Corporate Products &amp; Packaging — Creative Roots</title>
+  <meta http-equiv="refresh" content="0; url=category.html?slug=corporate-giveaways">
+  <script>
+    (function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const item = urlParams.get('item');
+      if (item === 'stall') {
+        window.location.replace('category.html?slug=exhibition-stalls');
+      } else if (item === 'cards' || item === 'brochure' || item === 'offset' || item === 'calendar') {
+        window.location.replace('category.html?slug=offset-printing');
+      } else {
+        window.location.replace('category.html?slug=corporate-giveaways');
+      }
+    })();
+  </script>
+  <title id="page-title">Corporate Services — Creative Roots</title>
   <meta name="description" content="Customized corporate branding, promotional merchandise, and premium printing solutions in Pakistan.">
   <link rel="stylesheet" href="css/styles.css?v=20261017_v5">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -1190,7 +1204,7 @@
       <a href="index.html" class="logo"><img src="images/logo-wordmark.svg" alt="Creative Roots" class="logo-img" width="342" height="54"></a>
 
       <div class="header-search-wrap search-bar">
-        <input type="text" id="search-input" class="header-search-input" placeholder="Search products, services, corporate gifts..." aria-label="Search">
+        <input type="text" id="search-input" class="header-search-input" placeholder="Search services, corporate solutions, printing..." aria-label="Search">
         <button type="button" class="search-clear-btn" aria-label="Clear search" style="display:none;"><i class="fa-solid fa-xmark"></i></button>
         <button type="button" id="search-btn" class="header-search-btn search-submit-btn" aria-label="Submit search"><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
@@ -1204,7 +1218,7 @@
     </div>
     <div class="mobile-search-bar-row">
       <div class="search-bar">
-        <input type="text" placeholder="Search products, services, corporate gifts..." aria-label="Search">
+        <input type="text" placeholder="Search services, corporate solutions, printing..." aria-label="Search">
         <button type="button" class="search-clear-btn" aria-label="Clear search" style="display:none;"><i class="fa-solid fa-xmark"></i></button>
         <button type="button" class="search-submit-btn" aria-label="Submit search"><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
@@ -1216,7 +1230,7 @@
     <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 16px;">
       <ul class="subnav-links">
         <li><a href="about.html">About Us</a></li>
-        <li><a href="products.html" style="font-weight: 700; color: #113627;"><i class="fa-solid fa-layer-group" style="color: #d4af37; margin-right: 4px;"></i> Product Store</a></li>
+        <li><a href="index.html#services" style="font-weight: 700; color: #113627;"><i class="fa-solid fa-shapes" style="color: var(--accent-orange, #F47721); margin-right: 4px;"></i> Services</a></li>
         <li><a href="contact.html">Book an Appointment</a></li>
         <li><a href="find-a-store.html">Find a Store</a></li>
       </ul>

@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // 1. EXTRACT SLUG FROM URL (Query param ?slug= or pathname /category/:slug)
   function resolveCurrentSlug() {
     const urlParams = new URLSearchParams(window.location.search);
-    const querySlug = urlParams.get('slug');
+    const querySlug = urlParams.get('slug') || urlParams.get('cat') || urlParams.get('category');
     if (querySlug) return querySlug.toLowerCase().trim();
 
     // Check pathname (e.g. /category/corporate-giveaways)

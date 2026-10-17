@@ -484,7 +484,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Update Full Details Page link inside modal
     const modalDetailsBtn = document.getElementById('modal-details-btn') || prodModal.querySelector('.btn-quote-modal');
     if (modalDetailsBtn) {
-      modalDetailsBtn.href = `product-detail.html?item=${encodeURIComponent(key)}`;
+      modalDetailsBtn.href = key === 'stall' ? 'category.html?slug=exhibition-stalls' : (key === 'offset' || key === 'brochure' ? 'category.html?slug=offset-printing' : 'category.html?slug=corporate-giveaways');
     }
 
     updateWhatsAppLink();
@@ -495,7 +495,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!modalWhatsAppBtn) return;
     const data = productDatabase[activeProductKey] || productDatabase['boxes'];
     const msg = encodeURIComponent(
-      `Hello Creative Roots Team! 👋\nI am interested in ordering:\n*Product:* ${data.title}\n*Quantity Tier:* ${activeTierQty}\n*Company:* \nPlease provide a formal corporate invoice / digital mock-up.`
+      `Hello Creative Roots Team! 👋\nI am interested in inquiring about:\n*Service/Project:* ${data.title}\n*Quantity Tier:* ${activeTierQty}\n*Company:* \nPlease provide a formal corporate invoice / consultation.`
     );
     modalWhatsAppBtn.setAttribute('href', `https://wa.me/923347009992?text=${msg}`);
   }
@@ -513,12 +513,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Bind to cards with [data-product] -> Navigate directly to dedicated Product Detail page
+  // Bind to cards with [data-product] -> Navigate directly to dedicated Category page
   document.querySelectorAll('[data-product]').forEach(card => {
     card.addEventListener('click', function (e) {
       e.preventDefault();
       const key = this.getAttribute('data-product') || 'boxes';
-      window.location.href = `product-detail.html?item=${encodeURIComponent(key)}`;
+      if (key === 'stall') {
+        window.location.href = 'category.html?slug=exhibition-stalls';
+      } else if (key === 'cards' || key === 'brochure' || key === 'offset') {
+        window.location.href = 'category.html?slug=offset-printing';
+      } else {
+        window.location.href = 'category.html?slug=corporate-giveaways';
+      }
     });
   });
 
@@ -692,7 +698,7 @@ document.addEventListener('DOMContentLoaded', function () {
       badgeTitle: 'Embossed Business Card',
       badgeImg: 'images/prod_cards.jpg',
       lifestyleImg: 'images/prod_cards.jpg',
-      link: 'collection.html?cat=cards'
+      link: 'category.html?slug=offset-printing'
     },
     {
       headline: '"The finishing could be a little sharper, but overall the color fidelity and binding look great."',
@@ -701,7 +707,7 @@ document.addEventListener('DOMContentLoaded', function () {
       badgeTitle: 'Hardcover Journal',
       badgeImg: 'images/prod_notebook.jpg',
       lifestyleImg: 'images/pack_booklet.jpg',
-      link: 'collection.html?cat=notebook'
+      link: 'category.html?slug=corporate-giveaways'
     },
     {
       headline: '"Delivered an exceptional corporate gifting experience. Quality and attention to detail was remarkable."',
@@ -710,7 +716,7 @@ document.addEventListener('DOMContentLoaded', function () {
       badgeTitle: 'Magnetic Gift Box',
       badgeImg: 'images/prod_box.jpg',
       lifestyleImg: 'images/promo_giftbox.jpg',
-      link: 'collection.html?cat=boxes'
+      link: 'category.html?slug=corporate-giveaways'
     },
     {
       headline: '"Heavyweight organic cotton canvas with razor-sharp screen printing. Top tier physical giveaways."',
@@ -719,7 +725,7 @@ document.addEventListener('DOMContentLoaded', function () {
       badgeTitle: 'Organic Canvas Tote',
       badgeImg: 'images/promo_business.jpg',
       lifestyleImg: 'images/promo_business.jpg',
-      link: 'collection.html?cat=bag'
+      link: 'category.html?slug=corporate-giveaways'
     },
     {
       headline: '"Matte ceramic finish with 24K gold rim. Our executive welcome hampers looked prestigious."',
@@ -728,7 +734,7 @@ document.addEventListener('DOMContentLoaded', function () {
       badgeTitle: '24K Gold Rim Mug',
       badgeImg: 'images/prod_mug.jpg',
       lifestyleImg: 'images/promo_drinkware.jpg',
-      link: 'product-detail.html?item=mug'
+      link: 'category.html?slug=corporate-giveaways'
     },
     {
       headline: '"Breathable cotton fabric and 3D chest embroidery that withstands repeated industrial washes."',
@@ -737,7 +743,7 @@ document.addEventListener('DOMContentLoaded', function () {
       badgeTitle: 'Embroidered Polo Shirt',
       badgeImg: 'images/prod_shirt.jpg',
       lifestyleImg: 'images/promo_merch.jpg',
-      link: 'product-detail.html?item=shirt'
+      link: 'category.html?slug=corporate-giveaways'
     },
     {
       headline: '"Pre-curved peak, heavy brushed cotton twill, and crisp 3D puff embroidery. Outstanding craftsmanship."',
@@ -746,7 +752,7 @@ document.addEventListener('DOMContentLoaded', function () {
       badgeTitle: 'Brushed Cotton Cap',
       badgeImg: 'images/cap_maroon.jpg',
       lifestyleImg: 'images/cap_maroon.jpg',
-      link: 'collection.html?cat=cap'
+      link: 'category.html?slug=corporate-giveaways'
     },
     {
       headline: '"The exhibition stall designed for Lahore Expo was a showstopper. Our brand stood out remarkably."',
@@ -755,7 +761,7 @@ document.addEventListener('DOMContentLoaded', function () {
       badgeTitle: 'Exhibition Expo Booth',
       badgeImg: 'images/hero_studio_banner.jpg',
       lifestyleImg: 'images/hero_studio_banner.jpg',
-      link: 'products.html'
+      link: 'category.html?slug=exhibition-stalls'
     },
     {
       headline: '"Double-wall thermal vacuum insulation keeps drinks ice cold for 24 hours. Engraved logo never fades."',
@@ -764,7 +770,7 @@ document.addEventListener('DOMContentLoaded', function () {
       badgeTitle: 'Thermal Matte Bottle',
       badgeImg: 'images/pack_bottle.jpg',
       lifestyleImg: 'images/pack_bottle.jpg',
-      link: 'collection.html?cat=bottle'
+      link: 'category.html?slug=corporate-giveaways'
     },
     {
       headline: '"Genuine cowhide leather with debossed crest. High-value gift for our VIP board directors."',
@@ -773,7 +779,7 @@ document.addEventListener('DOMContentLoaded', function () {
       badgeTitle: 'Leather Executive Wallet',
       badgeImg: 'images/pack_wallet.jpg',
       lifestyleImg: 'images/pack_wallet.jpg',
-      link: 'collection.html?cat=wallet'
+      link: 'category.html?slug=corporate-giveaways'
     },
     {
       headline: '"High-speed memory chip encased in heavy brushed metal. Laser engraving came out crystal clear."',
@@ -782,7 +788,7 @@ document.addEventListener('DOMContentLoaded', function () {
       badgeTitle: 'Brushed Swivel USB',
       badgeImg: 'images/pack_usb.jpg',
       lifestyleImg: 'images/pack_usb.jpg',
-      link: 'collection.html?cat=usb'
+      link: 'category.html?slug=corporate-giveaways'
     },
     {
       headline: '"Reliable execution, fair pricing, and extraordinary customer responsiveness for over three years."',
@@ -791,7 +797,7 @@ document.addEventListener('DOMContentLoaded', function () {
       badgeTitle: 'Executive Desk Tent',
       badgeImg: 'images/pack_calendar.jpg',
       lifestyleImg: 'images/pack_calendar.jpg',
-      link: 'collection.html?cat=calendar'
+      link: 'category.html?slug=offset-printing'
     }
   ];
 
@@ -1111,324 +1117,200 @@ document.addEventListener('DOMContentLoaded', function () {
   // 11. GLOBAL REAL-TIME SEARCH ENGINE & AUTOCOMPLETE
   // ============================================================
   const searchCatalog = [
-    // Core Services
+    // 6 Primary Enterprise Categories (Direct Routing to category.html)
     {
-      title: 'Offset Commercial Printing',
-      category: 'Core Service',
+      title: 'Corporate Giveaways & Executive Gift Boxes',
+      category: 'Corporate Gifting',
       type: 'service',
-      url: 'category.html?type=offset',
-      image: 'images/service_offset.jpg',
+      url: 'category.html?slug=corporate-giveaways',
+      image: 'new assets/1.jpeg',
       badge: 'Service',
       badgeClass: 'badge-service',
-      keywords: 'offset printing bulk packaging brochures flyers booklets magazines heidelberg cmyk books'
+      keywords: 'corporate giveaways gifts gift box boxes executive diary diary set pen set flask mug thermal bottle new hire onboarding welcome kit vip hamper stationery merchandise bespoke polo shirt cap tote bag wallet keychain usb'
     },
     {
       title: 'High-Speed Digital Printing',
-      category: 'Core Service',
+      category: 'Digital Printing',
       type: 'service',
-      url: 'category.html?type=digital',
+      url: 'category.html?slug=digital-printing',
       image: 'images/service_digital.jpg',
       badge: 'Service',
       badgeClass: 'badge-service',
-      keywords: 'digital printing urgent short run xerox ricoh color posters certificates vouchers stickers labels'
+      keywords: 'digital printing urgent short run xerox ricoh color posters certificates vouchers stickers labels flyers booklets postcards cards marketing collateral'
     },
     {
-      title: 'Custom Packaging & Rigid Boxes',
-      category: 'Core Service',
+      title: 'Commercial Offset Printing & Packaging',
+      category: 'Offset Printing',
       type: 'service',
-      url: 'collection.html?cat=box',
-      image: 'images/prod_box.jpg',
+      url: 'category.html?slug=offset-printing',
+      image: 'images/service_offset.jpg',
       badge: 'Service',
       badgeClass: 'badge-service',
-      keywords: 'packaging rigid boxes magnetic gift hamper luxury cartons kraft corrugated folding embossing foil'
+      keywords: 'offset printing bulk packaging brochures flyers booklets magazines heidelberg cmyk books catalogs visiting cards business cards annual reports calendars rigid cartons'
     },
     {
-      title: 'Corporate Event Management',
-      category: 'Core Service',
+      title: 'Architectural Signage & Outdoor Branding',
+      category: 'Outdoor Branding',
       type: 'service',
-      url: 'category.html?type=events',
-      image: 'images/service_events.jpg',
-      badge: 'Service',
-      badgeClass: 'badge-service',
-      keywords: 'corporate event management conferences annual dinners seminars gala stage av lighting sound trussing'
-    },
-    {
-      title: 'Turnkey 3D Exhibition Stalls',
-      category: 'Core Service',
-      type: 'service',
-      url: 'collection.html?cat=stall',
-      image: 'images/event_stall.jpg',
-      badge: 'Service',
-      badgeClass: 'badge-service',
-      keywords: 'exhibition stall booth trade show display expo pavilion 3d design fabrication branding backdrop'
-    },
-    {
-      title: 'Promotional Merchandise & Giveaways',
-      category: 'Core Service',
-      type: 'service',
-      url: 'products.html',
-      image: 'images/promo_merch.jpg',
-      badge: 'Service',
-      badgeClass: 'badge-service',
-      keywords: 'promotional merchandise giveaways swag custom branded corporate gifts souvenirs items branding'
-    },
-    {
-      title: 'Signage & Outdoor Advertising',
-      category: 'Core Service',
-      type: 'service',
-      url: 'category.html?type=signage',
+      url: 'category.html?slug=outdoor-branding',
       image: 'images/service_signage.jpg',
       badge: 'Service',
       badgeClass: 'badge-service',
-      keywords: 'signage outdoor advertising 3d acrylic letters neon led billboards hoardings shop front pylon signs'
+      keywords: 'signage outdoor advertising 3d acrylic letters neon led billboards hoardings shop front pylon signs building facade acp cladding frosted glass window graphics'
+    },
+    {
+      title: 'Panaflex & Large Format Printing',
+      category: 'Large Format Printing',
+      type: 'service',
+      url: 'category.html?slug=panaflex-printing',
+      image: 'images/projects/panaflex/panaflex-1.jpg',
+      badge: 'Service',
+      badgeClass: 'badge-service',
+      keywords: 'panaflex printing wide format solvent uv backlit flex signboards banners standees roll up rollups x-banner vinyl pasting window frosting backdrop skin'
+    },
+    {
+      title: 'Turnkey 3D Exhibition Stalls & Booths',
+      category: 'Exhibitions & Events',
+      type: 'service',
+      url: 'category.html?slug=exhibition-stalls',
+      image: 'images/event_stall.jpg',
+      badge: 'Service',
+      badgeClass: 'badge-service',
+      keywords: 'exhibition stall booth trade show display expo pavilion 3d design fabrication branding backdrop stage corporate event conference setup lahore expo karachi expo'
+    },
+    {
+      title: 'Corporate Event Management & Staging',
+      category: 'Event Production',
+      type: 'service',
+      url: 'category.html?slug=exhibition-stalls',
+      image: 'images/service_events.jpg',
+      badge: 'Service',
+      badgeClass: 'badge-service',
+      keywords: 'corporate event management conferences annual dinners seminars gala stage av lighting sound trussing backdrop fabrication launch event'
     },
     {
       title: 'Graphic Design & Corporate Branding',
-      category: 'Core Service',
+      category: 'Design & Identity',
       type: 'service',
-      url: 'category.html?type=design',
+      url: 'category.html?slug=digital-printing',
       image: 'images/service_design.jpg',
       badge: 'Service',
       badgeClass: 'badge-service',
-      keywords: 'graphic design branding logo identity brand guide creative packaging mockup 3d visual typography'
+      keywords: 'graphic design branding logo identity brand guide creative packaging mockup 3d visual typography corporate brand design'
     },
 
-    // Products
+    // Authentic Production Capabilities & Sub-Services
     {
-      key: 'cap',
-      title: 'Luxury Embroidered Cap',
-      category: 'Headwear & Uniforms',
-      type: 'product',
-      url: 'product-detail.html?item=cap',
-      image: 'images/cap_maroon.jpg',
-      badge: 'Product',
-      badgeClass: 'badge-product',
-      price: 'WhatsApp Inquiry',
-      keywords: 'cap hat maroon baseball embroidery crest uniform merchandise headwear snapback cotton'
+      title: 'Handcrafted Rigid Kappa Board Magnetic Gift Boxes',
+      category: 'Corporate Gifting',
+      type: 'service',
+      url: 'category.html?slug=corporate-giveaways',
+      image: 'images/projects/giveaways/giveaways-1.jpg',
+      badge: 'Service',
+      badgeClass: 'badge-service',
+      keywords: 'boxes rigid box magnetic closure kappa board gold foil velvet insert gift hamper luxury packaging bespoke'
     },
     {
-      key: 'shirt',
-      title: 'Executive Crewneck / T-Shirt',
-      category: 'Custom Apparel',
-      type: 'product',
-      url: 'product-detail.html?item=shirt',
-      image: 'images/prod_shirt.jpg',
-      badge: 'Product',
-      badgeClass: 'badge-product',
-      price: 'WhatsApp Inquiry',
-      keywords: 'shirt t-shirt tshirt tee cotton screen print dtf apparel clothes round neck combed'
+      title: 'Corporate Hardbound Diary & Executive Pen Sets',
+      category: 'Corporate Gifting',
+      type: 'service',
+      url: 'category.html?slug=corporate-giveaways',
+      image: 'images/projects/giveaways/giveaways-2.jpg',
+      badge: 'Service',
+      badgeClass: 'badge-service',
+      keywords: 'notebook notepad diary journal planner leather debossed metallic ballpoint pen executive writing set corporate stationery'
     },
     {
-      key: 'polo',
-      title: 'Heavyweight Pique Polo Shirt',
-      category: 'Custom Apparel',
-      type: 'product',
-      url: 'product-detail.html?item=polo',
+      title: 'Custom Laser-Etched Thermal Flasks & Ceramic Mugs',
+      category: 'Corporate Gifting',
+      type: 'service',
+      url: 'category.html?slug=corporate-giveaways',
+      image: 'images/projects/giveaways/giveaways-3.jpg',
+      badge: 'Service',
+      badgeClass: 'badge-service',
+      keywords: 'drinkware thermal flask stainless steel bottle ceramic mug coffee tea cup laser engraved insignia corporate drinkware'
+    },
+    {
+      title: 'Enterprise Onboarding Welcome Gift Kits',
+      category: 'Corporate Gifting',
+      type: 'service',
+      url: 'category.html?slug=corporate-giveaways',
+      image: 'images/projects/giveaways/giveaways-4.jpg',
+      badge: 'Service',
+      badgeClass: 'badge-service',
+      keywords: 'onboarding welcome kit new hire corporate gift box employee package branded swag cardholder diary flask pen'
+    },
+    {
+      title: 'Custom Branded Corporate Apparel & Uniforms',
+      category: 'Corporate Gifting',
+      type: 'service',
+      url: 'category.html?slug=corporate-giveaways',
       image: 'images/promo_merch.jpg',
-      badge: 'Product',
-      badgeClass: 'badge-product',
-      price: 'WhatsApp Inquiry',
-      keywords: 'polo shirt pique collar embroidered uniform corporate staff apparel breathable lacoste'
+      badge: 'Service',
+      badgeClass: 'badge-service',
+      keywords: 'apparel polo shirt t-shirt tshirt uniform cap embroidered cotton dtf screen print staff clothes headwear'
     },
     {
-      key: 'boxes',
-      title: 'Luxury Rigid Magnetic Gift Box',
-      category: 'Packaging & Gifting',
-      type: 'product',
-      url: 'product-detail.html?item=boxes',
-      image: 'images/prod_box.jpg',
-      badge: 'Product',
-      badgeClass: 'badge-product',
-      price: 'WhatsApp Inquiry',
-      keywords: 'box boxes giveaway packaging rigid magnet magnetic foil gift hamper carton kappa board matte'
-    },
-    {
-      key: 'notebook',
-      title: 'Hardcover Gold Foil Executive Journal',
-      category: 'Executive Stationery',
-      type: 'product',
-      url: 'product-detail.html?item=notebook',
-      image: 'images/prod_notebook.jpg',
-      badge: 'Product',
-      badgeClass: 'badge-product',
-      price: 'WhatsApp Inquiry',
-      keywords: 'notebook journal diary planner pad stationery leather spiral gold foil debossed ribbon'
-    },
-    {
-      key: 'cards',
-      title: 'Triple-Ply Velvet Edge Business Cards',
+      title: 'Triple-Ply Velvet Edge Visiting & Business Cards',
       category: 'Offset Printing',
-      type: 'product',
-      url: 'product-detail.html?item=cards',
-      image: 'images/prod_cards.jpg',
-      badge: 'Product',
-      badgeClass: 'badge-product',
-      price: 'WhatsApp Inquiry',
-      keywords: 'card cards business visiting foil gilded edge cotton kraft print velvet soft touch'
+      type: 'service',
+      url: 'category.html?slug=offset-printing',
+      image: 'images/projects/offset/offset-3.jpg',
+      badge: 'Service',
+      badgeClass: 'badge-service',
+      keywords: 'business cards visiting cards triple ply velvet edge metallic foil debossed spot uv offset printing executive card'
     },
     {
-      key: 'drinkware',
-      title: 'Smart Matte Thermal Flask & Mug Set',
-      category: 'Drinkware & Flasks',
-      type: 'product',
-      url: 'product-detail.html?item=drinkware',
-      image: 'images/promo_drinkware.jpg',
-      badge: 'Product',
-      badgeClass: 'badge-product',
-      price: 'WhatsApp Inquiry',
-      keywords: 'drinkware flask thermal bottle tumbler mug ceramic vacuum laser etched water insulated temperature'
+      title: 'Multi-Page Saddle-Stitch Catalogs & Booklets',
+      category: 'Digital Printing',
+      type: 'service',
+      url: 'category.html?slug=digital-printing',
+      image: 'images/projects/digital/digital-2.jpg',
+      badge: 'Service',
+      badgeClass: 'badge-service',
+      keywords: 'catalogs company profiles brochures booklets saddle stitch wire-o binding art card digital printing'
     },
     {
-      key: 'bottle',
-      title: 'Matte Stainless Steel Vacuum Bottle',
-      category: 'Drinkware & Flasks',
-      type: 'product',
-      url: 'product-detail.html?item=bottle',
-      image: 'images/pack_bottle.jpg',
-      badge: 'Product',
-      badgeClass: 'badge-product',
-      price: 'WhatsApp Inquiry',
-      keywords: 'bottle water flask stainless steel matte vacuum cold hot thermal laser engraved sports'
-    },
-    {
-      key: 'mug',
-      title: 'Grade-A Glazed Ceramic Office Mug',
-      category: 'Drinkware & Flasks',
-      type: 'product',
-      url: 'product-detail.html?item=mug',
-      image: 'images/prod_mug.jpg',
-      badge: 'Product',
-      badgeClass: 'badge-product',
-      price: 'WhatsApp Inquiry',
-      keywords: 'mug coffee tea cup ceramic glazed office kitchen print decal dishwasher safe'
-    },
-    {
-      key: 'pen',
-      title: 'Solid Brass Laser-Engraved Ballpoint Pen',
-      category: 'Executive Stationery',
-      type: 'product',
-      url: 'product-detail.html?item=pen',
-      image: 'images/pack_pen.jpg',
-      badge: 'Product',
-      badgeClass: 'badge-product',
-      price: 'WhatsApp Inquiry',
-      keywords: 'pen pens ballpoint rollerball metal brass gold laser executive writing instruments parker cross'
-    },
-    {
-      key: 'business',
-      title: 'Heavy Organic Canvas Tote Bag',
-      category: 'Promotional Merchandise',
-      type: 'product',
-      url: 'product-detail.html?item=business',
-      image: 'images/promo_business.jpg',
-      badge: 'Product',
-      badgeClass: 'badge-product',
-      price: 'WhatsApp Inquiry',
-      keywords: 'bag bags tote canvas cotton shopping carry giveaway exhibition eco friendly fabric'
-    },
-    {
-      key: 'wallet',
-      title: 'Genuine Leather Bifold Executive Wallet',
-      category: 'Leather Goods',
-      type: 'product',
-      url: 'product-detail.html?item=wallet',
-      image: 'images/pack_wallet.jpg',
-      badge: 'Product',
-      badgeClass: 'badge-product',
-      price: 'WhatsApp Inquiry',
-      keywords: 'wallet leather bifold card holder cash luxury accessory gift debossed premium'
-    },
-    {
-      key: 'calendar',
-      title: 'Desk Tent Calendar 2026',
-      category: 'Stationery & Printing',
-      type: 'product',
-      url: 'product-detail.html?item=calendar',
-      image: 'images/pack_calendar.jpg',
-      badge: 'Product',
-      badgeClass: 'badge-product',
-      price: 'WhatsApp Inquiry',
-      keywords: 'calendar desk tent stand spiral dates 2026 table stationery corporate year'
-    },
-    {
-      key: 'booklet',
-      title: 'Corporate Profile Brochure Booklet',
+      title: 'Executive Desk Tent Easel Calendars 2026',
       category: 'Offset Printing',
-      type: 'product',
-      url: 'product-detail.html?item=booklet',
-      image: 'images/pack_booklet.jpg',
-      badge: 'Product',
-      badgeClass: 'badge-product',
-      price: 'WhatsApp Inquiry',
-      keywords: 'booklet brochure catalog catalogue profile magazine book offset print heidelberg perfect bind saddle stitch'
+      type: 'service',
+      url: 'category.html?slug=offset-printing',
+      image: 'images/projects/offset/offset-5.jpg',
+      badge: 'Service',
+      badgeClass: 'badge-service',
+      keywords: 'calendar desk calendar tent stand wire-o dates 2026 corporate desk easel new year offset print'
     },
     {
-      key: 'keychain',
-      title: 'Pebble Leather & Metal Key Fob',
-      category: 'Promotional Merchandise',
-      type: 'product',
-      url: 'product-detail.html?item=keychain',
-      image: 'images/pack_keychain.jpg',
-      badge: 'Product',
-      badgeClass: 'badge-product',
-      price: 'WhatsApp Inquiry',
-      keywords: 'keychain key fob ring leather metal accessory gift custom engraved'
+      title: 'Architectural 3D Acrylic & LED Channel Letter Signage',
+      category: 'Outdoor Branding',
+      type: 'service',
+      url: 'category.html?slug=outdoor-branding',
+      image: 'images/projects/outdoor/outdoor-1.jpg',
+      badge: 'Service',
+      badgeClass: 'badge-service',
+      keywords: '3d acrylic letters led signage illuminated channel letters building facade outdoor advertising neon sign board'
     },
     {
-      key: 'stall',
-      title: 'Turnkey 3D Exhibition Stall & Booth',
-      category: 'Exhibitions & Events',
-      type: 'product',
-      url: 'product-detail.html?item=stall',
-      image: 'images/event_stall.jpg',
-      badge: 'Product',
-      badgeClass: 'badge-product',
-      price: 'WhatsApp Inquiry',
-      keywords: 'stall booth exhibition expo trade show display pavilion stage backdrop fabrication expocenter'
-    },
-
-    // Collections
-    {
-      title: 'Custom Packaging & Luxury Boxes Collection',
-      category: 'Curated Collection',
-      type: 'collection',
-      url: 'collection.html?cat=box',
-      image: 'images/prod_box.jpg',
-      badge: 'Collection',
-      badgeClass: 'badge-collection',
-      keywords: 'collection boxes packaging rigid boxes gift sets packaging collection'
-    },
-    {
-      title: 'Executive Pens & Writing Instruments Collection',
-      category: 'Curated Collection',
-      type: 'collection',
-      url: 'collection.html?cat=pen',
-      image: 'images/pack_pen.jpg',
-      badge: 'Collection',
-      badgeClass: 'badge-collection',
-      keywords: 'collection pens writing instruments ballpoint luxury pen collection'
-    },
-    {
-      title: 'Custom Corporate Apparel & Uniforms Collection',
-      category: 'Curated Collection',
-      type: 'collection',
-      url: 'collection.html?cat=polo',
-      image: 'images/promo_merch.jpg',
-      badge: 'Collection',
-      badgeClass: 'badge-collection',
-      keywords: 'collection apparel shirts polos caps hoodies uniform collection'
+      title: 'Retractable Rollup Standees & Trade Show Banners',
+      category: 'Large Format Printing',
+      type: 'service',
+      url: 'category.html?slug=panaflex-printing',
+      image: 'images/projects/panaflex/panaflex-4.jpg',
+      badge: 'Service',
+      badgeClass: 'badge-service',
+      keywords: 'rollup standee retractable banner stand trade show expo x-banner panaflex printing outdoor display'
     },
 
     // Corporate Pages
     {
-      title: 'Find a Store / Branch Locations',
+      title: 'Find a Store / Lahore Gohar Center Location',
       category: 'Store Outlets',
       type: 'page',
       url: 'find-a-store.html',
       image: 'images/service_signage.jpg',
       badge: 'Page',
       badgeClass: 'badge-page',
-      keywords: 'find a store location branch address map karachi gohar center royal arcade timings'
+      keywords: 'find a store location branch address map karachi gohar center royal arcade timings wahdat road lahore'
     },
     {
       title: 'About Creative Roots & Heritage',
@@ -1523,17 +1405,18 @@ document.addEventListener('DOMContentLoaded', function () {
         dropdown.innerHTML = `
           <div class="search-no-results">
             <i class="fa-solid fa-magnifying-glass" style="font-size: 1.5rem; color: #94a3b8; margin-bottom: 6px;"></i>
-            <div>No exact results for "<strong>${escapeHtml(q)}</strong>"</div>
-            <div style="font-size: 0.8rem; color: #64748b; margin-top: 4px;">Try one of our popular categories:</div>
+            <div>No exact services found for "<strong>${escapeHtml(q)}</strong>"</div>
+            <div style="font-size: 0.8rem; color: #64748b; margin-top: 4px;">Explore our corporate services:</div>
             <div class="search-quick-tags">
-              <button type="button" class="search-quick-tag" data-query="Gift Box">Gift Boxes</button>
-              <button type="button" class="search-quick-tag" data-query="Polo Shirt">Polo Shirts</button>
-              <button type="button" class="search-quick-tag" data-query="Pen">Luxury Pens</button>
+              <button type="button" class="search-quick-tag" data-query="Corporate Giveaways">Corporate Giveaways</button>
               <button type="button" class="search-quick-tag" data-query="Offset Printing">Offset Printing</button>
-              <button type="button" class="search-quick-tag" data-query="Exhibition Stall">Exhibition Stalls</button>
+              <button type="button" class="search-quick-tag" data-query="Digital Printing">Digital Printing</button>
+              <button type="button" class="search-quick-tag" data-query="Exhibition Stalls">Exhibition Stalls</button>
+              <button type="button" class="search-quick-tag" data-query="Outdoor Branding">Outdoor Branding</button>
+              <button type="button" class="search-quick-tag" data-query="Panaflex Printing">Panaflex Printing</button>
             </div>
-            <a href="products.html" style="color: #F47721; font-weight: 700; margin-top: 12px; display: inline-block; font-size: 0.85rem;">
-              Browse Full Product Store &rarr;
+            <a href="index.html#services" style="color: #F47721; font-weight: 700; margin-top: 12px; display: inline-block; font-size: 0.85rem;">
+              Explore All Services &rarr;
             </a>
           </div>
         `;
@@ -1555,27 +1438,25 @@ document.addEventListener('DOMContentLoaded', function () {
       let html = '';
       const topMatches = matches.slice(0, 6);
       topMatches.forEach((item, idx) => {
-        const targetUrl = item.url || (item.key ? `product-detail.html?item=${encodeURIComponent(item.key)}` : `products.html?search=${encodeURIComponent(item.title)}`);
+        const targetUrl = item.url || 'index.html#services';
         const badgeHtml = item.badge ? `<span class="search-result-badge ${item.badgeClass || ''}">${escapeHtml(item.badge)}</span>` : '';
-        const priceHtml = item.price ? `<span class="search-result-price" style="color: #25d366; font-size: 0.82rem; font-weight: 700;"><i class="fa-brands fa-whatsapp"></i> ${escapeHtml(item.price)}</span>` : '';
 
         html += `
           <a href="${targetUrl}" class="search-result-item" data-index="${idx}">
-            <img src="${item.image}" alt="${escapeHtml(item.title)}" class="search-result-thumb" onerror="this.src='images/prod_box.jpg'">
+            <img src="${item.image}" alt="${escapeHtml(item.title)}" class="search-result-thumb" onerror="this.src='images/service_offset.jpg'">
             <div class="search-result-info">
               <span class="search-result-title">${highlightMatch(item.title, q)}</span>
               <span class="search-result-cat">${escapeHtml(item.category)}</span>
               ${badgeHtml}
             </div>
-            ${priceHtml}
           </a>
         `;
       });
 
       html += `
         <div class="search-dropdown-footer">
-          <a href="products.html?search=${encodeURIComponent(q)}">
-            <span>View all ${matches.length} results in Store</span>
+          <a href="${topMatches[0] ? topMatches[0].url : 'index.html#services'}">
+            <span>Explore all ${matches.length} matching services</span>
             <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
@@ -1590,9 +1471,6 @@ document.addEventListener('DOMContentLoaded', function () {
       clearTimeout(searchTimer);
       searchTimer = setTimeout(() => {
         doSearch(this.value);
-        if (typeof filterStoreCardsLive === 'function' && window.location.href.includes('products.html')) {
-          filterStoreCardsLive(this.value);
-        }
       }, 120);
     });
 
@@ -1606,9 +1484,6 @@ document.addEventListener('DOMContentLoaded', function () {
         dropdown.classList.remove('active');
         dropdown.innerHTML = '';
         input.focus();
-        if (typeof clearStoreSearch === 'function' && window.location.href.includes('products.html')) {
-          clearStoreSearch();
-        }
       });
     }
 
@@ -1651,15 +1526,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (e.key === 'Enter') {
         e.preventDefault();
-        const q = this.value.trim();
+        const q = this.value.trim().toLowerCase();
         dropdown.classList.remove('active');
-        if (window.location.href.includes('products.html')) {
-          if (typeof filterStoreCardsLive === 'function') {
-            filterStoreCardsLive(q);
+        if (q) {
+          const tokens = q.split(/\s+/).filter(Boolean);
+          const currentMatches = searchCatalog.filter(item => {
+            const fullString = (item.title + ' ' + item.category + ' ' + (item.keywords || '')).toLowerCase();
+            return tokens.every(tok => fullString.includes(tok));
+          });
+          if (currentMatches.length > 0) {
+            window.location.href = currentMatches[0].url;
+            return;
           }
-        } else {
-          window.location.href = `products.html?search=${encodeURIComponent(q)}`;
         }
+        window.location.href = 'index.html#services';
       }
     });
 
@@ -1667,15 +1547,20 @@ document.addEventListener('DOMContentLoaded', function () {
     if (submitBtn) {
       submitBtn.addEventListener('click', function (e) {
         e.preventDefault();
-        const q = input.value.trim();
+        const q = input.value.trim().toLowerCase();
         dropdown.classList.remove('active');
-        if (window.location.href.includes('products.html')) {
-          if (typeof filterStoreCardsLive === 'function') {
-            filterStoreCardsLive(q);
+        if (q) {
+          const tokens = q.split(/\s+/).filter(Boolean);
+          const currentMatches = searchCatalog.filter(item => {
+            const fullString = (item.title + ' ' + item.category + ' ' + (item.keywords || '')).toLowerCase();
+            return tokens.every(tok => fullString.includes(tok));
+          });
+          if (currentMatches.length > 0) {
+            window.location.href = currentMatches[0].url;
+            return;
           }
-        } else {
-          window.location.href = `products.html?search=${encodeURIComponent(q)}`;
         }
+        window.location.href = 'index.html#services';
       });
     }
   });
@@ -1719,163 +1604,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // ============================================================
-  // 12. STORE PAGE (products.html) URL PARAMETER & LIVE SEARCH
+  // 12. STORE PAGE REDIRECT & SAFEGUARDS
   // ============================================================
   window.filterStoreCardsLive = function(query) {
-    const q = (query || '').toLowerCase().trim();
-    const staticCards = document.querySelectorAll('.store-card:not(.dynamic-catalog-card)');
-    const staticGrid = document.querySelector('.store-grid:not(#search-catalog-grid)');
-    let dynWrapper = document.getElementById('search-catalog-grid-wrapper');
-    const quoteSection = document.querySelector('.store-grid-section');
-
-    if (!q) {
-      if (staticCards.length > 0) {
-        staticCards.forEach(c => c.style.display = 'flex');
-      }
-      if (dynWrapper) dynWrapper.style.display = 'none';
-      if (quoteSection) quoteSection.style.display = 'block';
-      const existingBanner = document.getElementById('store-search-notice-banner');
-      if (existingBanner) existingBanner.style.display = 'none';
-      return;
-    }
-
-    // If static cards exist in the page, filter them
-    if (staticCards.length > 0 && staticGrid) {
-      let banner = document.getElementById('store-search-notice-banner');
-      if (!banner) {
-        banner = document.createElement('div');
-        banner.id = 'store-search-notice-banner';
-        banner.className = 'store-search-banner';
-        staticGrid.parentNode.insertBefore(banner, staticGrid);
-      }
-      let matchCount = 0;
-      staticCards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        if (text.includes(q)) {
-          card.style.display = 'flex';
-          matchCount++;
-        } else {
-          card.style.display = 'none';
-        }
-      });
-      banner.style.display = 'flex';
-      banner.innerHTML = `
-        <span>Showing results for "<strong>${escapeHtml(q)}</strong>" (${matchCount} products found)</span>
-        <button type="button" class="btn-clear-search" onclick="clearStoreSearch()"><i class="fa-solid fa-xmark"></i> Clear</button>
-      `;
-      return;
-    }
-
-    // Dynamic catalog search on products.html
-    const tokens = q.split(/\s+/).filter(Boolean);
-    const matches = (typeof searchCatalog !== 'undefined' ? searchCatalog : []).filter(item => {
-      const full = (item.title + ' ' + item.category + ' ' + (item.keywords || '') + ' ' + (item.key || '')).toLowerCase();
-      return tokens.every(tok => full.includes(tok));
-    });
-
-    if (!dynWrapper) {
-      dynWrapper = document.createElement('div');
-      dynWrapper.id = 'search-catalog-grid-wrapper';
-      dynWrapper.className = 'container';
-      dynWrapper.style.padding = '30px 16px 60px';
-
-      const banner = document.createElement('div');
-      banner.id = 'store-search-notice-banner';
-      banner.className = 'store-search-banner';
-      banner.style.display = 'flex';
-      banner.style.alignItems = 'center';
-      banner.style.justifyContent = 'space-between';
-      banner.style.padding = '14px 20px';
-      banner.style.background = '#f8fafc';
-      banner.style.border = '1px solid #e2e8f0';
-      banner.style.borderRadius = '12px';
-      banner.style.marginBottom = '24px';
-      dynWrapper.appendChild(banner);
-
-      const dynGrid = document.createElement('div');
-      dynGrid.id = 'search-catalog-grid';
-      dynGrid.className = 'store-grid';
-      dynWrapper.appendChild(dynGrid);
-
-      const hero = document.querySelector('.store-hero');
-      if (hero && hero.nextSibling) {
-        hero.parentNode.insertBefore(dynWrapper, hero.nextSibling);
-      } else {
-        document.body.appendChild(dynWrapper);
-      }
-    } else {
-      dynWrapper.style.display = 'block';
-    }
-
-    const banner = document.getElementById('store-search-notice-banner');
-    if (banner) {
-      banner.style.display = 'flex';
-      banner.innerHTML = `
-        <span style="font-size: 0.95rem; color: #1e293b;">Showing results for "<strong>${escapeHtml(q)}</strong>" (${matches.length} matching items found)</span>
-        <button type="button" class="btn-clear-search" onclick="clearStoreSearch()" style="background: none; border: 1px solid #cbd5e1; padding: 6px 14px; border-radius: 50px; cursor: pointer; font-size: 0.84rem; font-weight: 600;"><i class="fa-solid fa-xmark"></i> Clear</button>
-      `;
-    }
-
-    const dynGrid = document.getElementById('search-catalog-grid');
-    if (dynGrid) {
-      if (matches.length === 0) {
-        dynGrid.innerHTML = `
-          <div style="grid-column: 1 / -1; text-align: center; padding: 40px 20px; background: #fff; border: 1px solid #e2e8f0; border-radius: 14px;">
-            <i class="fa-solid fa-magnifying-glass" style="font-size: 2.2rem; color: #94a3b8; margin-bottom: 12px; display: inline-block;"></i>
-            <h3 style="font-size: 1.25rem; color: #1e293b; margin-bottom: 8px;">No matching items found for "${escapeHtml(q)}"</h3>
-            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 16px;">Try searching for "box", "card", "pen", "polo", or "offset".</p>
-            <button type="button" onclick="clearStoreSearch()" style="background: #F47721; color: #fff; border: none; padding: 10px 24px; border-radius: 50px; font-weight: 700; cursor: pointer;">Reset Search</button>
-          </div>
-        `;
-      } else {
-        let cardsHtml = '';
-        matches.forEach(item => {
-          const targetUrl = item.url || (item.key ? `product-detail.html?item=${encodeURIComponent(item.key)}` : `products.html`);
-          cardsHtml += `
-            <div class="store-card dynamic-catalog-card" style="display: flex;">
-              <div class="store-card-img">
-                <img src="${item.image}" alt="${escapeHtml(item.title)}" loading="lazy" onerror="this.src='images/prod_box.jpg'">
-              </div>
-              <div class="store-card-body">
-                <div>
-                  <span class="store-card-tag">${escapeHtml(item.category)}</span>
-                  <h3>${escapeHtml(item.title)}</h3>
-                </div>
-                <div>
-                  <div class="store-card-price" style="color: #25d366; font-size: 0.92rem; font-weight: 700;">
-                    <i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp
-                  </div>
-                  <a href="${targetUrl}" class="store-card-btn" style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                    <i class="fa-solid fa-arrow-right"></i> View Details
-                  </a>
-                </div>
-              </div>
-            </div>
-          `;
-        });
-        dynGrid.innerHTML = cardsHtml;
-      }
+    if (window.location.href.includes('products.html')) {
+      window.location.replace('index.html#services');
     }
   };
 
   window.clearStoreSearch = function() {
     const inputs = document.querySelectorAll('.search-bar input, .header-search-input');
     inputs.forEach(inp => inp.value = '');
-    filterStoreCardsLive('');
-    if (history.replaceState) {
-      history.replaceState(null, '', window.location.pathname);
-    }
   };
 
-  // Run on page load if ?search= is in URL on products.html
+  // Run on page load if visiting products.html
   if (window.location.href.includes('products.html')) {
-    const urlParams = new URLSearchParams(window.location.search);
-    const searchParam = urlParams.get('search');
-    if (searchParam) {
-      const searchInputs = document.querySelectorAll('.search-bar input, .header-search-input');
-      searchInputs.forEach(inp => inp.value = searchParam);
-      filterStoreCardsLive(searchParam);
-    }
+    window.location.replace('index.html#services');
   }
 
   // ============================================================
