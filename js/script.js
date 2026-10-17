@@ -1133,7 +1133,7 @@ document.addEventListener('DOMContentLoaded', function () {
       category: 'Digital Printing',
       type: 'service',
       url: 'category.html?slug=digital-printing',
-      image: 'images/service_digital.jpg',
+      image: 'new assets/2.jpeg',
       badge: 'Service',
       badgeClass: 'badge-service',
       keywords: 'digital printing urgent short run xerox ricoh color posters certificates vouchers stickers labels flyers booklets postcards cards marketing collateral'
@@ -1143,7 +1143,7 @@ document.addEventListener('DOMContentLoaded', function () {
       category: 'Offset Printing',
       type: 'service',
       url: 'category.html?slug=offset-printing',
-      image: 'images/service_offset.jpg',
+      image: 'new assets/3.jpeg',
       badge: 'Service',
       badgeClass: 'badge-service',
       keywords: 'offset printing bulk packaging brochures flyers booklets magazines heidelberg cmyk books catalogs visiting cards business cards annual reports calendars rigid cartons'
@@ -1153,7 +1153,7 @@ document.addEventListener('DOMContentLoaded', function () {
       category: 'Outdoor Branding',
       type: 'service',
       url: 'category.html?slug=outdoor-branding',
-      image: 'images/service_signage.jpg',
+      image: 'new assets/4.jpeg',
       badge: 'Service',
       badgeClass: 'badge-service',
       keywords: 'signage outdoor advertising 3d acrylic letters neon led billboards hoardings shop front pylon signs building facade acp cladding frosted glass window graphics'
@@ -1163,7 +1163,7 @@ document.addEventListener('DOMContentLoaded', function () {
       category: 'Large Format Printing',
       type: 'service',
       url: 'category.html?slug=panaflex-printing',
-      image: 'images/projects/panaflex/panaflex-1.jpg',
+      image: 'new assets/5.jpeg',
       badge: 'Service',
       badgeClass: 'badge-service',
       keywords: 'panaflex printing wide format solvent uv backlit flex signboards banners standees roll up rollups x-banner vinyl pasting window frosting backdrop skin'
@@ -1173,7 +1173,7 @@ document.addEventListener('DOMContentLoaded', function () {
       category: 'Exhibitions & Events',
       type: 'service',
       url: 'category.html?slug=exhibition-stalls',
-      image: 'images/event_stall.jpg',
+      image: 'new assets/6.jpeg',
       badge: 'Service',
       badgeClass: 'badge-service',
       keywords: 'exhibition stall booth trade show display expo pavilion 3d design fabrication branding backdrop stage corporate event conference setup lahore expo karachi expo'
@@ -1183,7 +1183,7 @@ document.addEventListener('DOMContentLoaded', function () {
       category: 'Event Production',
       type: 'service',
       url: 'category.html?slug=exhibition-stalls',
-      image: 'images/service_events.jpg',
+      image: 'images/projects/stalls/stalls-2.jpg',
       badge: 'Service',
       badgeClass: 'badge-service',
       keywords: 'corporate event management conferences annual dinners seminars gala stage av lighting sound trussing backdrop fabrication launch event'
@@ -1193,7 +1193,7 @@ document.addEventListener('DOMContentLoaded', function () {
       category: 'Design & Identity',
       type: 'service',
       url: 'category.html?slug=digital-printing',
-      image: 'images/service_design.jpg',
+      image: 'images/projects/digital/digital-3.jpg',
       badge: 'Service',
       badgeClass: 'badge-service',
       keywords: 'graphic design branding logo identity brand guide creative packaging mockup 3d visual typography corporate brand design'
@@ -1307,7 +1307,7 @@ document.addEventListener('DOMContentLoaded', function () {
       category: 'Store Outlets',
       type: 'page',
       url: 'find-a-store.html',
-      image: 'images/service_signage.jpg',
+      image: 'images/map_gohar.jpg',
       badge: 'Page',
       badgeClass: 'badge-page',
       keywords: 'find a store location branch address map karachi gohar center royal arcade timings wahdat road lahore'
@@ -1317,7 +1317,7 @@ document.addEventListener('DOMContentLoaded', function () {
       category: 'Company Profile',
       type: 'page',
       url: 'about.html',
-      image: 'images/service_design.jpg',
+      image: 'images/hero_studio_banner.jpg',
       badge: 'Page',
       badgeClass: 'badge-page',
       keywords: 'about us story company background team equipment factory mission vision'
@@ -1327,7 +1327,7 @@ document.addEventListener('DOMContentLoaded', function () {
       category: 'Customer Support',
       type: 'page',
       url: 'contact.html',
-      image: 'images/service_events.jpg',
+      image: 'images/company_contact_slide.jpg',
       badge: 'Page',
       badgeClass: 'badge-page',
       keywords: 'contact us book appointment phone email address inquiry quote consultation whatsapp'
@@ -1443,7 +1443,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         html += `
           <a href="${targetUrl}" class="search-result-item" data-index="${idx}">
-            <img src="${item.image}" alt="${escapeHtml(item.title)}" class="search-result-thumb" onerror="this.src='images/service_offset.jpg'">
+            <img src="${item.image}" alt="${escapeHtml(item.title)}" class="search-result-thumb" onerror="this.src='new assets/1.jpeg'">
             <div class="search-result-info">
               <span class="search-result-title">${highlightMatch(item.title, q)}</span>
               <span class="search-result-cat">${escapeHtml(item.category)}</span>
