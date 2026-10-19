@@ -8014,3 +8014,20 @@ button, input, select {
     padding: 40px 0 44px !important;
   }
 }
+
+/* Header: search bar to the left + call link (desktop) */
+@media (min-width: 769px) {
+  .header .container > .search-bar {
+    flex: 1 1 auto;
+    max-width: 520px;
+    margin: 0 auto 0 8px !important;
+  }
+  .header-actions .header-call-link {
+    color: var(--accent-orange, #F47721);
+    white-space: nowrap;
+  }
+  .header-actions .header-call-link i { font-size: 0.95rem; }
+}
+@media (max-width: 768px) {
+  .header-actions .header-call-link { display: none !important; }
+}
