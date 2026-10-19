@@ -7719,11 +7719,11 @@ button, input, select {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
+  width: 110px;
+  height: 110px;
   margin-bottom: 20px;
-  padding: 12px;
-  border-radius: 22px;
+  padding: 8px;
+  border-radius: 26px;
   background: linear-gradient(145deg, #f8fafc 0%, #eef3f8 100%);
   border: 1px solid var(--border-subtle);
   transition: transform 0.3s ease, background 0.3s ease;
@@ -7853,11 +7853,11 @@ button, input, select {
     border-radius: var(--radius-md);
   }
   .cr-service-card__icon {
-    width: 64px;
-    height: 64px;
+    width: 88px;
+    height: 88px;
     margin-bottom: 14px;
-    padding: 10px;
-    border-radius: 18px;
+    padding: 6px;
+    border-radius: 22px;
   }
   .cr-service-card__name { font-size: 1rem; margin-bottom: 6px; }
   .cr-service-card__desc { font-size: 0.82rem; line-height: 1.5; }
