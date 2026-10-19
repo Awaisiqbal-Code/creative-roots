@@ -3432,8 +3432,8 @@ button, input, select {
     text-decoration: none;
   }
   .logo-img {
-    height: 48px;
-    max-height: 48px;
+    height: 44px;
+    max-height: 44px;
     width: auto;
     max-width: 100%;
     object-fit: contain;
@@ -4639,36 +4639,36 @@ button, input, select {
 
 .page-transition-brand-title {
   font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: clamp(2.8rem, 8vw, 4.8rem);
-  font-weight: 900;
-  letter-spacing: -1px;
-  line-height: 1.05;
+  font-size: clamp(2rem, 5.5vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.28em;
-  filter: drop-shadow(0 6px 24px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.45));
 }
 
 .pt-brand-creative {
   color: #4ade80;
-  text-shadow: 0 0 28px rgba(74, 222, 128, 0.45);
+  text-shadow: 0 0 24px rgba(74, 222, 128, 0.4);
 }
 
 .pt-brand-roots {
   color: #F47721;
-  text-shadow: 0 0 32px rgba(244, 119, 33, 0.55);
+  text-shadow: 0 0 26px rgba(244, 119, 33, 0.5);
 }
 
 .page-transition-tagline {
   font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: clamp(0.78rem, 2.2vw, 1.05rem);
+  font-size: clamp(0.95rem, 2.5vw, 1.25rem);
   font-weight: 600;
-  letter-spacing: clamp(1.5px, 0.5vw, 3.5px);
+  letter-spacing: clamp(1px, 0.4vw, 2.5px);
   text-transform: uppercase;
-  color: #94a3b8;
+  color: #cbd5e1;
   margin-top: 14px;
-  opacity: 0.9;
+  opacity: 0.95;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
@@ -6755,8 +6755,8 @@ button, input, select {
     margin-right: auto !important;
   }
   .logo-img {
-    height: 48px !important;
-    max-height: 48px !important;
+    height: 44px !important;
+    max-height: 44px !important;
     width: auto !important;
     max-width: 100% !important;
     object-fit: contain !important;
@@ -6857,8 +6857,8 @@ button, input, select {
       gap: 6px !important;
     }
     .logo-img {
-      height: 46px !important;
-      max-height: 46px !important;
+      height: 42px !important;
+      max-height: 42px !important;
     }
     .mobile-menu-toggle {
       width: 36px !important;
