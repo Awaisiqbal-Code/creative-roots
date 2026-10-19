@@ -3432,8 +3432,8 @@ button, input, select {
     text-decoration: none;
   }
   .logo-img {
-    height: 44px;
-    max-height: 44px;
+    height: 48px;
+    max-height: 48px;
     width: auto;
     max-width: 100%;
     object-fit: contain;
@@ -4603,13 +4603,12 @@ button, input, select {
   inset: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(135deg, var(--navy-dark, #0d1726) 0%, var(--primary-navy, #132238) 100%);
+  background: radial-gradient(circle at 50% 45%, #18283f 0%, #0d1726 60%, #060b13 100%);
   z-index: 999999;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 18px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -4624,10 +4623,13 @@ button, input, select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  transform: translateY(12px) scale(0.96);
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  transform: translateY(16px) scale(0.96);
   opacity: 0;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+  user-select: none;
 }
 
 .page-transition-overlay.is-active .page-transition-brand {
@@ -4635,19 +4637,50 @@ button, input, select {
   opacity: 1;
 }
 
-.page-transition-logo {
-  height: 48px;
-  width: auto;
-  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.4));
+.page-transition-brand-title {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(2.8rem, 8vw, 4.8rem);
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1.05;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.28em;
+  filter: drop-shadow(0 6px 24px rgba(0, 0, 0, 0.5));
+}
+
+.pt-brand-creative {
+  color: #4ade80;
+  text-shadow: 0 0 28px rgba(74, 222, 128, 0.45);
+}
+
+.pt-brand-roots {
+  color: #F47721;
+  text-shadow: 0 0 32px rgba(244, 119, 33, 0.55);
+}
+
+.page-transition-tagline {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(0.78rem, 2.2vw, 1.05rem);
+  font-weight: 600;
+  letter-spacing: clamp(1.5px, 0.5vw, 3.5px);
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-top: 14px;
+  opacity: 0.9;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .page-transition-bar-wrap {
-  width: 140px;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.12);
+  width: clamp(180px, 28vw, 320px);
+  height: 3.5px;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 99px;
   overflow: hidden;
   position: relative;
+  margin-top: 26px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .page-transition-bar {
@@ -4656,9 +4689,10 @@ button, input, select {
   left: 0;
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, var(--accent-orange, #F47721), var(--orange-light, #FF8F42));
+  background: linear-gradient(90deg, #3E9B32 0%, #F47721 55%, #FFAE19 100%);
   border-radius: 99px;
-  transition: width 0.38s ease;
+  box-shadow: 0 0 12px rgba(244, 119, 33, 0.8);
+  transition: width 0.42s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .page-transition-overlay.is-active .page-transition-bar {
@@ -6721,8 +6755,8 @@ button, input, select {
     margin-right: auto !important;
   }
   .logo-img {
-    height: 44px !important;
-    max-height: 44px !important;
+    height: 48px !important;
+    max-height: 48px !important;
     width: auto !important;
     max-width: 100% !important;
     object-fit: contain !important;
@@ -6815,6 +6849,38 @@ button, input, select {
   }
   .header-store-link .header-action-label {
     display: none !important;
+  }
+
+  @media (max-width: 480px) {
+    .header .container {
+      padding: 0 10px !important;
+      gap: 6px !important;
+    }
+    .logo-img {
+      height: 46px !important;
+      max-height: 46px !important;
+    }
+    .mobile-menu-toggle {
+      width: 36px !important;
+      height: 36px !important;
+      min-width: 36px !important;
+      min-height: 36px !important;
+      font-size: 1.05rem !important;
+    }
+    .mobile-search-toggle {
+      width: 36px !important;
+      height: 36px !important;
+      min-width: 36px !important;
+      min-height: 36px !important;
+      font-size: 0.9rem !important;
+    }
+    .header-store-link {
+      width: 36px !important;
+      height: 36px !important;
+      min-width: 36px !important;
+      min-height: 36px !important;
+      font-size: 0.9rem !important;
+    }
   }
 
   /* Slide-Down Full Navigation Drawer */
