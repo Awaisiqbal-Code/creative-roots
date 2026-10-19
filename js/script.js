@@ -1922,7 +1922,7 @@ document.addEventListener('DOMContentLoaded', function () {
       overlay.setAttribute('aria-hidden', 'true');
       overlay.innerHTML = `
         <div class="page-transition-brand">
-          <img src="images/logo-wordmark-light.svg" alt="CreativeRoots" class="page-transition-logo" width="180" height="35">
+          <img src="images/logo-wordmark-light.svg?v=20261019_v2" alt="CreativeRoots" class="page-transition-logo" width="180" height="35">
           <div class="page-transition-bar-wrap">
             <div class="page-transition-bar"></div>
           </div>
