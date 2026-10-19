@@ -1647,6 +1647,188 @@
           rating: 5
         }
       ]
+    },
+
+    'solar-solutions': {
+      slug: 'solar-solutions',
+      aliases: ['solar', 'solar-energy', 'roots-energy', 'roots-energy-solutions', 'energy', 'energy-solutions', 'solar-packages', 'solar-panels'],
+      name: 'Solar Energy Solutions',
+      tagline: 'Reliable Solar Power Systems & Clean Energy Solutions',
+      heroImage: 'new assets/7.jpeg',
+      badge: '✦ CLEAN ENERGY DIVISION',
+      iconSvg: 'images/services/solar-solutions.svg',
+      description: 'Harness the power of the sun with turnkey solar power systems engineered by Roots Energy Solutions. We provide end-to-end residential, commercial, and industrial solar solutions including Tier-1 solar panels, hybrid inverters, lithium energy storage, and customized elevated rooftop mounting structures across Pakistan.',
+      seo: {
+        title: 'Roots Energy Solutions — Reliable Solar Power Systems | Creative Roots',
+        description: 'Turnkey residential, commercial, and industrial hybrid solar power systems in Pakistan. 5kW, 10kW, 15kW installations with net metering, lithium storage, and custom elevated structures.',
+        ogImage: 'new assets/7.jpeg'
+      },
+      highlights: [
+        {
+          icon: 'fa-solid fa-solar-panel',
+          title: 'Tier-1 Monocrystalline Panels',
+          desc: 'High-efficiency bifacial PERC modules delivering maximum power yield even in extreme high temperatures.'
+        },
+        {
+          icon: 'fa-solid fa-bolt-lightning',
+          title: 'Smart Hybrid Inverters',
+          desc: 'Advanced Deye and Solis hybrid inverters featuring smart net-metering, zero export, and remote mobile app monitoring.'
+        },
+        {
+          icon: 'fa-solid fa-car-battery',
+          title: 'Lithium Battery Storage',
+          desc: 'Long-life Dyness and Lithium Valley energy storage packs for 24/7 continuous uninterrupted clean power.'
+        },
+        {
+          icon: 'fa-solid fa-screwdriver-wrench',
+          title: 'Turnkey Installation & Engineering',
+          desc: 'Certified electrical engineers, customized heavy-gauge galvanized elevated frames, and rapid after-sales warranty.'
+        }
+      ],
+      items: [
+        {
+          id: 'solar-item-01',
+          name: '15kW Complete Hybrid Solar System Package',
+          description: 'Turnkey 15kW hybrid system featuring tier-1 bifacial panels, hybrid inverter, dual lithium battery banks, heavy-duty mounting rails, and DC surge protection.',
+          image: 'images/projects/solar/solar-1.jpg',
+          badge: 'Complete Package',
+          tag: '15kW Hybrid Package'
+        },
+        {
+          id: 'solar-item-02',
+          name: 'DHA Phase 7 Lahore – 15kW Turnkey Installation',
+          description: 'Real-world residential installation in DHA Lahore with elevated rooftop structure, Deye hybrid inverter, Lithium Valley battery bank, and net metering integration.',
+          image: 'images/projects/solar/solar-2.jpg',
+          badge: 'Featured Project',
+          tag: 'DHA Phase 7 Lahore'
+        },
+        {
+          id: 'solar-item-03',
+          name: 'Dual Solis Hybrid Inverters & Dyness Energy Storage',
+          description: 'Wall-mounted dual hybrid inverter configuration coupled with Dyness high-voltage lithium battery modules and professional fireproof cable trunking.',
+          image: 'images/projects/solar/solar-3.jpg',
+          badge: 'Enterprise Grade',
+          tag: 'Dual Hybrid Inverters'
+        },
+        {
+          id: 'solar-item-04',
+          name: 'Turnkey Solar DB & Automated Changeover Setup',
+          description: 'Precision engineered AC/DC distribution boxes, circuit breakers, digital voltage protector, smart energy meter, and seamless automatic changeover.',
+          image: 'images/projects/solar/solar-4.jpg',
+          badge: 'Certified Safety',
+          tag: 'AC/DC Distribution DB'
+        },
+        {
+          id: 'solar-item-05',
+          name: 'Residential Rooftop Solar Installation & Net-Metering',
+          description: 'Complete home solar power installation with optimized solar tilt angle, 3-phase net-metering assistance, and zero-bill energy independence.',
+          image: 'images/projects/solar/solar-5.jpg',
+          badge: 'Home Solar',
+          tag: 'Residential Solar'
+        },
+        {
+          id: 'solar-item-06',
+          name: 'Your Rooftop Your Powerstation – Smart Home Setup',
+          description: 'Aesthetic, low-profile rooftop solar arrays designed to power high-draw home appliances including inverter ACs, water pumps, and refrigeration effortlessly.',
+          image: 'images/projects/solar/solar-6.jpg',
+          badge: 'High Efficiency',
+          tag: 'Smart Energy Independence'
+        },
+        {
+          id: 'solar-item-07',
+          name: 'Commercial & Industrial Rooftop Solar Power Plant',
+          description: 'Large-scale multi-kilowatt elevated solar installation for industrial units, warehouses, and commercial plazas to slash peak grid utility tariffs.',
+          image: 'images/projects/solar/solar-7.jpg',
+          badge: 'Commercial',
+          tag: 'Industrial Solar Plant'
+        },
+        {
+          id: 'solar-item-08',
+          name: 'Custom Heavy-Gauge Elevated Solar Mounting Structures',
+          description: 'Engineered hot-dip galvanized custom high-rise frame structures offering usable roof terrace space beneath with superior aerodynamic stability.',
+          image: 'images/projects/solar/solar-8.jpg',
+          badge: 'Structural Tech',
+          tag: 'Elevated Galvanized Frame'
+        },
+        {
+          id: 'solar-item-09',
+          name: 'High-Yield Monocrystalline PERC Solar Panel Array',
+          description: 'Grade-A bifacial monocrystalline solar panel strings delivering up to 22.5% efficiency with multi-busbar technology and anti-reflective coated glass.',
+          image: 'images/projects/solar/solar-9.jpg',
+          badge: 'Tier-1 Modules',
+          tag: 'Monocrystalline PERC'
+        }
+      ],
+      projects: [
+        {
+          id: 'proj-solar-1',
+          title: '15kW Turnkey Hybrid Solar Installation',
+          badge: 'DHA Phase 7, Lahore',
+          desc: 'Complete rooftop solar installation with Deye hybrid inverter, Lithium Valley battery bank, and elevated galvanized structure.',
+          img: 'images/projects/solar/solar-2.jpg',
+          tag: 'Verified Commissioning'
+        },
+        {
+          id: 'proj-solar-2',
+          title: 'Commercial Multi-kW Solar Power Plant',
+          badge: 'Commercial Rooftop',
+          desc: 'High-capacity solar array mounted on heavy-duty structural frames for commercial energy independence.',
+          img: 'images/projects/solar/solar-7.jpg',
+          tag: 'Verified Commissioning'
+        },
+        {
+          id: 'proj-solar-3',
+          title: 'Dual Solis Hybrid & Dyness Lithium Storage',
+          badge: 'Hybrid Energy Storage',
+          desc: 'Dual inverter synchronization with lithium battery storage and surge-protected industrial distribution boards.',
+          img: 'images/projects/solar/solar-3.jpg',
+          tag: 'Verified Commissioning'
+        },
+        {
+          id: 'proj-solar-4',
+          title: 'Custom High-Rise Elevated Solar Structure',
+          badge: 'Elevated Engineering',
+          desc: 'Wind-resistant galvanized steel elevated pergola structure ensuring full utilization of rooftop living space.',
+          img: 'images/projects/solar/solar-8.jpg',
+          tag: 'Verified Commissioning'
+        }
+      ],
+      timeline: [
+        {
+          step: '01',
+          title: 'Site Survey & Energy Audit',
+          desc: 'Our electrical engineers conduct an on-site solar irradiance analysis, rooftop load calculation, and monthly bill evaluation.'
+        },
+        {
+          step: '02',
+          title: 'Custom System Sizing & 3D Engineering',
+          desc: 'We engineer a tailor-made solar system configuration (5kW, 10kW, 15kW+) with optimal panel layout and shadow simulation.'
+        },
+        {
+          step: '03',
+          title: 'Precision Fabrication & Certified Rigging',
+          desc: 'Our technical teams install elevated galvanized structures, tier-1 panels, inverters, and fire-safe AC/DC distribution boards.'
+        },
+        {
+          step: '04',
+          title: 'Net-Metering & Mobile Monitoring Handover',
+          desc: 'Full DISCO net-metering documentation processing, green meter installation, and mobile app live monitoring setup.'
+        }
+      ],
+      testimonials: [
+        {
+          quote: 'Roots Energy Solutions installed a 15kW hybrid solar system at our DHA Phase 7 residence. The execution, from the elevated structure to the neat DB wiring, was flawless. Our electricity bills have dropped to zero.',
+          client: 'Brig. (R) Tariq Mahmood',
+          company: 'Resident, DHA Phase 7 Lahore',
+          rating: 5
+        },
+        {
+          quote: 'We contracted Roots Energy Solutions for our commercial rooftop facility. Their engineering team is punctual, technical, and uses genuine tier-1 components. Highly recommended.',
+          client: 'Farhan Qureshi',
+          company: 'Managing Director, Horizon Logistics',
+          rating: 5
+        }
+      ]
     }
   };
 

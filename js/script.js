@@ -1198,6 +1198,36 @@ document.addEventListener('DOMContentLoaded', function () {
       badgeClass: 'badge-service',
       keywords: 'graphic design branding logo identity brand guide creative packaging mockup 3d visual typography corporate brand design'
     },
+    {
+      title: 'Roots Energy Solutions — Solar Power Systems',
+      category: 'Solar Energy',
+      type: 'service',
+      url: 'category.html?slug=solar-solutions',
+      image: 'new assets/7.jpeg',
+      badge: 'Service',
+      badgeClass: 'badge-service',
+      keywords: 'solar energy roots energy solutions solar power 5kw 10kw 15kw hybrid inverter on grid off grid solar panels lithium battery net metering solar installation lahore pakistan'
+    },
+    {
+      title: '15kW Complete Hybrid Solar System Package',
+      category: 'Solar Energy',
+      type: 'service',
+      url: 'category.html?slug=solar-solutions',
+      image: 'images/projects/solar/solar-1.jpg',
+      badge: 'Service',
+      badgeClass: 'badge-service',
+      keywords: '15kw hybrid solar system package inverter lithium battery panels deye solis residential commercial solar'
+    },
+    {
+      title: 'Commercial & Industrial Rooftop Solar Power Plant',
+      category: 'Solar Energy',
+      type: 'service',
+      url: 'category.html?slug=solar-solutions',
+      image: 'images/projects/solar/solar-7.jpg',
+      badge: 'Service',
+      badgeClass: 'badge-service',
+      keywords: 'commercial industrial rooftop solar power plant factory solar system net metering high capacity array'
+    },
 
     // Authentic Production Capabilities & Sub-Services
     {
@@ -1414,6 +1444,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <button type="button" class="search-quick-tag" data-query="Exhibition Stalls">Exhibition Stalls</button>
               <button type="button" class="search-quick-tag" data-query="Outdoor Branding">Outdoor Branding</button>
               <button type="button" class="search-quick-tag" data-query="Panaflex Printing">Panaflex Printing</button>
+              <button type="button" class="search-quick-tag" data-query="Solar Energy">Solar Energy</button>
             </div>
             <a href="index.html#services" style="color: #F47721; font-weight: 700; margin-top: 12px; display: inline-block; font-size: 0.85rem;">
               Explore All Services &rarr;
