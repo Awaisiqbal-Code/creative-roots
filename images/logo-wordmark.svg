@@ -21,7 +21,7 @@
     <text x="0" y="31.5" class="cr-brand-name" textLength="268" lengthAdjust="spacingAndGlyphs">
       <tspan fill="#3E9B32">Creative </tspan><tspan fill="#F47721">Roots</tspan>
     </text>
-    <text x="134" y="47.5" class="cr-brand-tagline" text-anchor="middle" textLength="244" lengthAdjust="spacingAndGlyphs">
+    <text x="132" y="47.5" class="cr-brand-tagline" text-anchor="middle" textLength="218" lengthAdjust="spacingAndGlyphs">
       <tspan fill="#334155">Printing</tspan> <tspan fill="#F47721" font-weight="700">|</tspan> <tspan fill="#334155">Corporate Events</tspan> <tspan fill="#F47721" font-weight="700">|</tspan> <tspan fill="#334155">Exhibition Stalls</tspan>
     </text>
   </g>
